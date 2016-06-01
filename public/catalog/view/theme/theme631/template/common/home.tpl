@@ -1,13 +1,5 @@
 <?php echo $header; ?>
 
-<style type="text/css">
-	.menutopo {
-		margin-top: 0px !important;
-	}
-	header .logo img {
-	    margin-top: 125px;
-	}
-</style>
 
 <div id="container">
 	<div class="container">

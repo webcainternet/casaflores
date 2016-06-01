@@ -83,7 +83,18 @@
         <div class="header_wrap">
             <div class="bg-dark">
                 <div class="container">
-                    <nav id="top-links" class="nav toggle-wrap">
+                    <div id="logo" class="logo">
+                        <?php if ($logo) { ?>
+                        <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive"/></a>
+                        <?php } else { ?>
+                        <h1>
+                            <a href="<?php echo $home; ?>"><?php echo $name; ?></a>
+                        </h1>
+                        <?php } ?>
+                    </div>
+
+
+                    <?php /* <nav id="top-links" class="nav toggle-wrap">
                         <a class="toggle material-design-settings49" href='#'></a>
                         <ul class="toggle_cont">
                             <li>
@@ -100,7 +111,7 @@
                                    <span>Quem Somos</span></a>
                             </li>
                         </ul>
-                        </nav>
+                        </nav> */ ?>
                         <?php //echo $cart; ?>
                         <?php //echo $search; ?>
 
@@ -129,22 +140,13 @@
                     </div>
                 </div>
 
-                <div style="width: 1200px; margin: auto; margin-top: -75px" class="menutopo">
 
-                    <div id="logo" class="logo">
-                        <?php if ($logo) { ?>
-                        <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive"/></a>
-                        <?php } else { ?>
-                        <h1>
-                            <a href="<?php echo $home; ?>"><?php echo $name; ?></a>
-                        </h1>
-                        <?php } ?>
-                    </div>
+                    
 
                     <div id="stuck" class="stuck-menu">
                         <?php if ($categories) { ?>
                         <div id="tm_menu" class="nav__primary">
-                            <div class="container" style="margin-left: 230px;">
+                            <div class="container">
                                 <?php if ($categories_tm) {
                                     echo $categories_tm;
                                 } ?>
@@ -154,7 +156,6 @@
                         <?php } ?>
                     </div>
 
-                </div>
                 <?php if ($categories) { ?>
                 <div class="container">
                     <div id="menu-gadget" class="menu-gadget" >

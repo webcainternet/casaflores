@@ -757,7 +757,7 @@ header * + .box-currency {
   margin-right: 108px;
 }
 header .nav__primary {
-  margin-top: 37px;
+  margin-top: 10px;
 }
 @media (max-width: 991px) {
   header * + .box-language,
@@ -817,20 +817,12 @@ header .box-language, header .box-currency, header .search, header .box-cart {
 }
 header .nav {
   float: left;
-}
-.common-home header .logo, .common-home header .box-address {
-  position: absolute;
-  left: 50%;
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  z-index: 1;
+  margin-top: 22px;
+  margin-left: 30px;
 }
 .common-home header .logo {
-  width: 1200px;
-  margin: auto;
+  margin-top: 15px;
+  float: left;
 }
 .common-home header .box-address {
   display: inline-block;
@@ -838,11 +830,14 @@ header .nav {
 }
 header .logo {
   margin-top: 15px;
+  float: left;
 }
 header .logo img {
   display: inline-block;
   margin-top: 65px;
-  width: 290px;
+  width: 200px;
+  float: left;
+  margin-top: -30px;
 }
 header .box-address {
   display: block;
@@ -904,6 +899,7 @@ header .search {
     margin: 0;
     background: none;
     width: auto;
+    font-size: 18px;
   }
   header .nav > .toggle_cont > li {
     display: inline-block;
@@ -2840,7 +2836,7 @@ input[type="checkbox"][name="agree"] + label:before, input[type="checkbox"][name
     width: auto !important;
     float: left;
     position: absolute;
-    top: 121px;
+    top: 150px;
 }
 
 .ajax-overlay-open .scroll-fix {
