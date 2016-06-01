@@ -156,11 +156,10 @@
 
                         <?php if ($price) { ?>
                             <div class="price-section">
-                                <span class="price-new"><?php echo $special; ?></span>
                                 <?php if (!$special) { ?>
                                     <span class="price-new"><?php echo $price; ?></span>
                                 <?php } else { ?>
-                                    <span class="price-old"><?php echo $price; ?></span>
+                                    <span class="price-old">de <?php echo $price; ?></span><br><span class="price-new"><?php echo 'por '.$special; ?></span> 
                                 <?php } ?>
                                 <?php if ($tax) { ?>
                                     <span class="tax"><?php echo $text_tax; ?> <?php echo $tax; ?></span>
@@ -441,26 +440,18 @@
                                            id="input-quantity" class="form-control"/>
                                     <input type="hidden" name="product_id" value="<?php echo $product_id; ?>"/>
                                     <a class="counter counter-plus material-design-add186" href='#'></a>
+                                    <?php /* <button type="button" id="button-cart"
+                                            data-loading-text="<?php echo $text_loading; ?>"
+                                            class="product-btn-add"><?php echo $button_cart; ?></button> */ ?>
                                     <button type="button" id="button-cart"
                                             data-loading-text="<?php echo $text_loading; ?>"
-                                            class="product-btn-add"><?php echo $button_cart; ?></button>
+                                            class="product-btn-add">Encomendar</button>
+
                                 </div>
                             </div>
 
 
                         </div>
-
-                        <ul class="product-buttons">
-                            <li>
-                                <button class="product-btn" onclick="wishlist.add('<?php echo $product_id; ?>');"><span
-                                        ><?php echo $button_wishlist; ?></span></button>
-                            </li>
-                            <li>
-                                <button type="button" class="product-btn"
-                                        onclick="compare.add('<?php echo $product_id; ?>');">
-                                    <span><?php echo $button_compare; ?></span></button>
-                            </li>
-                        </ul>
 
                         <?php if ($tags) { ?>
                             <!-- Product tags -->

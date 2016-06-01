@@ -292,11 +292,10 @@
                                             <?php if ($product['price']) { ?>
                                                 <div class="price">
                                                     <?php if (!$product['special']) { ?>
-                                                        <?php echo $product['price']; ?>
+                                                        <span class="price-apenas">Apenas</span> 
+                                                        <span class="price-new"><?php echo $product['price']; ?></span> 
                                                     <?php } else { ?>
-                                                        <span
-                                                            class="price-new"><?php echo $product['special']; ?></span>
-                                                        <span class="price-old"><?php echo $product['price']; ?></span>
+                                                        <span class="price-old">de <?php echo $product['price']; ?></span> <span class="price-new"><?php echo 'por '.$product['special']; ?></span> 
                                                     <?php } ?>
                                                     <?php if ($product['tax']) { ?>
                                                         <span
@@ -352,7 +351,7 @@
                         </div>
 
                         <?php if ($product['special']) { ?>
-                            <div class="sale"><span><?php echo $text_sale; ?></span></div>
+                            <div class="sale" style=""><span>Oferta</span></div>
                         <?php } ?>
                         <div class="image">
                             <a class="lazy"
@@ -376,10 +375,10 @@
                             <?php if ($product['price']) { ?>
                                 <div class="price">
                                     <?php if (!$product['special']) { ?>
-                                        <?php echo $product['price']; ?>
+                                        <span class="price-apenas">Apenas</span> 
+                                        <span class="price-new"><?php echo $product['price']; ?></span> 
                                     <?php } else { ?>
-                                        <span class="price-new"><?php echo $product['special']; ?></span> <span
-                                            class="price-old"><?php echo $product['price']; ?></span>
+                                        <span class="price-old">de <?php echo $product['price']; ?></span> <span class="price-new"><?php echo 'por '.$product['special']; ?></span> 
                                     <?php } ?>
                                     <?php if ($product['tax']) { ?>
                                         <span
@@ -405,7 +404,7 @@
                         <div class="cart-button">
                             <button class="product-btn-add" type="button"
                                     onclick="ajaxAdd($(this),<?php echo $product['product_id'] ?>);">
-                                <i class="fl-bigmug-line-shopping202"></i>
+                                Saiba mais
                                 
                             </button>
                             <button class="product-btn" type="button" data-toggle="tooltip"

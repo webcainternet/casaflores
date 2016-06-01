@@ -117,17 +117,32 @@
                         <?php echo $language; ?>
                     </div>
                 </div>
-                <div id="stuck" class="stuck-menu">
-                    <?php if ($categories) { ?>
-                    <div id="tm_menu" class="nav__primary">
-                        <div class="container">
-                            <?php if ($categories_tm) {
-                                echo $categories_tm;
-                            } ?>
-                            <div class="clear"></div>
-                        </div>
+
+                <div style="width: 1200px; margin: auto; margin-top: -75px" class="menutopo">
+
+                    <div id="logo" class="logo">
+                        <?php if ($logo) { ?>
+                        <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive"/></a>
+                        <?php } else { ?>
+                        <h1>
+                            <a href="<?php echo $home; ?>"><?php echo $name; ?></a>
+                        </h1>
+                        <?php } ?>
                     </div>
-                    <?php } ?>
+
+                    <div id="stuck" class="stuck-menu">
+                        <?php if ($categories) { ?>
+                        <div id="tm_menu" class="nav__primary">
+                            <div class="container" style="margin-left: 230px;">
+                                <?php if ($categories_tm) {
+                                    echo $categories_tm;
+                                } ?>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <?php } ?>
+                    </div>
+
                 </div>
                 <?php if ($categories) { ?>
                 <div class="container">
@@ -139,21 +154,7 @@
                 </div>
                 <?php } ?>
             </div>
-            <div id="logo" class="logo">
-                    <?php if ($logo) { ?>
-                    <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive"/></a>
-                    <?php } else { ?>
-                    <h1>
-                        <a href="<?php echo $home; ?>"><?php echo $name; ?></a>
-                    </h1>
-                    <?php } ?>
-                </div>
-                <address class="box-address">
-                    <dl>
-                        <dt><?php echo $text_telephone ?></dt>
-                        <dd><a href="callto:<?php echo $telephone ?>"><?php echo $telephone ?></a></dd>
-                    </dl>
-                </address>
+            
             <?php if ($maintenance == 0 && $class == 'common-home') { ?>
             <div class="header_modules"><?php echo $header_top; ?></div>
             <?php } ?>

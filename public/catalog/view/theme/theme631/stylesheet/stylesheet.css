@@ -803,6 +803,7 @@ header {
   padding-bottom: 15px;
   background: url(../image/sub-header-bg.jpg) center top no-repeat;
   background-size: cover;
+  min-height: 235px;
 }
 .common-home header {
   background: transparent;
@@ -828,21 +829,20 @@ header .nav {
   z-index: 1;
 }
 .common-home header .logo {
-  top: 46%;
+  width: 1200px;
+  margin: auto;
 }
 .common-home header .box-address {
   display: inline-block;
   top: 76%;
 }
 header .logo {
-  text-align: center;
   margin-top: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 90%;
 }
 header .logo img {
   display: inline-block;
+  margin-top: 65px;
+  width: 290px;
 }
 header .box-address {
   display: block;
@@ -1471,6 +1471,17 @@ header .search {
 .product-thumb * + .cart-button {
   margin-top: 10px;
 }
+
+.cart-button {
+  bottom: 30px;
+  right: 30px;
+  position: absolute;
+}
+
+.rating {
+  display: none;
+}
+
 .product-thumb .image + .caption {
   margin-top: 15px;
 }
@@ -1523,6 +1534,9 @@ header .search {
   -o-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+.product-thumb {
+  min-height: 488px;
 }
 .product-thumb, .product-thumb .image {
   transition-property: background-color;
@@ -1651,13 +1665,16 @@ header .search {
 .sale span, .new_pr span {
   display: inline-block;
   position: absolute;
-  top: 22px;
-  left: 53px;
+  top: 25px;
+  left: 40px;
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+  font-size: 14px; 
+  font-weight: bold; 
+  text-transform: uppercase;
 }
 html[lang="ru"] .sale span, html[lang="ru"] .new_pr span {
   left: 30px;
@@ -1697,18 +1714,29 @@ html[lang="de"] .new_pr span {
 }
 .product-thumb .price .price-new {
   float: left;
+  font-size: 22px;
 }
 .product-thumb .price .price-old {
-  float: right;
+  float: left;
+  font-size: 14px;
 }
+
+.product-thumb .price .price-apenas {
+  float: left;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+}
+
 @media (min-width: 768px) and (max-width: 1199px) {
   .product-thumb .price .price-new, .product-thumb .price .price-old {
     float: none;
   }
 }
-.product-thumb .price-new, .product-thumb .price-old, .product-thumb .price {
+.product-thumb .price {
   font-size: 22px;
 }
+
 
 .price-new, .price-old, .price {
   display: inline-block;
@@ -2220,7 +2248,11 @@ aside .row {
   color: #efab49;
 }
 .product-btn-add {
-  font-size: 61px;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: #EFAB49;
+    color: #FFF;
+    padding: 10px 20px;
 }
 .product-option-wrap .product-btn-add {
   font-size: 35px;
@@ -5494,4 +5526,9 @@ footer h5 + ul {
   .delivery_page .table th {
     padding: 6px;
   }
+}
+
+
+.quickview {
+  display: none !important;
 }

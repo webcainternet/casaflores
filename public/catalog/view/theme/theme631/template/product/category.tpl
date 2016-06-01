@@ -1,4 +1,11 @@
 <?php echo $header; ?>
+
+<style type="text/css">
+.col-sm-9 {
+    width: 100%;
+}
+</style>
+
 <div class="container">
   <ul class="breadcrumb">
 	<?php foreach ($breadcrumbs as $breadcrumb) { ?>
