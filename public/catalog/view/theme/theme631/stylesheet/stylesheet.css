@@ -2837,7 +2837,10 @@ input[type="checkbox"][name="agree"] + label:before, input[type="checkbox"][name
 }
 /*==================  Stuck menu  ======================*/
 .stuck-menu {
-  width: auto !important;
+    width: auto !important;
+    float: left;
+    position: absolute;
+    top: 121px;
 }
 
 .ajax-overlay-open .scroll-fix {

@@ -29,7 +29,7 @@ $_['text_checkout']      = 'Checkout';
 					$_['text_category']   = 'Categories';
 					$_['text_latest_added']   = 'Latest added product(s):';
 					$_['text_compare']      = 'Product Compare';
-					$_['text_telephone']      = 'Fale Conosco:';
+					$_['text_telephone']      = 'call us:';
 				
 $_['text_search']        = 'Search';
 $_['text_all']           = 'Show All';

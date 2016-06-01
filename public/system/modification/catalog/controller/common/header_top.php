@@ -46,6 +46,9 @@ class ControllerCommonHeaderTop extends Controller {
 			$this->load->model('extension/module');
 			
 
+			$this->load->model('extension/module');
+			
+
 		foreach ($modules as $module) {
 			$part = explode('.', $module['code']);
 			

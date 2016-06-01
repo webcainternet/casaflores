@@ -43,6 +43,9 @@ class ControllerCommonHeaderTop extends Controller {
 		
 		$modules = $this->model_design_layout->getLayoutModules($layout_id, 'header_top');
 
+			$this->load->model('extension/module');
+			
+
 		foreach ($modules as $module) {
 			$part = explode('.', $module['code']);
 			

@@ -4,6 +4,9 @@
 	.menutopo {
 		margin-top: 0px !important;
 	}
+	header .logo img {
+	    margin-top: 125px;
+	}
 </style>
 
 <div id="container">
