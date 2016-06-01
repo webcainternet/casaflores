@@ -803,7 +803,6 @@ header {
   padding-bottom: 15px;
   background: url(../image/sub-header-bg.jpg) center top no-repeat;
   background-size: cover;
-  min-height: 235px;
 }
 .common-home header {
   background: transparent;
@@ -2833,10 +2832,7 @@ input[type="checkbox"][name="agree"] + label:before, input[type="checkbox"][name
 }
 /*==================  Stuck menu  ======================*/
 .stuck-menu {
-    width: auto !important;
-    float: left;
-    position: absolute;
-    top: 150px;
+        top: 150px; 
 }
 
 .ajax-overlay-open .scroll-fix {
