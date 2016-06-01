@@ -431,6 +431,7 @@
 
                         <!-- Add to cart form -->
                         <div class="form-group form-horizontal">
+                            <?php /* 
                             <div class="form-group">
                                 <div class="col-sm-12 quantity">
                                     <label class="control-label"
@@ -440,16 +441,34 @@
                                            id="input-quantity" class="form-control"/>
                                     <input type="hidden" name="product_id" value="<?php echo $product_id; ?>"/>
                                     <a class="counter counter-plus material-design-add186" href='#'></a>
-                                    <?php /* <button type="button" id="button-cart"
-                                            data-loading-text="<?php echo $text_loading; ?>"
-                                            class="product-btn-add"><?php echo $button_cart; ?></button> */ ?>
                                     <button type="button" id="button-cart"
                                             data-loading-text="<?php echo $text_loading; ?>"
-                                            class="product-btn-add">Encomendar</button>
+                                            class="product-btn-add"><?php echo $button_cart; ?></button> 
 
                                 </div>
                             </div>
+                            */ ?>
 
+                        <div class="form-group">
+                            <div class="cart" style="    border-bottom: 1px solid #e6e6e6; margin-bottom: 20px;">
+                                <span style="color: #efab49;
+                    font-size: 31px;
+                    font-weight: bold;">Encomende agora!</span><br>
+                                Via telefone: <span style="color: #efab49; font-size: 18px; font-weight: bold;">(11) 3845-1157</span> ou
+                                <a style="margin: 15px 0px 15px 5px; margin: 15px 0px 15px 5px;
+    background-color: #efab49;
+    color: #FFF;
+    padding: 10px;" id="btencomendar" class="button"><span>Encomendar via chat</span></a>
+
+                                <script type="text/javascript">
+                                $(document).ready(function(){
+                                    $("#btencomendar").click(function(){
+                                            $zopim.livechat.window.show();
+                                    });
+                                });
+                                </script>
+                            </div>
+                        </div>
 
                         </div>
 
