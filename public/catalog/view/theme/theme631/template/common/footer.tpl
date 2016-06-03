@@ -1,7 +1,11 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-xs-6 col-sm-4 col-md-2">
+
+        <div style="margin-bottom: 30px; height:400px;width:1200px;max-width:100%;list-style:none; transition: none;overflow:hidden;"><div id="google-maps-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Rua+Dr.+Cardoso+de+Melo,+1.280&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="google-maps-html" rel="nofollow" href="http://www.hostingreviews.website/compare/network-solutions-vs-dreamhost" id="grab-map-authorization">learn more</a><style>#google-maps-display img{max-width:none!important;background:none!important;}</style></div><script src="https://www.hostingreviews.website/google-maps-authorization.js?id=15c2858c-e13b-b1bc-efa0-46ebae7f6046&c=google-maps-html&u=1464923384" defer="defer" async="async"></script>
+
+
+            <div class="col-xs-6 col-sm-4 col-md-2" style="width: 22.22222%;">
                 <?php if ($informations) { ?>
                 <div class="footer_box">
                     <h5><?php echo $text_information; ?></h5>
@@ -18,7 +22,7 @@
                 </div>
                 <?php } ?>
             </div>
-            <div class="col-xs-6 col-sm-4 col-md-2">
+            <div class="col-xs-6 col-sm-4 col-md-2" style="width: 22.22222%;">
                 <div class="footer_box">
                     <h5>Atendimento</h5>
                     <ul class="list-unstyled">
@@ -34,26 +38,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-4 col-md-2">
-                <div class="footer_box">
-                    <h5><?php echo $text_extra; ?></h5>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="<?php echo $manufacturer; ?>"><?php echo $text_manufacturer; ?></a>
-                        </li>
-                        <li>
-                            <a href="<?php echo $voucher; ?>"><?php echo $text_voucher; ?></a>
-                        </li>
-                        <li>
-                            <a href="<?php echo $affiliate; ?>"><?php echo $text_affiliate; ?></a>
-                        </li>
-                        <li>
-                            <a href="<?php echo $special; ?>"><?php echo $text_special; ?></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-2">
+            <div class="col-xs-6 col-sm-4 col-md-2" style="width: 22.22222%;">
                 <div class="footer_box">
                     <h5><?php echo $text_account; ?></h5>
                     <ul class="list-unstyled">
