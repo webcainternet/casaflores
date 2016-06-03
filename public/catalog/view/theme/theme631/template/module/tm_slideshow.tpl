@@ -16,7 +16,7 @@
 			barPosition: 'bottom',
 			easing: 'easeInOutExpo',
 			fx: 'simpleFade',
-			height: '62.04878048780488%',
+
 			minHeight: '500px',
 			hover: true,
 			pagination: false,
