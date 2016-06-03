@@ -122,7 +122,7 @@
                                 <a href="/" id="home"
                                    title="Home">
                                    <i class="fa fa-phone"></i>
-                                   <span>(11) 3845-1157</span></a>
+                                   <span>(11) 3845-1157 / (11) 3805-1157</span></a>
                             </li>
 
                             <li>
