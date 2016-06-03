@@ -4256,6 +4256,7 @@ aside #blog-search a:hover {
 
 .magnificent-viewport {
   background: #f5f5f5;
+  display: none !important;
 }
 
 .general_info {
