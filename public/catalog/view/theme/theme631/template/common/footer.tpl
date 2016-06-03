@@ -20,7 +20,7 @@
             </div>
             <div class="col-xs-6 col-sm-4 col-md-2">
                 <div class="footer_box">
-                    <h5><?php echo $text_service; ?></h5>
+                    <h5>Atendimento</h5>
                     <ul class="list-unstyled">
                         <li>
                             <a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a>

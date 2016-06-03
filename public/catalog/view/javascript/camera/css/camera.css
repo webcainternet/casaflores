@@ -3,7 +3,7 @@
 =========================================================*/
 .camera_container {
   position: relative;
-  padding-bottom: 62.04878%;
+  padding-bottom: 620px;
 }
 
 @media (max-width: 805.81761px) {
@@ -18,7 +18,8 @@
   top: 0;
   width: 100%;
   margin-bottom: 0 !important;
-  height: 100%;
+  height: 620px;
+  max-height: 620px;
   background: #fff;
   z-index: 0;
 }
