@@ -757,7 +757,8 @@ header * + .box-currency {
   margin-right: 108px;
 }
 header .nav__primary {
-  margin-top: 10px;
+  background-color: rgba(0, 0, 0, 0.3) !important;
+    margin-top: 0px !important;
 }
 @media (max-width: 991px) {
   header * + .box-language,
@@ -800,7 +801,6 @@ header .nav__primary {
 
 header {
   position: relative;
-  padding-bottom: 15px;
   background: url(../image/sub-header-bg.jpg) center top no-repeat;
   background-size: cover;
 }
