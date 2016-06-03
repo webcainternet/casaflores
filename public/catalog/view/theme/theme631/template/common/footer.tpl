@@ -1,3 +1,61 @@
+<div class="clear"></div>
+
+<style type="text/css">
+    .dvnews {
+        float: left;
+        width: 54%;
+        color: #FFF;
+        text-transform: uppercase;
+        font-size: 20px;
+        text-align: right;
+        padding: 34px 25px 0px 0px;
+    }
+    .dvnews2 {
+        float: left;
+        width: 46%;
+        color: #FFF;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 20px;
+        padding: 26px 25px 0px 0px;
+    }
+</style>
+
+<div style="width: 1200px; margin: auto; margin-top: 30px;">
+    <div style="background-color: #EFAB49; height: 90px;">
+    
+    <div class="dvnews">Receba as novidades e promoções da Casaflores</div>
+    <div class="dvnews2">
+        <input type="text" name="email" id="email" placeholder="Digite seu email" style="width: 330px; height: 38px; float: left;">
+        <input type="button" value="ENVIAR" onclick="javascript: emailadd();" style="border: 0px; height: 38px; background-color: rgb(50, 42, 32); padding: 5px 20px; margin-left: 7px; font-size: 15px;">
+    </div>
+
+
+    </div>
+</div>
+
+</section>
+
+<script type="text/javascript">
+  function emailadd() {
+    //Get
+    var bla = $('#email').val();
+
+    if (bla == '') {
+        alert('Digite o email');
+        document.getElementById('email').focus();
+    } else {
+        $.ajax({url: "/emailadd.php?email="+bla, success: function(result){
+            //$("#newsajax").append(result);
+            //alert(result);
+            alert(result);
+            $('#email').val('');
+        }});
+    }
+    
+  }
+</script>
+
 <footer>
     <div class="container">
         <div class="row">

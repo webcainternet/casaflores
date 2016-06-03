@@ -5258,14 +5258,12 @@ input#input-coupon {
                          Footer
 =========================================================*/
 * + footer {
-  margin-top: 8px;
 }
 * + .copyright {
   margin-top: 60px;
 }
 
 footer {
-  padding-top: 10px;
   color: #bcbcbc;
   background: transparent;
 }
