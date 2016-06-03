@@ -21,18 +21,6 @@
     }
 </style>
 
-<div style="width: 1200px; margin: auto; margin-top: 30px;">
-    <div style="background-color: #EFAB49; height: 90px;">
-    
-    <div class="dvnews">Receba as novidades e promoções da Casaflores</div>
-    <div class="dvnews2">
-        <input type="text" name="email" id="email" placeholder="Digite seu email" style="width: 330px; height: 38px; float: left;">
-        <input type="button" value="ENVIAR" onclick="javascript: emailadd();" style="border: 0px; height: 38px; background-color: rgb(50, 42, 32); padding: 5px 20px; margin-left: 7px; font-size: 15px;">
-    </div>
-
-
-    </div>
-</div>
 
 </section>
 
@@ -59,6 +47,21 @@
 <div id="banner2B" class="banners" style="margin: auto;">
     <div class="Dia dos Namorados">
         <div class="banner-box">
+            <div style="width: 100%; margin: auto; margin-top: 30px;">
+    <div style="background-color: #EFAB49; height: 90px;">
+    
+    <div class="dvnews">Receba as novidades e promoções da Casaflores</div>
+    <div class="dvnews2">
+        <input type="text" name="email" id="email" placeholder="Digite seu email" style="width: 330px; height: 38px; float: left;">
+        <input type="button" value="ENVIAR" onclick="javascript: emailadd();" style="border: 0px; height: 38px; background-color: rgb(50, 42, 32); padding: 5px 20px; margin-left: 7px; font-size: 15px;">
+    </div>
+
+
+    </div>
+</div>
+
+
+        
             <div style="height:400px;width:100%;max-width:100%;list-style:none; transition: none;overflow:hidden;"><div id="google-maps-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Rua+Dr.+Cardoso+de+Melo,+1.280&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="google-maps-html" rel="nofollow" href="http://www.hostingreviews.website/compare/network-solutions-vs-dreamhost" id="grab-map-authorization">learn more</a><style>#google-maps-display img{max-width:none!important;background:none!important;}</style></div><script src="https://www.hostingreviews.website/google-maps-authorization.js?id=15c2858c-e13b-b1bc-efa0-46ebae7f6046&c=google-maps-html&u=1464923384" defer="defer" async="async"></script>
 
         </div>
