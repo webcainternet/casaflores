@@ -31,7 +31,7 @@ $(document).ready(function () {
     } else if (cols1 == 1) {
         $('#content .product-layout:nth-child(3n+3)').after('<div class="clearfix hidden-xs"></div>');
     } else {
-        $('#content .product-layout:nth-child(4n+5)').addClass('last');
+        //$('#content .product-layout:nth-child(4n+5)').addClass('last');
     }
 
     // Highlight any found errors

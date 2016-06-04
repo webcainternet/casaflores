@@ -102,9 +102,6 @@
                             <a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a>
                         </li>
                         <li>
-                            <a href="<?php echo $return; ?>"><?php echo $text_return; ?></a>
-                        </li>
-                        <li>
                             <a href="<?php echo $sitemap; ?>"><?php echo $text_sitemap; ?></a>
                         </li>
                     </ul>
@@ -112,19 +109,31 @@
             </div>
             <div class="col-xs-6 col-sm-4 col-md-2" style="width: 22.22222%;">
                 <div class="footer_box">
-                    <h5><?php echo $text_account; ?></h5>
+                    <h5>Contato</h5>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="<?php echo $account; ?>"><?php echo $text_account; ?></a>
+                            <a href="https://www.facebook.com/Casaflores2016">
+                               <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                            </a>
+                            <a href="http://instagram.com/casaflores2016">
+                               <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
                         </li>
+
+        
+
                         <li>
-                            <a href="<?php echo $order; ?>"><?php echo $text_order; ?></a>
+                            <a href="#" id="home"
+                               title="Home">
+                               <i class="fa fa-phone"></i>
+                               <span>(11) 3845-1157 / (11) 3805-1157</span></a>
                         </li>
+
                         <li>
-                            <a href="<?php echo $wishlist; ?>"><?php echo $text_wishlist; ?></a>
-                        </li>
-                        <li>
-                            <a href="<?php echo $newsletter; ?>"><?php echo $text_newsletter; ?></a>
+                            <a href="/quem-somos" id="home"
+                               title="Home">
+                               <i class="fa fa-envelope"></i>
+                               <span style="text-transform: lowercase;">casaflores@casaflores.com.br</span></a>
                         </li>
                     </ul>
                 </div>

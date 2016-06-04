@@ -113,13 +113,25 @@
                         </ul>
                         </nav> */ ?>
                         <?php //echo $cart; ?>
-                        <?php //echo $search; ?>
+                        
 
                     <nav id="top-links" class="nav toggle-wrap" style="float: right;">
                         <a class="toggle material-design-settings49" href='#'></a>
                         <ul class="toggle_cont">
+
                             <li>
-                                <a href="/" id="home"
+                                <a href="https://www.facebook.com/Casaflores2016">
+                                   <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                                </a>
+                                <a href="http://instagram.com/casaflores2016">
+                                   <i class="fa fa-instagram" aria-hidden="true"></i>
+                                </a>
+                            </li>
+
+            
+
+                            <li>
+                                <a href="#" id="home"
                                    title="Home">
                                    <i class="fa fa-phone"></i>
                                    <span>(11) 3845-1157 / (11) 3805-1157</span></a>
@@ -133,6 +145,8 @@
                             </li>
                         </ul>
                         </nav>
+
+                        <?php // echo $search; ?>
 
 
                         <?php echo $currency; ?>

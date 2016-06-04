@@ -5,7 +5,7 @@
             <?php $f = 2000;
             foreach ($products as $product) {
                 $f++ ?>
-                <div class="product-layout col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="product-layout col-lg-3 col-md-3 col-sm-3 col-xs-12" style="width: 33%; height: 585px;">
                     <div class="product-thumb transition <?php if ($product['options']) echo 'options';?>">
                         <?php if ($product['options']) { ?>
                             <!-- Product options -->
