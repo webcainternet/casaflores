@@ -1531,7 +1531,7 @@ header .search {
   transition: all 0.3s ease;
 }
 .product-thumb {
-  min-height: 488px;
+  min-height: 585px;
 }
 .product-thumb, .product-thumb .image {
   transition-property: background-color;
