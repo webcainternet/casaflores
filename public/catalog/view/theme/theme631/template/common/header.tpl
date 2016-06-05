@@ -149,6 +149,10 @@
                         </ul>
                         </nav>
 
+                        <div style="float: right; color: #FFF;">
+                            Av. Dr. Cardoso de Melo, 1280 - Vila Olímpia, São Paulo - SP
+                        </div>
+
                         <?php // echo $search; ?>
 
 
