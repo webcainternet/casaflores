@@ -405,7 +405,7 @@
                 <?php if ($product['price']) { ?>
                     <div class="price">
                         <?php if (!$product['special']) { ?>
-                            <span class="price-apenas">Apenas</span> 
+                            <span class="price-apenas">Por</span> 
                             <span class="price-new"><?php echo $product['price']; ?></span> 
                         <?php } else { ?>
                             <span class="price-old">de <?php echo $product['price']; ?></span> <br> <span class="price-new"><?php echo 'por '.$product['special']; ?></span> 
