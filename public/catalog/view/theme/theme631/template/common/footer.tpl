@@ -87,9 +87,9 @@
                             <a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a>
                         </li>
                         <?php } ?>
-                        <?php if(isset($simple_blog_found)) { ?>
+                        <?php /* if(isset($simple_blog_found)) { ?>
                         <li><a href="<?php echo $simple_blog; ?>"><?php echo $simple_blog_footer_heading; ?></a></li>
-                        <?php } ?>
+                        <?php } */ ?>
                     </ul>
                 </div>
                 <?php } ?>
@@ -113,10 +113,13 @@
                     <ul class="list-unstyled">
                         <li>
                             <a href="https://www.facebook.com/Casaflores2016">
-                               <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                               <i class="fa fa-facebook-square" aria-hidden="true"></i> /casaflores2016
                             </a>
+                        </li>
+
+                        <li>
                             <a href="http://instagram.com/casaflores2016">
-                               <i class="fa fa-instagram" aria-hidden="true"></i>
+                               <i class="fa fa-instagram" aria-hidden="true"></i> /casaflores2016
                             </a>
                         </li>
 
