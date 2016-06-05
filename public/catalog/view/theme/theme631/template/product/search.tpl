@@ -386,14 +386,16 @@
                         <div class="name name-product"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
                         <div class="description"><?php echo $product['description']; ?></div>
                         <?php if ($product['price']) { ?>
-                            <div class="price price-product">
+                            <div class="price">
                                 <?php if (!$product['special']) { ?>
-                                    <?php echo $product['price']; ?>
+                                    <span class="price-apenas">Apenas</span> 
+                                    <span class="price-new"><?php echo $product['price']; ?></span> 
                                 <?php } else { ?>
-                                    <span class="price-new"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span>
+                                    <span class="price-old">de <?php echo $product['price']; ?></span> <br> <span class="price-new"><?php echo 'por '.$product['special']; ?></span> 
                                 <?php } ?>
                                 <?php if ($product['tax']) { ?>
-                                    <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
+                                    <span
+                                        class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
                                 <?php } ?>
                             </div>
                         <?php } ?>
@@ -413,24 +415,15 @@
                     </div>
                     <div class="aside">
                         <div class="cart-button">
-                            <button class="product-btn-add" type="button" onclick="ajaxAdd($(this),<?php echo $product['product_id'] ?>);">
-                                
-                                <span><?php echo $button_cart; ?></span>
-
-                            </button>
-                            <button class="product-btn" type="button"  title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><span><?php echo $button_wishlist; ?></span></button>
-                            <button class="product-btn" type="button"  title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><span><?php echo $button_compare; ?></span></button>
+                            <button class="product-btn-add" type="button">
+                        <a href="<?php echo $product['href']; ?>">Saiba mais</a></button>
                         </div>
                     </div>
                     
                     <div class="cart-button">
-                        <button class="product-btn-add" type="button" onclick="ajaxAdd($(this),<?php echo $product['product_id'] ?>);">
-                            <i class="fl-bigmug-line-shopping202"></i>
-                            
-
-                        </button>
-                        <button class="product-btn" type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="material-design-favorite21"></i><span><?php echo $button_wishlist; ?></span></button>
-                        <button class="product-btn" type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="material-design-shuffle24"></i><span><?php echo $button_compare; ?></span></button>
+                        <button class="product-btn-add" type="button">
+                        <a href="<?php echo $product['href']; ?>">Saiba mais</a></button>
+                        
                     </div>
                 </div>
                 <div class="clear"></div>
