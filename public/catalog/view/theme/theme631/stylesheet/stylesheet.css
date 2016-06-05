@@ -809,7 +809,7 @@ header {
   padding-bottom: 0;
 }
 header .bg-dark {
-  padding: 28px 0;
+  padding: 14px 0;
 }
 header .box-language, header .box-currency, header .search, header .box-cart {
   float: right;
