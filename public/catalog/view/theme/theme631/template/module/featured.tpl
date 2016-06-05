@@ -295,7 +295,7 @@
                                                         <span class="price-apenas">Apenas</span> 
                                                         <span class="price-new"><?php echo $product['price']; ?></span> 
                                                     <?php } else { ?>
-                                                        <span class="price-old">de <?php echo $product['price']; ?></span> <span class="price-new"><?php echo 'por '.$product['special']; ?></span> 
+                                                        <span class="price-old">de <?php echo $product['price']; ?></span> <br> <span class="price-new"><?php echo 'por '.$product['special']; ?></span> 
                                                     <?php } ?>
                                                     <?php if ($product['tax']) { ?>
                                                         <span
@@ -378,7 +378,7 @@
                                         <span class="price-apenas">Apenas</span> 
                                         <span class="price-new"><?php echo $product['price']; ?></span> 
                                     <?php } else { ?>
-                                        <span class="price-old">de <?php echo $product['price']; ?></span> <span class="price-new"><?php echo 'por '.$product['special']; ?></span> 
+                                        <span class="price-old">de <?php echo $product['price']; ?></span> <br> <span class="price-new"><?php echo 'por '.$product['special']; ?></span> 
                                     <?php } ?>
                                     <?php if ($product['tax']) { ?>
                                         <span
@@ -402,10 +402,8 @@
                             <?php } ?>
                         </div>
                         <div class="cart-button">
-                            <button class="product-btn-add" type="button"
-                                    onclick="ajaxAdd($(this),<?php echo $product['product_id'] ?>);">
-                                Saiba mais
-                                
+                            <button class="product-btn-add" type="button">
+                                <a href="<?php echo $product['href']; ?>">Saiba mais</a>
                             </button>
                             <button class="product-btn" type="button" data-toggle="tooltip"
                                     title="<?php echo $button_wishlist; ?>"
