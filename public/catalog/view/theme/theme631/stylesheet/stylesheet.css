@@ -5261,11 +5261,12 @@ input#input-coupon {
 * + footer {
 }
 * + .copyright {
-  margin-top: 60px;
+    margin-top: 20px;
+    margin-bottom: 25px;
 }
 
 footer {
-  color: #bcbcbc;
+  color: #FFF;
   background: transparent;
 }
 footer h5, footer ul {
@@ -5275,6 +5276,7 @@ footer h5 {
   font-size: 20px;
   line-height: 26px;
   text-transform: capitalize;
+  color: #FFF;
 }
 footer h5 + ul {
   margin-top: 24px;
@@ -5293,7 +5295,7 @@ footer h5 + ul {
 =========================================================*/
 @media (max-width: 2049px) {
   footer {
-    background-color: #fff;
+    background-color: #121213;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
