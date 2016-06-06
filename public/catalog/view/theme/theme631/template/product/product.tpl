@@ -454,7 +454,8 @@
                                 <span style="color: #efab49;
                     font-size: 31px;
                     font-weight: bold;">Encomende agora!</span><br>
-                                Via telefone: <span style="color: #efab49; font-size: 18px; font-weight: bold;">(11) 3845-1157</span> ou
+                                Via telefone: <span style="color: #efab49; font-size: 18px; font-weight: bold;">(11) 3845-1157 / (11) 3805-1157 </span><br>
+                                Via 
                                 <a style="margin: 15px 0px 15px 5px; margin: 15px 0px 15px 5px;
     background-color: #efab49;
     color: #FFF;
@@ -946,7 +947,7 @@
                                      <?php if ($product['price']) { ?>
                                         <div class="price">
                                             <?php if (!$product['special']) { ?>
-                                                <span class="price-apenas">Por</span> 
+                                                <span class="price-apenas">&nbsp;</span> 
                                                 <span class="price-new"><?php echo $product['price']; ?></span> 
                                             <?php } else { ?>
                                                 <span class="price-old">de <?php echo $product['price']; ?></span> <br> <span class="price-new"><?php echo 'por '.$product['special']; ?></span> 
