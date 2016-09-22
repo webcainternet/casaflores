@@ -816,7 +816,6 @@ header .box-language, header .box-currency, header .search, header .box-cart {
 }
 header .nav {
   float: left;
-  margin-top: 22px;
   margin-left: 30px;
 }
 .common-home header .logo {
@@ -2239,7 +2238,7 @@ aside .row {
   line-height: 1em;
 }
 .product-btn:hover, .product-btn-add:hover {
-  color: #efab49;
+  /* color: #efab49; */
 }
 .product-btn-add {
     font-size: 18px;

@@ -24,8 +24,8 @@ define('DIR_CATALOG', '/srv/httpd/casaflores.com.br/casaflores/public/catalog/')
 // DB
 define('DB_DRIVER', 'mysqli');
 define('DB_HOSTNAME', 'localhost');
-define('DB_USERNAME', 'casaflores');
-define('DB_PASSWORD', 'h3fe7wygf3f');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', 'root');
 define('DB_DATABASE', 'casaflores');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');

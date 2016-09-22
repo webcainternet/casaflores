@@ -431,7 +431,10 @@
 
                         <!-- Add to cart form -->
                         <div class="form-group form-horizontal">
-                            <?php /* 
+
+                            <?php 
+                                if ($stock == "Em estoque") { ?>
+
                             <div class="form-group">
                                 <div class="col-sm-12 quantity">
                                     <label class="control-label"
@@ -445,11 +448,32 @@
                                             data-loading-text="<?php echo $text_loading; ?>"
                                             class="product-btn-add"><?php echo $button_cart; ?></button> 
 
+
                                 </div>
                             </div>
-                            */ ?>
+
+                            <center>OU</center><br>
+
+                            <div class="cart" style="border-bottom: 1px solid #e6e6e6; margin-bottom: 20px; padding-left: 10px; padding-bottom: 10px; font-size: 16px;">
+                                <span style="color: #efab49; font-size: 31px; font-weight: bold;">Encomende agora!</span><br>&nbsp;<br>
+                                Via telefone: <span style="color: #efab49; font-size: 22px; font-weight: bold;">(11) 3845-1157 / (11) 3805-1157 </span><br>&nbsp;<br>
+                                Para fazer seu pedido por e-mail, faça o <a style="color: #efab49;" href="/docs/pedido_de_encomenda_casaflores.docx" target="_blank">download</a> da Ficha de Pedido e envie ela preenchida para o nosso email <a style="color: #efab49;" href="mailto:casaflores@casaflores.com.br" target="_blank">casaflores@casaflores.com.br</a>.
+
+                                <script type="text/javascript">
+                                $(document).ready(function(){
+                                    $("#btencomendar").click(function(){
+                                            $zopim.livechat.window.show();
+                                    });
+                                });
+                                </script>
+                            </div>
+
+                            <?php } else { ?>
+                                
 
                         <div class="form-group">
+
+
                             <div class="cart" style="border-bottom: 1px solid #e6e6e6; margin-bottom: 20px; padding-left: 10px; padding-bottom: 10px; font-size: 16px;">
                                 <span style="color: #efab49; font-size: 31px; font-weight: bold;">Encomende agora!</span><br>&nbsp;<br>
                                 Via telefone: <span style="color: #efab49; font-size: 22px; font-weight: bold;">(11) 3845-1157 / (11) 3805-1157 </span><br>&nbsp;<br>
@@ -464,6 +488,9 @@
                                 </script>
                             </div>
                         </div>
+
+                            <?php } ?>
+                            
 
                         </div>
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: May 31, 2016 at 12:51 AM
+-- Generation Time: Sep 22, 2016 at 02:37 AM
 -- Server version: 5.5.38
 -- PHP Version: 5.3.29
 
@@ -39,7 +39,7 @@ CREATE TABLE `oc_address` (
   `country_id` int(11) NOT NULL DEFAULT '0',
   `zone_id` int(11) NOT NULL DEFAULT '0',
   `custom_field` text NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_address`
@@ -47,7 +47,8 @@ CREATE TABLE `oc_address` (
 
 INSERT INTO `oc_address` (`address_id`, `customer_id`, `firstname`, `lastname`, `company`, `address_1`, `address_2`, `city`, `postcode`, `country_id`, `zone_id`, `custom_field`) VALUES
 (2, 2, 'demo', 'demo', '', 'demo demo', '', 'demo', '12345', 222, 3949, ''),
-(5, 5, 'asdhjashdj', 'hjasdhkjasdh', '', 'asdhasjdha', '', 'asdasd', '138123817', 2, 38, '');
+(5, 5, 'asdhjashdj', 'hjasdhkjasdh', '', 'asdhasjdha', '', 'asdasd', '138123817', 2, 38, ''),
+(6, 6, 'Fernando', 'de Figueiredo Mendes', '', 'Lomas Valentinas', '241', 'Sao Caetano do Sul', '09560260', 30, 464, '');
 
 -- --------------------------------------------------------
 
@@ -327,17 +328,18 @@ CREATE TABLE `oc_banner_image` (
   `link` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=212 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=317 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_banner_image`
 --
 
 INSERT INTO `oc_banner_image` (`banner_image_id`, `banner_id`, `link`, `image`, `sort_order`) VALUES
-(206, 17, 'index.php?route=product/category&amp;path=20', 'catalog/banner-2.png', 0),
-(211, 16, '', 'catalog/slide-1.jpg', 0),
-(210, 16, '', 'catalog/slide-2.jpg', 0),
-(209, 16, '', 'catalog/slide-3.jpg', 0);
+(315, 16, '/entrega', 'catalog/Entrega/20160807 - CASA FLORES - SITE - HOME - SLIDER - ENTREGA_5.jpg', 0),
+(312, 17, '', 'catalog/Home - Banner Footer/19092016 - CASA FLORES - SITE - HOME - BANNER FOOTER - PRIMAVERA.jpg', 0),
+(316, 16, '#', 'catalog/Home - Banner Slider/20160921 - CASA FLORES - SITE - HOME - SLIDER - Primavera 2016.jpg', 0),
+(314, 16, '#', 'catalog/Home - Banner Slider/31052016 - CASA FLORES - SITE - HOME - SLIDER - TESTE 8.jpg', 0),
+(313, 16, '#', 'catalog/Home - Banner Slider/20160911 - CASA FLORES - SITE - HOME - SLIDER - GIRASSOL.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -358,13 +360,14 @@ CREATE TABLE `oc_banner_image_description` (
 --
 
 INSERT INTO `oc_banner_image_description` (`banner_image_id`, `language_id`, `banner_id`, `title`, `description`) VALUES
-(206, 4, 17, 'banner-3', '&lt;div class=\\&quot;s-desc_cnt\\&quot;&gt;\r\n	&lt;p&gt;Everything you lacked for&lt;/p&gt;\r\n	&lt;em&gt;cooking&lt;/em&gt;\r\n&lt;/div&gt;\r\n&lt;div class=\\&quot;s-desc_aside\\&quot;&gt;\r\n	&lt;p&gt;&lt;span&gt;Free &lt;br&gt;shipping&lt;/span&gt; on orders over $99&lt;/p&gt;\r\n&lt;/div&gt;'),
-(211, 4, 16, 'slide-1', ''),
-(210, 4, 16, 'slide-2', ''),
+(312, 4, 17, 'PRIMAVERA', ''),
+(316, 4, 16, 'banner 10', ''),
 (99, 4, 9, 'slide-1', ''),
 (100, 4, 9, 'slide-2', ''),
 (101, 4, 9, 'slide-3', ''),
-(209, 4, 16, 'slide-3', '');
+(315, 4, 16, 'banner 8', ''),
+(314, 4, 16, 'banner 7', ''),
+(313, 4, 16, 'banner 9', '');
 
 -- --------------------------------------------------------
 
@@ -382,18 +385,50 @@ CREATE TABLE `oc_category` (
   `status` tinyint(1) NOT NULL,
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=80 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_category`
 --
 
 INSERT INTO `oc_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
-(37, '', 0, 1, 1, 0, 1, '2016-05-31 00:44:42', '2016-05-31 00:44:42'),
-(38, '', 0, 1, 1, 0, 1, '2016-05-31 00:45:00', '2016-05-31 00:45:00'),
-(39, '', 0, 1, 1, 0, 1, '2016-05-31 00:48:44', '2016-05-31 00:48:44'),
-(40, '', 0, 1, 1, 0, 1, '2016-05-31 00:48:56', '2016-05-31 00:48:56'),
-(41, '', 0, 1, 1, 0, 1, '2016-05-31 00:49:07', '2016-05-31 00:49:07');
+(37, '', 0, 1, 1, 0, 1, '2016-05-31 00:44:42', '2016-06-03 14:49:15'),
+(38, '', 0, 1, 1, 0, 1, '2016-05-31 00:45:00', '2016-06-03 14:49:42'),
+(40, '', 0, 1, 1, 2, 1, '2016-05-31 00:48:56', '2016-06-03 19:39:23'),
+(56, '', 38, 1, 1, 0, 1, '2016-06-01 08:59:17', '2016-06-01 10:27:09'),
+(42, '', 38, 1, 1, 0, 1, '2016-05-31 18:54:31', '2016-05-31 18:54:31'),
+(43, '', 38, 1, 1, 0, 1, '2016-05-31 18:57:22', '2016-05-31 18:57:22'),
+(44, '', 37, 0, 1, 0, 1, '2016-05-31 18:59:11', '2016-05-31 18:59:11'),
+(59, '', 0, 1, 1, 1, 1, '2016-06-02 15:47:09', '2016-06-06 21:53:01'),
+(47, '', 0, 1, 1, 0, 1, '2016-05-31 19:22:49', '2016-06-03 14:50:03'),
+(48, '', 47, 1, 1, 0, 1, '2016-05-31 19:23:30', '2016-05-31 19:23:30'),
+(49, '', 47, 1, 1, 0, 1, '2016-05-31 19:40:20', '2016-05-31 19:50:57'),
+(50, '', 38, 1, 1, 0, 1, '2016-05-31 22:27:54', '2016-05-31 22:27:54'),
+(60, '', 0, 1, 1, 3, 1, '2016-06-03 12:39:10', '2016-06-06 21:44:30'),
+(53, '', 37, 1, 1, 0, 1, '2016-05-31 23:03:23', '2016-05-31 23:03:23'),
+(54, '', 0, 0, 1, 0, 0, '2016-05-31 23:23:32', '2016-06-01 10:24:06'),
+(55, '', 37, 1, 1, 0, 1, '2016-05-31 23:43:48', '2016-06-01 11:38:56'),
+(57, '', 37, 1, 1, 0, 1, '2016-06-01 09:25:45', '2016-06-01 09:25:45'),
+(58, '', 37, 1, 1, 0, 1, '2016-06-01 09:30:55', '2016-06-01 09:30:55'),
+(61, '', 47, 1, 1, 0, 1, '2016-06-05 22:33:15', '2016-08-03 19:59:18'),
+(62, '', 47, 1, 1, 0, 1, '2016-06-09 16:30:41', '2016-08-16 23:15:35'),
+(63, '', 47, 1, 1, 0, 1, '2016-07-28 19:29:49', '2016-07-28 19:29:49'),
+(64, '', 47, 1, 1, 0, 1, '2016-07-28 19:31:51', '2016-07-28 19:31:51'),
+(65, '', 47, 1, 1, 0, 1, '2016-07-28 19:35:35', '2016-07-28 19:35:35'),
+(66, '', 65, 1, 1, 0, 1, '2016-07-28 19:38:10', '2016-07-28 19:38:10'),
+(67, '', 47, 1, 1, 0, 1, '2016-07-28 19:40:51', '2016-07-28 19:40:51'),
+(68, '', 47, 1, 1, 0, 1, '2016-07-28 19:47:27', '2016-07-28 19:47:27'),
+(69, '', 47, 1, 1, 0, 1, '2016-07-28 19:52:45', '2016-07-28 19:52:45'),
+(70, '', 47, 1, 1, 0, 0, '2016-07-28 19:53:30', '2016-08-16 23:01:48'),
+(71, '', 70, 1, 1, 0, 1, '2016-07-28 19:56:33', '2016-07-28 19:56:33'),
+(72, '', 70, 1, 1, 0, 1, '2016-07-28 19:59:52', '2016-07-28 19:59:52'),
+(73, '', 70, 1, 1, 0, 0, '2016-07-28 20:00:55', '2016-08-09 11:23:27'),
+(74, '', 37, 1, 1, 0, 1, '2016-08-03 17:57:36', '2016-08-03 17:57:36'),
+(75, '', 37, 1, 1, 0, 1, '2016-08-03 18:40:56', '2016-08-03 18:40:56'),
+(76, '', 37, 1, 1, 0, 1, '2016-09-16 20:47:33', '2016-09-16 20:47:33'),
+(77, '', 37, 1, 1, 0, 1, '2016-09-16 21:05:32', '2016-09-16 21:05:32'),
+(78, '', 47, 1, 1, 0, 1, '2016-09-16 21:59:01', '2016-09-16 22:00:41'),
+(79, '', 38, 1, 1, 0, 1, '2016-09-20 15:51:27', '2016-09-20 15:51:27');
 
 -- --------------------------------------------------------
 
@@ -417,10 +452,42 @@ CREATE TABLE `oc_category_description` (
 
 INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
 (37, 4, 'ARRANJOS', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'ARRANJOS', '', ''),
-(38, 4, 'BUQUÊS', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'BUQUÊS', '', ''),
-(39, 4, 'PLANTAS', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'PLANTAS', '', ''),
-(40, 4, 'SERVIÇOS', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'SERVIÇOS', '', ''),
-(41, 4, 'CLIENTES', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'CLIENTES', '', '');
+(38, 4, 'BUQUÊS', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'BUQUÊS DE FLORES', 'BUQUÊS DE FLORES', 'BUQUÊS DE FLORES'),
+(42, 4, 'Rosas', '&lt;p&gt;Rosas&lt;br&gt;&lt;/p&gt;', 'Rosas', 'Rosas', 'Rosas'),
+(43, 4, 'Tulipas', '&lt;p&gt;Tulipas&lt;br&gt;&lt;/p&gt;', 'Tulipas', 'Tulipas', 'Tulipas'),
+(44, 4, 'Orquídeas', '&lt;p&gt;Orquídeas&lt;br&gt;&lt;/p&gt;', 'Orquídeas', 'Orquídeas', 'Orquídeas'),
+(47, 4, 'PRESENTES', '&lt;p&gt;PRESENTES&lt;br&gt;&lt;/p&gt;', 'PRESENTES', 'PRESENTES', 'PRESENTES'),
+(48, 4, 'Flor em caixa', '&lt;p&gt;Flor em caixa&lt;br&gt;&lt;/p&gt;', 'Flor em caixa', 'Flor em caixa', 'Flor em caixa'),
+(49, 4, 'Casa Flores Secret', '&lt;p&gt;CASA FLORES SECRET&lt;br&gt;&lt;/p&gt;', 'CASA FLORES SECRET', 'CASA FLORES SECRET', 'CASA FLORES SECRET'),
+(50, 4, 'Astromélias', '&lt;p&gt;Astromélias&lt;br&gt;&lt;/p&gt;', 'Astromélias', 'Astromélias', 'Astromélias'),
+(53, 4, 'Rosas', '&lt;p&gt;Rosas&lt;br&gt;&lt;/p&gt;', 'Rosas', 'Rosas', 'Rosas'),
+(54, 4, 'Calachoes', '&lt;p&gt;Calachoes&lt;br&gt;&lt;/p&gt;', 'Calachoes', 'Calachoes', 'Calachoes'),
+(55, 4, 'Mix de flores', '&lt;p&gt;Mix de flores&lt;br&gt;&lt;/p&gt;', 'Mix de flores', 'Mix de flores', 'Mix de flores'),
+(56, 4, 'Mix de Flores', '&lt;p&gt;Mix de Flores&lt;/p&gt;', 'Mix de Flores', 'Mix de Flores', 'Flores diversas'),
+(57, 4, 'Astromélias', '&lt;p&gt;Astromélias&lt;br&gt;&lt;/p&gt;', 'Astromélias', 'Astromélias', 'Astromélias'),
+(58, 4, 'Tulipas', '&lt;p&gt;Tulipas&lt;br&gt;&lt;/p&gt;', 'Tulipas', 'Tulipas', 'Tulipas'),
+(67, 4, 'Cartões', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Cartões para flores', 'Cartões para flores', 'Cartões para flores'),
+(63, 4, 'Novidades', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Novidades', 'Novidades', 'Novidades'),
+(64, 4, 'Garrafa com flor', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Garrafa com flor', 'Garrafa com flor', 'Garrafa com flor'),
+(65, 4, 'Maternidade', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Maternidade', 'Maternidade', 'Maternidade'),
+(66, 4, 'Orquídeas', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Orquídeas', 'Orquídeas', 'Orquídeas'),
+(68, 4, 'Acessórios', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Acessórios', 'Acessórios', 'Acessórios'),
+(69, 4, 'Flores e doces', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Flores e doces', 'Flores e doces', 'Flores e doces'),
+(70, 4, 'Dia dos Pais', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Dia dos Pais', 'Dia dos Pais', 'Dia dos Pais'),
+(71, 4, 'Cestas', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Cestas', 'Cestas', 'Cestas'),
+(72, 4, 'Flor em caixa', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Flor em caixa', 'Flor em caixa', 'Flor em caixa'),
+(73, 4, 'Buquês masculinos', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Buquês masculinos', 'Buquês masculinos', 'Buquês masculinos'),
+(74, 4, 'Cravinas', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Cravinas', 'Cravinas', 'Cravinas'),
+(75, 4, 'Cravos', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Cravos', 'Cravos', 'Cravos'),
+(62, 4, 'Tags para flores', '&lt;div style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;http://casaflores.com.br/image/catalog/Imagem Departamento/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 111_1.jpg&quot;&gt;&lt;/div&gt;', 'Tags para flores', 'Tags para flores', 'Tags para flores'),
+(76, 4, 'Gérberas', '&lt;p&gt;Gérberas&lt;br&gt;&lt;/p&gt;', 'Gérberas', 'Gérberas', 'Gérberas'),
+(77, 4, 'Lisianthus', '&lt;p&gt;Lisianthus&lt;br&gt;&lt;/p&gt;', 'Lisianthus', 'Lisianthus', 'Lisianthus'),
+(78, 4, 'Dia da Secretária', '&lt;p&gt;Dia da Secretária&lt;br&gt;&lt;/p&gt;', 'Dia da Secretária', 'Dia da Secretária', 'Dia da Secretária'),
+(79, 4, 'Frésias', '&lt;p&gt;Frésias&lt;br&gt;&lt;/p&gt;', 'Frésias', 'Frésias', 'Frésias'),
+(61, 4, 'Cestas', '&lt;p&gt;Cestas de flores com presentes&lt;br&gt;&lt;/p&gt;', 'Cestas', 'Cestas', 'Cestas'),
+(60, 4, 'COMO ENCOMENDAR?', '&lt;h4 style=&quot;&quot;&gt;&lt;div style=&quot;text-align: center;&quot;&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;h3 style=&quot;&quot;&gt;&lt;span style=&quot;color: rgb(239, 198, 49); font-family: Arial;&quot;&gt;É muito fácil fazer uma encomenda na Casa Flores! Confira abaixo:&lt;/span&gt;&lt;/h3&gt;&lt;p style=&quot;&quot;&gt;&lt;span style=&quot;font-family: Arial;&quot;&gt;1. Após escolher o produto desejado, você deve preenche a ficha do pedido (&lt;/span&gt;&lt;a href=&quot;http://casaflores.com.br/docs/pedido_de_encomenda_casaflores.docx&quot; target=&quot;_blank&quot;&gt;clique aqui para baixar a ficha de pedido&lt;/a&gt;&lt;span style=&quot;font-family: Arial;&quot;&gt;) e a compra é concluída conforme os meios de pagamento disponíveis;&lt;br&gt;&amp;nbsp;&lt;br&gt;2. O pedido mínimo é de R$40,00 &amp;nbsp;e já inclui um cartão básico branco para presente. As entregas são de segunda à sexta, das 8:30h às 18h;&lt;br&gt;&amp;nbsp;&lt;br&gt;3. Não é possível agendar o horário exato de entrega, mas faremos o possível para que o seu presente chegue na hora marcada! J&lt;br&gt;&amp;nbsp;&lt;br&gt;4. Se você precisa da entrega no mesmo dia, entre em contato o quanto antes, de preferência até às 13h, que a gente fará o melhor para te atender.&lt;br&gt;&amp;nbsp;&lt;br&gt;5. Caso tenha alguma dúvida, a descrição completa deste serviço está em NORMAS DE ENTREGA (&lt;/span&gt;&lt;a href=&quot;http://casaflores.homolog.lojavirtual.digital/delivery&quot; target=&quot;_blank&quot;&gt;clique aqui&lt;/a&gt;&lt;span style=&quot;font-family: Arial;&quot;&gt;)&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/h4&gt;', 'Encomende', 'Encomende', 'Encomende'),
+(40, 4, 'SERVIÇOS', '&lt;center&gt;&lt;p&gt;&lt;img src=&quot;http://casaflores.homolog.lojavirtual.digital/image/catalog/20160603 - CASA FLORES - SITE - MENU - SERVIÇOS - ASSINATURAS DE FLORES.jpg&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;http://casaflores.homolog.lojavirtual.digital/image/catalog/20160603 - CASA FLORES - SITE - MENU - SERVIÇOS - JARDINAGEM3.jpg&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;http://casaflores.homolog.lojavirtual.digital/image/catalog/20160603 - CASA FLORES - SITE - MENU - SERVIÇOS - DECORACAO DE EVENTOS3.jpg&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;/center&gt;', 'SERVIÇOS', 'SERVIÇOS', 'SERVIÇOS'),
+(59, 4, 'ENTREGA', '&lt;h4 style=&quot;&quot;&gt;&lt;div style=&quot;text-align: center;&quot;&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;h3 style=&quot;&quot;&gt;&lt;span style=&quot;color: rgb(239, 198, 49); font-family: Arial; line-height: 1.1;&quot;&gt;Entrega&lt;/span&gt;&lt;br&gt;&lt;/h3&gt;\r\n&lt;h4 style=&quot;&quot;&gt;&lt;div style=&quot;text-align: center;&quot;&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;p style=&quot;&quot;&gt;&lt;span style=&quot;font-family: Arial;&quot;&gt;TAXAS DE ENTREGA NA GRANDE SP&lt;/span&gt;&lt;/p&gt;\r\n&lt;p style=&quot;font-size: 20px; line-height: 16.5px; text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;font-size: 20px; line-height: 16.5px; text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial;&quot;&gt;&lt;img src=&quot;http://casaflores.com.br/image/catalog/Entrega/31052016 - CASA FLORES - SITE - HOME - ENTREGA - TABELA DE PREÇOS2.jpg&quot; style=&quot;width: 696.172px; height: 359.499px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;\r\n&lt;p style=&quot;font-size: 15px; line-height: 16.5px; text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;\r\n&lt;p style=&quot;&quot;&gt;&lt;span style=&quot;font-family: Arial;&quot;&gt;NORMAS DE ENTREGA&lt;br&gt;A nossa missão é sempre buscar entregar todos os pedidos dentro das condições escolhidas pelo. No entanto, o prazo de entrega de seu pedido pode variar de acordo com as dificuldades encontradas para chegar ao destino final ou até por condições externas fora de nosso alcance.&lt;br&gt;&lt;br&gt;Os pedidos serão entregues de acordo com o horário da finalização da compra. Isso ocorre, devido a prévio agendamento de entregas anteriores, a fim de seguirmos um cronograma de logística e devido ao tempo necessário para realizar todo processo de venda, confecção e entrega das flores. Logo, não é possível agendar o horário exato de entrega, mas faremos o possível para que o seu.&lt;br&gt;&lt;br&gt;O pedido mínimo para agendar uma entrega é de R$40,00 e já inclui um cartão básico branco para&lt;br&gt;As entregas são feitas de segunda à sexta, das 8:30h às 18h, e para entregas urgentes, seguem abaixo os períodos de entrega.&lt;br&gt;&lt;br&gt;Das 08:30h às 13h - Limite para finalização do pedido: até as 15h do dia anterior&lt;br&gt;Das 13h às 18h - Limite para finalização do pedido: até as 13h do mesmo dia&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-family: Arial; color: inherit; line-height: 1.1; font-weight: bold;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;span style=&quot;font-family: Arial; color: inherit; line-height: 1.1; font-weight: bold;&quot;&gt;Entregas em datas comemorativas:&lt;/span&gt;&lt;span style=&quot;font-family: Arial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial;&quot;&gt;Devido ao grande número de encomendas em datas comemorativas especiais como Dia das Mães, Dia dos Namorados, Natal, Dia da Mulher, Dia da Secretária, entre outras, o horário escolhido para entrega será levado como referência, porém os pedidos solicitados para essas datas serão entregues entre 8:30h e 18h. De qualquer forma, estaremos nos esforçando ao máximo para realizar a entrega no período escolhido na compra.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-weight: bold;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-weight: bold;&quot;&gt;Exigências:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial;&quot;&gt;Pedidos exigindo que as flores sejam exclusivamente entregues nas mãos do destinatário não podem ser garantidos. Nosso compromisso é de entregar seu pedido no endereço de destino. De forma alguma podemos adentrar em portarias, casas, empresas, escritórios ou em qualquer outra localidade sem autorização dos responsáveis. Não se encontrando o destinatário, sempre que possível, deixaremos com algum responsável que esteja no local.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial;&quot;&gt;Entregas em hotéis, flats, hospitais, quartéis, casas de show e etc… Nossa responsabilidade termina com a entrega de seu pedido na Consierge ou ao responsável pelo encaminhamento ao destinatário.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-weight: bold;&quot;&gt;Endereços incorretos:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial;&quot;&gt;Caso o endereço fornecido para entrega esteja incorreto, ou, seja inexistente, entraremos em contato com o destinatário para verificar onde podemos encontra-lo. Caso não seja possível através do telefone fornecido, entraremos em contato com o comprador para que possamos tomar as devidas providências. Mudanças de endereços podem gerar novos custos.No caso de não houver ninguém no endereço de entrega,　entraremos em contato por telefone com o destinatário a fim de agendar um novo horário. Dependendo da área a ser entregue novamente, poderá gerar novos custos..No caso de não haver entrega para a cidade/bairro solicitado, estaremos entrando em contato imediato, para comunicar o cancelamento de seu pedido.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial;&quot;&gt;Atenção: caso a compra seja finalizada com cartão de crédito, e haja dificuldades em aprovar o débito, ou depósitos não realizados e ou não identificados podem ocasionar atrasos nas entregas e até o cancelamento do pedido.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-weight: bold;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-weight: bold;&quot;&gt;Taxas de entrega:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; color: inherit; line-height: 1.1;&quot;&gt;Ao realizar a compra, confira as taxas de entrega estabelecidas em cada bairro. Os preços visualizados ao lado dos arranjos são unicamente dos produtos.&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-weight: bold;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-weight: bold;&quot;&gt;Termos de garantia:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial;&quot;&gt;Estaremos sempre enviando flores frescas, de alta qualidade, a fim de mantermos nossa responsabilidade e missão de distribuir beleza e promover boas recordações. Se por alguma razão, você não ficar satisfeito com sua compra, por favor, contate-nos imediatamente através do email: casaflores@casaflores.com.br e estaremos providenciando uma solução no menor espaço de tempo possível.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-weight: bold;&quot;&gt;Política de substituição de flores:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial;&quot;&gt;Devido a grande variedade de flores que disponibilizamos, por ser um artigo altamente sazonal que depende de condições climáticas (sensível a qualquer variação de tempo e temperatura), altamente perecível, e até por motivo de grande procura (períodos de pico), colocamos aqui nossa política de substituição de flores no caso de haver ocasional indisponibilidade de algumas variedades de flores encontradas em nossos arranjos. Caso não haja a cor específica da flor escolhida, entraremos em contato a fim de achar uma solução, se, por ventura, não conseguirmos contata-lo, estaremos enviando flores cuja, a cor esteja mais próxima das opções escolhidas no pedido.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial;&quot;&gt;Nossos floristas sempre que necessário poderão substituir flores, porém sempre procurando ao máximo evitar descaracterizar do arranjo escolhido e sempre substituindo por flores de igual ou maior valor ou ainda se necessário por uma maior quantidade de outras flores que alcance o valor do arranjo comprado.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;\r\n&lt;p&gt;&lt;/p&gt;\r\n&lt;table class=&quot;table table-bordered&quot;&gt;\r\n\r\n\r\n\r\n\r\n\r\n&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;&lt;/h4&gt;&lt;/div&gt;&lt;/div&gt;&lt;/h4&gt;', 'ENTREGA', 'ENTREGA', 'ENTREGA');
 
 -- --------------------------------------------------------
 
@@ -452,9 +519,75 @@ CREATE TABLE `oc_category_path` (
 INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
 (40, 40, 0),
 (38, 38, 0),
-(41, 41, 0),
-(39, 39, 0),
-(37, 37, 0);
+(55, 37, 0),
+(60, 60, 0),
+(37, 37, 0),
+(42, 38, 0),
+(42, 42, 1),
+(43, 38, 0),
+(43, 43, 1),
+(44, 37, 0),
+(44, 44, 1),
+(47, 47, 0),
+(48, 47, 0),
+(48, 48, 1),
+(49, 47, 0),
+(49, 49, 1),
+(50, 38, 0),
+(50, 50, 1),
+(61, 61, 1),
+(61, 47, 0),
+(59, 59, 0),
+(53, 37, 0),
+(53, 53, 1),
+(54, 54, 0),
+(55, 55, 1),
+(56, 38, 0),
+(56, 56, 1),
+(57, 37, 0),
+(57, 57, 1),
+(58, 37, 0),
+(58, 58, 1),
+(62, 47, 0),
+(62, 62, 1),
+(63, 47, 0),
+(63, 63, 1),
+(64, 47, 0),
+(64, 64, 1),
+(65, 47, 0),
+(65, 65, 1),
+(66, 47, 0),
+(66, 65, 1),
+(66, 66, 2),
+(67, 47, 0),
+(67, 67, 1),
+(68, 47, 0),
+(68, 68, 1),
+(69, 47, 0),
+(69, 69, 1),
+(70, 47, 0),
+(70, 70, 1),
+(71, 47, 0),
+(71, 70, 1),
+(71, 71, 2),
+(72, 47, 0),
+(72, 70, 1),
+(72, 72, 2),
+(73, 70, 1),
+(73, 47, 0),
+(73, 73, 2),
+(74, 37, 0),
+(74, 74, 1),
+(75, 37, 0),
+(75, 75, 1),
+(76, 37, 0),
+(76, 76, 1),
+(77, 37, 0),
+(77, 77, 1),
+(78, 47, 0),
+(78, 78, 1),
+(79, 38, 0),
+(79, 79, 1);
 
 -- --------------------------------------------------------
 
@@ -475,9 +608,41 @@ CREATE TABLE `oc_category_to_layout` (
 INSERT INTO `oc_category_to_layout` (`category_id`, `store_id`, `layout_id`) VALUES
 (37, 0, 0),
 (38, 0, 0),
-(41, 0, 0),
+(56, 0, 0),
 (40, 0, 0),
-(39, 0, 0);
+(60, 0, 4),
+(42, 0, 0),
+(43, 0, 0),
+(44, 0, 0),
+(59, 0, 11),
+(47, 0, 0),
+(48, 0, 0),
+(49, 0, 0),
+(50, 0, 0),
+(61, 0, 0),
+(53, 0, 0),
+(54, 0, 0),
+(55, 0, 0),
+(57, 0, 0),
+(58, 0, 0),
+(62, 0, 0),
+(63, 0, 0),
+(64, 0, 0),
+(65, 0, 0),
+(66, 0, 0),
+(67, 0, 0),
+(68, 0, 0),
+(69, 0, 0),
+(70, 0, 0),
+(71, 0, 0),
+(72, 0, 0),
+(73, 0, 0),
+(74, 0, 0),
+(75, 0, 0),
+(76, 0, 0),
+(77, 0, 0),
+(78, 0, 0),
+(79, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -497,9 +662,41 @@ CREATE TABLE `oc_category_to_store` (
 INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
 (37, 0),
 (38, 0),
-(39, 0),
 (40, 0),
-(41, 0);
+(42, 0),
+(43, 0),
+(44, 0),
+(47, 0),
+(48, 0),
+(49, 0),
+(50, 0),
+(53, 0),
+(54, 0),
+(55, 0),
+(56, 0),
+(57, 0),
+(58, 0),
+(59, 0),
+(60, 0),
+(61, 0),
+(62, 0),
+(63, 0),
+(64, 0),
+(65, 0),
+(66, 0),
+(67, 0),
+(68, 0),
+(69, 0),
+(70, 0),
+(71, 0),
+(72, 0),
+(73, 0),
+(74, 0),
+(75, 0),
+(76, 0),
+(77, 0),
+(78, 0),
+(79, 0);
 
 -- --------------------------------------------------------
 
@@ -869,7 +1066,7 @@ CREATE TABLE `oc_currency` (
 --
 
 INSERT INTO `oc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-(4, 'Real', 'BRL', 'R$ ', '', '2', 3.57049990, 1, '2016-05-31 00:11:57');
+(4, 'Real', 'BRL', 'R$ ', '', '2', 1.00000000, 1, '2016-09-22 01:31:59');
 
 -- --------------------------------------------------------
 
@@ -899,14 +1096,15 @@ CREATE TABLE `oc_customer` (
   `safe` tinyint(1) NOT NULL,
   `token` varchar(255) NOT NULL,
   `date_added` datetime NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_customer`
 --
 
 INSERT INTO `oc_customer` (`customer_id`, `customer_group_id`, `store_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `password`, `salt`, `cart`, `wishlist`, `newsletter`, `address_id`, `custom_field`, `ip`, `status`, `approved`, `safe`, `token`, `date_added`) VALUES
-(2, 1, 0, 'demo', 'demo', 'demo@demolink.org', '123456789', '', 'b12292ff7485b6ad85261a15d41c8e805d43d3a2', 'a3a50762a', 'a:3:{s:140:"YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjM1O3M6Njoib3B0aW9uIjthOjM6e2k6MjMwO3M6MjoiMjUiO2k6MjI3O2E6MTp7aTowO3M6MjoiMTkiO31pOjIyNDtzOjI6IjEyIjt9fQ==";i:1;s:140:"YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjM1O3M6Njoib3B0aW9uIjthOjM6e2k6MjMwO3M6MjoiMjUiO2k6MjI3O2E6MTp7aTowO3M6MjoiMTciO31pOjIyNDtzOjI6IjEzIjt9fQ==";i:3;s:104:"YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjMwO3M6Njoib3B0aW9uIjthOjI6e2k6MjM3O3M6MjoiNDYiO2k6MjM4O3M6MjoiNDkiO319";i:1;}', 'a:3:{i:0;i:47;i:1;i:42;i:2;i:43;}', 0, 2, '', '192.168.9.125', 1, 1, 0, '', '2015-08-26 11:29:30');
+(2, 1, 0, 'demo', 'demo', 'demo@demolink.org', '123456789', '', 'b12292ff7485b6ad85261a15d41c8e805d43d3a2', 'a3a50762a', 'a:3:{s:140:"YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjM1O3M6Njoib3B0aW9uIjthOjM6e2k6MjMwO3M6MjoiMjUiO2k6MjI3O2E6MTp7aTowO3M6MjoiMTkiO31pOjIyNDtzOjI6IjEyIjt9fQ==";i:1;s:140:"YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjM1O3M6Njoib3B0aW9uIjthOjM6e2k6MjMwO3M6MjoiMjUiO2k6MjI3O2E6MTp7aTowO3M6MjoiMTciO31pOjIyNDtzOjI6IjEzIjt9fQ==";i:3;s:104:"YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjMwO3M6Njoib3B0aW9uIjthOjI6e2k6MjM3O3M6MjoiNDYiO2k6MjM4O3M6MjoiNDkiO319";i:1;}', 'a:3:{i:0;i:47;i:1;i:42;i:2;i:43;}', 0, 2, '', '192.168.9.125', 1, 1, 0, '', '2015-08-26 11:29:30'),
+(6, 1, 0, 'Fernando', 'de Figueiredo Mendes', 'fernando.mendes@webca.com.br', '11976495157', '', '86cb67bdc508f743660058d1f53d74637b316620', '2e5e16ec6', 'a:2:{s:40:"YToxOntzOjEwOiJwcm9kdWN0X2lkIjtpOjEzNDt9";i:5;s:40:"YToxOntzOjEwOiJwcm9kdWN0X2lkIjtpOjEzNTt9";i:3;}', '', 0, 6, '', '127.0.0.1', 1, 1, 0, '', '2016-09-22 01:46:17');
 
 -- --------------------------------------------------------
 
@@ -921,7 +1119,7 @@ CREATE TABLE `oc_customer_activity` (
   `data` text NOT NULL,
   `ip` varchar(40) NOT NULL,
   `date_added` datetime NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_customer_activity`
@@ -930,7 +1128,8 @@ CREATE TABLE `oc_customer_activity` (
 INSERT INTO `oc_customer_activity` (`activity_id`, `customer_id`, `key`, `data`, `ip`, `date_added`) VALUES
 (27, 2, 'login', 'a:2:{s:11:"customer_id";s:1:"2";s:4:"name";s:9:"demo demo";}', '192.168.9.125', '2015-09-29 17:55:31'),
 (28, 5, 'register', 'a:2:{s:11:"customer_id";i:5;s:4:"name";s:23:"asdhjashdj hjasdhkjasdh";}', '192.168.9.13', '2015-10-09 14:28:15'),
-(29, 5, 'order_account', 'a:3:{s:11:"customer_id";s:1:"5";s:4:"name";s:23:"asdhjashdj hjasdhkjasdh";s:8:"order_id";i:15;}', '192.168.9.13', '2015-10-09 14:57:07');
+(29, 5, 'order_account', 'a:3:{s:11:"customer_id";s:1:"5";s:4:"name";s:23:"asdhjashdj hjasdhkjasdh";s:8:"order_id";i:15;}', '192.168.9.13', '2015-10-09 14:57:07'),
+(30, 6, 'register', 'a:2:{s:11:"customer_id";i:6;s:4:"name";s:29:"Fernando de Figueiredo Mendes";}', '127.0.0.1', '2016-09-22 01:46:19');
 
 -- --------------------------------------------------------
 
@@ -1006,7 +1205,7 @@ CREATE TABLE `oc_customer_ip` (
   `customer_id` int(11) NOT NULL,
   `ip` varchar(40) NOT NULL,
   `date_added` datetime NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_customer_ip`
@@ -1014,7 +1213,8 @@ CREATE TABLE `oc_customer_ip` (
 
 INSERT INTO `oc_customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added`) VALUES
 (9, 2, '192.168.9.125', '2015-09-29 17:55:32'),
-(10, 5, '192.168.9.13', '2015-10-09 14:28:15');
+(10, 5, '192.168.9.13', '2015-10-09 14:28:15'),
+(11, 6, '127.0.0.1', '2016-09-22 01:46:19');
 
 -- --------------------------------------------------------
 
@@ -1157,7 +1357,14 @@ CREATE TABLE `oc_download` (
   `filename` varchar(128) NOT NULL,
   `mask` varchar(128) NOT NULL,
   `date_added` datetime NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `oc_download`
+--
+
+INSERT INTO `oc_download` (`download_id`, `filename`, `mask`, `date_added`) VALUES
+(1, 'Pedido de Encomenda Casa Flores.doc.ab9bbcd8ed38ec4ed8330930cbddfe6e', 'Ficha de encomenda Casa Flores.doc', '2016-06-03 18:27:19');
 
 -- --------------------------------------------------------
 
@@ -1170,6 +1377,13 @@ CREATE TABLE `oc_download_description` (
   `language_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `oc_download_description`
+--
+
+INSERT INTO `oc_download_description` (`download_id`, `language_id`, `name`) VALUES
+(1, 4, 'Ficha de encomenda');
 
 -- --------------------------------------------------------
 
@@ -1194,21 +1408,20 @@ CREATE TABLE `oc_extension` (
 `extension_id` int(11) NOT NULL,
   `type` varchar(32) NOT NULL,
   `code` varchar(32) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=473 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=481 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_extension`
 --
 
 INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
-(23, 'payment', 'cod'),
 (22, 'total', 'shipping'),
 (57, 'total', 'sub_total'),
 (58, 'total', 'tax'),
 (59, 'total', 'total'),
 (410, 'module', 'banner'),
 (390, 'total', 'credit'),
-(387, 'shipping', 'flat'),
+(478, 'shipping', 'joseanmatias_faixa_cep'),
 (349, 'total', 'handling'),
 (350, 'total', 'low_order_fee'),
 (389, 'total', 'coupon'),
@@ -1216,7 +1429,6 @@ INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
 (408, 'module', 'account'),
 (393, 'total', 'reward'),
 (398, 'total', 'voucher'),
-(407, 'payment', 'free_checkout'),
 (427, 'module', 'featured'),
 (471, 'module', 'html'),
 (433, 'module', 'bestseller'),
@@ -1225,13 +1437,16 @@ INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
 (436, 'module', 'affiliate'),
 (437, 'module', 'information'),
 (438, 'module', 'tm_slideshow'),
-(442, 'module', 'tm_google_map'),
 (440, 'module', 'olark'),
 (458, 'module', 'filter'),
 (460, 'module', 'tm_module_tab'),
 (467, 'module', 'tm_blog_articles'),
 (469, 'module', 'tm_blog_category'),
-(472, 'module', 'tm_newsletter_popup');
+(472, 'module', 'tm_newsletter_popup'),
+(475, 'module', 'slideshow'),
+(476, 'module', 'carousel'),
+(477, 'feed', 'google_base'),
+(479, 'payment', 'pagseguro');
 
 -- --------------------------------------------------------
 
@@ -1321,14 +1536,10 @@ CREATE TABLE `oc_information` (
 --
 
 INSERT INTO `oc_information` (`information_id`, `bottom`, `sort_order`, `status`) VALUES
-(3, 1, 3, 1),
+(3, 1, 3, 0),
 (4, 1, 1, 1),
-(5, 1, 4, 1),
-(6, 1, 2, 1),
-(7, 0, 0, 1),
-(8, 0, 0, 1),
-(9, 0, 0, 1),
-(10, 0, 0, 1);
+(5, 1, 4, 0),
+(6, 1, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -1351,14 +1562,10 @@ CREATE TABLE `oc_information_description` (
 --
 
 INSERT INTO `oc_information_description` (`information_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(6, 4, 'Delivery Information', '&lt;div class=&quot;delivery_page&quot;&gt;\r\n&lt;h4&gt;Hello and welcome to the Shipping and Delivery Information page! Here you can get acquainted with useful information on terms and conditions of our goods delivery.&lt;/h4&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;p&gt;You can purchase your items online and pick them up at our street store, or ship them directly to your doorstep. Shipping is free on some orders. We use the best carriers in the business to make sure your order gets to you on time. From the Secure Checkout page you''ll see your item description, price and delivery timing. Where available, you can also choose a faster delivery method for each item on your order, for an additional fee. Delivery times vary according to your selected delivery address, availability of your items and the time of day you place your order.&lt;/p&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;h3 class=&quot;clear&quot;&gt;Cost&lt;/h3&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;table-responsive&quot;&gt;\r\n&lt;table class=&quot;table table-bordered&quot;&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n	&lt;thead&gt;\r\n\r\n\r\n\r\n\r\n&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Service&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Locations&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Delivery Schedule&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Cost per Shipment&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n&lt;/thead&gt;\r\n\r\n\r\n\r\n\r\n&lt;tbody&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Royal mail 1st Class Service (Order value $20 or less)&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;All of UK &amp;amp; some European Countries &lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Monday - Saturday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$3.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Royal mail Tracker (Order value $50 or less)&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;All of UK&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Monday - Saturday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$4.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Standard Courier Delivery&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;UK mainland only&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Delivery 7.30am - 5.30am &lt;br&gt; Monday - Friday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$5.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Standard Courier Delivery&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Northern Ireland, Eire, Scilly Isles&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Delivery 7.30am - 5.30am &lt;br&gt; Monday - Friday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$9.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Royal mail 1st Class Service (Order value $20 or less)&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;All of UK &amp;amp; some European Countries &lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Monday - Saturday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$3.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Priority courier pre 12pm Next Working Day&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;UK mainland only&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Pre 12pm &lt;br&gt; Delivery 7.30am - 12pm &lt;br&gt; Monday - Friday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$8.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n	&lt;tr&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;Royal mail 1st Class Service (Order value $20 or less)&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;All of UK &amp;amp; some European Countries &lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;1-3 days &lt;br&gt; Monday - Saturday&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n		&lt;td&gt;$3.95&lt;/td&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n	&lt;/tr&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/tbody&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/table&gt;\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;h3&gt;Free Delivery&lt;/h3&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;p&gt;Free two-day shipping is available on in-stock items. You can see in your bag if your item is in stock. Free two-day shipping is not available on customized, engraved products, and for certain order types, including orders paid for with financing or by bank transfer. To get free two-day shipping, you will need to place your order by 5pm, Monday to Friday. For instance, if you order your goods before 5:00 pm, Monday to Friday we will deliver them in two business days.&lt;/p&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;', '', '', ''),
-(5, 4, 'Terms &amp; Conditions', '&lt;div class=&quot;row terms_conditions_page&quot;&gt;\r\n	&lt;div class=&quot;col-sm-6&quot;&gt;\r\n		&lt;h4&gt;entire agreement&lt;/h4&gt;\r\n\r\n		&lt;p&gt;If you require a complete delivery of your orders, please enter an X in the Complete Delivery field on the shipping screen of the customer master record. The indicator is copied into the order header, which you can also use for the purpose. &lt;/p&gt;\r\n\r\n		&lt;h4&gt;controlling terms&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Buyer expressly agrees that Seller’s Invoice and these Terms and Conditions of Sale represent the complete agreement of the parties with respect to the sale of the product(s) listed on the Invoice and no different or additional terms or conditions in Buyer’s purchase order or in any other prior or subsequent communications in any way adding to, modifying or otherwise changing these Terms and Conditions of Sale shall be binding upon Seller.&lt;/p&gt;\r\n\r\n		&lt;h4&gt;acceptance of orders&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Seller may accept buyer’s offer to purchase and shall be bound to supply the applicable Goods in accordance with these terms and conditions either by execution of the acknowledgment copy of the order, or acceptable electronic transmission, delivery of the Goods to CAI or by any other statement, act or course of conduct which constitutes acceptance under applicable law.\r\n&lt;/p&gt;\r\n\r\n		&lt;h4&gt;prices&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Unless otherwise indicated on the face of the invoice, all prices are quoted on a per pound basis. Buyer is responsible for any tax or government charges imposed upon the sale or transfer of the Product. Buyer shall not have any right to set off any amounts due hereunder against any amounts which may become payable to Seller under any other agreement.&lt;/p&gt;\r\n\r\n		&lt;h4&gt;delivery&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Unless otherwise agrees in writing signed by officer of Seller, all delivery dates are estimates Seller shall use its reasonable efforts to deliver all Product within the time specified; however, in no case shall Seller be liable for any expense, loss or damage whatsoever suffered by Buyer as a result of the Seller’s failure to deliver Product by the specified date.&lt;/p&gt;\r\n\r\n		&lt;h4&gt;transportation and risk of loss&lt;/h4&gt;\r\n\r\n		&lt;p&gt;The method and route of shipment are at Seller’s discretion unless Buyer timely supplies explicit instructions otherwise. Title to the Product passes to Buyer when Product is delivered to the selected carrier, even if Seller made a nonconforming tender. Buyer attempts to revoke acceptance of the Product, or Buyer repudiates this document after the Products have been identified hereto.&lt;/p&gt;\r\n\r\n		&lt;h4&gt;cancellation or modification&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Any order placed with and accepted by Seller may be canceled by Buyer only upon Seller’s approval in a writing signed by an officer of Seller and upon terms that indemnify Seller against any loss. Seller will not accept order cancellations once a product has been delivered to a carrier, without charging a cancellation fee of twenty-five percent (25%) of order value to recover retrieval costs incurred. Seller will not accept cancellations of special orders of non-standard, non-price list products. Seller may cancel all or any part of this order and discontinue its performance hereunder without liability to Buyer in the event Buyer materially breaches this contract, becomes insolvent, is the subject to bankruptcy protection, or is the subject of a receivership, liquidation, dissolution or similar proceeding.\r\n&lt;/p&gt;\r\n\r\n		&lt;h4&gt;taxes&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Buyer is responsible for any tax or governmental charge imposed upon the sale or transfer of any product. Any such tax or governmental charge will be added to the total invoice amount. All prices are FOB Seller’s facilities. Applicable freight costs will be added to the invoice.&lt;/p&gt;\r\n\r\n	&lt;/div&gt;\r\n\r\n	&lt;div class=&quot;col-sm-6&quot;&gt;\r\n		&lt;h4&gt;warranty and disclaimer&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Seller warrants that the purchased Product is free from defects in materials and workmanship at the time of delivery. If an analysis is stated on the face of the Invoice, it is not intended to be a complete analysis and is not to be regarded as a specification or warranty, unless specifically stated in writing to be such. \r\n&lt;/p&gt;\r\n\r\n		&lt;h4&gt;limitation of liability&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Buyer acknowledges and agrees that seller’s liability for any claims with respect to the products shall not exceed the amount paid by buyer for the products under the invoice. Such limitations on seller’s liability hereunder shall apply even if seller’s liability is due in whole or in part to its own negligence. Any action by or on behalf of Buyer or its successors or assigns for breach of this document must be commenced within one (1) year after the cause of action as accrued.&lt;/p&gt;\r\n\r\n		&lt;h4&gt;return of material&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Upon delivery of Product, Buyer shall have five (5) days to inspect Product and notify Seller, in writing, of any defective goods or other cause for rejection. Buyer agrees that five (5) day period provides Buyer a reasonable opportunity to inspect the Product. Such notification shall identify each and every reason for any rejection of Product. Buyer’s failure to reject Product within such five (5) day period shall constitute a waiver of Buyer’s inspection right and an unqualified and irrevocable acceptance of the Product by Buyer.&lt;/p&gt;\r\n\r\n		&lt;h4&gt;indemnity&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Buyer shall defend, indemnify and hold harmless Seller and its affiliated or related companies from and against any and all claims, losses, liability, damages and expenses including, but not limited to, attorneys’ fees and cost of defense arising from, related to or in any way connected with or alleged to arise from or out of any asserted deficiencies or defects in Product caused by any alteration or modification thereof by Buyer with or without Seller’s consent, or improper handling or storage by Buyer, the breach of any term or condition stated herein, Buyer’s failure to label Product or Buyer’s improper labeling of Product regardless of whether the labeling was done with or without the advice of Seller, or any act or omission of Buyer including any Claims for or resulting from any injury to person (including death) or damage to property or for economic loss, several or comparative negligence, breach of agreement, breach of warranty or other breach of duty of or by Indemnitee or as a result of Indemnitee’s strict or other product liability. The foregoing indemnification shall not be construed to eliminate or in any way reduce any other indemnification or right which Indemnitee has by law.&lt;/p&gt;\r\n\r\n		&lt;h4&gt;payment&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Net cash thirty (30) days from the date of Invoice. Amounts not paid within thirty (30) days are overdue and shall accrue interest at a rate of one and one-half percent (1-1/2%) per month or the highest allowed by law, whichever is less. Buyer shall reimburse Seller for any costs incurred in collecting past due sums or any other amounts owed by Buyer for any reason whatsoever, including, but not limited to, court costs and attorneys’ fees.\r\n&lt;/p&gt;\r\n\r\n		&lt;h4&gt;governing law and arbitration&lt;/h4&gt;\r\n\r\n		&lt;p&gt;This document shall be interpreted and governed by the law of the State of America, excluding its conflicts of laws rules. The parties specifically exclude the application of the United Nations Convention on the Sale of Goods.\r\n&lt;/p&gt;\r\n\r\n	&lt;/div&gt;\r\n\r\n&lt;/div&gt;', '', '', ''),
-(3, 4, 'Privacy Policy', '&lt;div class=&quot;privacy_page&quot;&gt;\r\n    &lt;ol&gt;\r\n        &lt;li&gt;\r\n            &lt;h4&gt;General information&lt;/h4&gt;\r\n\r\n\r\n\r\n            &lt;p&gt;Welcome to our Privacy Policy page! When you use our store services, you trust us with your information. This Privacy Policy is meant to help you understand what data we collect, why we collect it, and what we do with it. When you share information with us, we can make our services even better for you. For instance, we can show you more relevant search results and ads, help you connect with people or to make sharing with others quicker and easier. As you use our services, we want you to be clear how we’re using information and the ways in which you can protect your privacy. This is important; we hope you will take time to read it carefully. Remember, you can find controls to manage your information and protect your privacy and security. We’ve tried to keep it as simple as possible. &lt;/p&gt;\r\n\r\n\r\n        &lt;/li&gt;\r\n\r\n\r\n        &lt;li&gt;\r\n            &lt;h4&gt;Right to access, correct and delete data and to object to data processing&lt;/h4&gt;\r\n\r\n\r\n\r\n            &lt;p&gt;Our customers have the right to access, correct and delete personal data relating to them, and to object to the processing of such data, by addressing a written request, at any time. The Company makes every effort to put in place suitable precautions to safeguard the security and privacy of personal data, and to prevent it from being altered, corrupted, destroyed or accessed by unauthorized third parties. However, the Company does not control each and every risk related to the use of the Internet, and therefore warns the Site users of the potential risks involved in the functioning and use of the Internet. The Site may include links to other web sites or other internet sources. As the Company cannot control these web sites and external sources, the Company cannot be held responsible for the provision or display of these web sites and external sources, and may not be held liable for the content, advertising, products, services or any other material available on or from these web sites or external sources.  &lt;/p&gt;\r\n\r\n        &lt;/li&gt;\r\n\r\n\r\n        &lt;li&gt;\r\n            &lt;h4&gt;Management of personal data&lt;/h4&gt;\r\n\r\n\r\n\r\n            &lt;p&gt;You can view or edit your personal data online for many of our services. You can also make choices about our collection and use of your data. How you can access or control your personal data will depend on which services you use. You can choose whether you wish to receive promotional communications from our store by email, SMS, physical mail, and telephone. If you receive promotional email or SMS messages from us and would like to opt out, you can do so by following the directions in that message. You can also make choices about the receipt of promotional email, telephone calls, and postal mail by visiting and signing into Company Promotional Communications Manager, which allows you to update contact information, manage contact preferences, opt out of email subscriptions, and choose whether to share your contact information with our partners. These choices do not apply to mandatory service communications that are part of certain store services.&lt;/p&gt;\r\n\r\n        &lt;/li&gt;\r\n\r\n\r\n        &lt;li&gt;\r\n            &lt;h4&gt;Information We Collect&lt;/h4&gt;\r\n\r\n\r\n\r\n            &lt;p&gt;Our store collects data to operate effectively and provide you the best experiences with our services. You provide some of this data directly, such as when you create a personal account. We get some of it by recording how you interact with our services by, for example, using technologies like cookies, and receiving error reports or usage data from software running on your device. We also obtain data from third parties (including other companies). For example, we supplement the data we collect by purchasing demographic data from other companies. We also use services from other companies to help us determine a location based on your IP address in order to customize certain services to your location. The data we collect depends on the services and features you use. \r\n&lt;/p&gt;\r\n\r\n\r\n        &lt;/li&gt;\r\n\r\n\r\n        &lt;li&gt;\r\n            &lt;h4&gt;How We Use Your Information&lt;/h4&gt;\r\n\r\n\r\n\r\n            &lt;p&gt;Our store uses the data we collect for three basic purposes: to operate our business and provide (including improving and personalizing) the services we offer, to send communications, including promotional communications, and to display advertising. In carrying out these purposes, we combine data we collect through the various store services you use to give you a more seamless, consistent and personalized experience. However, to enhance privacy, we have built in technological and procedural safeguards designed to prevent certain data combinations. For example, we store data we collect from you when you are unauthenticated (not signed in) separately from any account information that directly identifies you, such as your name, email address or phone number.\r\n&lt;/p&gt;\r\n\r\n        &lt;/li&gt;\r\n\r\n\r\n        &lt;li&gt;\r\n            &lt;h4&gt;Sharing Your Information&lt;/h4&gt;\r\n\r\n\r\n\r\n            &lt;p&gt;We share your personal data with your consent or as necessary to complete any transaction or provide any service you have requested or authorized. For example, we share your content with third parties when you tell us to do so. When you provide payment data to make a purchase, we will share payment data with banks and other entities that process payment transactions or provide other financial services, and for fraud prevention and credit risk reduction. In addition, we share personal data among our controlled affiliates and subsidiaries. We also share personal data with vendors or agents working on our behalf for the purposes described in this statement. For example, companies we''ve hired to provide customer service support or assist in protecting and securing our systems and services may need access to personal data in order to provide those functions. In such cases, these companies must abide by our data privacy and security requirements and are not allowed to use personal data they receive from us for any other purpose. We may also disclose personal data as part of a corporate transaction such as a merger or sale of assets.&lt;/p&gt;\r\n\r\n        &lt;/li&gt;\r\n\r\n\r\n    &lt;/ol&gt;\r\n&lt;/div&gt;', '', '', ''),
-(7, 4, 'Robert Johnson', '&lt;div class=&quot;human_info&quot;&gt;\r\n&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;\r\n		&lt;img src=&quot;image/catalog/article/article-1.jpg&quot; alt=&quot;Robert Johnson&quot;&gt;\r\n	\r\n&lt;/figure&gt;\r\n&lt;p&gt;&lt;strong&gt;Senior salesman&lt;/strong&gt; with 15 years of experience. He knows everything about the products he offers.&lt;/p&gt;\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;', '', '', ''),
-(8, 4, 'Jessica Priston', '&lt;div class=&quot;human_info&quot;&gt;&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;										&lt;img src=&quot;image/catalog/article/article-2.jpg&quot; alt=&quot;Jessica Priston&quot;&gt;									&lt;/figure&gt;\r\n&lt;p&gt;Mega positive &lt;strong&gt;shop assistant&lt;/strong&gt; always ready to help you make the right choice and charm you with a smile.&lt;/p&gt;\r\n\r\n\r\n\r\n&lt;/div&gt;', '', '', ''),
-(9, 4, 'Sam Kromstain', '&lt;div class=&quot;human_info&quot;&gt;\r\n&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;							&lt;img src=&quot;image/catalog/article/article-3.jpg&quot; alt=&quot;Sam Kromstain&quot;&gt;								&lt;/figure&gt;\r\n&lt;p&gt;&lt;strong&gt;Wholesale manager.&lt;/strong&gt; Contact him if you want to buy a batch of the products offered at our store. &lt;/p&gt;\r\n\r\n\r\n\r\n&lt;/div&gt;', '', '', ''),
-(10, 4, 'Edna Barton', '&lt;div class=&quot;human_info&quot;&gt;\r\n&lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;									&lt;img src=&quot;image/catalog/article/article-4.jpg&quot; alt=&quot;Edna Barton&quot;&gt;								&lt;/figure&gt;\r\n&lt;p&gt; &lt;strong&gt;Quality control manager&lt;/strong&gt;. Her mission is to check the products we ship and settle quality issues if any.&lt;/p&gt;\r\n\r\n\r\n\r\n&lt;/div&gt;', '', '', ''),
-(4, 4, 'About', '&lt;div class=&quot;text-center&quot;&gt;\r\n&lt;h4&gt;Catering to your requirements, handling your needs with care  &lt;/h4&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;p&gt;Our store is more than just another average online retailer. We sell not only top quality products, but give our customers a positive online shopping experience. Forget about struggling to do everything at once: taking care of the family, running your business, walking your dog, cleaning the house, doing the shopping, etc. Purchase the goods you need every day or just like in a few clicks or taps, depending on the device you use to access the Internet. We work to make your life more enjoyable. &lt;/p&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;row&quot;&gt;\r\n    &lt;div class=&quot;col-sm-4&quot;&gt;\r\n        &lt;div class=&quot;count-box&quot;&gt;&lt;strong&gt;14500&lt;/strong&gt;\r\n            &lt;h5&gt;Products available&lt;/h5&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n        &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    &lt;div class=&quot;col-sm-4&quot;&gt;\r\n        &lt;div class=&quot;count-box&quot;&gt;&lt;strong&gt;81%&lt;/strong&gt;\r\n            &lt;h5&gt;Clients come back&lt;/h5&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n        &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    &lt;div class=&quot;col-sm-4&quot;&gt;\r\n        &lt;div class=&quot;count-box&quot;&gt;&lt;strong&gt;10 mlns&lt;/strong&gt;\r\n            &lt;h5&gt;Site members&lt;/h5&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n        &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;h3&gt;Store Events&lt;/h3&gt;\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;row&quot;&gt;\r\n    &lt;div class=&quot;col-sm-4&quot;&gt;\r\n        &lt;div class=&quot;icon-box&quot;&gt;&lt;i class=&quot;material-design-search100&quot;&gt;&lt;/i&gt;\r\n            &lt;h5&gt;For convenience of choice&lt;/h5&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n            &lt;p&gt;We think about the convenience of your choice. Our products are supplied with star rating that should help hesitant buyers to take a decision. What’s more, you can search our site if you know exactly what you are looking for or use a bunch of different filters that will considerably save your time and efforts.   &lt;/p&gt;\r\n\r\n\r\n\r\n\r\n\r\n        &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n    &lt;div class=&quot;col-sm-4&quot;&gt;\r\n        &lt;div class=&quot;icon-box&quot;&gt;&lt;i class=&quot;material-design-front16&quot;&gt;&lt;/i&gt;\r\n            &lt;h5&gt;Delivery to all regions&lt;/h5&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n            &lt;p&gt;We deliver our goods worldwide. No matter where you live, your order will be shipped in time and delivered right to your door or to any other location you have stated. The packages are handled with utmost care, so the ordered products will be handed to you safe and sound, just like you expect them to be.    &lt;/p&gt;\r\n\r\n\r\n\r\n\r\n\r\n        &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n    &lt;div class=&quot;col-sm-4&quot;&gt;\r\n        &lt;div class=&quot;icon-box&quot;&gt;&lt;i class=&quot;material-design-thumb54&quot;&gt;&lt;/i&gt;\r\n            &lt;h5&gt;The highest quality of products&lt;/h5&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n            &lt;p&gt;We guarantee the highest quality of the products we sell. Several decades of successful operation and millions of happy customers let us feel certain about that. Besides, all items we sell pass thorough quality control, so no characteristics mismatch can escape the eye of our professionals.   &lt;/p&gt;\r\n\r\n\r\n\r\n\r\n\r\n        &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;h3&gt;OUR TEAM&lt;/h3&gt;\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;row&quot;&gt;\r\n    &lt;div class=&quot;col-sm-3&quot;&gt;\r\n        &lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;\r\n            &lt;a title=&quot;Robert Johnson&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=7&quot;&gt;&lt;img alt=&quot;Robert Johnson&quot; src=&quot;image/catalog/article/article-1.jpg&quot;&gt;&lt;/a&gt;\r\n        &lt;/figure&gt;\r\n        &lt;h5&gt;&lt;a title=&quot;Robert Johnson&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=7&quot;&gt;Robert Johnson&lt;/a&gt;&lt;/h5&gt;\r\n\r\n\r\n\r\n\r\n        &lt;p&gt;Senior salesman with 15 years of experience. He knows everything about the products he offers.&lt;/p&gt;\r\n\r\n\r\n\r\n\r\n    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n    &lt;div class=&quot;col-sm-3&quot;&gt;\r\n        &lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;\r\n            &lt;a title=&quot;Jessica Priston&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=8&quot;&gt;&lt;img alt=&quot;Jessica Priston&quot; src=&quot;image/catalog/article/article-2.jpg&quot;&gt;&lt;/a&gt;\r\n        &lt;/figure&gt;\r\n        &lt;h5&gt;&lt;a title=&quot;Jessica Priston&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=8&quot;&gt;Jessica Priston&lt;/a&gt;&lt;/h5&gt;\r\n\r\n\r\n\r\n\r\n        &lt;p&gt;Mega positive shop assistant always ready to help you make the right choice and charm you with a smile.&lt;/p&gt;\r\n\r\n\r\n\r\n\r\n    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n    &lt;div class=&quot;col-sm-3&quot;&gt;\r\n        &lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;\r\n            &lt;a title=&quot;Sam Kromstain&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=9&quot;&gt;&lt;img alt=&quot;Sam Kromstain&quot; src=&quot;image/catalog/article/article-3.jpg&quot;&gt;&lt;/a&gt;\r\n        &lt;/figure&gt;\r\n        &lt;h5&gt;&lt;a title=&quot;Sam Kromstain&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=9&quot;&gt;Sam Kromstain&lt;/a&gt;&lt;/h5&gt;\r\n\r\n\r\n\r\n\r\n        &lt;p&gt;Wholesale manager. Contact him if you want to buy a batch of the products offered at our store.  &lt;/p&gt;\r\n\r\n\r\n\r\n\r\n    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n    &lt;div class=&quot;col-sm-3&quot;&gt;\r\n        &lt;figure class=&quot;thumbnail featured-thumbnail&quot;&gt;\r\n            &lt;a title=&quot;Edna Barton&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=10&quot;&gt;&lt;img alt=&quot;Edna Barton&quot; src=&quot;image/catalog/article/article-4.jpg&quot;&gt;&lt;/a&gt;\r\n        &lt;/figure&gt;\r\n        &lt;h5&gt;&lt;a title=&quot;Edna Barton&quot; href=&quot;index.php?route=information/information&amp;amp;information_id=10&quot;&gt;Edna Barton&lt;/a&gt;&lt;/h5&gt;\r\n\r\n\r\n\r\n\r\n        &lt;p&gt;Quality control manager. Her mission is to check the products we ship and settle quality issues if any.&lt;/p&gt;\r\n\r\n\r\n\r\n\r\n    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n&lt;h3&gt;Testimonials&lt;/h3&gt;\r\n\r\n\r\n\r\n&lt;div class=&quot;row&quot;&gt;\r\n    &lt;div class=&quot;col-sm-10 col-sm-offset-1&quot;&gt;\r\n        &lt;div class=&quot;testimonials&quot;&gt;\r\n            &lt;div class=&quot;item&quot;&gt;\r\n                &lt;blockquote&gt;\r\n                    &lt;h5&gt;Mary Taba&lt;/h5&gt;\r\n\r\n\r\n\r\n\r\n                    &lt;p&gt;“Guys, you rock! Made a purchase at your store recently. The order has been shipped and delivered on time. The quality is superb! The price is quite reasonable. Told all my friends about your excellent service and the variety of choice. I think I’ll be your loyal customer in future as well. I wish your store many more years of prosperity.” &lt;/p&gt;\r\n\r\n\r\n\r\n                &lt;/blockquote&gt;\r\n            &lt;/div&gt;\r\n\r\n\r\n\r\n            &lt;div class=&quot;item&quot;&gt;\r\n                &lt;blockquote&gt;\r\n                    &lt;h5&gt;Virginia Ubert&lt;/h5&gt;\r\n\r\n\r\n\r\n\r\n                    &lt;p&gt;“Having the distressing experience with some online shops before decided to say ‘’THANK YOU” to all personnel of this store. You are not only friendly, but deliver really good products in the shortest possible terms. In a word, I am absolutely happy with my purchase and the service. Everything was perfect!”&lt;/p&gt;\r\n\r\n\r\n\r\n                &lt;/blockquote&gt;\r\n            &lt;/div&gt;\r\n\r\n\r\n\r\n          \r\n\r\n\r\n\r\n        &lt;/div&gt;\r\n\r\n\r\n\r\n    &lt;/div&gt;\r\n\r\n\r\n\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;', '', '', '');
+(6, 4, 'Normas de Entrega', '&lt;div class=&quot;delivery_page&quot;&gt;\r\n&lt;h4&gt;&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 18.3333px; line-height: 14.2667px; font-weight: bold; color: rgb(239, 198, 49); font-family: Arial;&quot;&gt;NORMAS DE ENTREGA&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;A nossa missão é sempre buscar entregar todos os pedidos dentro das condições escolhidas pelo cliente.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;No entanto, o prazo de entrega de seu pedido pode variar de acordo com as dificuldades encontradas para chegar ao destino final ou até por condições externas fora de nosso alcance.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;Os pedidos serão entregues de acordo com o horário da finalização da compra. Isso ocorre, devido a prévio agendamento de entregas anteriores, a fim de seguirmos um cronograma de logística e devido ao tempo necessário para realizar todo processo de venda, confecção e entrega das flores.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;Logo, não é possível agendar o horário exato de entrega, mas faremos o possível para que o seu presente chegue na hora marcada!&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;O pedido mínimo para agendar uma entrega é de R$40,00 e já inclui um cartão básico branco para presente.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;As entregas são feitas de segunda à sexta, das 8:30h às 18h e para entregas urgentes segue abaixo os horários limite para solicitação:&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; font-weight: bold; color: rgb(99, 99, 99);&quot;&gt;Períodos de entrega: &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Limite para finalização do pedido:&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;Das 08:30h às 13h &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Até 15h do dia anterior&amp;nbsp;&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;Das 13h às 18h &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Até às 13h do mesmo dia&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; font-weight: bold; color: rgb(99, 99, 99);&quot;&gt;Entregas em datas comemorativas:&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;Devido ao grande número de encomendas em datas comemorativas especiais como Dia das Mães, Dia dos Namorados, Natal, Dia da Mulher, Dia da Secretária, entre outras, o horário escolhido para entrega será levado como referência, porém os pedidos solicitados para essas datas serão entregues entre 8:30h e 18h. De qualquer forma, estaremos nos esforçando ao máximo para realizar a entrega no período escolhido na compra.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;Exigências:&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;Pedidos exigindo que as flores sejam exclusivamente entregues nas mãos do destinatário não podem ser garantidos. Nosso compromisso é de entregar seu pedido no endereço de destino. De forma alguma podemos adentrar em portarias, casas, empresas, escritórios ou em qualquer outra localidade sem autorização dos responsáveis. Não se encontrando o destinatário, sempre que possível, deixaremos com algum responsável que esteja no local.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;Entregas em hotéis, flats, hospitais, quartéis, casas de show e etc… Nossa responsabilidade termina com a entrega de seu pedido na Consierge ou ao responsável pelo encaminhamento ao destinatário.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; font-weight: bold; color: rgb(99, 99, 99);&quot;&gt;Endereços incorretos:&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;Caso o endereço fornecido para entrega esteja incorreto, ou, seja inexistente, entraremos em contato com o destinatário para verificar onde podemos encontra-lo. Caso não seja possível através do telefone fornecido, entraremos em contato com o comprador para que possamos tomar as devidas providências. Mudanças de endereços podem gerar novos custos. No caso de não houver ninguém no endereço de entrega,　entraremos em contato por telefone com o destinatário a fim de agendar um novo horário. Dependendo da área a ser entregue novamente, poderá gerar novos custos. No caso de não haver entrega para a cidade/bairro solicitado, estaremos entrando em contato imediato, para comunicar o cancelamento de seu pedido.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;Atenção: caso a compra seja finalizada com cartão de crédito, e haja dificuldades em aprovar o débito, ou depósitos não realizados e ou não identificados podem ocasionar atrasos nas entregas e até o cancelamento do pedido.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;Taxas de entrega: Ao realizar a compra, confira as taxas de entrega estabelecidas em cada bairro. Os preços visualizados ao lado dos arranjos são unicamente dos produtos.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; font-weight: bold; color: rgb(99, 99, 99);&quot;&gt;Termos de garantia:&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;Estaremos sempre enviando flores frescas, de alta qualidade, a fim de mantermos nossa responsabilidade e missão de distribuir beleza e promover boas recordações. Se por alguma razão, você não ficar satisfeito com sua compra, por favor, contate-nos imediatamente através do e-mail: casaflores@casaflores.com.br e estaremos providenciando uma solução no menor espaço de tempo possível.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; font-weight: bold; color: rgb(99, 99, 99);&quot;&gt;Política de substituição de flores:&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;Devido a grande variedade de flores que disponibilizamos, por ser um artigo altamente sazonal que depende de condições climáticas (sensível a qualquer variação de tempo e temperatura), altamente perecível, e até por motivo de grande procura (períodos de pico), colocamos aqui nossa política de substituição de flores no caso de haver ocasional indisponibilidade de algumas variedades de flores encontradas em nossos arranjos. Caso não haja a cor específica da flor escolhida, entraremos em contato a fim de achar uma solução, se, por ventura, não conseguirmos contata-lo, estaremos enviando flores cuja cor esteja mais próxima das opções escolhidas no pedido.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;Nossos floristas sempre que necessário poderão substituir flores, porém sempre procurando ao máximo evitar descaracterizar do arranjo escolhido e sempre substituindo por flores de igual ou maior valor ou ainda se necessário por uma maior quantidade de outras flores que alcance o valor do arranjo comprado.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 19.3333px; line-height: 14.2667px; font-weight: bold; color: rgb(239, 198, 49);&quot;&gt;FORMAS DE PAGAMENTO:&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;Para pagamento na loja temos as seguintes opções de pagamento:&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. Cartão de Débito bandeiras Master e Visa&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. Cartão de Crédito bandeiras Master e Visa&amp;nbsp;&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. Dinheiro&amp;nbsp;&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;4. Cheque&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;5. Faturado ( somente para clientes cadastrados )&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;6. Depósito Bancário no Banco Itaú&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Dados bancários:&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Titular: Gilberto Andreuccetti - ME&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;CNPJ: 11.448.522/0001-77&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Banco: Itaú&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Agência: 3130 | Conta corrente: 22043-1&amp;nbsp;&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; font-weight: bold; color: rgb(99, 99, 99);&quot;&gt;IMPORTANTE:&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;No caso de transferência / depósito / TED em conta corrente é obrigatório encaminhar o comprovante, indicando o assunto “Comprovante de Depósito e Descrição da compra para que ocorra a liberação da mesma”.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;Envie seu comprovante para o e-mail: casaflores@casafores.com.br&amp;nbsp;&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; color: rgb(99, 99, 99);&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; font-weight: bold; color: rgb(99, 99, 99);&quot;&gt;OBS.:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 13.3333px; line-height: 14.2667px; font-weight: bold; color: rgb(99, 99, 99);&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;MsoNormal&quot; style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 13.3333px; line-height: 14.2667px; font-family: Arial; color: rgb(99, 99, 99);&quot;&gt;Caso a compra seja finalizada com cartão de crédito e haja dificuldades em aprovar o débito ou depósitos não realizados e/ou não identificados, pode ocorrer atraso nas entrega e até o cancelamento do pedido.&lt;/span&gt;&lt;/p&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br&gt;&lt;/div&gt;\r\n\r\n&lt;/h4&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;/div&gt;', 'Normas de Entrega', 'Normas de Entrega', 'Normas de Entrega'),
+(5, 4, 'Termos e Condições', '&lt;div class=&quot;row terms_conditions_page&quot;&gt;\r\n	&lt;div class=&quot;col-sm-6&quot;&gt;\r\n		&lt;h4&gt;entire agreement&lt;/h4&gt;\r\n\r\n		&lt;p&gt;If you require a complete delivery of your orders, please enter an X in the Complete Delivery field on the shipping screen of the customer master record. The indicator is copied into the order header, which you can also use for the purpose. &lt;/p&gt;\r\n\r\n		&lt;h4&gt;controlling terms&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Buyer expressly agrees that Seller’s Invoice and these Terms and Conditions of Sale represent the complete agreement of the parties with respect to the sale of the product(s) listed on the Invoice and no different or additional terms or conditions in Buyer’s purchase order or in any other prior or subsequent communications in any way adding to, modifying or otherwise changing these Terms and Conditions of Sale shall be binding upon Seller.&lt;/p&gt;\r\n\r\n		&lt;h4&gt;acceptance of orders&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Seller may accept buyer’s offer to purchase and shall be bound to supply the applicable Goods in accordance with these terms and conditions either by execution of the acknowledgment copy of the order, or acceptable electronic transmission, delivery of the Goods to CAI or by any other statement, act or course of conduct which constitutes acceptance under applicable law.\r\n&lt;/p&gt;\r\n\r\n		&lt;h4&gt;prices&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Unless otherwise indicated on the face of the invoice, all prices are quoted on a per pound basis. Buyer is responsible for any tax or government charges imposed upon the sale or transfer of the Product. Buyer shall not have any right to set off any amounts due hereunder against any amounts which may become payable to Seller under any other agreement.&lt;/p&gt;\r\n\r\n		&lt;h4&gt;delivery&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Unless otherwise agrees in writing signed by officer of Seller, all delivery dates are estimates Seller shall use its reasonable efforts to deliver all Product within the time specified; however, in no case shall Seller be liable for any expense, loss or damage whatsoever suffered by Buyer as a result of the Seller’s failure to deliver Product by the specified date.&lt;/p&gt;\r\n\r\n		&lt;h4&gt;transportation and risk of loss&lt;/h4&gt;\r\n\r\n		&lt;p&gt;The method and route of shipment are at Seller’s discretion unless Buyer timely supplies explicit instructions otherwise. Title to the Product passes to Buyer when Product is delivered to the selected carrier, even if Seller made a nonconforming tender. Buyer attempts to revoke acceptance of the Product, or Buyer repudiates this document after the Products have been identified hereto.&lt;/p&gt;\r\n\r\n		&lt;h4&gt;cancellation or modification&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Any order placed with and accepted by Seller may be canceled by Buyer only upon Seller’s approval in a writing signed by an officer of Seller and upon terms that indemnify Seller against any loss. Seller will not accept order cancellations once a product has been delivered to a carrier, without charging a cancellation fee of twenty-five percent (25%) of order value to recover retrieval costs incurred. Seller will not accept cancellations of special orders of non-standard, non-price list products. Seller may cancel all or any part of this order and discontinue its performance hereunder without liability to Buyer in the event Buyer materially breaches this contract, becomes insolvent, is the subject to bankruptcy protection, or is the subject of a receivership, liquidation, dissolution or similar proceeding.\r\n&lt;/p&gt;\r\n\r\n		&lt;h4&gt;taxes&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Buyer is responsible for any tax or governmental charge imposed upon the sale or transfer of any product. Any such tax or governmental charge will be added to the total invoice amount. All prices are FOB Seller’s facilities. Applicable freight costs will be added to the invoice.&lt;/p&gt;\r\n\r\n	&lt;/div&gt;\r\n\r\n	&lt;div class=&quot;col-sm-6&quot;&gt;\r\n		&lt;h4&gt;warranty and disclaimer&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Seller warrants that the purchased Product is free from defects in materials and workmanship at the time of delivery. If an analysis is stated on the face of the Invoice, it is not intended to be a complete analysis and is not to be regarded as a specification or warranty, unless specifically stated in writing to be such. \r\n&lt;/p&gt;\r\n\r\n		&lt;h4&gt;limitation of liability&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Buyer acknowledges and agrees that seller’s liability for any claims with respect to the products shall not exceed the amount paid by buyer for the products under the invoice. Such limitations on seller’s liability hereunder shall apply even if seller’s liability is due in whole or in part to its own negligence. Any action by or on behalf of Buyer or its successors or assigns for breach of this document must be commenced within one (1) year after the cause of action as accrued.&lt;/p&gt;\r\n\r\n		&lt;h4&gt;return of material&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Upon delivery of Product, Buyer shall have five (5) days to inspect Product and notify Seller, in writing, of any defective goods or other cause for rejection. Buyer agrees that five (5) day period provides Buyer a reasonable opportunity to inspect the Product. Such notification shall identify each and every reason for any rejection of Product. Buyer’s failure to reject Product within such five (5) day period shall constitute a waiver of Buyer’s inspection right and an unqualified and irrevocable acceptance of the Product by Buyer.&lt;/p&gt;\r\n\r\n		&lt;h4&gt;indemnity&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Buyer shall defend, indemnify and hold harmless Seller and its affiliated or related companies from and against any and all claims, losses, liability, damages and expenses including, but not limited to, attorneys’ fees and cost of defense arising from, related to or in any way connected with or alleged to arise from or out of any asserted deficiencies or defects in Product caused by any alteration or modification thereof by Buyer with or without Seller’s consent, or improper handling or storage by Buyer, the breach of any term or condition stated herein, Buyer’s failure to label Product or Buyer’s improper labeling of Product regardless of whether the labeling was done with or without the advice of Seller, or any act or omission of Buyer including any Claims for or resulting from any injury to person (including death) or damage to property or for economic loss, several or comparative negligence, breach of agreement, breach of warranty or other breach of duty of or by Indemnitee or as a result of Indemnitee’s strict or other product liability. The foregoing indemnification shall not be construed to eliminate or in any way reduce any other indemnification or right which Indemnitee has by law.&lt;/p&gt;\r\n\r\n		&lt;h4&gt;payment&lt;/h4&gt;\r\n\r\n		&lt;p&gt;Net cash thirty (30) days from the date of Invoice. Amounts not paid within thirty (30) days are overdue and shall accrue interest at a rate of one and one-half percent (1-1/2%) per month or the highest allowed by law, whichever is less. Buyer shall reimburse Seller for any costs incurred in collecting past due sums or any other amounts owed by Buyer for any reason whatsoever, including, but not limited to, court costs and attorneys’ fees.\r\n&lt;/p&gt;\r\n\r\n		&lt;h4&gt;governing law and arbitration&lt;/h4&gt;\r\n\r\n		&lt;p&gt;This document shall be interpreted and governed by the law of the State of America, excluding its conflicts of laws rules. The parties specifically exclude the application of the United Nations Convention on the Sale of Goods.\r\n&lt;/p&gt;\r\n\r\n	&lt;/div&gt;\r\n\r\n&lt;/div&gt;', 'Termos e Condições', '', ''),
+(3, 4, 'Políticas de Privacidade', '&lt;div class=&quot;privacy_page&quot;&gt;\r\n    &lt;ol&gt;\r\n        &lt;li&gt;\r\n            &lt;h4&gt;General information&lt;/h4&gt;\r\n\r\n\r\n\r\n            &lt;p&gt;Welcome to our Privacy Policy page! When you use our store services, you trust us with your information. This Privacy Policy is meant to help you understand what data we collect, why we collect it, and what we do with it. When you share information with us, we can make our services even better for you. For instance, we can show you more relevant search results and ads, help you connect with people or to make sharing with others quicker and easier. As you use our services, we want you to be clear how we’re using information and the ways in which you can protect your privacy. This is important; we hope you will take time to read it carefully. Remember, you can find controls to manage your information and protect your privacy and security. We’ve tried to keep it as simple as possible. &lt;/p&gt;\r\n\r\n\r\n        &lt;/li&gt;\r\n\r\n\r\n        &lt;li&gt;\r\n            &lt;h4&gt;Right to access, correct and delete data and to object to data processing&lt;/h4&gt;\r\n\r\n\r\n\r\n            &lt;p&gt;Our customers have the right to access, correct and delete personal data relating to them, and to object to the processing of such data, by addressing a written request, at any time. The Company makes every effort to put in place suitable precautions to safeguard the security and privacy of personal data, and to prevent it from being altered, corrupted, destroyed or accessed by unauthorized third parties. However, the Company does not control each and every risk related to the use of the Internet, and therefore warns the Site users of the potential risks involved in the functioning and use of the Internet. The Site may include links to other web sites or other internet sources. As the Company cannot control these web sites and external sources, the Company cannot be held responsible for the provision or display of these web sites and external sources, and may not be held liable for the content, advertising, products, services or any other material available on or from these web sites or external sources.  &lt;/p&gt;\r\n\r\n        &lt;/li&gt;\r\n\r\n\r\n        &lt;li&gt;\r\n            &lt;h4&gt;Management of personal data&lt;/h4&gt;\r\n\r\n\r\n\r\n            &lt;p&gt;You can view or edit your personal data online for many of our services. You can also make choices about our collection and use of your data. How you can access or control your personal data will depend on which services you use. You can choose whether you wish to receive promotional communications from our store by email, SMS, physical mail, and telephone. If you receive promotional email or SMS messages from us and would like to opt out, you can do so by following the directions in that message. You can also make choices about the receipt of promotional email, telephone calls, and postal mail by visiting and signing into Company Promotional Communications Manager, which allows you to update contact information, manage contact preferences, opt out of email subscriptions, and choose whether to share your contact information with our partners. These choices do not apply to mandatory service communications that are part of certain store services.&lt;/p&gt;\r\n\r\n        &lt;/li&gt;\r\n\r\n\r\n        &lt;li&gt;\r\n            &lt;h4&gt;Information We Collect&lt;/h4&gt;\r\n\r\n\r\n\r\n            &lt;p&gt;Our store collects data to operate effectively and provide you the best experiences with our services. You provide some of this data directly, such as when you create a personal account. We get some of it by recording how you interact with our services by, for example, using technologies like cookies, and receiving error reports or usage data from software running on your device. We also obtain data from third parties (including other companies). For example, we supplement the data we collect by purchasing demographic data from other companies. We also use services from other companies to help us determine a location based on your IP address in order to customize certain services to your location. The data we collect depends on the services and features you use. \r\n&lt;/p&gt;\r\n\r\n\r\n        &lt;/li&gt;\r\n\r\n\r\n        &lt;li&gt;\r\n            &lt;h4&gt;How We Use Your Information&lt;/h4&gt;\r\n\r\n\r\n\r\n            &lt;p&gt;Our store uses the data we collect for three basic purposes: to operate our business and provide (including improving and personalizing) the services we offer, to send communications, including promotional communications, and to display advertising. In carrying out these purposes, we combine data we collect through the various store services you use to give you a more seamless, consistent and personalized experience. However, to enhance privacy, we have built in technological and procedural safeguards designed to prevent certain data combinations. For example, we store data we collect from you when you are unauthenticated (not signed in) separately from any account information that directly identifies you, such as your name, email address or phone number.\r\n&lt;/p&gt;\r\n\r\n        &lt;/li&gt;\r\n\r\n\r\n        &lt;li&gt;\r\n            &lt;h4&gt;Sharing Your Information&lt;/h4&gt;\r\n\r\n\r\n\r\n            &lt;p&gt;We share your personal data with your consent or as necessary to complete any transaction or provide any service you have requested or authorized. For example, we share your content with third parties when you tell us to do so. When you provide payment data to make a purchase, we will share payment data with banks and other entities that process payment transactions or provide other financial services, and for fraud prevention and credit risk reduction. In addition, we share personal data among our controlled affiliates and subsidiaries. We also share personal data with vendors or agents working on our behalf for the purposes described in this statement. For example, companies we''ve hired to provide customer service support or assist in protecting and securing our systems and services may need access to personal data in order to provide those functions. In such cases, these companies must abide by our data privacy and security requirements and are not allowed to use personal data they receive from us for any other purpose. We may also disclose personal data as part of a corporate transaction such as a merger or sale of assets.&lt;/p&gt;\r\n\r\n        &lt;/li&gt;\r\n\r\n\r\n    &lt;/ol&gt;\r\n&lt;/div&gt;', 'Políticas de Privacidade', '', ''),
+(4, 4, 'Sobre a Casa Flores', '&lt;h3&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Quem somos:&lt;br&gt;&lt;/span&gt;&lt;/h3&gt;&lt;h4&gt;Com mais de 16 anos de experiência, a Casa Flores é uma empresa que une técnica, criatividade, bom gosto e cordialidade no atendimento. Somos uma empresa familiar e que traz no seu DNA a paixão pelas flores e pelo bairro da Vila Olímpia, onde tudo começou.&lt;br&gt;&lt;h4&gt;Atendemos a grande São Paulo na confecção de arranjos e buques,presentes com flores, assinaturas de flores, paisagismo e decoração de eventos.&lt;/h4&gt;&lt;/h4&gt;&amp;nbsp;&lt;br&gt;&lt;h3&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Missão:&amp;nbsp;&lt;/span&gt;&lt;/h3&gt;&lt;h4&gt;Tocar o coração das pessoas através das flores.&lt;/h4&gt;&lt;h4&gt;&lt;br&gt;&lt;/h4&gt;&lt;h4 style=&quot;font-family: ''Open Sans'', sans-serif; color: rgb(102, 102, 102);&quot;&gt;Buscamos sempre entender as necessidades e expectativas dos nossos clientes e oferecer soluções completas de compra trazendo comodidade e uma experiência diferenciada.&amp;nbsp;&lt;/h4&gt;&lt;h4&gt;Sabendo que as flores expressam nossas emoções e transmitem nossos sentimentos, a Casa Flores faz do seu trabalho uma arte, usando as flores como principal matéria-prima.&lt;/h4&gt;', 'Sobre a Casa Flores', 'Sobre a Casa Flores', 'Sobre a Casa Flores');
 
 -- --------------------------------------------------------
 
@@ -1377,14 +1584,10 @@ CREATE TABLE `oc_information_to_layout` (
 --
 
 INSERT INTO `oc_information_to_layout` (`information_id`, `store_id`, `layout_id`) VALUES
-(4, 0, 0),
+(4, 0, 4),
 (6, 0, 0),
 (3, 0, 0),
-(5, 0, 0),
-(7, 0, 0),
-(8, 0, 0),
-(9, 0, 0),
-(10, 0, 0);
+(5, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1405,11 +1608,7 @@ INSERT INTO `oc_information_to_store` (`information_id`, `store_id`) VALUES
 (3, 0),
 (4, 0),
 (5, 0),
-(6, 0),
-(7, 0),
-(8, 0),
-(9, 0),
-(10, 0);
+(6, 0);
 
 -- --------------------------------------------------------
 
@@ -1478,60 +1677,39 @@ CREATE TABLE `oc_layout_module` (
   `code` varchar(64) NOT NULL,
   `position` varchar(14) NOT NULL,
   `sort_order` int(3) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=973 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=990 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_layout_module`
 --
 
 INSERT INTO `oc_layout_module` (`layout_module_id`, `layout_id`, `code`, `position`, `sort_order`) VALUES
-(926, 12, 'olark.50', 'footer_top', 1),
-(921, 3, 'filter', 'column_left', 1),
 (910, 10, 'bestseller.43', 'column_left', 2),
-(909, 10, 'olark.50', 'footer_top', 1),
-(942, 13, 'olark.50', 'footer_top', 1),
 (972, 5, 'tm_fbbox.42', 'footer_top', 2),
-(933, 11, 'olark.50', 'footer_top', 1),
-(939, 2, 'olark.50', 'footer_top', 1),
 (916, 14, 'tm_blog_category.90', 'column_left', 0),
-(906, 6, 'olark.50', 'footer_top', 1),
 (908, 10, 'affiliate', 'column_left', 1),
-(924, 7, 'olark.50', 'footer_top', 1),
-(928, 8, 'tm_google_map.54', 'content_top', 0),
-(931, 4, 'olark.50', 'footer_top', 1),
 (970, 5, 'account', 'column_left', 1),
-(941, 13, 'bestseller.43', 'column_left', 1),
-(945, 9, 'olark.50', 'footer_top', 1),
-(920, 3, 'featured.28', 'column_left', 1),
-(919, 3, 'olark.50', 'footer_top', 1),
-(961, 1, 'featured.51', 'content_top', 3),
-(962, 1, 'tm_slideshow.46', 'header_top', 1),
-(960, 1, 'tm_fbbox.42', 'footer_top', 2),
-(957, 1, 'banner.93', 'content_top', 4),
-(958, 1, 'banner.94', 'content_top', 2),
+(988, 1, 'featured.51', 'content_top', 3),
+(987, 1, 'tm_slideshow.46', 'header_top', 1),
+(986, 1, 'tm_fbbox.42', 'footer_top', 2),
 (917, 14, 'tm_fbbox.42', 'footer_top', 2),
-(959, 1, 'tm_google_map.54', 'footer_bottom', 1),
-(956, 1, 'tm_newsletter_popup.95', 'content_top', 5),
+(985, 1, 'banner.93', 'content_top', 4),
 (907, 6, 'tm_fbbox.42', 'footer_top', 2),
 (911, 10, 'tm_fbbox.42', 'footer_top', 2),
 (915, 14, 'tm_blog_articles.91', 'column_left', 1),
-(918, 14, 'olark.50', 'footer_top', 1),
-(922, 3, 'bestseller.43', 'column_left', 2),
-(923, 3, 'tm_fbbox.42', 'footer_top', 2),
+(973, 3, 'tm_fbbox.42', 'footer_top', 2),
 (925, 7, 'tm_fbbox.42', 'footer_top', 2),
 (927, 12, 'tm_fbbox.42', 'footer_top', 2),
-(929, 8, 'olark.50', 'footer_top', 1),
 (930, 8, 'tm_fbbox.42', 'footer_top', 2),
 (932, 4, 'tm_fbbox.42', 'footer_top', 2),
 (934, 11, 'tm_fbbox.42', 'footer_top', 2),
 (971, 5, 'latest.69', 'column_left', 2),
 (940, 2, 'tm_fbbox.42', 'footer_top', 2),
-(943, 13, 'latest.69', 'column_left', 2),
-(944, 13, 'tm_fbbox.42', 'footer_top', 2),
+(974, 13, 'tm_fbbox.42', 'footer_top', 2),
 (946, 9, 'tm_fbbox.42', 'footer_top', 2),
-(963, 1, 'banner.33', 'content_top', 1),
-(964, 1, 'olark.50', 'footer_top', 1),
-(969, 5, 'olark.50', 'footer_top', 1);
+(984, 1, 'banner.94', 'content_top', 2),
+(983, 1, 'tm_newsletter_popup.95', 'content_top', 5),
+(989, 1, 'banner.33', 'content_top', 1);
 
 -- --------------------------------------------------------
 
@@ -1544,7 +1722,7 @@ CREATE TABLE `oc_layout_route` (
   `layout_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   `route` varchar(255) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=278 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=282 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_layout_route`
@@ -1553,8 +1731,8 @@ CREATE TABLE `oc_layout_route` (
 INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`) VALUES
 (254, 6, 0, 'account/%'),
 (255, 10, 0, 'affiliate/%'),
-(264, 3, 0, 'product/category'),
-(275, 1, 0, 'common/home'),
+(278, 3, 0, 'product/category'),
+(281, 1, 0, 'common/home'),
 (271, 2, 0, 'product/product'),
 (269, 11, 0, 'information/information'),
 (265, 7, 0, 'checkout/%'),
@@ -1563,7 +1741,7 @@ INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `rout
 (268, 4, 0, ''),
 (277, 5, 0, 'product/manufacturer'),
 (266, 12, 0, 'product/compare'),
-(272, 13, 0, 'product/search'),
+(279, 13, 0, 'product/search'),
 (262, 14, 0, 'simple_blog/author'),
 (261, 14, 0, 'simple_blog/article'),
 (260, 14, 0, 'simple_blog/category'),
@@ -1640,19 +1818,19 @@ CREATE TABLE `oc_manufacturer` (
   `name` varchar(64) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   `sort_order` int(3) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_manufacturer`
 --
 
 INSERT INTO `oc_manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`) VALUES
-(5, 'McCormick', 'catalog/demo/htc_logo.jpg', 0),
-(6, 'PLANT', 'catalog/demo/palm_logo.jpg', 0),
-(7, 'Watkins', 'catalog/demo/hp_logo.jpg', 0),
-(8, 'Smoked Paprika ', 'catalog/demo/apple_logo.jpg', 0),
-(9, 'Simply Organic', 'catalog/demo/canon_logo.jpg', 0),
-(10, 'Organic Turmeric', 'catalog/demo/sony_logo.jpg', 0);
+(11, 'Casa Flores', 'catalog/12733998_1530598097241152_6638920351497627041_n (1).jpg', 0),
+(12, 'Casa Flores e Bistrô dos Pães', '', 0),
+(13, 'Casa Flores e Intt Cosméticos', '', 0),
+(14, 'Casa Flores e Atelier Otilia', '', 0),
+(15, 'Casa Flores e Bendito Brigadeiro', '', 0),
+(16, 'Casa Flores, Atelier Otilia e Bendito Brigadeiro', '', 0);
 
 -- --------------------------------------------------------
 
@@ -1670,12 +1848,12 @@ CREATE TABLE `oc_manufacturer_to_store` (
 --
 
 INSERT INTO `oc_manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
-(5, 0),
-(6, 0),
-(7, 0),
-(8, 0),
-(9, 0),
-(10, 0);
+(11, 0),
+(12, 0),
+(13, 0),
+(14, 0),
+(15, 0),
+(16, 0);
 
 -- --------------------------------------------------------
 
@@ -1752,7 +1930,7 @@ CREATE TABLE `oc_module` (
   `name` varchar(64) NOT NULL,
   `code` varchar(32) NOT NULL,
   `setting` text NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=96 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=99 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_module`
@@ -1761,13 +1939,11 @@ CREATE TABLE `oc_module` (
 INSERT INTO `oc_module` (`module_id`, `name`, `code`, `setting`) VALUES
 (33, 'banner-top', 'banner', 'a:5:{s:4:"name";s:10:"banner-top";s:9:"banner_id";s:2:"14";s:5:"width";s:4:"1331";s:6:"height";s:3:"541";s:6:"status";s:1:"1";}'),
 (28, 'Featured  Aside', 'featured', 'a:6:{s:4:"name";s:15:"Featured  Aside";s:7:"product";a:8:{i:0;s:2:"43";i:1;s:2:"40";i:2;s:2:"30";i:3;s:2:"42";i:4;s:2:"33";i:5;s:2:"46";i:6;s:2:"32";i:7;s:2:"28";}s:5:"limit";s:1:"1";s:5:"width";s:3:"270";s:6:"height";s:3:"270";s:6:"status";s:1:"1";}'),
-(51, 'Featured Home', 'featured', 'a:6:{s:4:"name";s:13:"Featured Home";s:7:"product";a:8:{i:0;s:2:"33";i:1;s:2:"35";i:2;s:2:"28";i:3;s:2:"47";i:4;s:2:"43";i:5;s:2:"45";i:6;s:2:"48";i:7;s:2:"34";}s:5:"limit";s:1:"8";s:5:"width";s:3:"270";s:6:"height";s:3:"270";s:6:"status";s:1:"1";}'),
-(46, 'Tm Slideshow', 'tm_slideshow', 'a:5:{s:4:"name";s:12:"Tm Slideshow";s:9:"banner_id";s:2:"16";s:5:"width";s:4:"2050";s:6:"height";s:4:"1272";s:6:"status";s:1:"1";}'),
-(50, 'Olark Chat', 'olark', 'a:4:{s:4:"name";s:10:"Olark Chat";s:13:"olark_version";s:5:"2.0.0";s:13:"olark_site_id";s:16:"7830-582-10-3714";s:6:"status";s:1:"1";}'),
-(42, 'Facebook', 'tm_fbbox', 'a:10:{s:4:"name";s:8:"Facebook";s:8:"page_url";s:40:"https://www.facebook.com/TemplateMonster";s:6:"app_id";s:15:"734741803247761";s:13:"show_facepile";s:4:"true";s:2:"bg";s:5:"false";s:10:"show_posts";s:4:"true";s:5:"width";s:3:"295";s:6:"height";s:3:"214";s:8:"language";s:5:"en_US";s:6:"status";s:1:"1";}'),
+(51, 'Featured Home', 'featured', 'a:6:{s:4:"name";s:13:"Featured Home";s:7:"product";a:9:{i:0;s:3:"134";i:1;s:3:"135";i:2;s:2:"91";i:3;s:3:"171";i:4;s:3:"101";i:5;s:3:"170";i:6;s:3:"168";i:7;s:3:"153";i:8;s:3:"151";}s:5:"limit";s:1:"9";s:5:"width";s:3:"500";s:6:"height";s:3:"500";s:6:"status";s:1:"1";}'),
+(46, 'Tm Slideshow', 'tm_slideshow', 'a:5:{s:4:"name";s:12:"Tm Slideshow";s:9:"banner_id";s:2:"16";s:5:"width";s:4:"2050";s:6:"height";s:3:"620";s:6:"status";s:1:"1";}'),
+(42, 'Facebook', 'tm_fbbox', 'a:10:{s:4:"name";s:8:"Facebook";s:8:"page_url";s:39:"https://www.facebook.com/Casaflores2016";s:6:"app_id";s:15:"734741803247761";s:13:"show_facepile";s:4:"true";s:2:"bg";s:5:"false";s:10:"show_posts";s:4:"true";s:5:"width";s:3:"295";s:6:"height";s:3:"214";s:8:"language";s:5:"en_US";s:6:"status";s:1:"1";}'),
 (43, 'Bestsellers Aside', 'bestseller', 'a:5:{s:4:"name";s:17:"Bestsellers Aside";s:5:"limit";s:1:"1";s:5:"width";s:3:"270";s:6:"height";s:3:"270";s:6:"status";s:1:"1";}'),
 (48, 'Specials Home', 'special', 'a:5:{s:4:"name";s:13:"Specials Home";s:5:"limit";s:1:"5";s:5:"width";s:3:"270";s:6:"height";s:3:"270";s:6:"status";s:1:"1";}'),
-(54, 'Google Map', 'tm_google_map', 'a:16:{s:4:"name";s:10:"Google Map";s:17:"tm_google_map_key";s:0:"";s:6:"status";s:1:"1";s:18:"tm_google_map_zoom";s:2:"14";s:18:"tm_google_map_type";s:1:"1";s:20:"tm_google_map_sensor";s:4:"true";s:19:"tm_google_map_width";s:4:"100%";s:20:"tm_google_map_height";s:5:"421px";s:20:"tm_google_map_styles";s:2291:"                                                                                                                                                                                                                                                                                                                                                                                    [{&quot;featureType&quot;:&quot;landscape&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;lightness&quot;:65},{&quot;visibility&quot;:&quot;on&quot;}]},{&quot;featureType&quot;:&quot;poi&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;lightness&quot;:51},{&quot;visibility&quot;:&quot;simplified&quot;}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;visibility&quot;:&quot;simplified&quot;}]},{&quot;featureType&quot;:&quot;road.arterial&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;lightness&quot;:30},{&quot;visibility&quot;:&quot;on&quot;}]},{&quot;featureType&quot;:&quot;road.local&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;lightness&quot;:40},{&quot;visibility&quot;:&quot;on&quot;}]},{&quot;featureType&quot;:&quot;transit&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;visibility&quot;:&quot;simplified&quot;}]},{&quot;featureType&quot;:&quot;administrative.province&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;water&quot;,&quot;elementType&quot;:&quot;labels&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;on&quot;},{&quot;lightness&quot;:-25},{&quot;saturation&quot;:-100}]},{&quot;featureType&quot;:&quot;water&quot;,&quot;elementType&quot;:&quot;geometry&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#ffff00&quot;},{&quot;lightness&quot;:-25},{&quot;saturation&quot;:-97}]}]                                                                                                                                                                                                                                                                                                                                                                                                                        ";s:24:"tm_google_map_disable_ui";s:5:"false";s:25:"tm_google_map_scrollwheel";s:5:"false";s:23:"tm_google_map_draggable";s:4:"true";s:20:"tm_google_map_marker";s:22:"catalog/marker_map.png";s:27:"tm_google_map_marker_active";s:29:"catalog/marker_map_active.png";s:26:"tm_google_map_marker_width";s:2:"54";s:27:"tm_google_map_marker_height";s:2:"72";}'),
 (66, 'BestSellers Home', 'bestseller', 'a:5:{s:4:"name";s:16:"BestSellers Home";s:5:"limit";s:1:"4";s:5:"width";s:3:"270";s:6:"height";s:3:"270";s:6:"status";s:1:"1";}'),
 (67, 'Specials Aside', 'special', 'a:5:{s:4:"name";s:14:"Specials Aside";s:5:"limit";s:1:"1";s:5:"width";s:3:"270";s:6:"height";s:3:"270";s:6:"status";s:1:"1";}'),
 (68, 'Latest Home', 'latest', 'a:5:{s:4:"name";s:11:"Latest Home";s:5:"limit";s:1:"4";s:5:"width";s:3:"270";s:6:"height";s:3:"270";s:6:"status";s:1:"1";}'),
@@ -1777,7 +1953,7 @@ INSERT INTO `oc_module` (`module_id`, `name`, `code`, `setting`) VALUES
 (91, 'Blog Popular Articles', 'tm_blog_articles', 'a:12:{s:6:"status";s:1:"1";s:4:"name";s:21:"Blog Popular Articles";s:13:"article_limit";s:1:"3";s:13:"show_readmore";s:1:"0";s:9:"show_date";s:1:"0";s:11:"show_author";s:1:"0";s:13:"show_comments";s:1:"0";s:10:"show_image";s:1:"0";s:11:"image_width";s:1:"0";s:12:"image_height";s:1:"0";s:17:"description_limit";s:3:"150";s:11:"category_id";s:7:"popular";}'),
 (93, 'banner-bottom', 'banner', 'a:5:{s:4:"name";s:13:"banner-bottom";s:9:"banner_id";s:2:"17";s:5:"width";s:4:"1331";s:6:"height";s:3:"325";s:6:"status";s:1:"1";}'),
 (94, 'banner-top-2', 'banner', 'a:5:{s:4:"name";s:12:"banner-top-2";s:9:"banner_id";s:2:"18";s:5:"width";s:4:"1331";s:6:"height";s:3:"310";s:6:"status";s:1:"1";}'),
-(95, 'TM Newsletter Popup', 'tm_newsletter_popup', 'a:7:{s:4:"name";s:19:"TM Newsletter Popup";s:19:"newsletter_popup_bg";s:25:"catalog/newsletter-bg.jpg";s:25:"newsletter_popup_bg_width";s:3:"721";s:26:"newsletter_popup_bg_height";s:3:"622";s:23:"newsletter_popup_cookie";s:1:"1";s:31:"tm_newsletter_popup_description";a:3:{i:1;a:2:{s:5:"title";s:27:"Subscribe to our newsletter";s:11:"description";s:146:"Sign up for our exclusive email list and be the first to know \r\nabout new products, special offers, store events and other \r\ndiscount information.";}i:2;a:2:{s:5:"title";s:27:"Subscribe to our newsletter";s:11:"description";s:146:"Sign up for our exclusive email list and be the first to know \r\nabout new products, special offers, store events and other \r\ndiscount information.";}i:3;a:2:{s:5:"title";s:27:"Subscribe to our newsletter";s:11:"description";s:146:"Sign up for our exclusive email list and be the first to know \r\nabout new products, special offers, store events and other \r\ndiscount information.";}}s:6:"status";s:1:"1";}');
+(95, 'TM Newsletter Popup', 'tm_newsletter_popup', 'a:7:{s:4:"name";s:19:"TM Newsletter Popup";s:19:"newsletter_popup_bg";s:25:"catalog/newsletter-bg.jpg";s:25:"newsletter_popup_bg_width";s:3:"721";s:26:"newsletter_popup_bg_height";s:3:"622";s:23:"newsletter_popup_cookie";s:1:"1";s:31:"tm_newsletter_popup_description";a:1:{i:4;a:2:{s:5:"title";s:0:"";s:11:"description";s:0:"";}}s:6:"status";s:1:"0";}');
 
 -- --------------------------------------------------------
 
@@ -2392,32 +2568,133 @@ CREATE TABLE `oc_product` (
   `viewed` int(5) NOT NULL DEFAULT '0',
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=172 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_product`
 --
 
 INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `date_added`, `date_modified`) VALUES
-(35, 'Product 8', '', '', '', '', '', '', '', 1000, 5, 'catalog/product-46.png', 5, 0, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, 0, '2009-02-03 18:08:31', '2015-10-07 19:28:04'),
-(33, 'Product 6', '', '', '', '', '', '', '', 0, 5, 'catalog/product-52.png', 10, 1, 200.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 0, '2009-02-03 17:08:31', '2015-10-07 19:28:25'),
-(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'catalog/product-10.png', 5, 1, 100.0000, 200, 9, '2009-02-03', 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, 0, '2009-02-03 16:06:50', '2015-10-07 19:25:03'),
-(29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'catalog/product-43.png', 6, 1, 279.9900, 0, 9, '2009-02-03', 133.00000000, 2, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, 0, '2009-02-03 16:42:17', '2015-10-07 19:27:50'),
-(30, 'Product 3', '', '', '', '', '', '', '', 60000, 6, 'catalog/product-13.png', 9, 1, 100.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, 0, '2009-02-03 16:59:00', '2015-10-07 19:25:24'),
-(32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'catalog/product-28.png', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, 0, '2009-02-03 17:07:26', '2015-10-07 19:26:55'),
-(31, 'Product 4', '', '', '', '', '', '', '', 1000, 6, 'catalog/product-40.png', 0, 1, 80.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, 0, '2009-02-03 17:00:10', '2015-10-07 19:27:39'),
-(34, 'Product 7', '', '', '', '', '', '', '', 1000, 6, 'catalog/product-25.png', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 0, '2009-02-03 18:07:54', '2015-10-07 19:26:44'),
-(36, 'Product 9', '', '', '', '', '', '', '', 994, 6, 'catalog/product-22.png', 8, 0, 100.0000, 100, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 0, '2009-02-03 18:09:19', '2015-10-07 19:26:16'),
-(40, 'product 11', '', '', '', '', '', '', '', 970, 5, 'catalog/product-16.png', 8, 1, 101.0000, 0, 9, '2009-02-03', 10.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, 0, '2009-02-03 21:07:12', '2015-10-07 19:25:46'),
-(41, 'Product 14', '', '', '', '', '', '', '', 977, 5, 'catalog/product-13.png', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, 0, '2009-02-03 21:07:26', '2015-10-07 19:25:35'),
-(42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'catalog/product-22.png', 8, 1, 100.0000, 400, 9, '2009-02-04', 12.50000000, 1, 1.00000000, 2.00000000, 3.00000000, 1, 1, 2, 0, 1, 0, '2009-02-03 21:07:37', '2015-10-07 19:26:33'),
-(43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'catalog/product-31.png', 8, 0, 500.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 0, '2009-02-03 21:07:49', '2015-10-07 19:27:06'),
-(44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'catalog/product-34.png', 8, 1, 1000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:00', '2015-10-07 19:27:18'),
-(45, 'Product 18', '', '', '', '', '', '', '', 998, 5, 'catalog/product-37.png', 8, 1, 200.0000, 0, 0, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:17', '2015-10-07 19:27:28'),
-(46, 'Product 19', '', '', '', '', '', '', '', 1000, 5, 'catalog/product-55.png', 10, 1, 1000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:29', '2015-10-07 19:28:38'),
-(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'catalog/product-10.png', 7, 1, 100.0000, 400, 9, '2009-02-03', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 0, 1, 0, '2009-02-03 21:08:40', '2015-10-07 19:25:13'),
-(48, 'product 20', 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'catalog/product-19.png', 8, 1, 100.0000, 0, 9, '2009-02-08', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 0, '2009-02-08 17:21:51', '2015-10-07 19:26:03'),
-(49, 'SAM1', '', '', '', '', '', '', '', 80000, 8, 'catalog/product-49.png', 0, 1, 199.9900, 0, 9, '2011-04-25', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 0, '2011-04-26 08:57:34', '2015-10-07 19:28:14');
+(61, 'BUQUÊ', 'BU-M-ASTROI-MIXAMROSBR-TELA', '', '', '', '', '', '', 20, 8, 'catalog/Produtos/Buquês/Astromélias/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 9.jpg', 11, 0, 110.0000, 0, 0, '2016-06-01', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 0, 100, '2016-05-31 22:30:52', '2016-06-20 08:33:13'),
+(55, 'BUQUÊ', 'RA 12 ROSAC CHOC CRE', '', '', '', '', '', '', 20, 8, 'catalog/Produtos/Ramalhete/Rosas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 2_1.jpg', 0, 0, 0.0000, 0, 0, '2016-05-31', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 0, 2, '2016-05-31 19:17:33', '2016-06-03 01:38:27'),
+(53, 'BUQUÊ', 'BU-13-ROSAC-ROSC-TELA', '', '', '', '', '', '', 20, 8, 'catalog/Produtos/Buquês/Rosas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 4.jpg', 11, 0, 160.0000, 0, 0, '2016-05-31', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 1, 366, '2016-05-31 18:31:19', '2016-06-20 09:29:46'),
+(70, 'ARRANJO', 'AR-13-ROSC-BRCHOC-VA-V770-M', '', '', '', '', '', '', 20, 8, 'catalog/Produtos/Arranjo/Rosas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 15.jpg', 11, 0, 160.0000, 0, 0, '2016-06-01', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 1, 411, '2016-06-01 09:20:50', '2016-06-20 09:28:02'),
+(54, 'BUQUÊ', 'RA 18 TUL MIXVERAM TELA', '', '', '', '', '', '', 20, 8, 'catalog/Produtos/Buquês/Tulipa/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 3.jpg', 11, 0, 148.0000, 0, 0, '2016-05-31', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 0, 143, '2016-05-31 18:53:37', '2016-06-20 09:34:49'),
+(56, 'ARRANJO', 'AR-5-ROSAC-VER-CAIXA-INPAPER', '', '', '', '', '', '', 20, 8, 'catalog/Produtos/Flor em caixa/Rosas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 17.jpg', 0, 0, 0.0000, 0, 0, '2016-05-31', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 0, 2, '2016-05-31 19:21:50', '2016-09-20 13:00:36'),
+(57, 'ARRANJO', 'AR-12-TUL-MIXVERMAM-VA-VIDRO-M', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Arranjo/Tulipas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 5.jpg', 11, 1, 124.0000, 0, 0, '2016-05-31', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 676, '2016-05-31 19:32:25', '2016-06-20 08:50:58'),
+(58, 'CASA FLORES SECRET HOT PEPPER UNISEX', 'SECRET HOT PEPPER VERM 01', '', '', '', '', '', '', 0, 6, 'catalog/Produtos/Secret/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 23_3.jpg', 13, 0, 261.2500, 0, 0, '2016-05-31', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 0, 1, 1, 361, '2016-05-31 19:49:08', '2016-06-13 14:41:35'),
+(59, 'CASA FLORES SECRET HALLS VIBER FEMININO', 'SECRET VERD 01', '', '', '', '', '', '', 0, 6, 'catalog/Produtos/Secret/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 24_1_1.jpg', 13, 0, 261.2500, 0, 0, '2016-05-31', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 0, 1, 1, 451, '2016-05-31 19:55:41', '2016-06-13 14:40:21'),
+(60, 'CASA FLORES SECRET 50 TONS UNISEX', 'SECRET 50 TONS AMAREROSA 01', '', '', '', '', '', '', 0, 6, 'catalog/Produtos/Secret/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 25_1_1.jpg', 13, 0, 261.2500, 0, 0, '2016-05-31', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 0, 1, 1, 462, '2016-05-31 20:06:10', '2016-06-13 14:40:49'),
+(50, 'ARRANJO', 'AR-3-MINORQU-MIXCORES-CES990-P', '', '', '', '', '', '', 20, 8, 'catalog/Produtos/Orquídeas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 8_1.jpg', 11, 0, 190.0000, 0, 0, '2016-05-31', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 1, 241, '2016-05-31 17:04:58', '2016-06-20 08:48:21'),
+(51, 'MINI ORQUÍDEA NA COR ROSA EM VASO', 'AR-1-MINORQU-ROSC-VA-Q110-P', '', '', '', '', '', '', 20, 8, 'catalog/Produtos/Orquídeas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 11.jpg', 0, 0, 0.0000, 0, 0, '2016-05-31', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 0, 4, '2016-05-31 17:44:34', '2016-06-01 22:40:54'),
+(52, 'BUQUÊ', 'BU 12 ROSAC VER TELA', '', '', '', '', '', '', 20, 8, 'catalog/Produtos/Buquês/Rosas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 1_1.jpg', 11, 0, 160.0000, 0, 0, '2016-05-31', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 1, 534, '2016-05-31 18:24:03', '2016-06-20 09:30:12'),
+(62, 'BUQUÊ', 'BU-13-ROSAN-VER-CRE', '', '', '', '', '', '', 20, 8, 'catalog/Produtos/Buquês/Rosas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 10.jpg', 11, 0, 120.0000, 0, 0, '2016-05-31', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 1, 197, '2016-05-31 22:37:12', '2016-09-19 15:22:44'),
+(63, 'BUQUÊ', 'BU-M-MIXROSANASTRO-ROSC-CRE', '', '', '', '', '', '', 20, 8, 'catalog/Produtos/Buquês/Astromélias/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 18.jpg', 11, 0, 69.0000, 0, 0, '2016-06-01', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 1, 361, '2016-05-31 22:45:30', '2016-06-20 09:30:41'),
+(64, 'BUQUÊ', 'BU-18-ROSAC-PINK', '', '', '', '', '', '', 20, 8, 'catalog/Produtos/Arranjo/Rosas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 6.jpg', 11, 0, 238.0000, 0, 0, '2016-06-01', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 1, 173, '2016-05-31 23:06:40', '2016-06-20 09:43:12'),
+(65, 'ARRANJO', 'AR-19-ROSAC-AM-VA-OV880-V-G-LAÇO', '', '', '', '', '', '', 20, 8, 'catalog/Produtos/Arranjo/Rosas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 7.jpg', 11, 0, 298.0000, 0, 0, '2016-05-31', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 1, 226, '2016-05-31 23:10:16', '2016-06-20 08:49:46'),
+(66, 'ARRANJO', 'AR-15-ROSAC-VER-VA-RET330-V-M', '', '', '', '', '', '', 20, 8, 'catalog/Produtos/Arranjo/Rosas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 12.jpg', 11, 0, 180.0000, 0, 0, '2016-06-01', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 0, 249, '2016-05-31 23:15:41', '2016-09-19 14:54:24'),
+(67, 'ARRANJO', 'AR-3-CALAC-MIXBRAMROS-CACH-RET330-MA-P', '', '', '', '', '', '', 20, 8, 'catalog/Produtos/Arranjo/Calachoe/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 13.jpg', 0, 0, 0.0000, 0, 0, '2016-06-01', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 0, 3, '2016-05-31 23:22:46', '2016-06-01 10:23:51'),
+(68, 'ARRANJO', 'AR-M-MIXFLORES-VA-RET330-POR-BR01-M', '', '', '', '', '', '', 20, 8, 'catalog/Produtos/Arranjo/Flores diversas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 14_2.jpg', 11, 0, 110.0000, 0, 0, '2016-05-31', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 1, 266, '2016-05-31 23:47:08', '2016-06-20 08:51:29'),
+(69, 'BUQUÊ', 'BU-M-MIXFLORES-TELA', '', '', '', '', '', '', 20, 8, 'catalog/Produtos/Buquês/Flores diversas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 20.jpg', 11, 0, 120.0000, 0, 0, '2016-06-01', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 0, 73, '2016-06-01 09:00:12', '2016-06-20 09:34:15'),
+(71, 'ARRANJO', 'AR-5-ASTR-MIXCORES-VA-GA550-P', '', '', '', '', '', '', 20, 8, 'catalog/Produtos/Arranjo/Astromélias/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 16.jpg', 11, 0, 35.0000, 0, 0, '2016-06-01', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 0, 475, '2016-06-01 09:24:41', '2016-08-03 18:45:50'),
+(72, 'RAMALHETE', 'RA-M-TULASTRO-MIXVERAM-JUTA', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Ramalhete/Tulipas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 19.jpg', 0, 1, 0.0000, 0, 0, '2016-06-01', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 0, 2, '2016-06-01 09:34:12', '2016-06-01 22:42:11'),
+(73, 'ARRANJO', 'AR-15-ROSC-VER-VA-RET330-M-URSOP', '', '', '', '', '', '', 20, 8, 'catalog/Produtos/Arranjo/Rosas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 27.jpg', 0, 0, 210.0000, 0, 0, '2016-06-01', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 1, 507, '2016-06-01 17:32:31', '2016-06-20 09:06:45'),
+(74, 'ARRANJO', 'AR-15-ROSC-AM-VA-V-M', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Arranjo/Rosas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 28.jpg', 11, 1, 198.0000, 0, 0, '2016-06-01', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 126, '2016-06-01 17:41:00', '2016-06-20 09:27:34'),
+(75, 'ARRANJO ', 'AR-19-TUP-MIXVERMAMPINK-VA-RET330-M', '', '', '', '', '', '', 20, 8, 'catalog/Produtos/Arranjo/Tulipas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 29_1.jpg', 11, 0, 190.0000, 0, 0, '2016-06-01', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 1, 539, '2016-06-01 18:10:52', '2016-06-20 08:50:41'),
+(76, 'ARRANJO', 'AR-0-SYMB-LISI-MIXAMROX-VA-RED220-PR02-M', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Arranjo/Orquídeas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 30.jpg', 11, 1, 135.0000, 0, 0, '2016-06-01', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 235, '2016-06-01 18:20:50', '2016-06-20 08:48:36'),
+(77, 'ARRANJO', 'AR-0-ORQU-MIXBRPINK-VA-OV880-V-LUVID-M', '', '', '', '', '', '', 20, 8, 'catalog/Produtos/Arranjo/Orquídeas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 32.jpg', 11, 0, 320.0000, 0, 0, '2016-06-01', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 1, 174, '2016-06-01 19:15:39', '2016-06-20 08:49:17'),
+(78, 'CESTA', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cesta/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 33_1.jpg', 12, 0, 278.0000, 0, 0, '2016-06-06', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 1, 212, '2016-06-05 22:57:33', '2016-08-03 19:55:01'),
+(92, 'ARRANJO', '', '', '', '', '', '', '', 20, 7, 'catalog/Produtos/Arranjo/Astromélias/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 40_2.jpg', 0, 1, 59.9000, 0, 0, '2016-08-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 119, '2016-08-03 17:44:27', '2016-08-03 18:09:13'),
+(79, 'TAG', 'TAG 01', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 34_1.jpg', 14, 1, 5.0000, 0, 0, '2016-06-09', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 116, '2016-06-09 16:28:46', '2016-09-18 20:39:07'),
+(80, 'TAG', 'TAG 02', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 34_2.jpg', 14, 1, 5.0000, 0, 0, '2016-06-09', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 113, '2016-06-09 16:42:01', '2016-09-18 20:39:34'),
+(81, 'TAG', 'TAG 03', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 34_3.jpg', 14, 1, 5.0000, 0, 0, '2016-06-09', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 114, '2016-06-09 16:45:34', '2016-09-18 20:39:49'),
+(82, 'TAG', 'TAG CARTÃO 4', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 34_4.jpg', 14, 1, 5.0000, 0, 0, '2016-06-09', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 101, '2016-06-09 16:48:25', '2016-09-18 20:40:01'),
+(83, 'TAG', 'TAG 05', '', '', '', '', '', '', 20, 9, 'catalog/Produtos/Tag/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 34_5.jpg', 14, 1, 5.0000, 0, 0, '2016-06-09', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 0, 12, '2016-06-09 16:50:53', '2016-09-18 20:40:17'),
+(85, 'TAG', 'TAG 06', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 34_6.jpg', 14, 1, 5.0000, 0, 0, '2016-06-09', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 0, 32, '2016-06-09 16:52:52', '2016-09-18 20:41:21'),
+(86, 'TAG', 'TAG 07', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 34_7.jpg', 14, 1, 5.0000, 0, 0, '2016-06-09', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 116, '2016-06-09 16:54:16', '2016-09-18 20:41:43'),
+(87, 'TAG', 'TAG 08', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 34_8.jpg', 14, 1, 5.0000, 0, 0, '2016-06-09', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 129, '2016-06-09 16:55:14', '2016-09-18 20:42:10'),
+(88, 'TAG', 'TAG 09', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 34_9.jpg', 14, 1, 5.0000, 0, 0, '2016-06-09', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 125, '2016-06-09 16:56:22', '2016-09-18 20:42:43'),
+(89, 'TAG', 'TAG 10', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 34_10.jpg', 14, 1, 5.0000, 0, 0, '2016-06-09', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 122, '2016-06-09 16:57:56', '2016-08-04 13:53:31'),
+(90, 'TAG', 'TAG 11', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 34_11.jpg', 14, 1, 5.0000, 0, 0, '2016-06-09', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 112, '2016-06-09 17:01:03', '2016-08-04 09:53:45'),
+(91, 'CESTA', 'CESTA H 1', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cesta/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 35.jpg', 12, 0, 180.0000, 0, 0, '2016-06-06', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 1, 512, '2016-06-09 17:39:28', '2016-08-07 21:26:44'),
+(93, 'ARRANJO', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Arranjo/Astromélias/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 67.jpg', 0, 1, 69.9000, 0, 0, '2016-08-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 106, '2016-08-03 17:56:43', '2016-08-03 17:58:33'),
+(94, 'ARRANJO', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Garrafa com flor/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 57.jpg', 0, 1, 54.9000, 0, 0, '2016-08-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 45, '2016-08-03 18:13:07', '0000-00-00 00:00:00'),
+(95, 'ARRANJO', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Garrafa com flor/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 58.jpg', 0, 1, 54.9000, 0, 0, '2016-08-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 68, '2016-08-03 18:22:47', '2016-08-03 18:23:35'),
+(96, 'ARRANJO', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Flor em caixa/Orquídeas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 42.jpg', 0, 1, 89.9000, 0, 0, '2016-08-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 91, '2016-08-03 18:29:24', '2016-08-03 18:29:58'),
+(97, 'ARRANJO', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Flor em caixa/Cravos/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 68_1.jpg', 0, 1, 82.5000, 0, 0, '2016-08-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 112, '2016-08-03 18:33:24', '2016-08-08 18:23:24'),
+(98, 'ARRANJO', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Flor em caixa/Cravos/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 69.jpg', 0, 1, 82.5000, 0, 0, '2016-08-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 69, '2016-08-03 18:56:00', '2016-08-08 18:23:13'),
+(99, 'ARRANJO', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Flor em caixa/Cravos/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 70.jpg', 0, 1, 82.5000, 0, 0, '2016-08-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 143, '2016-08-03 19:02:47', '2016-08-08 18:23:04'),
+(100, 'ARRANJO', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Flor em caixa/Orquídeas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 62.jpg', 0, 1, 109.5000, 0, 0, '2016-08-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 171, '2016-08-03 19:08:28', '2016-08-03 19:09:57'),
+(101, 'ARRANJO', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Flor em caixa/Rosas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 71.jpg', 11, 1, 79.9000, 0, 0, '2016-08-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 110, '2016-08-03 19:24:46', '2016-08-03 19:26:54'),
+(102, 'ARRANJO', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Flor em caixa/Mix de flores/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 72.jpg', 11, 1, 79.9000, 0, 0, '2016-08-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 94, '2016-08-03 19:42:04', '0000-00-00 00:00:00'),
+(103, 'FLORES E DOCES', 'BRIGADEIROS EM CAIXA - 8 UNIDADES', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Flores e doces/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 64.jpg', 12, 1, 28.0000, 0, 0, '2016-08-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 64, '2016-08-03 19:48:21', '2016-08-08 22:36:24'),
+(104, 'FLORES E DOCES', 'MACARONS EM CAIXA - 12 UNIDADES', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Flores e doces/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 106.jpg', 12, 1, 78.0000, 0, 0, '2016-08-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 41, '2016-08-03 19:52:37', '2016-08-08 22:36:11'),
+(105, 'CESTA', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cesta/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 46.jpg', 0, 1, 238.0000, 0, 0, '2016-08-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 124, '2016-08-03 19:59:23', '2016-08-17 20:19:05'),
+(106, 'CESTA', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cesta/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 49.jpg', 12, 1, 197.0000, 0, 0, '2016-08-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 102, '2016-08-03 20:07:35', '2016-08-03 20:15:16'),
+(107, 'CESTA', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cesta/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 47.jpg', 12, 1, 210.0000, 0, 0, '2016-08-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 98, '2016-08-03 20:18:58', '2016-08-04 19:08:20'),
+(108, 'CESTA', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cesta/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 48.jpg', 12, 1, 233.0000, 0, 0, '2016-08-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 84, '2016-08-03 20:24:20', '2016-08-04 19:08:37'),
+(109, 'TAG', 'TAG 12', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 73.jpg', 14, 1, 5.0000, 0, 0, '2016-08-04', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 29, '2016-08-04 09:59:54', '2016-08-04 13:54:25'),
+(110, 'TAG', 'TAG 13', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 74.jpg', 14, 1, 5.0000, 0, 0, '2016-08-04', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 82, '2016-08-04 10:01:04', '2016-08-04 13:54:35'),
+(111, 'TAG', 'TAG 14', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 75.jpg', 14, 1, 5.0000, 0, 0, '2016-08-04', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 37, '2016-08-04 10:03:31', '2016-08-04 13:54:43'),
+(112, 'TAG', 'TAG 15', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 76.jpg', 14, 1, 5.0000, 0, 0, '2016-08-04', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 37, '2016-08-04 10:11:45', '2016-08-04 13:54:49'),
+(113, 'TAG', 'TAG 16', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 78.jpg', 14, 1, 5.0000, 0, 0, '2016-08-04', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 32, '2016-08-04 10:12:53', '2016-08-04 13:54:56'),
+(114, 'CARTÃO', 'CARTÃO PARA PRESENTE 1', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 79.jpg', 0, 1, 10.0000, 0, 0, '2016-08-04', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 28, '2016-08-04 16:52:26', '2016-08-04 16:54:06'),
+(115, 'CARTÃO', 'CARTÃO PARA PRESENTE 2', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 81.jpg', 0, 1, 10.0000, 0, 0, '2016-08-04', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 27, '2016-08-04 16:55:16', '0000-00-00 00:00:00'),
+(116, 'CARTÃO', 'CARTÃO PARA PRESENTE 3', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 83.jpg', 0, 1, 10.0000, 0, 0, '2016-08-04', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 29, '2016-08-04 17:00:40', '0000-00-00 00:00:00'),
+(117, 'CARTÃO', 'CARTÃO PARA PRESENTE 4', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 85.jpg', 0, 1, 10.0000, 0, 0, '2016-08-04', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 20, '2016-08-04 17:01:29', '2016-08-04 17:02:43'),
+(118, 'CARTÃO', 'CARTÃO PARA PRESENTE 5', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 87.jpg', 0, 1, 10.0000, 0, 0, '2016-08-04', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 24, '2016-08-04 17:02:18', '0000-00-00 00:00:00'),
+(119, 'CARTÃO', 'CARTÃO PARA PRESENTE 6', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 92.jpg', 0, 1, 15.0000, 0, 0, '2016-08-04', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 25, '2016-08-04 17:14:21', '0000-00-00 00:00:00'),
+(120, 'CARTÃO', 'CARTÃO PARA PRESENTE 7', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 94.jpg', 0, 1, 15.0000, 0, 0, '2016-08-04', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 24, '2016-08-04 17:15:22', '0000-00-00 00:00:00'),
+(121, 'CARTÃO', 'CARTÃO PARA PRESENTE 8', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 96.jpg', 0, 1, 15.0000, 0, 0, '2016-08-04', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 28, '2016-08-04 17:46:15', '0000-00-00 00:00:00'),
+(122, 'CARTÃO', 'CARTÃO PARA PRESENTE 9', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 98.jpg', 0, 1, 15.0000, 0, 0, '2016-08-06', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 24, '2016-08-06 18:04:46', '0000-00-00 00:00:00'),
+(123, 'CARTÃO', 'CARTÃO PARA PRESENTE 10', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 100.jpg', 0, 1, 15.0000, 0, 0, '2016-08-06', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 24, '2016-08-06 18:09:10', '0000-00-00 00:00:00'),
+(124, 'CARTÃO', 'CARTÃO PARA PRESENTE 11', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 103.jpg', 0, 1, 15.0000, 0, 0, '2016-08-06', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 24, '2016-08-06 18:17:08', '2016-08-06 18:17:36'),
+(125, 'BONECOS', 'BONECA ARTESANAL PEQUENA 01', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Bonecos/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 50.jpg', 0, 1, 27.0000, 0, 0, '2016-08-06', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 0, 57, '2016-08-06 18:32:49', '2016-09-19 15:23:43'),
+(126, 'BONECOS', 'BONECA ARTESANAL PEQUENA 02', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Bonecos/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 51.jpg', 0, 1, 27.0000, 0, 0, '2016-08-06', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 62, '2016-08-06 18:33:48', '2016-08-06 18:49:17'),
+(127, 'BONECOS', 'BONECA ARTESANAL PEQUENA 03', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Bonecos/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 52.jpg', 0, 1, 27.0000, 0, 0, '2016-08-06', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 64, '2016-08-06 18:35:06', '2016-08-06 18:49:28'),
+(128, 'BONECOS', 'URSINHA ARTESANAL PEQUENA 01', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Bonecos/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 55.jpg', 0, 1, 22.0000, 0, 0, '2016-08-06', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 51, '2016-08-06 18:40:36', '2016-08-06 18:50:06'),
+(129, 'BONECOS', 'BONECA ARTESANAL CHAPÉU 01', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Bonecos/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 53.jpg', 11, 1, 34.0000, 0, 0, '2016-08-06', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 49, '2016-08-06 18:43:43', '2016-09-20 14:17:34'),
+(130, 'BONECOS', 'BONECA ARTESANAL CHAPÉU 02', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Bonecos/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 54.jpg', 0, 1, 34.0000, 0, 0, '2016-08-06', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 41, '2016-08-06 18:44:32', '2016-08-17 20:12:43'),
+(131, 'BONECOS', 'BONECO ARTESANAL PEQUENO 01', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Bonecos/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 56.jpg', 0, 1, 27.0000, 0, 0, '2016-08-06', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 64, '2016-08-06 18:45:57', '2016-08-17 20:11:49'),
+(132, 'TAG', 'TAG 17', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 108.jpg', 14, 1, 5.0000, 0, 0, '2016-08-17', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 15, '2016-08-16 22:59:33', '0000-00-00 00:00:00'),
+(133, 'TAG', 'TAG 18', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 110.jpg', 14, 1, 5.0000, 0, 0, '2016-08-17', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 24, '2016-08-16 23:00:44', '2016-09-18 20:43:04'),
+(134, 'ARRANJO', 'ARRANJO ASTROMÉLIAS MIX DE FLORES - 01', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Arranjo/Astromélias/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 130_1_1.jpg', 11, 1, 59.9000, 0, 0, '2016-09-16', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 23, '2016-09-16 19:57:55', '2016-09-16 20:22:25'),
+(135, 'ARRANJO', 'ARRANJO ASTROMÉLIAS MIX DE FLORES - 02', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Arranjo/Astromélias/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 132_1.jpg', 11, 1, 59.9000, 0, 0, '2016-09-16', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 43, '2016-09-16 20:24:36', '2016-09-22 02:28:35'),
+(136, 'ARRANJO', 'ARRANJO GÉRBERAS AMARELAS', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Arranjo/Gérberas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 135_1.jpg', 11, 1, 38.9000, 0, 0, '2016-09-16', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 21, '2016-09-16 20:46:54', '2016-09-16 20:59:38'),
+(137, 'ARRANJO LISIANTHUS E ROSAS BRANCAS', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Arranjo/Lisianthus e Rosas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 136_1.jpg', 11, 1, 59.9000, 0, 0, '2016-09-16', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 8, '2016-09-16 21:08:27', '0000-00-00 00:00:00'),
+(138, 'ORQUÍDEAS PHALENOPSIS BRANCAS COM 12 BRIGADEIROS', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Arranjo/Orquídeas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 137_1.jpg', 15, 1, 265.0000, 0, 0, '2016-09-16', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 11, '2016-09-16 21:20:34', '2016-09-16 22:01:51'),
+(140, 'ORQUÍDEAS PHALENOPSIS BRANCAS', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Arranjo/Orquídeas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 138.jpg', 14, 1, 215.0000, 0, 0, '2016-09-16', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 1, '2016-09-16 21:26:28', '2016-09-16 22:02:14'),
+(141, 'ARRANJO CAIXA BRANCA COM ROSAS - DIA DA SECRETÁRIA', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Arranjo/Rosas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 139_1.jpg', 14, 1, 75.0000, 0, 0, '2016-09-16', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 6, '2016-09-16 21:48:04', '2016-09-16 21:59:33'),
+(142, 'ARRANJO CAIXA BRANCA COM ROSAS NACIONAIS SALMÃO', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Arranjo/Rosas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 140_1.jpg', 14, 1, 70.0000, 0, 0, '2016-09-16', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 11, '2016-09-16 21:52:50', '2016-09-16 21:57:54'),
+(143, 'ARRANJO CAIXA COM ROSAS BRANCAS - DIA DA SECRETÁRIA', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Arranjo/Rosas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 141_1.jpg', 14, 1, 184.0000, 0, 0, '2016-09-16', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 7, '2016-09-16 22:11:22', '2016-09-16 22:12:52'),
+(144, 'TAG', 'TAG 19', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 146.jpg', 0, 1, 5.0000, 0, 0, '2016-09-18', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 0, '2016-09-18 20:45:25', '0000-00-00 00:00:00'),
+(145, 'TAG', 'TAG 20', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 147.jpg', 0, 1, 5.0000, 0, 0, '2016-09-18', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 2, '2016-09-18 20:45:39', '2016-09-18 20:52:11'),
+(146, 'TAG', 'TAG 21', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 148.jpg', 0, 1, 5.0000, 0, 0, '2016-09-18', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 0, '2016-09-18 20:46:50', '2016-09-18 20:52:19'),
+(147, 'TAG', 'TAG 22', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 149.jpg', 0, 1, 5.0000, 0, 0, '2016-09-18', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 0, '2016-09-18 20:49:04', '2016-09-18 20:54:28'),
+(148, 'TAG', 'TAG 23', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 150.jpg', 0, 1, 5.0000, 0, 0, '2016-09-18', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 0, '2016-09-18 20:51:00', '2016-09-18 20:54:38'),
+(149, 'TAG', 'TAG 24', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 151.jpg', 0, 1, 5.0000, 0, 0, '2016-09-18', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 0, '2016-09-18 20:56:56', '2016-09-18 20:58:36'),
+(150, 'TAG', 'TAG 25', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 152.jpg', 0, 1, 5.0000, 0, 0, '2016-09-18', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 0, '2016-09-18 20:59:01', '2016-09-18 20:59:47'),
+(151, 'TAG', 'TAG 26', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 153.jpg', 0, 1, 5.0000, 0, 0, '2016-09-18', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 3, '2016-09-18 21:00:43', '2016-09-18 21:01:28'),
+(152, 'TAG', 'TAG 27', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 154.jpg', 0, 1, 5.0000, 0, 0, '2016-09-18', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 0, '2016-09-18 21:01:44', '2016-09-18 21:07:11'),
+(153, 'TAG', 'TAG 28', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 155.jpg', 0, 1, 5.0000, 0, 0, '2016-09-18', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 1, '2016-09-18 21:07:24', '2016-09-18 21:09:34'),
+(154, 'TAG', 'TAG 29', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 156.jpg', 0, 1, 5.0000, 0, 0, '2016-09-18', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 1, '2016-09-18 21:09:56', '2016-09-18 21:11:14'),
+(155, 'TAG', 'TAG 31', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 158.jpg', 0, 1, 5.0000, 0, 0, '2016-09-18', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 1, '2016-09-18 21:11:20', '2016-09-18 21:14:32'),
+(156, 'TAG', 'TAG 30', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Tag/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 157.jpg', 0, 1, 5.0000, 0, 0, '2016-09-18', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 0, '2016-09-18 21:17:10', '2016-09-18 21:17:51'),
+(157, 'ARRANJO', 'ARRANJO CAIXA COM ROSAS ROSA E 12 BRIGADEIROS DIVERSOS', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Arranjo/Rosas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 143_1.jpg', 16, 1, 125.0000, 0, 0, '2016-09-18', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 16, '2016-09-18 22:48:49', '2016-09-19 14:53:35'),
+(158, 'ARRANJO', 'ARRANJO EM CAIXA COR AZUL CLARO E CABIDES AZUIS DE BONECOS', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Flor em caixa/Astromélias/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 126.jpg', 0, 1, 150.0000, 0, 0, '2016-09-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 0, 0, '2016-09-20 06:17:50', '0000-00-00 00:00:00'),
+(159, 'ARRANJO', 'ARRANJO EM CAIXA ROSAS AMARELAS E BRIGADEIROS', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Flor em caixa/Rosas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 129.jpg', 12, 1, 107.9000, 0, 0, '2016-09-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 6, '2016-09-20 06:28:40', '0000-00-00 00:00:00'),
+(160, 'ARRANJO', 'ARRANJO EM CAIXA COM ROSAS AMARELAS E 12 MACARONS DIVERSOS', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Flor em caixa/Rosas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 128.jpg', 12, 1, 157.9000, 0, 0, '2016-09-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 1, '2016-09-20 06:30:00', '2016-09-20 06:31:55'),
+(161, 'ARRANJO', 'ARRANJO EM CAIXA COR ROSA E 12 MACARONS', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Flor em caixa/Mix de flores/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 127.jpg', 0, 1, 157.9000, 0, 0, '2016-09-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 2, '2016-09-20 12:59:16', '0000-00-00 00:00:00'),
+(162, 'CABIDE', 'CABIDE BEBÊ AZUL CLARO COM BONECO', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cabides/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 115.jpg', 11, 1, 50.0000, 0, 0, '2016-09-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 0, 0, '2016-09-20 14:14:57', '0000-00-00 00:00:00'),
+(163, 'CABIDE', '', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cabides/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 116.jpg', 0, 1, 150.0000, 0, 0, '2016-09-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 0, 0, '2016-09-20 14:26:40', '0000-00-00 00:00:00'),
+(164, 'CABIDE', '3 CABIDES BEBÊ NA COR CREME COM BONECO DE OVELHA', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cabides/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 118.jpg', 0, 1, 150.0000, 0, 0, '2016-09-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 0, 0, '2016-09-20 14:36:46', '2016-09-20 14:40:09'),
+(165, 'CABIDE', '3 CABIDES BEBÊ NA COR BRANCA COM BONECA', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cabides/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 114.jpg', 0, 1, 150.0000, 0, 0, '2016-09-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 0, 0, '2016-09-20 14:40:44', '2016-09-20 14:41:46'),
+(166, 'CABIDE', 'CABIDE BEBÊ BRANCO COM BONECA', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cabides/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 113.jpg', 11, 1, 50.0000, 0, 0, '2016-09-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 0, 0, '2016-09-20 14:42:02', '2016-09-20 14:43:03'),
+(167, 'CABIDE', 'CABIDE BEBÊ BRANCO COM OVELHA', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Cabides/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 117.jpg', 11, 1, 50.0000, 0, 0, '2016-09-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 0, 0, '2016-09-20 14:47:21', '2016-09-20 14:48:07'),
+(168, 'FLORES E DOCES', 'BRIGADEIROS EM CAIXA - 12 UNIDADES - DIVERSOS SABORES', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Flores e doces/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 144_1.jpg', 15, 1, 50.0000, 0, 0, '2016-08-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 6, '2016-09-20 15:05:55', '2016-09-20 15:23:41'),
+(169, 'FLORES E DOCES', 'BRIGADEIROS EM CAIXA - 4 UNIDADES - DIVERSOS SABORES', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Flores e doces/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 145_1.jpg', 15, 1, 20.0000, 0, 0, '2016-08-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 4, '2016-09-20 15:22:27', '2016-09-20 15:34:12'),
+(170, 'BUQUÊ', 'MINI BUQUÊ DE FRÉSIAS COM DIVERSAS CORES', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Buquês/Frésias/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 162_1.jpg', 11, 1, 35.0000, 0, 0, '2016-09-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 22, '2016-09-20 15:55:16', '2016-09-20 18:41:37'),
+(171, 'ARRANJO', 'ARRANJO EM CAIXA COR ROSA COM ROSAS NACIONAIS ROSA', '', '', '', '', '', '', 20, 6, 'catalog/Produtos/Flor em caixa/Rosas/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 121.jpg', 11, 1, 79.9000, 0, 0, '2016-08-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 9, '2016-09-22 02:17:45', '2016-09-22 02:19:27');
 
 -- --------------------------------------------------------
 
@@ -2431,85 +2708,6 @@ CREATE TABLE `oc_product_attribute` (
   `language_id` int(11) NOT NULL,
   `text` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `oc_product_attribute`
---
-
-INSERT INTO `oc_product_attribute` (`product_id`, `attribute_id`, `language_id`, `text`) VALUES
-(35, 7, 4, 'Attribute value 2'),
-(42, 9, 4, 'Attribute value 4'),
-(47, 9, 4, 'Attribute value 4'),
-(45, 9, 4, 'Attribute value 4'),
-(41, 7, 4, 'Attribute value 2'),
-(35, 9, 4, 'Attribute value 3'),
-(49, 9, 4, 'Attribute value 4'),
-(32, 9, 4, 'Attribute value 4'),
-(31, 9, 4, 'Attribute value 4'),
-(35, 5, 4, 'Attribute value 1'),
-(41, 9, 4, 'Attribute value 4'),
-(28, 9, 4, 'Attribute value 4'),
-(29, 9, 4, 'Attribute value 4'),
-(30, 11, 4, 'Attribute value 4'),
-(33, 9, 4, 'Attribute value 4'),
-(34, 9, 4, 'Attribute value 4'),
-(36, 11, 4, 'Attribute value 4'),
-(40, 9, 4, 'Attribute value 4'),
-(44, 9, 4, 'Attribute value 4'),
-(46, 9, 4, 'Attribute value 4'),
-(48, 9, 4, 'Attribute value 4'),
-(42, 7, 4, 'Attribute value 2'),
-(33, 8, 4, 'Attribute value 3'),
-(33, 7, 4, 'Attribute value 2'),
-(28, 8, 4, 'Attribute value 3'),
-(28, 7, 4, 'Attribute value 2'),
-(47, 7, 4, 'Attribute value 2'),
-(47, 8, 4, 'Attribute value 3'),
-(30, 8, 4, 'Attribute value 3'),
-(30, 7, 4, 'Attribute value 2'),
-(44, 8, 4, 'Attribute value 3'),
-(44, 7, 4, 'Attribute value 2'),
-(41, 8, 4, 'Attribute value 3'),
-(42, 8, 4, 'Attribute value 3'),
-(49, 8, 4, 'Attribute value 3'),
-(49, 7, 4, 'Attribute value 2'),
-(32, 8, 4, 'Attribute value 3'),
-(32, 7, 4, 'Attribute value 2'),
-(29, 8, 4, 'Attribute value 3'),
-(29, 7, 4, 'Attribute value 2'),
-(45, 8, 4, 'Attribute value 3'),
-(45, 7, 4, 'Attribute value 2'),
-(48, 8, 4, 'Attribute value 3'),
-(48, 7, 4, 'Attribute value 2'),
-(34, 8, 4, 'Attribute value 3'),
-(34, 7, 4, 'Attribute value 2'),
-(43, 4, 4, 'Attribute value 2'),
-(31, 8, 4, 'Attribute value 3'),
-(31, 7, 4, 'Attribute value 2'),
-(46, 8, 4, 'Attribute value 3'),
-(46, 7, 4, 'Attribute value 2'),
-(40, 8, 4, 'Attribute value 3'),
-(40, 7, 4, 'Attribute value 2'),
-(36, 8, 4, 'Attribute value 3'),
-(36, 7, 4, 'Attribute value 2'),
-(28, 5, 4, 'Attribute value 1'),
-(47, 5, 4, 'Attribute value 1'),
-(30, 5, 4, 'Attribute value 1'),
-(41, 5, 4, 'Attribute value 1'),
-(40, 5, 4, 'Attribute value 1'),
-(48, 5, 4, 'Attribute value 1'),
-(36, 5, 4, 'Attribute value 1'),
-(42, 5, 4, 'Attribute value 1'),
-(34, 5, 4, 'Attribute value 1'),
-(32, 5, 4, 'Attribute value 1'),
-(43, 2, 4, 'Attribute value 1'),
-(44, 5, 4, 'Attribute value 1'),
-(45, 5, 4, 'Attribute value 1'),
-(31, 5, 4, 'Attribute value 1'),
-(29, 5, 4, 'Attribute value 1'),
-(49, 5, 4, 'Attribute value 1'),
-(33, 5, 4, 'Attribute value 1'),
-(46, 5, 4, 'Attribute value 1');
 
 -- --------------------------------------------------------
 
@@ -2533,25 +2731,127 @@ CREATE TABLE `oc_product_description` (
 --
 
 INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(48, 4, 'Simply Organic Cayenne Pepper', '&lt;iframe src=&quot;//www.youtube.com/embed/LGmDp2JK-vo?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;\r\n&lt;p&gt;&lt;b&gt;Welcome to the world of the unbelievable smell and perfect taste.&lt;/b&gt; From ancient times spices were very rare and expensive. Only very rich people could afford buying spices. Nowadays spices have become a casual part of all the types of cuisine. We can’t imagine our life without pepper or cinnamon.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;We are proud to present our unique products.&lt;/b&gt; You’ll be amazed because we have the largest choice of tremendous spices. We provide only premium quality goods at a fair price. Our vendors and manufacturers guarantee the quality of our spices. The products of our store are the standard of elegant taste and if you want to express your emotions in cooking you have to buy our products because they are simply unbelievable.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Our spices are real bestsellers and they have a great number of faithful fans all over the country.&lt;/b&gt; There is no doubt about our reputation because it’s perfect and our clients’ testimonials can prove this fact. We care about our clients and never let them down. Our assortment can satisfy most whimsical clients. &lt;/p&gt;', '', '', '', ''),
-(46, 4, 'Whole Spice Nutmeg Powder', '&lt;iframe src=&quot;//www.youtube.com/embed/LGmDp2JK-vo?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;\r\n&lt;p&gt;&lt;b&gt;Welcome to the world of the unbelievable smell and perfect taste.&lt;/b&gt; From ancient times spices were very rare and expensive. Only very rich people could afford buying spices. Nowadays spices have become a casual part of all the types of cuisine. We can’t imagine our life without pepper or cinnamon.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;We are proud to present our unique products.&lt;/b&gt; You’ll be amazed because we have the largest choice of tremendous spices. We provide only premium quality goods at a fair price. Our vendors and manufacturers guarantee the quality of our spices. The products of our store are the standard of elegant taste and if you want to express your emotions in cooking you have to buy our products because they are simply unbelievable.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Our spices are real bestsellers and they have a great number of faithful fans all over the country.&lt;/b&gt; There is no doubt about our reputation because it’s perfect and our clients’ testimonials can prove this fact. We care about our clients and never let them down. Our assortment can satisfy most whimsical clients. &lt;/p&gt;', '', '', '', ''),
-(47, 4, 'McCormick Curry Powder', '&lt;iframe src=&quot;//www.youtube.com/embed/LGmDp2JK-vo?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;\r\n&lt;p&gt;&lt;b&gt;Welcome to the world of the unbelievable smell and perfect taste.&lt;/b&gt; From ancient times spices were very rare and expensive. Only very rich people could afford buying spices. Nowadays spices have become a casual part of all the types of cuisine. We can’t imagine our life without pepper or cinnamon.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;We are proud to present our unique products.&lt;/b&gt; You’ll be amazed because we have the largest choice of tremendous spices. We provide only premium quality goods at a fair price. Our vendors and manufacturers guarantee the quality of our spices. The products of our store are the standard of elegant taste and if you want to express your emotions in cooking you have to buy our products because they are simply unbelievable.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Our spices are real bestsellers and they have a great number of faithful fans all over the country.&lt;/b&gt; There is no doubt about our reputation because it’s perfect and our clients’ testimonials can prove this fact. We care about our clients and never let them down. Our assortment can satisfy most whimsical clients. &lt;/p&gt;', '', '', '', ''),
-(49, 4, 'Watkins All Natural Spice', '&lt;iframe src=&quot;//www.youtube.com/embed/LGmDp2JK-vo?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;\r\n&lt;p&gt;&lt;b&gt;Welcome to the world of the unbelievable smell and perfect taste.&lt;/b&gt; From ancient times spices were very rare and expensive. Only very rich people could afford buying spices. Nowadays spices have become a casual part of all the types of cuisine. We can’t imagine our life without pepper or cinnamon.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;We are proud to present our unique products.&lt;/b&gt; You’ll be amazed because we have the largest choice of tremendous spices. We provide only premium quality goods at a fair price. Our vendors and manufacturers guarantee the quality of our spices. The products of our store are the standard of elegant taste and if you want to express your emotions in cooking you have to buy our products because they are simply unbelievable.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Our spices are real bestsellers and they have a great number of faithful fans all over the country.&lt;/b&gt; There is no doubt about our reputation because it’s perfect and our clients’ testimonials can prove this fact. We care about our clients and never let them down. Our assortment can satisfy most whimsical clients. &lt;/p&gt;', '', '', '', ''),
-(28, 4, 'McCormick Curry Powder', '&lt;iframe src=&quot;//www.youtube.com/embed/LGmDp2JK-vo?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;\r\n&lt;p&gt;&lt;b&gt;Welcome to the world of the unbelievable smell and perfect taste.&lt;/b&gt; From ancient times spices were very rare and expensive. Only very rich people could afford buying spices. Nowadays spices have become a casual part of all the types of cuisine. We can’t imagine our life without pepper or cinnamon.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;We are proud to present our unique products.&lt;/b&gt; You’ll be amazed because we have the largest choice of tremendous spices. We provide only premium quality goods at a fair price. Our vendors and manufacturers guarantee the quality of our spices. The products of our store are the standard of elegant taste and if you want to express your emotions in cooking you have to buy our products because they are simply unbelievable.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Our spices are real bestsellers and they have a great number of faithful fans all over the country.&lt;/b&gt; There is no doubt about our reputation because it’s perfect and our clients’ testimonials can prove this fact. We care about our clients and never let them down. Our assortment can satisfy most whimsical clients. &lt;/p&gt;', '', '', '', ''),
-(29, 4, 'Spicely Organic Rosemary Ground', '&lt;iframe src=&quot;//www.youtube.com/embed/LGmDp2JK-vo?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;\r\n&lt;p&gt;&lt;b&gt;Welcome to the world of the unbelievable smell and perfect taste.&lt;/b&gt; From ancient times spices were very rare and expensive. Only very rich people could afford buying spices. Nowadays spices have become a casual part of all the types of cuisine. We can’t imagine our life without pepper or cinnamon.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;We are proud to present our unique products.&lt;/b&gt; You’ll be amazed because we have the largest choice of tremendous spices. We provide only premium quality goods at a fair price. Our vendors and manufacturers guarantee the quality of our spices. The products of our store are the standard of elegant taste and if you want to express your emotions in cooking you have to buy our products because they are simply unbelievable.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Our spices are real bestsellers and they have a great number of faithful fans all over the country.&lt;/b&gt; There is no doubt about our reputation because it’s perfect and our clients’ testimonials can prove this fact. We care about our clients and never let them down. Our assortment can satisfy most whimsical clients. &lt;/p&gt;', '', '', '', ''),
-(30, 4, 'Organic Turmeric Root Powder', '&lt;iframe src=&quot;//www.youtube.com/embed/LGmDp2JK-vo?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;\r\n&lt;p&gt;&lt;b&gt;Welcome to the world of the unbelievable smell and perfect taste.&lt;/b&gt; From ancient times spices were very rare and expensive. Only very rich people could afford buying spices. Nowadays spices have become a casual part of all the types of cuisine. We can’t imagine our life without pepper or cinnamon.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;We are proud to present our unique products.&lt;/b&gt; You’ll be amazed because we have the largest choice of tremendous spices. We provide only premium quality goods at a fair price. Our vendors and manufacturers guarantee the quality of our spices. The products of our store are the standard of elegant taste and if you want to express your emotions in cooking you have to buy our products because they are simply unbelievable.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Our spices are real bestsellers and they have a great number of faithful fans all over the country.&lt;/b&gt; There is no doubt about our reputation because it’s perfect and our clients’ testimonials can prove this fact. We care about our clients and never let them down. Our assortment can satisfy most whimsical clients. &lt;/p&gt;', '', '', '', ''),
-(31, 4, 'Spicely Organic Chili Ancho Ground', '&lt;iframe src=&quot;//www.youtube.com/embed/LGmDp2JK-vo?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;\r\n&lt;p&gt;&lt;b&gt;Welcome to the world of the unbelievable smell and perfect taste.&lt;/b&gt; From ancient times spices were very rare and expensive. Only very rich people could afford buying spices. Nowadays spices have become a casual part of all the types of cuisine. We can’t imagine our life without pepper or cinnamon.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;We are proud to present our unique products.&lt;/b&gt; You’ll be amazed because we have the largest choice of tremendous spices. We provide only premium quality goods at a fair price. Our vendors and manufacturers guarantee the quality of our spices. The products of our store are the standard of elegant taste and if you want to express your emotions in cooking you have to buy our products because they are simply unbelievable.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Our spices are real bestsellers and they have a great number of faithful fans all over the country.&lt;/b&gt; There is no doubt about our reputation because it’s perfect and our clients’ testimonials can prove this fact. We care about our clients and never let them down. Our assortment can satisfy most whimsical clients. &lt;/p&gt;', '', '', '', ''),
-(32, 4, 'Simply Organic Ginger Root Ground', '&lt;iframe src=&quot;//www.youtube.com/embed/LGmDp2JK-vo?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;\r\n&lt;p&gt;&lt;b&gt;Welcome to the world of the unbelievable smell and perfect taste.&lt;/b&gt; From ancient times spices were very rare and expensive. Only very rich people could afford buying spices. Nowadays spices have become a casual part of all the types of cuisine. We can’t imagine our life without pepper or cinnamon.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;We are proud to present our unique products.&lt;/b&gt; You’ll be amazed because we have the largest choice of tremendous spices. We provide only premium quality goods at a fair price. Our vendors and manufacturers guarantee the quality of our spices. The products of our store are the standard of elegant taste and if you want to express your emotions in cooking you have to buy our products because they are simply unbelievable.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Our spices are real bestsellers and they have a great number of faithful fans all over the country.&lt;/b&gt; There is no doubt about our reputation because it’s perfect and our clients’ testimonials can prove this fact. We care about our clients and never let them down. Our assortment can satisfy most whimsical clients. &lt;/p&gt;', '', '', '', ''),
-(33, 4, 'Whole Spice Bay Leaves Powder', '&lt;iframe src=&quot;//www.youtube.com/embed/LGmDp2JK-vo?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;\r\n&lt;p&gt;&lt;b&gt;Welcome to the world of the unbelievable smell and perfect taste.&lt;/b&gt; From ancient times spices were very rare and expensive. Only very rich people could afford buying spices. Nowadays spices have become a casual part of all the types of cuisine. We can’t imagine our life without pepper or cinnamon.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;We are proud to present our unique products.&lt;/b&gt; You’ll be amazed because we have the largest choice of tremendous spices. We provide only premium quality goods at a fair price. Our vendors and manufacturers guarantee the quality of our spices. The products of our store are the standard of elegant taste and if you want to express your emotions in cooking you have to buy our products because they are simply unbelievable.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Our spices are real bestsellers and they have a great number of faithful fans all over the country.&lt;/b&gt; There is no doubt about our reputation because it’s perfect and our clients’ testimonials can prove this fact. We care about our clients and never let them down. Our assortment can satisfy most whimsical clients. &lt;/p&gt;', '', '', '', ''),
-(34, 4, 'Simply Organic Cinnamon Sticks', '&lt;iframe src=&quot;//www.youtube.com/embed/LGmDp2JK-vo?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;\r\n&lt;p&gt;&lt;b&gt;Welcome to the world of the unbelievable smell and perfect taste.&lt;/b&gt; From ancient times spices were very rare and expensive. Only very rich people could afford buying spices. Nowadays spices have become a casual part of all the types of cuisine. We can’t imagine our life without pepper or cinnamon.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;We are proud to present our unique products.&lt;/b&gt; You’ll be amazed because we have the largest choice of tremendous spices. We provide only premium quality goods at a fair price. Our vendors and manufacturers guarantee the quality of our spices. The products of our store are the standard of elegant taste and if you want to express your emotions in cooking you have to buy our products because they are simply unbelievable.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Our spices are real bestsellers and they have a great number of faithful fans all over the country.&lt;/b&gt; There is no doubt about our reputation because it’s perfect and our clients’ testimonials can prove this fact. We care about our clients and never let them down. Our assortment can satisfy most whimsical clients. &lt;/p&gt;', '', '', '', ''),
-(35, 4, 'The Perfect Spice Seasoning', '&lt;iframe src=&quot;//www.youtube.com/embed/LGmDp2JK-vo?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;\r\n&lt;p&gt;&lt;b&gt;Welcome to the world of the unbelievable smell and perfect taste.&lt;/b&gt; From ancient times spices were very rare and expensive. Only very rich people could afford buying spices. Nowadays spices have become a casual part of all the types of cuisine. We can’t imagine our life without pepper or cinnamon.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;We are proud to present our unique products.&lt;/b&gt; You’ll be amazed because we have the largest choice of tremendous spices. We provide only premium quality goods at a fair price. Our vendors and manufacturers guarantee the quality of our spices. The products of our store are the standard of elegant taste and if you want to express your emotions in cooking you have to buy our products because they are simply unbelievable.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Our spices are real bestsellers and they have a great number of faithful fans all over the country.&lt;/b&gt; There is no doubt about our reputation because it’s perfect and our clients’ testimonials can prove this fact. We care about our clients and never let them down. Our assortment can satisfy most whimsical clients. &lt;/p&gt;', '', '', '', ''),
-(36, 4, 'Simply Organic Chophouse Seasoning', '&lt;iframe src=&quot;//www.youtube.com/embed/LGmDp2JK-vo?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;\r\n&lt;p&gt;&lt;b&gt;Welcome to the world of the unbelievable smell and perfect taste.&lt;/b&gt; From ancient times spices were very rare and expensive. Only very rich people could afford buying spices. Nowadays spices have become a casual part of all the types of cuisine. We can’t imagine our life without pepper or cinnamon.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;We are proud to present our unique products.&lt;/b&gt; You’ll be amazed because we have the largest choice of tremendous spices. We provide only premium quality goods at a fair price. Our vendors and manufacturers guarantee the quality of our spices. The products of our store are the standard of elegant taste and if you want to express your emotions in cooking you have to buy our products because they are simply unbelievable.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Our spices are real bestsellers and they have a great number of faithful fans all over the country.&lt;/b&gt; There is no doubt about our reputation because it’s perfect and our clients’ testimonials can prove this fact. We care about our clients and never let them down. Our assortment can satisfy most whimsical clients. &lt;/p&gt;', '', '', '', ''),
-(40, 4, 'PLANT Salt Kit', '&lt;iframe src=&quot;//www.youtube.com/embed/LGmDp2JK-vo?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;\r\n&lt;p&gt;&lt;b&gt;Welcome to the world of the unbelievable smell and perfect taste.&lt;/b&gt; From ancient times spices were very rare and expensive. Only very rich people could afford buying spices. Nowadays spices have become a casual part of all the types of cuisine. We can’t imagine our life without pepper or cinnamon.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;We are proud to present our unique products.&lt;/b&gt; You’ll be amazed because we have the largest choice of tremendous spices. We provide only premium quality goods at a fair price. Our vendors and manufacturers guarantee the quality of our spices. The products of our store are the standard of elegant taste and if you want to express your emotions in cooking you have to buy our products because they are simply unbelievable.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Our spices are real bestsellers and they have a great number of faithful fans all over the country.&lt;/b&gt; There is no doubt about our reputation because it’s perfect and our clients’ testimonials can prove this fact. We care about our clients and never let them down. Our assortment can satisfy most whimsical clients. &lt;/p&gt;', '', '', '', ''),
-(41, 4, 'Organic Turmeric Root Powder', '&lt;iframe src=&quot;//www.youtube.com/embed/LGmDp2JK-vo?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;\r\n&lt;p&gt;&lt;b&gt;Welcome to the world of the unbelievable smell and perfect taste.&lt;/b&gt; From ancient times spices were very rare and expensive. Only very rich people could afford buying spices. Nowadays spices have become a casual part of all the types of cuisine. We can’t imagine our life without pepper or cinnamon.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;We are proud to present our unique products.&lt;/b&gt; You’ll be amazed because we have the largest choice of tremendous spices. We provide only premium quality goods at a fair price. Our vendors and manufacturers guarantee the quality of our spices. The products of our store are the standard of elegant taste and if you want to express your emotions in cooking you have to buy our products because they are simply unbelievable.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Our spices are real bestsellers and they have a great number of faithful fans all over the country.&lt;/b&gt; There is no doubt about our reputation because it’s perfect and our clients’ testimonials can prove this fact. We care about our clients and never let them down. Our assortment can satisfy most whimsical clients. &lt;/p&gt;', '', '', '', ''),
-(42, 4, 'Simply Organic Chophouse Seasoning', '&lt;iframe src=&quot;//www.youtube.com/embed/LGmDp2JK-vo?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;\r\n&lt;p&gt;&lt;b&gt;Welcome to the world of the unbelievable smell and perfect taste.&lt;/b&gt; From ancient times spices were very rare and expensive. Only very rich people could afford buying spices. Nowadays spices have become a casual part of all the types of cuisine. We can’t imagine our life without pepper or cinnamon.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;We are proud to present our unique products.&lt;/b&gt; You’ll be amazed because we have the largest choice of tremendous spices. We provide only premium quality goods at a fair price. Our vendors and manufacturers guarantee the quality of our spices. The products of our store are the standard of elegant taste and if you want to express your emotions in cooking you have to buy our products because they are simply unbelievable.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Our spices are real bestsellers and they have a great number of faithful fans all over the country.&lt;/b&gt; There is no doubt about our reputation because it’s perfect and our clients’ testimonials can prove this fact. We care about our clients and never let them down. Our assortment can satisfy most whimsical clients. &lt;/p&gt;', '', '', '', ''),
-(43, 4, 'Simply Organic Mustard Seed Ground', '&lt;iframe src=&quot;//www.youtube.com/embed/LGmDp2JK-vo?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;\r\n&lt;p&gt;&lt;b&gt;Welcome to the world of the unbelievable smell and perfect taste.&lt;/b&gt; From ancient times spices were very rare and expensive. Only very rich people could afford buying spices. Nowadays spices have become a casual part of all the types of cuisine. We can’t imagine our life without pepper or cinnamon.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;We are proud to present our unique products.&lt;/b&gt; You’ll be amazed because we have the largest choice of tremendous spices. We provide only premium quality goods at a fair price. Our vendors and manufacturers guarantee the quality of our spices. The products of our store are the standard of elegant taste and if you want to express your emotions in cooking you have to buy our products because they are simply unbelievable.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Our spices are real bestsellers and they have a great number of faithful fans all over the country.&lt;/b&gt; There is no doubt about our reputation because it’s perfect and our clients’ testimonials can prove this fact. We care about our clients and never let them down. Our assortment can satisfy most whimsical clients. &lt;/p&gt;', '', '', '', ''),
-(44, 4, 'Simply Organic Poppy Seed Whole', '&lt;iframe src=&quot;//www.youtube.com/embed/LGmDp2JK-vo?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;\r\n&lt;p&gt;&lt;b&gt;Welcome to the world of the unbelievable smell and perfect taste.&lt;/b&gt; From ancient times spices were very rare and expensive. Only very rich people could afford buying spices. Nowadays spices have become a casual part of all the types of cuisine. We can’t imagine our life without pepper or cinnamon.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;We are proud to present our unique products.&lt;/b&gt; You’ll be amazed because we have the largest choice of tremendous spices. We provide only premium quality goods at a fair price. Our vendors and manufacturers guarantee the quality of our spices. The products of our store are the standard of elegant taste and if you want to express your emotions in cooking you have to buy our products because they are simply unbelievable.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Our spices are real bestsellers and they have a great number of faithful fans all over the country.&lt;/b&gt; There is no doubt about our reputation because it’s perfect and our clients’ testimonials can prove this fact. We care about our clients and never let them down. Our assortment can satisfy most whimsical clients. &lt;/p&gt;', '', '', '', ''),
-(45, 4, 'Smoked Paprika Chiquilin', '&lt;iframe src=&quot;//www.youtube.com/embed/LGmDp2JK-vo?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; allowfullscreen=&quot;&quot; height=&quot;315&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;\r\n&lt;p&gt;&lt;b&gt;Welcome to the world of the unbelievable smell and perfect taste.&lt;/b&gt; From ancient times spices were very rare and expensive. Only very rich people could afford buying spices. Nowadays spices have become a casual part of all the types of cuisine. We can’t imagine our life without pepper or cinnamon.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;We are proud to present our unique products.&lt;/b&gt; You’ll be amazed because we have the largest choice of tremendous spices. We provide only premium quality goods at a fair price. Our vendors and manufacturers guarantee the quality of our spices. The products of our store are the standard of elegant taste and if you want to express your emotions in cooking you have to buy our products because they are simply unbelievable.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Our spices are real bestsellers and they have a great number of faithful fans all over the country.&lt;/b&gt; There is no doubt about our reputation because it’s perfect and our clients’ testimonials can prove this fact. We care about our clients and never let them down. Our assortment can satisfy most whimsical clients. &lt;/p&gt;', '', '', '', '');
+(51, 4, 'MINI ORQUÍDEA NA COR ROSA EM VASO', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'MINI ORQUÍDEA NA COR ROSA EM VASO', 'MINI ORQUÍDEA NA COR ROSA EM VASO', 'MINI ORQUÍDEA NA COR ROSA EM VASO'),
+(55, 4, 'RAMALHETE 12 ROSAS COLOMBIANAS COR CHOCOLATE EM EMBALAGEM EM TOM DOURADO', '&lt;p&gt;RAMALHETE 12 ROSAS COLOMBIANAS CHOCOLATE&lt;br&gt;&lt;/p&gt;', '', 'RAMALHETE 12 ROSAS COLOMBIANAS COR CHOCOLATE EM EMBALAGEM EM TOM DOURADO', 'RAMALHETE 12 ROSAS COLOMBIANAS COR CHOCOLATE EM EMBALAGEM EM TOM DOURADO', 'RAMALHETE 12 ROSAS COLOMBIANAS COR CHOCOLATE EM EMBALAGEM EM TOM DOURADO'),
+(56, 4, 'ROSAS COLOMBIANAS EM CAIXA ', '&lt;p&gt;ROSAS COLOMBIANAS EM CAIXA&amp;nbsp;&lt;br&gt;&lt;/p&gt;', '', 'ROSAS COLOMBIANAS EM CAIXA ', 'ROSAS COLOMBIANAS EM CAIXA ', 'ROSAS COLOMBIANAS EM CAIXA '),
+(65, 4, 'ARRANJO DE ROSAS COLOMBIANAS AMARELAS código 105', '&lt;p&gt;ARRANJO COM 18 ROSAS COLOMBIANAS NA COR AMARELA EM VASO OVAL código 105&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO COM 18 ROSAS COLOMBIANAS NA COR AMARELA EM VASO OVAL código 105', 'ARRANJO COM 18 ROSAS COLOMBIANAS NA COR AMARELA EM VASO OVAL código 105\r\n', 'ARRANJO COM 18 ROSAS COLOMBIANAS NA COR AMARELA EM VASO OVAL código 105\r\n'),
+(67, 4, 'ARRANJO MINI CALACHOE 3 TONS  EM CACHEPÔ DE MADEIRA', '&lt;p&gt;ARRANJO COM MINI CALACHOE 3 TONS &amp;nbsp;EM CACHEPÔ DE MADEIRA&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO COM MINI CALACHOE 3 TONS  EM CACHEPÔ DE MADEIRA', 'ARRANJO COM MINI CALACHOE 3 TONS  EM CACHEPÔ DE MADEIRA', 'ARRANJO COM MINI CALACHOE 3 TONS  EM CACHEPÔ DE MADEIRA'),
+(72, 4, 'RAMALHETE DE TULIPAS &amp; ASTROMELIAS IMPORTADAS TAMANHO M', '&lt;p&gt;RAMALHETE DE TULIPAS &amp;amp; ASTROMELIAS IMPORTADAS TAMANHO M EM TONS DE VERMELHO E AMARELO EMBALADOS EM JUTA&lt;br&gt;&lt;/p&gt;', '', 'RAMALHETE DE TULIPAS &amp; ASTROMELIAS IMPORTADAS TAMANHO M EM TONS DE VERMELHO E AMARELO EMBALADOS EM JUTA', 'RAMALHETE DE TULIPAS &amp; ASTROMELIAS IMPORTADAS TAMANHO M EM TONS DE VERMELHO E AMARELO EMBALADOS EM JUTA', 'RAMALHETE DE TULIPAS &amp; ASTROMELIAS IMPORTADAS TAMANHO M EM TONS DE VERMELHO E AMARELO EMBALADOS EM JUTA'),
+(75, 4, 'ARRANJO DE TULIPAS MIX DE CORES código 108', '&lt;p&gt;ARRANJO DE 18 TULIPAS MIX DE CORES VERMELHAS, AMARELAS E PINK EM VASO RETANGULAR código 108&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO DE 18 TULIPAS MIX DE CORES VERMELHAS, AMARELAS E PINK EM VASO RETANGULAR código 108', 'ARRANJO DE 18 TULIPAS MIX DE CORES VERMELHAS, AMARELAS E PINK EM VASO RETANGULAR código 108', 'ARRANJO DE 18 TULIPAS MIX DE CORES VERMELHAS, AMARELAS E PINK EM VASO RETANGULAR código 108'),
+(57, 4, 'ARRANJO DE TULIPAS VERMELHAS &amp; AMARELAS código 109', '&lt;p&gt;ARRANJO COM 12 TULIPAS VERMELHAS &amp;amp; AMARELAS EM VASO DE VIDRO código 109&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'ARRANJO COM 12 TULIPAS VERMELHAS &amp; AMARELAS EM VASO DE VIDRO código 109', ' ARRANJO COM 12 TULIPAS VERMELHAS &amp; AMARELAS EM VASO DE VIDRO código 109', 'ARRANJO COM 12 TULIPAS VERMELHAS &amp; AMARELAS EM VASO DE VIDRO código 109\r\n', 'ARRANJO COM 12 TULIPAS VERMELHAS &amp; AMARELAS EM VASO DE VIDRO código 109\r\n'),
+(61, 4, 'BUQUÊ DE ASTROMÉLIAS MIX DE CORES ', '&lt;p&gt;BUQUÊ DE ASTROMÉLIAS MIX DE CORES NA COR AMARELA, ROSA E BRANCA código 111&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;br&gt;&lt;/p&gt;', '', 'BUQUÊ DE ASTROMÉLIAS  MIX DE CORES NA COR AMARELA, ROSA E BRANCA   código 111', 'BUQUÊ DE ASTROMÉLIAS  MIX DE CORES NA COR AMARELA, ROSA E BRANCA código 111\r\n\r\n ', 'BUQUÊ DE ASTROMÉLIAS  MIX DE CORES NA COR AMARELA, ROSA E BRANCA código 111\r\n\r\n '),
+(50, 4, 'ARRANJO DE MINI ORQUÍDEAS código 101', '&lt;p&gt;ARRANJO MINI ORQUÍDEAS BRANCAS, AMARELAS E PINK NA CESTA código 101&lt;br&gt;&lt;/p&gt;', 'ARRANJO MINI ORQUÍDEAS NA CESTA código 101', 'ARRANJO MINI ORQUÍDEAS BRANCAS, AMARELAS E PINK NA CESTA código 101', 'ARRANJO MINI ORQUÍDEAS BRANCAS, AMARELAS E PINK NA CESTA código 101', 'ARRANJO MINI ORQUÍDEAS BRANCAS, AMARELAS E PINK NA CESTA código 101'),
+(77, 4, 'ARRANJO DE ORQUÍDEAS PHALAENOPSIS BRANCAS E PINK código 103', '&lt;p&gt;ARRANJO DE ORQUÍDEAS PHALAENOPSIS BRANCAS E PINK NO VASO OVAL COM GRÃOS DE CAFÉ codigo 103&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO DE ORQUÍDEAS PHALAENOPSIS BRANCAS E PINK NO VASO OVAL COM GRÃOS DE CAFÉ código 103', 'ARRANJO DE ORQUÍDEAS PHALAENOPSIS BRANCAS E PINK NO VASO OVAL COM GRÃOS DE CAFÉ código 103', 'ARRANJO DE ORQUÍDEAS PHALAENOPSIS BRANCAS E PINK NO VASO OVAL COM GRÃOS DE CAFÉ código 103'),
+(76, 4, 'ARRANJO DE ORQUÍDEA CYMBIDIUM E LISIANTHUS código 102', '&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;745&quot; style=&quot;width: 559pt;&quot;&gt;&lt;tbody&gt;&lt;tr height=&quot;20&quot; style=&quot;height:15.0pt&quot;&gt;\r\n  &lt;td height=&quot;20&quot; class=&quot;xl63&quot; width=&quot;745&quot; style=&quot;height:15.0pt;width:559pt&quot;&gt;ARRANJO\r\n  DE ORQUÍDEA CYMBIDIUM E LISIANTHUS EM VASO DE CERAMICA PRETO código 102&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;', '', 'ARRANJO DE ORQUÍDEA CYMBIDIUMS E LISIANTHUS EM VASO DE CERAMICA PRETO código 102', 'ARRANJO DE ORQUÍDEA CYMBIDIUMS E LISIANTHUS EM VASO DE CERAMICA PRETO código 102\r\n', 'ARRANJO DE ORQUÍDEA CYMBIDIUMS E LISIANTHUS EM VASO DE CERAMICA PRETO código 102\r\n'),
+(53, 4, 'BUQUÊ DE ROSAS COLOMBIANAS NA COR ROSA código 113', '&lt;p&gt;BUQUÊ COM 12 ROSAS COLOMBIANAS NA COR ROSA código 113&lt;br&gt;&lt;/p&gt;', 'BUQUÊ COM 12 ROSAS COLOMBIANAS NA COR ROSA código 113', 'BUQUÊ COM 12 ROSAS COLOMBIANAS NA COR ROSA código 113', 'BUQUÊ COM 12 ROSAS COLOMBIANAS NA COR ROSA código 113', 'BUQUÊ COM 12 ROSAS COLOMBIANAS NA COR ROSA código 113\r\n'),
+(52, 4, 'BUQUÊ DE ROSAS COLOMBIANAS VERMELHAS código 112', '&lt;p&gt;BUQUÊ COM 12 ROSAS COLOMBIANAS VERMELHAS código 112&lt;br&gt;&lt;/p&gt;', '', 'BUQUÊ COM 12 ROSAS COLOMBIANAS VERMELHAS código 112', 'BUQUÊ COM 12 ROSAS COLOMBIANAS VERMELHAS código 112', 'BUQUÊ COM 12 ROSAS COLOMBIANAS VERMELHAS código 112'),
+(63, 4, 'BUQUÊ DE ROSAS NACIONAIS E ASTROMÉLIAS NA COR ROSA código 116', '&lt;p&gt;BUQUÊ COM 7 ROSAS NACIONAIS E ASTROMÉLIAS NA COR ROSA código 116&lt;br&gt;&lt;/p&gt;', '', 'BUQUÊ COM 7 ROSAS NACIONAIS E ASTROMÉLIAS NA COR ROSA código 116', 'BUQUÊ COM 7  ROSAS NACIONAIS E ASTROMÉLIAS NA COR ROSA código 116', 'BUQUÊ DE  ROSAS NACIONAIS E ASTROMÉLIAS NA COR ROSA código 116'),
+(68, 4, 'ARRANJO MIX DE FLORES &amp; CORES código 110', '&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;745&quot; style=&quot;width: 559pt;&quot;&gt;&lt;tbody&gt;&lt;tr height=&quot;20&quot; style=&quot;height:15.0pt&quot;&gt;\r\n  &lt;td height=&quot;20&quot; class=&quot;xl65&quot; width=&quot;745&quot; style=&quot;height:15.0pt;width:559pt&quot;&gt;ARRANJO COM MIX DE FLORES &amp;amp; CORES ( ROSAS COLOMBIANAS PINK, MINI HORTÊNCIA, SYMBIDIUM, LISIANTHUS E FOLHAGEM ) TAMANHO M EM VASO DE CERÂMICA BRANCO código 110&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;', '', 'ARRANJO COM MIX DE FLORES &amp; CORES ( ROSAS COLOMBIANAS PINK, MINI HORTÊNCIA, SYMBIDIUM, LISIANTHUS E FOLHAGEM ) TAMANHO M EM VASO DE CERÂMICA BRANCO código 110', 'ARRANJO COM MIX DE FLORES &amp; CORES ( ROSAS COLOMBIANAS PINK, MINI HORTÊNCIA, SYMBIDIUM, LISIANTHUS E FOLHAGEM ) TAMANHO M EM VASO DE CERÂMICA BRANCO código 110', 'ARRANJO COM MIX DE FLORES &amp; CORES ( ROSAS COLOMBIANAS PINK, MINI HORTÊNCIA, SYMBIDIUM, LISIANTHUS E FOLHAGEM ) TAMANHO M EM VASO DE CERÂMICA BRANCO código 110'),
+(70, 4, 'ARRANJO DE ROSAS COLOMBIANAS BRANCAS &amp; CHOCOLATE código 107', '&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;640&quot; style=&quot;width: 480pt;&quot;&gt;&lt;tbody&gt;&lt;tr height=&quot;20&quot; style=&quot;height:15.0pt&quot;&gt;\r\n  &lt;td height=&quot;20&quot; class=&quot;xl65&quot; width=&quot;640&quot; style=&quot;height: 15pt; width: 480pt;&quot;&gt;&lt;h5&gt;ARRANJO COM 12 ROSAS\r\n  COLOMBIANAS BRANCAS &amp;amp; CHOCOLATE EM VASO DE VIDRO código 107&lt;/h5&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;', '', 'ARRANJO COM 12 ROSAS COLOMBIANAS BRANCAS &amp; CHOCOLATE EM VASO DE VIDRO código 107', 'ARRANJO COM 12 ROSAS COLOMBIANAS BRANCAS &amp; CHOCOLATE EM VASO DE VIDRO código 107', 'ARRANJO COM 12 ROSAS COLOMBIANAS BRANCAS &amp; CHOCOLATE EM VASO DE VIDRO código 107'),
+(79, 4, 'TAG 01', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 01', 'TAG 01', 'TAG 01'),
+(80, 4, 'TAG 02', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 02', 'TAG 02', 'TAG 02'),
+(81, 4, 'TAG 03', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 03', 'TAG 03', 'TAG 03'),
+(82, 4, 'TAG 04', '&lt;div&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Tamanho: 8cm altura x 5cm largura&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/div&gt;', '', 'TAG 04', 'TAG 04', 'TAG 04'),
+(83, 4, 'TAG 05', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 05', 'TAG 05', 'TAG 05'),
+(64, 4, 'BUQUÊ DE ROSAS COLOMBIANAS NA COR PINK código 114', '&lt;h1&gt;&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;745&quot; style=&quot;width: 559pt;&quot;&gt;&lt;tbody&gt;&lt;tr height=&quot;20&quot; style=&quot;height:15.0pt&quot;&gt;\r\n  &lt;td height=&quot;20&quot; class=&quot;xl65&quot; width=&quot;745&quot; style=&quot;height:15.0pt;width:559pt&quot;&gt;&lt;h5&gt;&amp;nbsp;BUQUÊ DE 18 ROSAS COLOMBIANAS NA COR PINK código 114&lt;/h5&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/h1&gt;', '', 'BUQUÊ DE 18 ROSAS COLOMBIANAS NA COR PINK código 114', 'BUQUÊ DE 18 ROSAS COLOMBIANAS NA COR PINK  código 114\r\n', 'BUQUÊ DE 18 ROSAS COLOMBIANAS NA COR PINK  código 114\r\n'),
+(60, 4, 'CASA FLORES SECRET 50 TONS UNISEX', '&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;span style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;span style=&quot;line-height: 1;&quot;&gt;Lançamento da linha Casa Flores Secret Box em parceira com a Intt Cosméticos unindo romantismo e sensualidade num só presente!&amp;nbsp;&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;Código 120&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Casa Flores Secret Box&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 1 caixa retangular tamanho 33 x 22 x 12 na cor preta&lt;span class=&quot;Apple-tab-span&quot; style=&quot;white-space:pre&quot;&gt;		&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 1 arranjo loral (mix de flores em tons de amarelo) &lt;span class=&quot;Apple-tab-span&quot; style=&quot;white-space:pre&quot;&gt;		&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Podutos Intt&lt;/span&gt;&lt;span class=&quot;Apple-tab-span&quot; style=&quot;white-space:pre&quot;&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;		&lt;/span&gt;			&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 1 vela para massagem sabor Nutella&lt;span class=&quot;Apple-tab-span&quot; style=&quot;white-space:pre&quot;&gt;		&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 1 Cliv Tons&lt;span class=&quot;Apple-tab-span&quot; style=&quot;white-space:pre&quot;&gt;						&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 1 Vibration Tons&lt;span class=&quot;Apple-tab-span&quot; style=&quot;white-space:pre&quot;&gt;						&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 1 Algema Tons&lt;/p&gt;', 'CASA FLORES SECRET 50 TONS UNISEX', 'CASA FLORES SECRET 50 TONS UNISEX', 'CASA FLORES SECRET 50 TONS UNISEX', 'CASA FLORES SECRET 50 TONS UNISEX'),
+(85, 4, 'TAG 06', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 06', 'TAG 06', 'TAG 06'),
+(86, 4, 'TAG 07', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 com largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 07', 'TAG 07', 'TAG 07'),
+(88, 4, 'TAG 09', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 09', 'TAG 09', 'TAG 09'),
+(89, 4, 'TAG 10', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8 cm altura x 5 cm largura&amp;nbsp;&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 10', 'TAG 10', 'TAG 10'),
+(74, 4, 'ARRANJO DE ROSAS COLOMBIANAS AMARELAS código 106', '&lt;p&gt;ARRANJO COM 15 ROSAS COLOMBIANAS AMARELAS EM VASO DE VIDRO código 106&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO COM 15 ROSAS COLOMBIANAS AMARELAS EM VASO DE VIDRO código 106', 'ARRANJO COM 15 ROSAS COLOMBIANAS AMARELAS EM VASO DE VIDRO código 106', 'ARRANJO COM 15 ROSAS COLOMBIANAS AMARELAS EM VASO DE VIDRO código 106'),
+(66, 4, 'ARRANJO DE ROSAS COLOMBIANAS VERMELHAS código 117', '&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;745&quot; style=&quot;width: 559pt;&quot;&gt;&lt;tbody&gt;&lt;tr height=&quot;20&quot; style=&quot;height:15.0pt&quot;&gt;\r\n  &lt;td height=&quot;20&quot; class=&quot;xl65&quot; width=&quot;745&quot; style=&quot;height:15.0pt;width:559pt&quot;&gt;&lt;h5&gt;ARRANJO\r\n  COM 15 ROSAS COLOMBIANAS NA COR VERMELHA EM VASO RETANGULAR código 107&lt;/h5&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;', '', 'ARRANJO COM 15 ROSAS COLOMBIANAS NA COR VERMELHA EM VASO RETANGULAR código 107', 'ARRANJO COM 15 ROSAS COLOMBIANAS NA COR VERMELHA EM VASO RETANGULAR código 107\r\n', 'ARRANJO COM 15 ROSAS COLOMBIANAS NA COR VERMELHA EM VASO RETANGULAR código 107\r\n'),
+(90, 4, 'TAG 11', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'Tag 11', 'Tag 11', 'Tag 11'),
+(78, 4, 'CESTA DE CAFÉ DA MANHÃ 02', '&lt;p style=&quot;line-height: 1;&quot;&gt;Uma linda cesta de café da manhã composta por flores escolhidas com todo cuidado pela Casa Flores , e produtos para um delicioso café da manhã especialmente selecionadas pelo O Bistrô dos Pães &amp;nbsp;( &amp;nbsp;www.obistrodospaes.com.br ) &amp;nbsp; para um presente lindo, colorido e muito gostoso !!&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;As cestas pode ser individuais ou para o casal.&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;Esta cesta é composta por:&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- Arranjo de Astromélias (*) na cor rosa &amp;amp; folhagens com espuma floral e embalagem;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 1 Cesta Vime tamanho M;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 2 Sucos orgânicos pequenos em garrafa de vidro;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 2 Croissant de Nutella com amêndoas;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 2 Pack de brigadeiros contendo 4 unidades &amp;nbsp;cada (tradicional, oreo, beijinho e frutas vermelhas);&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 3 Mini pães - sabores conforme disponibilidade: &amp;nbsp;azeite e sal grosso, português, multigrãos e castanhas e australiano;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 2 Trios com geleia, manteiga e mel;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 2 Bem-casados&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;span style=&quot;font-weight: bold; font-style: italic;&quot;&gt;Temos opção de inclusão de caixa com 6 deliciosos macarons : Valor adicional de R$ 49,00.&lt;/span&gt;&lt;/p&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;(*) As flores e cores podem ser alteradas conforme disponibilidade na loja e na data solicitada para entrega do presente.&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&amp;nbsp;Todos os produtos ( flores , pães e doces ) são frescos e as cestas são montadas no dia da entrega.&lt;/p&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;', '', 'Cesta de Café da Manhã', 'Cesta de Café da Manhã', 'Cesta de Café da Manhã'),
+(91, 4, 'CESTA DE CAFÉ DA MANHÃ 01', '&lt;p style=&quot;line-height: 1;&quot;&gt;Uma linda cesta de café da manhã composta por flores escolhidas com todo cuidado pela Casa Flores , e produtos para um delicioso café da manhã especialmente selecionadas pelo &amp;nbsp;O Bistrô dos Pães ( &amp;nbsp;www.obistrodospaes.com.br ) &amp;nbsp; para um presente lindo, colorido e muito gostoso !!&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;As cestas pode ser individuais ou para o casal.&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;Esta cesta é composta por:&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- Arranjo de Lírios na cor vermelha (*) &amp;amp; folhagens com espuma floral e embalagem;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 1 Cesta Vime tamanho M;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 1 Suco orgânico pequena em garrafa de vidro;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 1 Croissant de Nutella com amêndoas;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 1 Pack de brigadeiros contendo 4 unidades &amp;nbsp;(tradicional, oreo, beijinho e frutas vermelhas);&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 2 Mini pães - sabores conforme disponibilidade: &amp;nbsp;azeite e sal grosso, português, multigrãos e castanhas e australiano;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- Trio com geleia, manteiga e mel;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 1 Bem-casado&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;span style=&quot;line-height: 1;&quot;&gt;(*) As flores e cores podem ser alteradas conforme disponibilidade da loja e na data de entrega do presente.&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;Todos os produtos ( flores , pães e doces ) são frescos e as cestas são montadas no dia da entrega.&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/p&gt;', '', 'Cesta de Café da Manhã', 'Cesta de Café da Manhã', 'Cesta de Café da Manhã'),
+(59, 4, 'CASA FLORES SECRET  HALLS VIBER FEMININO', '&lt;div style=&quot;line-height: 1.4;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 1.4;&quot;&gt;Lançamento da linha Casa Flores Secret Box em parceira com a Intt Cosméticos, unindo romantismo e sensualidade num só presente!&lt;/div&gt;\r\n&lt;div style=&quot;line-height: 1.4;&quot;&gt;&lt;br&gt;&lt;/div&gt;\r\n&lt;div style=&quot;line-height: 1.4;&quot;&gt;Código 119&lt;/div&gt;\r\n&lt;div style=&quot;line-height: 1.4;&quot;&gt;&lt;br&gt;&lt;/div&gt;\r\n&lt;div style=&quot;line-height: 1.4;&quot;&gt;Casa Flores Box Secret&lt;/div&gt;\r\n&lt;div style=&quot;line-height: 1.4;&quot;&gt;- 1 caixa retangular tamanho 33 X 22 X 12 na cor preta&lt;/div&gt;\r\n&lt;div style=&quot;line-height: 1.4;&quot;&gt;- 1 arranjo floral (mix de flores em tons de rosa)&lt;/div&gt;\r\n&lt;div style=&quot;line-height: 1.4;&quot;&gt;&lt;br&gt;&lt;/div&gt;\r\n&lt;div style=&quot;line-height: 1.4;&quot;&gt;Produtos Intt&lt;/div&gt;\r\n&lt;div style=&quot;line-height: 1.4;&quot;&gt;- 1 vela para massagem sabor&lt;/div&gt;\r\n&lt;div style=&quot;line-height: 1.4;&quot;&gt;- 1 estimulante feminino Vibrante Halls Viber&lt;/div&gt;\r\n&lt;div style=&quot;line-height: 1.4;&quot;&gt;- 1 gel funcional Touch Me&lt;/div&gt;\r\n&lt;div style=&quot;line-height: 1.4;&quot;&gt;- Manual de instrução&lt;/div&gt;', 'CASA FLORES SECRET  HALLS VIBER FEMININO', 'Lançamento da linha Casa Flores Secret Box em parceira com a Intt Cosméticos unindo romantismo e sensualidade num só presente! ', 'Lançamento da linha Casa Flores Secret Box em parceira com a Intt Cosméticos unindo romantismo e sensualidade num só presente! ', ''),
+(73, 4, 'ARRANJO DE ROSAS COLOMBIANAS VERMELHAS &amp; URSINHO DE PELÚCIA código 104', '&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;640&quot; style=&quot;width: 480pt;&quot;&gt;&lt;tbody&gt;&lt;tr height=&quot;20&quot; style=&quot;height:15.0pt&quot;&gt;\r\n  &lt;td height=&quot;20&quot; class=&quot;xl65&quot; width=&quot;640&quot; style=&quot;height:15.0pt;width:480pt&quot;&gt;&lt;h5&gt;ARRANJO\r\n  COM 15 ROSAS COLOMBIANAS VERMELHAS EM VASO DE VIDRO &amp;amp; URSINHO DE PELÚCIA código 104&lt;/h5&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;Custo arranjo rosas &amp;amp; vaso: R$ 180,00&lt;/p&gt;&lt;p&gt;Custo &amp;nbsp;Urso de Pelúcia tamanho P = R$ 30,00&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO COM 15 ROSAS COLOMBIANAS VERMELHAS EM VASO DE VIDRO &amp; URSINHO DE PELÚCIA código 104', 'ARRANJO COM 15 ROSAS COLOMBIANAS VERMELHAS EM VASO DE VIDRO &amp; URSINHO DE PELÚCIA código 104\r\n', 'ARRANJO COM 15 ROSAS COLOMBIANAS VERMELHAS EM VASO DE VIDRO &amp; URSINHO DE PELÚCIA código 104\r\n'),
+(58, 4, 'CASA FLORES SECRET HOT PEPPER UNISEX', '&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;Lançamento da linha Casa Flores Secret Box em parceira com a Intt Cosméticos unindo romantismo e sensualidade num só presente!&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;Código 121&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Casa Flores Secret Box&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 1 caixa retangular tamanho 33x22x12 na cor preta&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 1 arranjo floral (mix de flores em tons de vermelho)&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Produtos Intt&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 1 vela para massagem sabor morango&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 1 estimulante unisex hot pepper&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- 1 gel eletrizante vibration sabor morango&lt;/p&gt;&lt;p style=&quot;line-height: 1;&quot;&gt;- manual instrução&amp;nbsp;&lt;/p&gt;', 'CASA FLORES SECRET HOT PAPPER UNISEX', 'CASA FLORES SECRET  HOT PEPPER UNISEX', 'CASA FLORES SECRET HOT PEPPER UNISEX', 'CASA FLORES SECRET HOT PEPPER UNISEX'),
+(62, 4, 'BUQUÊ DE ROSAS NACIONAIS VERMELHAS código 115', '&lt;p&gt;BUQUÊ COM 12 ROSAS NACIONAIS NA COR VERMELHA código 115&lt;br&gt;&lt;/p&gt;', '', 'BUQUÊ COM 13 ROSAS NACIONAIS NA COR VERMELHA código 115', 'BUQUÊ COM 13 ROSAS NACIONAIS NA COR VERMELHA código 115', 'BUQUÊ COM 13 ROSAS NACIONAIS NA COR VERMELHA código 115'),
+(71, 4, 'ARRANJO DE ASTROMÉLIAS Código 100', '&lt;p&gt;ARRANJO DE ASTROMÉLIAS EM VASO DE VIDRO TAMANHO P código 100&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO DE ASTROMÉLIAS EM VASO DE VIDRO TAMANHO P código 100', 'ARRANJO DE ASTROMÉLIAS EM VASO DE VIDRO TAMANHO P código 100', ''),
+(69, 4, 'BUQUÊ MIX DE FLORES &amp; CORES código 117', '&lt;p&gt;BUQUÊ MIX DE FLORES &amp;amp; CORES ( GERBERA, FLOR DO CAMPO, LIRIO ) código 117&lt;br&gt;&lt;/p&gt;', '', 'BUQUÊ MIX DE FLORES &amp; CORES ( GERBERA, FLOR DO CAMPO, LIRIO ) código 117', 'BUQUÊ MIX DE FLORES &amp; CORES ( GERBERA, FLOR DO CAMPO, LIRIO ) código 117', 'BUQUÊ MIX DE FLORES &amp; CORES ( GERBERA, FLOR DO CAMPO, LIRIO ) código 117'),
+(54, 4, 'RAMALHETE DE TULIPAS NAS CORES VERMELHA E AMARELA código 118', '&lt;p&gt;RAMALHETE COM 18 TULIPAS NAS CORES VERMELHA E AMARELA código 118&lt;br&gt;&lt;/p&gt;', '', 'RAMALHETE COM 18 TULIPAS NAS CORES VERMELHA E AMARELA código 118 ', 'RAMALHETE COM 18 TULIPAS NAS CORES VERMELHA E AMARELA código 118', 'RAMALHETE COM 18 TULIPAS NAS CORES VERMELHA E AMARELA código 118'),
+(87, 4, 'TAG 08', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 08', 'TAG 08', 'TAG 08'),
+(92, 4, 'ARRANJO ASTROMÉLIAS E ROSAS EM TOM ROSA', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO ASTROMÉLIAS E ROSAS EM TOM ROSA', 'ARRANJO ASTROMÉLIAS E ROSAS EM TOM ROSA', 'ARRANJO ASTROMÉLIAS E ROSAS EM TOM ROSA'),
+(93, 4, 'ARRANJO MIX DE FLORES CRAVINAS E ASTROMÉLIAS NOS TONS ROSA E BRANCO', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO MIX DE FLORES CRAVINAS E ASTROMÉLIAS NOS TONS ROSA E BRANCO', 'ARRANJO MIX DE FLORES CRAVINAS E ASTROMÉLIAS NOS TONS ROSA E BRANCO', 'ARRANJO MIX DE FLORES CRAVINAS E ASTROMÉLIAS NOS TONS ROSA E BRANCO'),
+(94, 4, 'GARRAFA DE CERVEJA COM ROSAS COLOMBIANAS EM TOM VERMELHO', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'GARRAFA DE CERVEJA COM ROSAS COLOMBIANAS EM TOM VERMELHO', 'GARRAFA DE CERVEJA COM ROSAS COLOMBIANAS EM TOM VERMELHO', 'GARRAFA DE CERVEJA COM ROSAS COLOMBIANAS EM TOM VERMELHO'),
+(95, 4, 'GARRAFA DE CERVEJA COM ORQUÍDEAS CIMBÍDIO EM TOM AMARELO', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'GARRAFA DE CERVEJA COM ORQUÍDEAS CIMBÍDIO EM TOM AMARELO', 'GARRAFA DE CERVEJA COM ORQUÍDEAS CIMBÍDIO EM TOM AMARELO', 'GARRAFA DE CERVEJA COM ORQUÍDEAS CIMBÍDIO EM TOM AMARELO'),
+(96, 4, 'ARRANJO EM CAIXA COR PRETA COM ORQUÍDEAS CIMBÍDIOS EM TOM AMARELO ', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO EM CAIXA COR PRETA COM ORQUÍDEAS CIMBÍDIOS EM TOM AMARELO ', 'ARRANJO EM CAIXA COR PRETA COM ORQUÍDEAS CIMBÍDIOS EM TOM AMARELO ', 'ARRANJO EM CAIXA COR PRETA COM ORQUÍDEAS CIMBÍDIOS EM TOM AMARELO '),
+(97, 4, 'ARRANJO EM CAIXA COR PRETA COM CRAVOS EM TOM VERMELHO', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO EM CAIXA COR PRETA COM CRAVOS EM TOM VERMELHO', 'ARRANJO EM CAIXA COR PRETA COM CRAVOS EM TOM VERMELHO', 'ARRANJO EM CAIXA COR PRETA COM CRAVOS EM TOM VERMELHO'),
+(98, 4, 'ARRANJO EM CAIXA COR PRETA COM CRAVOS EM TOM AMARELO', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO EM CAIXA COR PRETA COM CRAVOS EM TOM AMARELO', 'ARRANJO EM CAIXA COR PRETA COM CRAVOS EM TOM AMARELO', 'ARRANJO EM CAIXA COR PRETA COM CRAVOS EM TOM AMARELO'),
+(99, 4, 'ARRANJO EM CAIXA COR AZUL CLARO COM MIX DE FLORES DE CRAVOS', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO EM CAIXA COR AZUL CLARO COM MIX DE FLORES DE CRAVOS', 'ARRANJO EM CAIXA COR AZUL CLARO COM MIX DE FLORES DE CRAVOS', 'ARRANJO EM CAIXA COR AZUL CLARO COM MIX DE FLORES DE CRAVOS'),
+(100, 4, 'ARRANJO EM CAIXA COR AZUL CLARO COM ORQUÍDEAS CIMBÍDIOS EM TOM AMARELO E BONECO ARTESANAL', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO EM CAIXA COR AZUL CLARO COM ORQUÍDEAS CIMBÍDIOS EM TOM AMARELO E BONECO ARTESANAL', 'ARRANJO EM CAIXA COR AZUL CLARO COM ORQUÍDEAS CIMBÍDIOS EM TOM AMARELO E BONECO ARTESANAL', 'ARRANJO EM CAIXA COR AZUL CLARO COM ORQUÍDEAS CIMBÍDIOS EM TOM AMARELO E BONECO ARTESANAL'),
+(101, 4, 'ARRANJO EM CAIXA COR PRETA COM ROSAS NACIONAIS EM TOM AMARELO', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO EM CAIXA COR PRETA COM ROSAS NACIONAIS EM TOM AMARELO', 'ARRANJO EM CAIXA COR PRETA COM ROSAS NACIONAIS EM TOM AMARELO', 'ARRANJO EM CAIXA COR PRETA COM ROSAS NACIONAIS EM TOM AMARELO'),
+(102, 4, 'ARRANJO EM CAIXA COR ROSA COM MIX DE FLORES', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO EM CAIXA COR ROSA COM MIX DE FLORES', 'ARRANJO EM CAIXA COR ROSA COM MIX DE FLORES', 'ARRANJO EM CAIXA COR ROSA COM MIX DE FLORES'),
+(103, 4, 'BRIGADEIROS EM CAIXA - 8 UNIDADES', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'BRIGADEIROS EM CAIXA - 8 UNIDADES', 'BRIGADEIROS EM CAIXA - 8 UNIDADES', 'BRIGADEIROS EM CAIXA - 8 UNIDADES'),
+(104, 4, 'MACARONS EM CAIXA - 12 UNIDADES', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'MACARONS EM CAIXA - 12 UNIDADES', 'MACARONS EM CAIXA - 12 UNIDADES', 'MACARONS EM CAIXA - 12 UNIDADES'),
+(106, 4, 'CESTA KIT CAFÉ E LÍRIOS', '&lt;p&gt;- Cesta&lt;/p&gt;&lt;p&gt;- Arranjo de Lírios&lt;/p&gt;&lt;p&gt;- Pó de café torrado e moído marca São Francisco - 250g&lt;/p&gt;&lt;p&gt;- Coador de pano&lt;/p&gt;&lt;p&gt;- Xícara e pires marca São Francisco&lt;/p&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;', '', 'CESTA KIT CAFÉ E LÍRIOS', 'CESTA KIT CAFÉ E LÍRIOS', 'CESTA KIT CAFÉ E LÍRIOS'),
+(105, 4, 'CESTA KIT CERVEJA KARAVELLE COM PISTACHE E LÍRIOS', '&lt;p&gt;- Cesta&lt;/p&gt;&lt;p&gt;- Cerveja Karavelle Wess 600ml&lt;/p&gt;&lt;p&gt;- Cerveja Red Ale Hell 600ml&lt;/p&gt;&lt;p&gt;- Cerveja Pilsen Premium 600ml&lt;/p&gt;&lt;p&gt;- Pote com pistaches 130g&lt;/p&gt;', '', 'CESTA KIT CERVEJA KARAVELLE COM PISTACHE E LÍRIOS', 'CESTA KIT CERVEJA KARAVELLE COM PISTACHE E LÍRIOS', 'CESTA KIT CERVEJA KARAVELLE COM PISTACHE E LÍRIOS'),
+(107, 4, 'CESTA KIT CERVEJA BELGA LEFFE, COM PISTACHE, DAMASCO E LÍRIOS', '&lt;p&gt;- Cesta&lt;/p&gt;&lt;p&gt;- Arranjo de Lírios&lt;/p&gt;&lt;p&gt;- Pote com pistaches 130g&lt;/p&gt;&lt;p&gt;- Pote com damascos 35g&lt;/p&gt;&lt;p&gt;- Cerveja tipo Blond 330ml&lt;/p&gt;&lt;p&gt;- Cerveja tipo Radieuse 330ml&lt;/p&gt;', '', 'CESTA KIT CERVEJA BELGA LEFFE, COM PISTACHE, DAMASCO E LÍRIOS', 'CESTA KIT CERVEJA BELGA LEFFE, COM PISTACHE, DAMASCO E LÍRIOS', 'CESTA KIT CERVEJA BELGA LEFFE, COM PISTACHE, DAMASCO E LÍRIOS'),
+(108, 4, 'CESTA KIT CERVEJA GOOSE ISLAND, COM PISTACHE, DAMASCO E LÍRIOS', '&lt;p&gt;- Cesta&lt;/p&gt;&lt;p&gt;- Arranjo de Lírios&lt;/p&gt;&lt;p&gt;- Pote com pistaches 130g&lt;/p&gt;&lt;p&gt;- Pote com damascos 35g&lt;/p&gt;&lt;p&gt;- Cerveja tipo Ipa 335ml&lt;/p&gt;&lt;p&gt;- Cerveja tipo Honkers 335ml&lt;/p&gt;', '', 'CESTA KIT CERVEJA GOOSE ISLAND, COM PISTACHE, DAMASCO E LÍRIOS', 'CESTA KIT CERVEJA GOOSE ISLAND, COM PISTACHE, DAMASCO E LÍRIOS', 'CESTA KIT CERVEJA GOOSE ISLAND, COM PISTACHE, DAMASCO E LÍRIOS'),
+(109, 4, 'TAG 12', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 12', 'TAG 12', 'TAG 12'),
+(110, 4, 'TAG 13', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 13', 'TAG 13', 'TAG 13'),
+(111, 4, 'TAG 14', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 14', 'TAG 14', 'TAG 14'),
+(112, 4, 'TAG 15', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 15', 'TAG 15', 'TAG 15'),
+(113, 4, 'TAG 16', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 16', 'TAG 16', 'TAG 16'),
+(114, 4, 'CARTÃO PARA PRESENTE 1', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'CARTÃO PARA PRESENTE 1', 'CARTÃO PARA PRESENTE 1', 'CARTÃO PARA PRESENTE 1'),
+(115, 4, 'CARTÃO PARA PRESENTE 2', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'CARTÃO PARA PRESENTE 1', 'CARTÃO PARA PRESENTE 1', 'CARTÃO PARA PRESENTE 1'),
+(116, 4, 'CARTÃO PARA PRESENTE 3', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'CARTÃO PARA PRESENTE 3', 'CARTÃO PARA PRESENTE 3', 'CARTÃO PARA PRESENTE 3'),
+(117, 4, 'CARTÃO PARA PRESENTE 4', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'CARTÃO PARA PRESENTE 4', 'CARTÃO PARA PRESENTE 4', 'CARTÃO PARA PRESENTE 4'),
+(118, 4, 'CARTÃO PARA PRESENTE 5', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'CARTÃO PARA PRESENTE 5', 'CARTÃO PARA PRESENTE 5', 'CARTÃO PARA PRESENTE 5'),
+(119, 4, 'CARTÃO PARA PRESENTE 6', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'CARTÃO PARA PRESENTE 6', 'CARTÃO PARA PRESENTE 6', 'CARTÃO PARA PRESENTE 6'),
+(120, 4, 'CARTÃO PARA PRESENTE 7', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'CARTÃO PARA PRESENTE 7', 'CARTÃO PARA PRESENTE 7', 'CARTÃO PARA PRESENTE 7'),
+(121, 4, 'CARTÃO PARA PRESENTE 8', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'CARTÃO PARA PRESENTE 8', 'CARTÃO PARA PRESENTE 8', 'CARTÃO PARA PRESENTE 8'),
+(122, 4, 'CARTÃO PARA PRESENTE 9', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'CARTÃO PARA PRESENTE 9', 'CARTÃO PARA PRESENTE 9', 'CARTÃO PARA PRESENTE 9'),
+(123, 4, 'CARTÃO PARA PRESENTE 10', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'CARTÃO PARA PRESENTE 10', 'CARTÃO PARA PRESENTE 10', 'CARTÃO PARA PRESENTE 10'),
+(124, 4, 'CARTÃO PARA PRESENTE 11', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'CARTÃO PARA PRESENTE 11', 'CARTÃO PARA PRESENTE 11', ''),
+(125, 4, 'BONECA ARTESANAL PEQUENA 01', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'BONECA ARTESANAL PEQUENA 01', 'BONECA ARTESANAL PEQUENA 01', 'BONECA ARTESANAL PEQUENA 01'),
+(126, 4, 'BONECA ARTESANAL PEQUENA 02', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'BONECA ARTESANAL PEQUENA 02', 'BONECA ARTESANAL PEQUENA 02', 'BONECA ARTESANAL PEQUENA 02'),
+(127, 4, 'BONECA ARTESANAL PEQUENA 03', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'BONECA ARTESANAL PEQUENA 03', 'BONECA ARTESANAL PEQUENA 03', 'BONECA ARTESANAL PEQUENA 03'),
+(128, 4, 'URSINHA ARTESANAL PEQUENA 01', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'URSINHA ARTESANAL PEQUENA 01', 'URSINHA ARTESANAL PEQUENA 01', 'URSINHA ARTESANAL PEQUENA 01'),
+(129, 4, 'BONECA ARTESANAL CHAPÉU 01', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'BONECA ARTESANAL CHAPÉU 01', 'BONECA ARTESANAL CHAPÉU 01', 'BONECA ARTESANAL CHAPÉU 01'),
+(130, 4, 'BONECA ARTESANAL CHAPÉU 02', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'BONECA ARTESANAL CHAPÉU 02', 'BONECA ARTESANAL CHAPÉU 02', 'BONECA ARTESANAL CHAPÉU 02'),
+(131, 4, 'BONECO ARTESANAL PEQUENO 01', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'BONECO ARTESANAL PEQUENO 01', 'BONECO ARTESANAL PEQUENO 01', 'BONECO ARTESANAL PEQUENO 01'),
+(132, 4, 'TAG 17', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 17', 'TAG 17', 'TAG 17'),
+(133, 4, 'TAG 18', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 18', 'TAG 18', 'TAG 18'),
+(134, 4, 'ARRANJO ASTROMÉLIAS MIX DE FLORES - 01', '&lt;p&gt;ARRANJO ASTROMÉLIAS MIX DE FLORES - 01&lt;/p&gt;&lt;p&gt;Vaso com 18 cm altura x 6 cm de diâmetro no bocal x 9 de largura.&lt;/p&gt;', '', 'ARRANJO ASTROMÉLIAS MIX DE FLORES - 01', 'ARRANJO ASTROMÉLIAS MIX DE FLORES - 01', 'ARRANJO ASTROMÉLIAS MIX DE FLORES'),
+(135, 4, 'ARRANJO ASTROMÉLIAS MIX DE FLORES - 02', '&lt;p&gt;ARRANJO ASTROMÉLIAS MIX DE FLORES - 02&lt;/p&gt;&lt;p&gt;Vaso com 18 cm altura x 6 cm de diâmetro no bocal x 9 de largura.&lt;/p&gt;', '', 'ARRANJO ASTROMÉLIAS MIX DE FLORES - 02', 'ARRANJO ASTROMÉLIAS MIX DE FLORES - 02', 'ARRANJO ASTROMÉLIAS MIX DE FLORES - 02'),
+(136, 4, 'ARRANJO GÉRBERAS AMARELAS', '&lt;p&gt;ARRANJO GÉRBERAS AMARELAS&lt;/p&gt;&lt;p&gt;Com 8 gérberas na cor amarela&lt;/p&gt;&lt;p&gt;Vaso com 18 cm de altura x 6 cm de diâmetro no bocal x 6 cm de largura&lt;/p&gt;', '', 'ARRANJO GÉRBERAS AMARELAS', 'ARRANJO GÉRBERAS AMARELAS', 'ARRANJO GÉRBERAS AMARELAS'),
+(137, 4, 'ARRANJO LISIANTHUS E ROSAS BRANCAS', '&lt;p&gt;ARRANJO LISIANTHUS E ROSAS BRANCAS&lt;br&gt;&lt;/p&gt;&lt;p&gt;12 hastes, sendo 8 de lisianthus e 4 de rosas nacionais&lt;/p&gt;&lt;p&gt;Vaso com 13 cm de altura, 6 de diâmetro no bocal e 7,5 cm de largura&lt;/p&gt;', '', 'ARRANJO LISIANTHUS E ROSAS BRANCAS', 'ARRANJO LISIANTHUS E ROSAS BRANCAS', 'ARRANJO LISIANTHUS E ROSAS BRANCAS'),
+(138, 4, 'ORQUÍDEAS PHALENOPSIS BRANCAS COM 12 BRIGADEIROS', '&lt;p&gt;ORQUÍDEAS PHALENOPSIS BRANCAS COM 12 BRIGADEIROS&lt;/p&gt;&lt;p&gt;2 hastes com 16 a 20 flores em média&lt;/p&gt;&lt;p&gt;Vaso com 17 cm de altura x 17 cm de largura x 17 cm de profundidade&lt;/p&gt;&lt;p&gt;Tag com 8 cm de altura x 5 cm de largura&lt;br&gt;&lt;/p&gt;', '', 'ORQUÍDEAS PHALENOPSIS BRANCAS COM 12 BRIGADEIROS', 'ORQUÍDEAS PHALENOPSIS BRANCAS COM 12 BRIGADEIROS', 'ORQUÍDEAS PHALENOPSIS BRANCAS COM 12 BRIGADEIROS'),
+(140, 4, 'ORQUÍDEAS PHALENOPSIS BRANCAS', '&lt;p&gt;ORQUÍDEAS PHALENOPSIS BRANCAS&lt;/p&gt;&lt;p&gt;2 hastes com 16 a 20 flores em média&lt;/p&gt;&lt;p&gt;Vaso com 17 cm de altura x 17 cm de largura x 17 cm de profundidade&lt;/p&gt;&lt;p&gt;Tag com 8 cm de altura x 5 cm de largura&lt;/p&gt;', '', 'ORQUÍDEAS PHALENOPSIS BRANCAS', 'ORQUÍDEAS PHALENOPSIS BRANCAS', 'ORQUÍDEAS PHALENOPSIS BRANCAS'),
+(141, 4, 'ARRANJO CAIXA BRANCA COM ROSAS NACIONAIS SALMÃO - DIA DA SECRETÁRIA', '&lt;p&gt;ARRANJO CAIXA BRANCA COM ROSAS NACIONAIS SALMÃO - DIA DA SECRETÁRIA&lt;/p&gt;&lt;p&gt;12 hastes de rosas nacionais na cor salmão + folhagem&amp;nbsp;&lt;/p&gt;&lt;p&gt;Caixa com 12 cm de altura x 12 cm de largura x 12 cm de profundidade&lt;/p&gt;&lt;p&gt;Tag com 8 cm de altura x 5 cm de largura&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO CAIXA BRANCA COM ROSAS NACIONAIS SALMÃO - DIA DA SECRETÁRIA', 'ARRANJO CAIXA BRANCA COM ROSAS NACIONAIS SALMÃO - DIA DA SECRETÁRIA', 'ARRANJO CAIXA BRANCA COM ROSAS NACIONAIS SALMÃO - DIA DA SECRETÁRIA'),
+(142, 4, 'ARRANJO CAIXA BRANCA COM ROSAS NACIONAIS SALMÃO ', '&lt;p&gt;ARRANJO CAIXA BRANCA COM ROSAS NACIONAIS SALMÃO&lt;/p&gt;&lt;p&gt;12 hastes de rosas nacionais na cor salmão + folhagem&amp;nbsp;&lt;/p&gt;&lt;p&gt;Caixa com 12 cm de altura x 12 cm de largura x 12 cm de profundidade&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO CAIXA BRANCA COM ROSAS NACIONAIS SALMÃO', 'ARRANJO CAIXA BRANCA COM ROSAS NACIONAIS SALMÃO', 'ARRANJO CAIXA BRANCA COM ROSAS NACIONAIS SALMÃO'),
+(143, 4, 'ARRANJO CAIXA TONS DE AZUL COM ROSAS BRANCAS - DIA DA SECRETÁRIA', '&lt;p&gt;ARRANJO CAIXA TONS DE AZUL COM ROSAS BRANCAS - DIA DA SECRETÁRIA&lt;/p&gt;&lt;p&gt;12 hastes de rosas colombianas na cor branca&lt;/p&gt;&lt;p&gt;* Caixa com 6 cm de altura x 25 cm de largura x 19 cm de profundidade - modelo da caixa sujeito a disponibilidade no dia da compra&lt;/p&gt;&lt;p&gt;Tag com 8 cm de altura x 5 cm de alrgura&lt;/p&gt;', '', 'ARRANJO CAIXA TONS DE AZUL COM ROSAS BRANCAS - DIA DA SECRETÁRIA', 'ARRANJO CAIXA TONS DE AZUL COM ROSAS BRANCAS - DIA DA SECRETÁRIA', 'ARRANJO CAIXA TONS DE AZUL COM ROSAS BRANCAS - DIA DA SECRETÁRIA'),
+(144, 4, 'TAG 19', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 19', 'TAG 19', 'TAG 19'),
+(145, 4, 'TAG 20', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 20', 'TAG 20', 'TAG 20'),
+(146, 4, 'TAG 21', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 21', 'TAG 21', 'TAG 21'),
+(147, 4, 'TAG 22', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 22', 'TAG 22', 'TAG 22'),
+(148, 4, 'TAG 23', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 23', 'TAG 23', 'TAG 23'),
+(149, 4, 'TAG 24', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 24', 'TAG 24', 'TAG 24'),
+(150, 4, 'TAG 25', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 25', 'TAG 25', 'TAG 25'),
+(151, 4, 'TAG 26', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 26', 'TAG 26', 'TAG 26'),
+(152, 4, 'TAG 27', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 27', 'TAG 27', 'TAG 27'),
+(153, 4, 'TAG 28', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 28', 'TAG 28', 'TAG 28'),
+(154, 4, 'TAG 29', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 29', 'TAG 29', 'TAG 29'),
+(155, 4, 'TAG 31', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 31', 'TAG 31', 'TAG 31'),
+(156, 4, 'TAG 30', '&lt;p&gt;Tags feitos a mão com amor pelo Atelier Otilia. Originais e únicos compondo de forma delicada o seu presente com flores!&lt;/p&gt;&lt;p&gt;Tamanho: 8cm altura x 5 cm largura&lt;/p&gt;&lt;p&gt;Siga o Instagram do Atelier Otilia -&amp;gt; www.instagram.com/atelierotilia&lt;/p&gt;', '', 'TAG 30', 'TAG 30', 'TAG 30'),
+(157, 4, 'ARRANJO CAIXA BRANCA COM ROSAS COLOMBIANAS NA COR ROSA E 12 BRIGADEIROS DIVERSOS', '&lt;p&gt;ARRANJO CAIXA BRANCA COM ROSAS COLOMBIANAS NA COR ROSA E 12 BRIGADEIROS DIVERSOS&lt;/p&gt;&lt;p&gt;4 rosas colombianas na cor rosa&lt;/p&gt;&lt;p&gt;Caixa branca com 6 cm de altura x 25 cm de largura 6 cm de profundidade&lt;/p&gt;&lt;p&gt;Tag com 8 cm de altura x 5 cm de largura by Atelier Otília&lt;/p&gt;&lt;p&gt;12 brigadeiros de sabores diversos by Bendito Brigadeiro&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Opção 1 - com 12 brigadeiros R$ 125,00&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Opção 2 - sem os brigadeiros R$ 75,00&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Opção 3 - com rosas nacionais e os 12 brigadeiros por R$ 89,90&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Opção 2 - com rosas nacionais sem os 12 brigadeiros por R$ 39,90&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO CAIXA BRANCA COM ROSAS COLOMBIANAS NA COR ROSA E 12 BRIGADEIROS DIVERSOS', 'ARRANJO CAIXA BRANCA COM ROSAS COLOMBIANAS NA COR ROSA E 12 BRIGADEIROS DIVERSOS', 'ARRANJO CAIXA BRANCA COM ROSAS COLOMBIANAS NA COR ROSA E 12 BRIGADEIROS DIVERSOS'),
+(158, 4, 'ARRANJO EM CAIXA COR AZUL CLARO COM ORQUÍDEAS CIMBÍDIOS EM TOM AMARELO E 3 CABIDES AZUIS DE BONECOS', '&lt;p&gt;ARRANJO EM CAIXA COR AZUL CLARO COM ORQUÍDEAS CIMBÍDIOS EM TOM AMARELO E 3 CABIDES AZUIS DE BONECOS&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO EM CAIXA COR AZUL CLARO COM ORQUÍDEAS CIMBÍDIOS EM TOM AMARELO E 3 CABIDES AZUIS DE BONECOS', 'ARRANJO EM CAIXA COR AZUL CLARO COM ORQUÍDEAS CIMBÍDIOS EM TOM AMARELO E 3 CABIDES AZUIS DE BONECOS', 'ARRANJO EM CAIXA COR AZUL CLARO COM ORQUÍDEAS CIMBÍDIOS EM TOM AMARELO E 3 CABIDES AZUIS DE BONECOS'),
+(159, 4, 'ARRANJO EM CAIXA COR PRETA COM ROSAS NACIONAIS EM TOM AMARELO E 8 BRIGADEIROS DIVERSOS', '&lt;p&gt;ARRANJO EM CAIXA COR PRETA COM ROSAS NACIONAIS EM TOM AMARELO E 8 BRIGADEIROS DIVERSOS&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO EM CAIXA COR PRETA COM ROSAS NACIONAIS EM TOM AMARELO E 8 BRIGADEIROS DIVERSOS', 'ARRANJO EM CAIXA COR PRETA COM ROSAS NACIONAIS EM TOM AMARELO E 8 BRIGADEIROS DIVERSOS', 'ARRANJO EM CAIXA COR PRETA COM ROSAS NACIONAIS EM TOM AMARELO E 8 BRIGADEIROS DIVERSOS'),
+(160, 4, 'ARRANJO EM CAIXA COR PRETA COM ROSAS NACIONAIS EM TOM AMARELO E 12 MACARONS DIVERSOS', '&lt;p&gt;ARRANJO EM CAIXA COR PRETA COM ROSAS NACIONAIS EM TOM AMARELO E 12 MACARONS DIVERSOS&lt;/p&gt;', '', 'ARRANJO EM CAIXA COR PRETA COM ROSAS NACIONAIS EM TOM AMARELO E 12 MACARONS DIVERSOS', 'ARRANJO EM CAIXA COR PRETA COM ROSAS NACIONAIS EM TOM AMARELO E 12 MACARONS DIVERSOS', 'ARRANJO EM CAIXA COR PRETA COM ROSAS NACIONAIS EM TOM AMARELO E 8 BRIGADEIROS DIVERSOS');
+INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
+(161, 4, 'ARRANJO EM CAIXA COR ROSA COM MIX DE FLORES E 12 MACARONS', '&lt;p&gt;ARRANJO EM CAIXA COR ROSA COM MIX DE FLORES E 12 MACARONS&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO EM CAIXA COR ROSA COM MIX DE FLORES E 12 MACARONS', 'ARRANJO EM CAIXA COR ROSA COM MIX DE FLORES E 12 MACARONS', 'ARRANJO EM CAIXA COR ROSA COM MIX DE FLORES E 12 MACARONS'),
+(162, 4, 'CABIDE BEBÊ AZUL CLARO COM BONECO', '&lt;p&gt;CABIDE BEBÊ AZUL CLARO COM BONECO&lt;br&gt;&lt;/p&gt;', '', 'CABIDE BEBÊ AZUL CLARO COM BONECO', 'CABIDE BEBÊ AZUL CLARO COM BONECO', 'CABIDE BEBÊ AZUL CLARO COM BONECO'),
+(163, 4, '3 CABIDES BEBÊ NA COR AZUL CLARO COM BONECO', '&lt;p&gt;3 CABIDES BEBÊ NA COR AZUL CLARO COM BONECO&lt;br&gt;&lt;/p&gt;', '', '3 CABIDES BEBÊ NA COR AZUL CLARO COM BONECO', '3 CABIDES BEBÊ NA COR AZUL CLARO COM BONECO', '3 CABIDES BEBÊ NA COR AZUL CLARO COM BONECO'),
+(164, 4, '3 CABIDES BEBÊ NA COR CREME COM BONECO DE OVELHA', '&lt;p&gt;3 CABIDES BEBÊ NA COR CREME COM BONECO DE OVELHA&lt;br&gt;&lt;/p&gt;', '', '3 CABIDES BEBÊ NA COR CREME COM BONECO DE OVELHA', '3 CABIDES BEBÊ NA COR CREME COM BONECO DE OVELHA', '3 CABIDES BEBÊ NA COR CREME COM BONECO DE OVELHA'),
+(165, 4, '3 CABIDES BEBÊ NA COR BRANCA COM BONECA', '&lt;p&gt;3 CABIDES BEBÊ NA COR BRANCA COM BONECA&lt;br&gt;&lt;/p&gt;', '', '3 CABIDES BEBÊ NA COR BRANCA COM BONECA', '3 CABIDES BEBÊ NA COR BRANCA COM BONECA', '3 CABIDES BEBÊ NA COR BRANCA COM BONECA'),
+(166, 4, 'CABIDE BEBÊ BRANCO COM BONECA', '&lt;p&gt;CABIDE BEBÊ BRANCO COM BONECA&lt;br&gt;&lt;/p&gt;', '', 'CABIDE BEBÊ BRANCO COM BONECA', 'CABIDE BEBÊ BRANCO COM BONECA', 'CABIDE BEBÊ BRANCO COM BONECA'),
+(167, 4, 'CABIDE BEBÊ BRANCO COM OVELHA', '&lt;p&gt;CABIDE BEBÊ BRANCO COM OVELHA&lt;br&gt;&lt;/p&gt;', '', 'CABIDE BEBÊ BRANCO COM OVELHA', 'CABIDE BEBÊ BRANCO COM OVELHA', 'CABIDE BEBÊ BRANCO COM OVELHA'),
+(168, 4, 'BRIGADEIROS EM CAIXA - 12 UNIDADES - DIVERSOS SABORES', '&lt;p&gt;BRIGADEIROS EM CAIXA - 12 UNIDADES - DIVERSOS SABORES&lt;/p&gt;&lt;p&gt;12 brigadeiros de sabores diversos by Bendito Brigadeiro&lt;br&gt;&lt;/p&gt;', '', 'BRIGADEIROS EM CAIXA - 12 UNIDADES - DIVERSOS SABORES', 'BRIGADEIROS EM CAIXA - 12 UNIDADES - DIVERSOS SABORES', 'BRIGADEIROS EM CAIXA - 12 UNIDADES - DIVERSOS SABORES'),
+(169, 4, 'BRIGADEIROS EM CAIXA - 4 UNIDADES - DIVERSOS SABORES', '&lt;p&gt;BRIGADEIROS EM CAIXA - 4 UNIDADES - DIVERSOS SABORES&lt;/p&gt;&lt;p&gt;4 brigadeiros de sabores diversos by Bendito Brigadeiro&lt;br&gt;&lt;/p&gt;', '', 'BRIGADEIROS EM CAIXA - 4 UNIDADES - DIVERSOS SABORES', 'BRIGADEIROS EM CAIXA - 4 UNIDADES - DIVERSOS SABORES', 'BRIGADEIROS EM CAIXA - 4 UNIDADES - DIVERSOS SABORES'),
+(170, 4, 'MINI BUQUÊ DE FRÉSIAS COM DIVERSAS CORES EM EMBALAGEM MARROM', '&lt;p&gt;MINI BUQUÊ DE FRÉSIAS COM DIVERSAS CORES EM EMBALAGEM MARROM&lt;br&gt;&lt;/p&gt;', '', 'MINI BUQUÊ DE FRÉSIAS COM DIVERSAS CORES EM EMBALAGEM MARROM', 'MINI BUQUÊ DE FRÉSIAS COM DIVERSAS CORES EM EMBALAGEM MARROM', 'MINI BUQUÊ DE FRÉSIAS COM DIVERSAS CORES EM EMBALAGEM MARROM'),
+(171, 4, 'ARRANJO EM CAIXA COR ROSA COM ROSAS NACIONAIS EM TOM ROSA', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'ARRANJO EM CAIXA COR ROSA COM ROSAS NACIONAIS EM TOM ROSA', 'ARRANJO EM CAIXA COR ROSA COM ROSAS NACIONAIS EM TOM ROSA', 'ARRANJO EM CAIXA COR ROSA COM ROSAS NACIONAIS EM TOM ROSA');
 
 -- --------------------------------------------------------
 
@@ -2569,15 +2869,6 @@ CREATE TABLE `oc_product_discount` (
   `date_start` date NOT NULL DEFAULT '0000-00-00',
   `date_end` date NOT NULL DEFAULT '0000-00-00'
 ) ENGINE=MyISAM AUTO_INCREMENT=495 DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `oc_product_discount`
---
-
-INSERT INTO `oc_product_discount` (`product_discount_id`, `product_id`, `customer_group_id`, `quantity`, `priority`, `price`, `date_start`, `date_end`) VALUES
-(494, 42, 1, 30, 1, 66.0000, '0000-00-00', '0000-00-00'),
-(493, 42, 1, 20, 1, 77.0000, '0000-00-00', '0000-00-00'),
-(492, 42, 1, 10, 1, 88.0000, '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -2601,89 +2892,60 @@ CREATE TABLE `oc_product_image` (
   `product_id` int(11) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=3592 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3843 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_product_image`
 --
 
 INSERT INTO `oc_product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
-(3525, 30, 'catalog/product-15.png', 0),
-(3523, 47, 'catalog/product-12.png', 0),
-(3519, 28, 'catalog/product-12.png', 0),
-(3529, 41, 'catalog/product-15.png', 0),
-(3534, 40, 'catalog/product-18.png', 0),
-(3541, 36, 'catalog/product-24.png', 0),
-(3540, 36, 'catalog/product-23.png', 0),
-(3553, 34, 'catalog/product-27.png', 0),
-(3552, 34, 'catalog/product-26.png', 0),
-(3557, 32, 'catalog/product-29.png', 4),
-(3561, 43, 'catalog/product-33.png', 0),
-(3560, 43, 'catalog/product-32.png', 0),
-(3564, 44, 'catalog/product-36.png', 0),
-(3563, 44, 'catalog/product-35.png', 0),
-(3567, 45, 'catalog/product-39.png', 0),
-(3566, 45, 'catalog/product-38.png', 0),
-(3571, 31, 'catalog/product-42.png', 0),
-(3570, 31, 'catalog/product-41.png', 0),
-(3574, 29, 'catalog/product-45.png', 0),
-(3591, 46, 'catalog/product-57.png', 0),
-(3590, 46, 'catalog/product-56.png', 0),
-(3537, 48, 'catalog/product-21.png', 0),
-(3536, 48, 'catalog/product-20.png', 0),
-(3533, 40, 'catalog/product-18.png', 0),
-(3532, 40, 'catalog/product-17.png', 0),
-(3524, 30, 'catalog/product-14.png', 0),
-(3522, 47, 'catalog/product-11.png', 0),
-(3518, 28, 'catalog/product-11.png', 0),
-(3528, 41, 'catalog/product-14.png', 0),
-(3531, 40, 'catalog/product-17.png', 0),
-(3530, 40, 'catalog/product-16.png', 0),
-(3535, 48, 'catalog/product-19.png', 0),
-(3539, 36, 'catalog/product-23.png', 0),
-(3538, 36, 'catalog/product-22.png', 0),
-(3551, 34, 'catalog/product-26.png', 0),
-(3550, 34, 'catalog/product-25.png', 0),
-(3556, 32, 'catalog/product-30.png', 3),
-(3555, 32, 'catalog/product-29.png', 2),
-(3559, 43, 'catalog/product-32.png', 0),
-(3558, 43, 'catalog/product-31.png', 0),
-(3562, 44, 'catalog/product-34.png', 0),
-(3565, 45, 'catalog/product-37.png', 0),
-(3569, 31, 'catalog/product-41.png', 0),
-(3568, 31, 'catalog/product-40.png', 0),
-(3573, 29, 'catalog/product-44.png', 0),
-(3589, 46, 'catalog/product-56.png', 0),
-(3588, 46, 'catalog/product-55.png', 0),
-(3583, 49, 'catalog/product-51.png', 0),
-(3582, 49, 'catalog/product-51.png', 0),
-(3581, 49, 'catalog/product-50.png', 0),
-(3580, 49, 'catalog/product-50.png', 0),
-(3579, 49, 'catalog/product-49.png', 0),
-(3578, 49, 'catalog/product-49.png', 0),
-(3549, 42, 'catalog/product-24.png', 0),
-(3548, 42, 'catalog/product-24.png', 0),
-(3547, 42, 'catalog/product-24.png', 0),
-(3546, 42, 'catalog/product-23.png', 0),
-(3545, 42, 'catalog/product-23.png', 0),
-(3521, 47, 'catalog/product-11.png', 0),
-(3520, 47, 'catalog/product-10.png', 0),
-(3517, 28, 'catalog/product-11.png', 0),
-(3516, 28, 'catalog/product-10.png', 0),
-(3527, 41, 'catalog/product-14.png', 0),
-(3526, 41, 'catalog/product-13.png', 0),
-(3572, 29, 'catalog/product-43.png', 0),
-(3577, 35, 'catalog/product-48.png', 0),
-(3576, 35, 'catalog/product-47.png', 0),
-(3575, 35, 'catalog/product-46.png', 0),
-(3587, 33, 'catalog/product-54.png', 0),
-(3586, 33, 'catalog/product-53.png', 0),
-(3585, 33, 'catalog/product-53.png', 0),
-(3584, 33, 'catalog/product-52.png', 0),
-(3544, 42, 'catalog/product-23.png', 0),
-(3543, 42, 'catalog/product-22.png', 0),
-(3542, 42, 'catalog/product-22.png', 0),
-(3554, 32, 'catalog/product-30.png', 1);
+(3677, 58, 'catalog/Produtos/Secret/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 23_2.jpg', 0),
+(3676, 60, 'catalog/Produtos/Secret/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 25_2.jpg', 2),
+(3675, 60, 'catalog/Produtos/Secret/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 26_1.jpg', 1),
+(3674, 59, 'catalog/Produtos/Secret/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 26_1.jpg', 0),
+(3707, 103, 'catalog/Produtos/Flores e doces/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 63.jpg', 0),
+(3706, 103, 'catalog/Produtos/Flores e doces/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 65.jpg', 0),
+(3705, 103, 'catalog/Produtos/Flores e doces/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 66.jpg', 0),
+(3682, 112, 'catalog/Produtos/Tag/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 77.jpg', 0),
+(3684, 114, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 80.jpg', 0),
+(3685, 115, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 82.jpg', 0),
+(3686, 116, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 84.jpg', 0),
+(3689, 117, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 86.jpg', 0),
+(3688, 118, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 88.jpg', 0),
+(3690, 119, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 93.jpg', 0),
+(3691, 120, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 95.jpg', 0),
+(3692, 121, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 97.jpg', 0),
+(3693, 122, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 99.jpg', 0),
+(3694, 123, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 101.jpg', 0),
+(3695, 124, 'catalog/Produtos/Cartão/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 102.jpg', 0),
+(3704, 104, 'catalog/Produtos/Flores e doces/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 104.jpg', 0),
+(3703, 104, 'catalog/Produtos/Flores e doces/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 105.jpg', 0),
+(3702, 104, 'catalog/Produtos/Flores e doces/20160529 - CASA FLORES - NOVO SITE - FOTO PRODUTO 107.jpg', 0),
+(3720, 134, 'catalog/Produtos/Arranjo/Astromélias/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 130_3_1.jpg', 0),
+(3721, 134, 'catalog/Produtos/Arranjo/Astromélias/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 130_2_1.jpg', 0),
+(3842, 135, 'catalog/Produtos/Arranjo/Astromélias/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 132_2.jpg', 0),
+(3733, 136, 'catalog/Produtos/Arranjo/Gérberas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 135_4.jpg', 0),
+(3732, 136, 'catalog/Produtos/Arranjo/Gérberas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 135_2.jpg', 0),
+(3731, 136, 'catalog/Produtos/Arranjo/Gérberas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 135_3.jpg', 0),
+(3734, 137, 'catalog/Produtos/Arranjo/Lisianthus e Rosas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 136_2.jpg', 0),
+(3735, 137, 'catalog/Produtos/Arranjo/Lisianthus e Rosas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 136_3.jpg', 0),
+(3787, 140, 'catalog/Produtos/Arranjo/Orquídeas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 137_3.jpg', 0),
+(3785, 138, 'catalog/Produtos/Arranjo/Orquídeas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 137_3.jpg', 0),
+(3784, 138, 'catalog/Produtos/Arranjo/Orquídeas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 137_2.jpg', 0),
+(3786, 140, 'catalog/Produtos/Arranjo/Orquídeas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 137_2.jpg', 0),
+(3783, 141, 'catalog/Produtos/Arranjo/Rosas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 139_3.jpg', 0),
+(3782, 141, 'catalog/Produtos/Arranjo/Rosas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 139_2.jpg', 0),
+(3781, 142, 'catalog/Produtos/Arranjo/Rosas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 139_3.jpg', 0),
+(3780, 142, 'catalog/Produtos/Arranjo/Rosas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 140_2.jpg', 0),
+(3795, 143, 'catalog/Produtos/Arranjo/Rosas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 141_3.jpg', 0),
+(3794, 143, 'catalog/Produtos/Arranjo/Rosas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 141_2.jpg', 0),
+(3807, 157, 'catalog/Produtos/Arranjo/Rosas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 143_3.jpg', 0),
+(3806, 157, 'catalog/Produtos/Arranjo/Rosas/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 143_2.jpg', 0),
+(3826, 168, 'catalog/Produtos/Flores e doces/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 144_2.jpg', 0),
+(3833, 169, 'catalog/Produtos/Flores e doces/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 145_2.jpg', 0),
+(3835, 169, 'catalog/Produtos/Flores e doces/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 145_3.jpg', 0),
+(3834, 169, 'catalog/Produtos/Flores e doces/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 145_4.jpg', 0),
+(3839, 170, 'catalog/Produtos/Buquês/Frésias/20160916 - CASA FLORES - NOVO SITE - FOTO PRODUTO 162_2.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -2698,49 +2960,6 @@ CREATE TABLE `oc_product_option` (
   `value` text NOT NULL,
   `required` tinyint(1) NOT NULL
 ) ENGINE=MyISAM AUTO_INCREMENT=268 DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `oc_product_option`
---
-
-INSERT INTO `oc_product_option` (`product_option_id`, `product_id`, `option_id`, `value`, `required`) VALUES
-(234, 28, 13, '', 0),
-(236, 47, 13, '', 1),
-(237, 30, 13, '', 1),
-(265, 42, 12, '2014-12-18', 1),
-(230, 35, 13, '', 1),
-(224, 35, 11, '', 1),
-(227, 35, 2, '', 1),
-(233, 28, 11, '', 1),
-(235, 47, 11, '', 1),
-(238, 30, 11, '', 1),
-(239, 44, 11, '', 1),
-(240, 41, 11, '', 1),
-(242, 49, 13, '', 1),
-(241, 49, 11, '', 1),
-(244, 32, 13, '', 1),
-(243, 32, 11, '', 1),
-(246, 29, 13, '', 1),
-(245, 29, 11, '', 1),
-(248, 45, 13, '', 1),
-(247, 45, 11, '', 0),
-(250, 48, 13, '', 1),
-(249, 48, 11, '', 1),
-(252, 34, 13, '', 1),
-(251, 34, 11, '', 1),
-(254, 43, 13, '', 1),
-(253, 43, 11, '', 1),
-(256, 31, 13, '', 1),
-(255, 31, 11, '', 1),
-(257, 46, 11, '', 1),
-(259, 40, 13, '', 1),
-(258, 40, 11, '', 1),
-(261, 36, 13, '', 1),
-(260, 36, 11, '', 1),
-(262, 42, 11, '', 1),
-(264, 42, 10, '2014-12-18 12:25', 1),
-(266, 42, 9, '', 1),
-(263, 42, 13, '', 1);
 
 -- --------------------------------------------------------
 
@@ -2763,114 +2982,6 @@ CREATE TABLE `oc_product_option_value` (
   `weight` decimal(15,8) NOT NULL,
   `weight_prefix` varchar(1) NOT NULL
 ) ENGINE=MyISAM AUTO_INCREMENT=128 DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `oc_product_option_value`
---
-
-INSERT INTO `oc_product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
-(123, 263, 42, 13, 51, 1500, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(124, 263, 42, 13, 50, 1500, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(45, 237, 30, 13, 51, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(122, 263, 42, 13, 49, 1500, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(119, 262, 42, 11, 48, 1500, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(24, 230, 35, 13, 51, 122, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(25, 230, 35, 13, 50, 122, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(23, 230, 35, 13, 49, 122, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(14, 224, 35, 11, 48, 15, 1, 15.0000, '+', 0, '+', 0.00000000, '+'),
-(36, 234, 28, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(37, 234, 28, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(35, 234, 28, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(32, 233, 28, 11, 48, 144, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(33, 233, 28, 11, 47, 144, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(34, 233, 28, 11, 46, 144, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(42, 236, 47, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(43, 236, 47, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(41, 236, 47, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(38, 235, 47, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(39, 235, 47, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(40, 235, 47, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(46, 237, 30, 13, 50, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(44, 237, 30, 13, 49, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(47, 238, 30, 11, 48, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(48, 238, 30, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(49, 238, 30, 11, 46, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(50, 239, 44, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(51, 239, 44, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(52, 239, 44, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(53, 240, 41, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(54, 240, 41, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(55, 240, 41, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(120, 262, 42, 11, 47, 1500, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(121, 262, 42, 11, 46, 1500, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(60, 242, 49, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(61, 242, 49, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(59, 242, 49, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(56, 241, 49, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(57, 241, 49, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(58, 241, 49, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(66, 244, 32, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(67, 244, 32, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(65, 244, 32, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(62, 243, 32, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(63, 243, 32, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(64, 243, 32, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(73, 246, 29, 13, 50, 1000, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-(78, 248, 45, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(79, 248, 45, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(77, 248, 45, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(74, 247, 45, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(75, 247, 45, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(76, 247, 45, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(84, 250, 48, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(85, 250, 48, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(83, 250, 48, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(80, 249, 48, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(81, 249, 48, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(82, 249, 48, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(90, 252, 34, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(91, 252, 34, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(89, 252, 34, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(86, 251, 34, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(87, 251, 34, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(88, 251, 34, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(96, 254, 43, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(97, 254, 43, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(95, 254, 43, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(92, 253, 43, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(93, 253, 43, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(94, 253, 43, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(102, 256, 31, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(103, 256, 31, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(101, 256, 31, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(98, 255, 31, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(99, 255, 31, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(100, 255, 31, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(104, 257, 46, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(105, 257, 46, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(106, 257, 46, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(111, 259, 40, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(112, 259, 40, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(110, 259, 40, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(107, 258, 40, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(108, 258, 40, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(109, 258, 40, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(117, 261, 36, 13, 51, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(118, 261, 36, 13, 50, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(116, 261, 36, 13, 49, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(113, 260, 36, 11, 48, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(114, 260, 36, 11, 47, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(115, 260, 36, 11, 46, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(13, 224, 35, 11, 47, 10, 1, 10.0000, '+', 0, '+', 0.00000000, '+'),
-(68, 245, 29, 11, 47, 1000, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(12, 224, 35, 11, 46, 12, 1, 5.0000, '+', 0, '+', 0.00000000, '+'),
-(71, 246, 29, 13, 49, 1000, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-(19, 227, 35, 2, 44, 12, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(18, 227, 35, 2, 24, 12, 1, 15.0000, '+', 15, '+', 15.00000000, '+'),
-(72, 246, 29, 13, 51, 1000, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-(17, 227, 35, 2, 23, 12, 1, 10.0000, '+', 10, '+', 10.00000000, '+'),
-(70, 245, 29, 11, 48, 1000, 1, 20.0000, '+', 20, '+', 20.00000000, '+'),
-(69, 245, 29, 11, 46, 1000, 1, 15.0000, '+', 15, '+', 15.00000000, '+');
 
 -- --------------------------------------------------------
 
@@ -2900,210 +3011,10 @@ CREATE TABLE `oc_product_related` (
 --
 
 INSERT INTO `oc_product_related` (`product_id`, `related_id`) VALUES
-(28, 28),
-(28, 29),
-(28, 30),
-(28, 31),
-(28, 32),
-(28, 33),
-(28, 34),
-(28, 35),
-(28, 36),
-(28, 40),
-(28, 41),
-(28, 42),
-(28, 43),
-(28, 44),
-(28, 45),
-(28, 46),
-(28, 47),
-(28, 48),
-(28, 49),
-(29, 28),
-(29, 30),
-(29, 33),
-(29, 35),
-(29, 41),
-(29, 42),
-(29, 47),
-(30, 28),
-(30, 29),
-(30, 30),
-(30, 31),
-(30, 32),
-(30, 33),
-(30, 34),
-(30, 35),
-(30, 36),
-(30, 40),
-(30, 41),
-(30, 43),
-(30, 44),
-(30, 45),
-(30, 46),
-(30, 47),
-(30, 48),
-(30, 49),
-(31, 28),
-(31, 30),
-(31, 33),
-(31, 35),
-(31, 47),
-(32, 28),
-(32, 30),
-(32, 33),
-(32, 35),
-(32, 41),
-(32, 42),
-(32, 47),
-(33, 28),
-(33, 29),
-(33, 30),
-(33, 31),
-(33, 32),
-(33, 33),
-(33, 34),
-(33, 35),
-(33, 36),
-(33, 40),
-(33, 41),
-(33, 42),
-(33, 43),
-(33, 44),
-(33, 45),
-(33, 46),
-(33, 47),
-(33, 48),
-(33, 49),
-(34, 28),
-(34, 30),
-(34, 33),
-(34, 35),
-(34, 41),
-(34, 42),
-(34, 47),
-(35, 28),
-(35, 29),
-(35, 30),
-(35, 31),
-(35, 32),
-(35, 33),
-(35, 34),
-(35, 35),
-(35, 36),
-(35, 40),
-(35, 41),
-(35, 42),
-(35, 43),
-(35, 44),
-(35, 45),
-(35, 46),
-(35, 47),
-(35, 48),
-(35, 49),
-(36, 28),
-(36, 30),
-(36, 33),
-(36, 35),
-(36, 41),
-(36, 42),
-(36, 47),
-(40, 28),
-(40, 30),
-(40, 33),
-(40, 35),
-(40, 41),
-(40, 42),
-(40, 47),
-(41, 28),
-(41, 29),
-(41, 30),
-(41, 32),
-(41, 33),
-(41, 34),
-(41, 35),
-(41, 36),
-(41, 40),
-(41, 41),
-(41, 42),
-(41, 45),
-(41, 46),
-(41, 47),
-(41, 48),
-(41, 49),
-(42, 28),
-(42, 29),
-(42, 32),
-(42, 33),
-(42, 34),
-(42, 35),
-(42, 36),
-(42, 40),
-(42, 41),
-(42, 44),
-(42, 45),
-(42, 46),
-(42, 47),
-(42, 48),
-(42, 49),
-(43, 28),
-(43, 30),
-(43, 33),
-(43, 35),
-(43, 47),
-(44, 28),
-(44, 30),
-(44, 33),
-(44, 35),
-(44, 42),
-(44, 47),
-(45, 28),
-(45, 30),
-(45, 33),
-(45, 35),
-(45, 41),
-(45, 42),
-(45, 47),
-(46, 28),
-(46, 30),
-(46, 33),
-(46, 35),
-(46, 41),
-(46, 42),
-(46, 47),
-(47, 28),
-(47, 29),
-(47, 30),
-(47, 31),
-(47, 32),
-(47, 33),
-(47, 34),
-(47, 35),
-(47, 36),
-(47, 40),
-(47, 41),
-(47, 42),
-(47, 43),
-(47, 44),
-(47, 45),
-(47, 46),
-(47, 47),
-(47, 48),
-(47, 49),
-(48, 28),
-(48, 30),
-(48, 33),
-(48, 35),
-(48, 41),
-(48, 42),
-(48, 47),
-(49, 28),
-(49, 30),
-(49, 33),
-(49, 35),
-(49, 41),
-(49, 42),
-(49, 47);
+(57, 71),
+(61, 71),
+(71, 57),
+(71, 61);
 
 -- --------------------------------------------------------
 
@@ -3117,20 +3028,6 @@ CREATE TABLE `oc_product_reward` (
   `customer_group_id` int(11) NOT NULL DEFAULT '0',
   `points` int(8) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM AUTO_INCREMENT=778 DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `oc_product_reward`
---
-
-INSERT INTO `oc_product_reward` (`product_reward_id`, `product_id`, `customer_group_id`, `points`) VALUES
-(773, 42, 1, 100),
-(771, 47, 1, 300),
-(770, 28, 1, 400),
-(774, 43, 1, 600),
-(772, 30, 1, 200),
-(775, 44, 1, 700),
-(776, 45, 1, 800),
-(777, 49, 1, 1000);
 
 -- --------------------------------------------------------
 
@@ -3146,26 +3043,7 @@ CREATE TABLE `oc_product_special` (
   `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `date_start` date NOT NULL DEFAULT '0000-00-00',
   `date_end` date NOT NULL DEFAULT '0000-00-00'
-) ENGINE=MyISAM AUTO_INCREMENT=613 DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `oc_product_special`
---
-
-INSERT INTO `oc_product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
-(605, 42, 1, 1, 90.0000, '0000-00-00', '0000-00-00'),
-(603, 30, 1, 2, 90.0000, '0000-00-00', '0000-00-00'),
-(602, 30, 1, 1, 80.0000, '0000-00-00', '0000-00-00'),
-(612, 33, 1, 0, 150.0000, '0000-00-00', '0000-00-00'),
-(600, 28, 1, 0, 80.0000, '0000-00-00', '0000-00-00'),
-(601, 47, 1, 0, 60.0000, '0000-00-00', '0000-00-00'),
-(608, 44, 1, 0, 90.0000, '0000-00-00', '0000-00-00'),
-(604, 41, 1, 0, 90.0000, '0000-00-00', '0000-00-00'),
-(611, 49, 1, 0, 150.0000, '0000-00-00', '0000-00-00'),
-(606, 32, 1, 0, 90.0000, '0000-00-00', '0000-00-00'),
-(610, 29, 1, 0, 200.0000, '0000-00-00', '0000-00-00'),
-(609, 45, 1, 0, 150.0000, '0000-00-00', '0000-00-00'),
-(607, 43, 1, 0, 400.0000, '0000-00-00', '0000-00-00');
+) ENGINE=MyISAM AUTO_INCREMENT=614 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -3177,6 +3055,247 @@ CREATE TABLE `oc_product_to_category` (
   `product_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `oc_product_to_category`
+--
+
+INSERT INTO `oc_product_to_category` (`product_id`, `category_id`) VALUES
+(50, 37),
+(52, 38),
+(53, 38),
+(54, 38),
+(55, 38),
+(55, 42),
+(56, 53),
+(57, 37),
+(58, 47),
+(58, 49),
+(59, 47),
+(59, 49),
+(60, 47),
+(60, 49),
+(61, 38),
+(61, 56),
+(62, 38),
+(63, 38),
+(64, 38),
+(65, 37),
+(66, 37),
+(67, 37),
+(68, 37),
+(68, 55),
+(69, 38),
+(69, 56),
+(70, 37),
+(71, 37),
+(73, 37),
+(74, 37),
+(75, 37),
+(76, 37),
+(77, 37),
+(78, 47),
+(78, 61),
+(79, 62),
+(80, 62),
+(81, 62),
+(82, 62),
+(83, 47),
+(83, 62),
+(85, 47),
+(85, 62),
+(86, 47),
+(86, 62),
+(87, 47),
+(87, 62),
+(88, 47),
+(88, 62),
+(89, 47),
+(89, 62),
+(90, 47),
+(90, 62),
+(91, 47),
+(91, 61),
+(91, 70),
+(92, 37),
+(92, 53),
+(92, 57),
+(93, 37),
+(93, 57),
+(93, 74),
+(94, 47),
+(94, 64),
+(95, 44),
+(95, 47),
+(95, 64),
+(96, 37),
+(96, 44),
+(96, 48),
+(97, 37),
+(97, 47),
+(97, 70),
+(97, 75),
+(98, 37),
+(98, 47),
+(98, 70),
+(98, 75),
+(99, 37),
+(99, 47),
+(99, 70),
+(99, 75),
+(100, 37),
+(100, 44),
+(100, 47),
+(100, 48),
+(101, 37),
+(101, 47),
+(101, 48),
+(101, 53),
+(102, 37),
+(102, 47),
+(102, 48),
+(102, 55),
+(103, 47),
+(103, 69),
+(104, 47),
+(104, 69),
+(105, 47),
+(105, 61),
+(106, 47),
+(106, 61),
+(106, 70),
+(106, 71),
+(107, 47),
+(107, 61),
+(107, 70),
+(107, 71),
+(108, 47),
+(108, 61),
+(108, 70),
+(108, 71),
+(109, 62),
+(110, 62),
+(111, 62),
+(112, 62),
+(113, 62),
+(114, 67),
+(115, 67),
+(116, 67),
+(117, 67),
+(118, 67),
+(119, 67),
+(120, 67),
+(121, 67),
+(122, 67),
+(123, 67),
+(124, 67),
+(125, 47),
+(125, 65),
+(125, 68),
+(126, 47),
+(126, 65),
+(126, 68),
+(127, 47),
+(127, 65),
+(127, 68),
+(128, 47),
+(128, 65),
+(128, 68),
+(129, 47),
+(129, 68),
+(130, 47),
+(130, 68),
+(131, 47),
+(131, 65),
+(131, 68),
+(132, 62),
+(133, 62),
+(134, 37),
+(134, 57),
+(135, 37),
+(136, 37),
+(136, 76),
+(137, 53),
+(137, 77),
+(138, 44),
+(138, 69),
+(138, 78),
+(140, 44),
+(140, 47),
+(141, 37),
+(141, 78),
+(142, 37),
+(142, 47),
+(142, 53),
+(143, 37),
+(143, 78),
+(144, 62),
+(144, 78),
+(145, 62),
+(145, 78),
+(146, 62),
+(146, 78),
+(147, 62),
+(147, 78),
+(148, 62),
+(148, 78),
+(149, 62),
+(149, 78),
+(150, 62),
+(150, 78),
+(151, 62),
+(151, 78),
+(152, 62),
+(152, 78),
+(153, 62),
+(153, 78),
+(154, 62),
+(154, 78),
+(155, 62),
+(155, 78),
+(156, 62),
+(156, 78),
+(157, 78),
+(158, 47),
+(158, 65),
+(159, 47),
+(159, 48),
+(159, 69),
+(160, 47),
+(160, 69),
+(161, 47),
+(161, 48),
+(161, 55),
+(161, 69),
+(162, 47),
+(162, 65),
+(162, 68),
+(163, 47),
+(163, 65),
+(163, 68),
+(164, 47),
+(164, 65),
+(164, 68),
+(165, 47),
+(165, 65),
+(165, 68),
+(166, 47),
+(166, 65),
+(166, 68),
+(167, 47),
+(167, 65),
+(167, 68),
+(168, 47),
+(168, 69),
+(169, 47),
+(169, 69),
+(170, 38),
+(170, 47),
+(170, 78),
+(170, 79),
+(171, 37),
+(171, 47),
+(171, 48);
 
 -- --------------------------------------------------------
 
@@ -3206,25 +3325,126 @@ CREATE TABLE `oc_product_to_layout` (
 --
 
 INSERT INTO `oc_product_to_layout` (`product_id`, `store_id`, `layout_id`) VALUES
-(44, 0, 0),
-(31, 0, 0),
-(46, 0, 0),
-(30, 0, 0),
-(49, 0, 0),
-(48, 0, 0),
-(34, 0, 0),
-(42, 0, 0),
-(28, 0, 0),
-(29, 0, 0),
-(33, 0, 0),
-(40, 0, 0),
-(47, 0, 0),
-(45, 0, 0),
-(36, 0, 0),
-(35, 0, 0),
-(41, 0, 0),
-(32, 0, 0),
-(43, 0, 0);
+(57, 0, 0),
+(55, 0, 0),
+(50, 0, 0),
+(66, 0, 0),
+(52, 0, 0),
+(63, 0, 0),
+(60, 0, 0),
+(61, 0, 0),
+(68, 0, 0),
+(54, 0, 0),
+(51, 0, 0),
+(64, 0, 0),
+(67, 0, 0),
+(56, 0, 0),
+(62, 0, 0),
+(53, 0, 0),
+(65, 0, 0),
+(59, 0, 0),
+(58, 0, 0),
+(69, 0, 0),
+(70, 0, 0),
+(71, 0, 0),
+(72, 0, 0),
+(73, 0, 0),
+(74, 0, 0),
+(75, 0, 0),
+(76, 0, 0),
+(77, 0, 0),
+(78, 0, 0),
+(79, 0, 0),
+(80, 0, 0),
+(81, 0, 0),
+(82, 0, 0),
+(83, 0, 0),
+(85, 0, 0),
+(86, 0, 0),
+(87, 0, 0),
+(88, 0, 0),
+(89, 0, 0),
+(90, 0, 0),
+(91, 0, 0),
+(92, 0, 0),
+(93, 0, 0),
+(94, 0, 0),
+(95, 0, 0),
+(96, 0, 0),
+(97, 0, 0),
+(98, 0, 0),
+(99, 0, 0),
+(100, 0, 0),
+(101, 0, 0),
+(102, 0, 0),
+(103, 0, 0),
+(104, 0, 0),
+(105, 0, 0),
+(106, 0, 0),
+(107, 0, 0),
+(108, 0, 0),
+(109, 0, 0),
+(110, 0, 0),
+(111, 0, 0),
+(112, 0, 0),
+(113, 0, 0),
+(114, 0, 0),
+(115, 0, 0),
+(116, 0, 0),
+(117, 0, 0),
+(118, 0, 0),
+(119, 0, 0),
+(120, 0, 0),
+(121, 0, 0),
+(122, 0, 0),
+(123, 0, 0),
+(124, 0, 0),
+(125, 0, 0),
+(126, 0, 0),
+(127, 0, 0),
+(128, 0, 0),
+(129, 0, 0),
+(130, 0, 0),
+(131, 0, 0),
+(132, 0, 0),
+(133, 0, 0),
+(134, 0, 0),
+(135, 0, 0),
+(136, 0, 0),
+(137, 0, 0),
+(138, 0, 0),
+(140, 0, 0),
+(141, 0, 0),
+(142, 0, 0),
+(143, 0, 0),
+(144, 0, 0),
+(145, 0, 0),
+(146, 0, 0),
+(147, 0, 0),
+(148, 0, 0),
+(149, 0, 0),
+(150, 0, 0),
+(151, 0, 0),
+(152, 0, 0),
+(153, 0, 0),
+(154, 0, 0),
+(155, 0, 0),
+(156, 0, 0),
+(157, 0, 0),
+(158, 0, 0),
+(159, 0, 0),
+(160, 0, 0),
+(161, 0, 0),
+(162, 0, 0),
+(163, 0, 0),
+(164, 0, 0),
+(165, 0, 0),
+(166, 0, 0),
+(167, 0, 0),
+(168, 0, 0),
+(169, 0, 0),
+(170, 0, 0),
+(171, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -3242,25 +3462,126 @@ CREATE TABLE `oc_product_to_store` (
 --
 
 INSERT INTO `oc_product_to_store` (`product_id`, `store_id`) VALUES
-(28, 0),
-(29, 0),
-(30, 0),
-(31, 0),
-(32, 0),
-(33, 0),
-(34, 0),
-(35, 0),
-(36, 0),
-(40, 0),
-(41, 0),
-(42, 0),
-(43, 0),
-(44, 0),
-(45, 0),
-(46, 0),
-(47, 0),
-(48, 0),
-(49, 0);
+(50, 0),
+(51, 0),
+(52, 0),
+(53, 0),
+(54, 0),
+(55, 0),
+(56, 0),
+(57, 0),
+(58, 0),
+(59, 0),
+(60, 0),
+(61, 0),
+(62, 0),
+(63, 0),
+(64, 0),
+(65, 0),
+(66, 0),
+(67, 0),
+(68, 0),
+(69, 0),
+(70, 0),
+(71, 0),
+(72, 0),
+(73, 0),
+(74, 0),
+(75, 0),
+(76, 0),
+(77, 0),
+(78, 0),
+(79, 0),
+(80, 0),
+(81, 0),
+(82, 0),
+(83, 0),
+(85, 0),
+(86, 0),
+(87, 0),
+(88, 0),
+(89, 0),
+(90, 0),
+(91, 0),
+(92, 0),
+(93, 0),
+(94, 0),
+(95, 0),
+(96, 0),
+(97, 0),
+(98, 0),
+(99, 0),
+(100, 0),
+(101, 0),
+(102, 0),
+(103, 0),
+(104, 0),
+(105, 0),
+(106, 0),
+(107, 0),
+(108, 0),
+(109, 0),
+(110, 0),
+(111, 0),
+(112, 0),
+(113, 0),
+(114, 0),
+(115, 0),
+(116, 0),
+(117, 0),
+(118, 0),
+(119, 0),
+(120, 0),
+(121, 0),
+(122, 0),
+(123, 0),
+(124, 0),
+(125, 0),
+(126, 0),
+(127, 0),
+(128, 0),
+(129, 0),
+(130, 0),
+(131, 0),
+(132, 0),
+(133, 0),
+(134, 0),
+(135, 0),
+(136, 0),
+(137, 0),
+(138, 0),
+(140, 0),
+(141, 0),
+(142, 0),
+(143, 0),
+(144, 0),
+(145, 0),
+(146, 0),
+(147, 0),
+(148, 0),
+(149, 0),
+(150, 0),
+(151, 0),
+(152, 0),
+(153, 0),
+(154, 0),
+(155, 0),
+(156, 0),
+(157, 0),
+(158, 0),
+(159, 0),
+(160, 0),
+(161, 0),
+(162, 0),
+(163, 0),
+(164, 0),
+(165, 0),
+(166, 0),
+(167, 0),
+(168, 0),
+(169, 0),
+(170, 0),
+(171, 0);
 
 -- --------------------------------------------------------
 
@@ -3419,28 +3740,14 @@ CREATE TABLE `oc_review` (
   `status` tinyint(1) NOT NULL DEFAULT '0',
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_review`
 --
 
 INSERT INTO `oc_review` (`review_id`, `product_id`, `customer_id`, `author`, `text`, `rating`, `status`, `date_added`, `date_modified`) VALUES
-(3, 47, 0, 'Otto', 'I''m very happy. Good choise for everyone!', 5, 1, '2014-12-03 12:03:04', '2015-09-29 18:28:02'),
-(5, 30, 0, 'Jenifer', 'Wonderful! It''s what i was looking for long time. ', 5, 1, '2014-12-03 12:03:47', '2015-09-24 10:56:40'),
-(9, 29, 0, 'Donald', 'Hi, my order arrived yesterday. I love it! Thank you! What a fast service...you guys are great! I wish every site was like this one ', 5, 1, '2014-12-03 12:05:27', '2015-09-24 10:38:10'),
-(12, 45, 0, 'David', 'Thank you again and again! I have experienced the fastest support ever. My order arrived on my door step the following day. Your team is always, friendly and very helpful. You managed to exceed my expectations! ', 5, 1, '2014-12-03 12:06:13', '2015-09-24 10:37:41'),
-(13, 45, 0, 'Irene', 'Very good product.', 4, 1, '2014-12-03 12:06:18', '2015-09-24 10:45:46'),
-(17, 48, 0, 'Cooper', 'Hi, guys! I want to thank you for my very very quick delivery and I just love my order… Your company efficient services and customer care are second to none! I am very happy! I will surely share my experience with my friends!', 5, 1, '2014-12-03 12:07:18', '2015-09-24 10:37:14'),
-(21, 34, 0, 'Cate', 'I love your store! There is the largest selection of products of the exceptional quality and the lowest prices like in no other store. My family appreciated my purchase, I have no words to describe how pleased I am...Thanks a lot to your store, to your team and the delivery in time!!! Go on your great business, stay the best!', 5, 1, '2014-12-03 12:08:39', '2015-09-24 10:36:21'),
-(22, 31, 0, 'Elizabeth', 'Great Job, 100 percent satisfaction guarantee!', 4, 1, '2014-12-03 12:10:01', '2015-09-24 10:43:10'),
-(25, 40, 0, 'Bob', 'Hi guys! I''m soo impressed!!! Your service is unbeaten, support staff is so friendly...very knowledgeable and professional team! The product I received is of the highest quality ever! And in addition I''ve saved my money!', 5, 1, '2014-12-03 12:10:41', '2015-09-24 10:35:49'),
-(28, 49, 0, 'Bernard', 'WOW!!! I have no words! It was a unique and very enjoyable experience. You have such a diverse variety of beautiful products of the highest quality plus superb service. I am now a fan of your site! I can''t wait to buy from you again! ', 5, 1, '2014-12-03 12:11:12', '2015-09-24 10:35:17'),
-(33, 35, 0, 'Barry', 'I loved everything about buying from you! My purchase was carefully packaged and quickly shipped. I was also pleased with great service and delivery times. There is no such awesome store on the web that can match you :)', 5, 1, '2014-12-03 12:13:02', '2015-09-24 10:02:21'),
-(39, 28, 0, 'Albert', 'I wanted to say thank you for the amazing product and for the fast processing and delivery. It was impressive, you weren''t kidding. I was surprised with such an excellent quality...My family is very happy. I would definitely use this site again and again and recommend it to others.', 5, 1, '2014-12-03 12:14:08', '2015-09-24 10:01:24'),
-(42, 43, 0, 'Tom', 'Thank you again and again! I have experienced the fastest support ever. My order arrived on my door step the following day. Your team is always, friendly and very helpful. You managed to exceed my expectations! ', 5, 1, '2014-12-03 12:33:45', '2015-09-24 09:59:33'),
-(43, 42, 0, 'Mark', 'Hi, my order arrived yesterday. I love it! Thank you! What a fast service...you guys are great! I wish every site was like this one ', 5, 1, '2014-12-03 12:34:03', '2015-09-24 09:58:50'),
-(47, 46, 0, 'Jessica', 'Hi, guys! I want to thank you for my very very quick delivery and I just love my order…  Your company efficient services and customer care are second to none! I am very happy! I will surely share my experience with my friends!', 5, 1, '2014-12-03 12:35:09', '2015-09-24 09:59:03');
+(51, 54, 0, 'Fausto Simaro Vieira', 'Ótima opção de presente para o Dia dos Namorados!!!', 5, 1, '2016-06-01 10:01:12', '2016-06-01 10:01:31');
 
 -- --------------------------------------------------------
 
@@ -3455,7 +3762,7 @@ CREATE TABLE `oc_setting` (
   `key` varchar(64) NOT NULL,
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=14611 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=16477 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_setting`
@@ -3469,21 +3776,15 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (5, 0, 'total', 'total_sort_order', '9', 0),
 (6, 0, 'total', 'total_status', '1', 0),
 (7, 0, 'tax', 'tax_sort_order', '5', 0),
-(8, 0, 'free_checkout', 'free_checkout_sort_order', '1', 0),
-(9, 0, 'cod', 'cod_sort_order', '5', 0),
-(10, 0, 'cod', 'cod_total', '0.01', 0),
-(11, 0, 'cod', 'cod_order_status_id', '1', 0),
-(12, 0, 'cod', 'cod_geo_zone_id', '0', 0),
-(13, 0, 'cod', 'cod_status', '1', 0),
+(16462, 0, 'pagseguro', 'pagseguro_total', '1', 0),
+(16464, 0, 'pagseguro', 'pagseguro_update_status_alert', '1', 0),
+(16463, 0, 'pagseguro', 'pagseguro_posfixo', '', 0),
 (14, 0, 'shipping', 'shipping_status', '1', 0),
 (15, 0, 'shipping', 'shipping_estimator', '1', 0),
 (27, 0, 'coupon', 'coupon_sort_order', '4', 0),
 (28, 0, 'coupon', 'coupon_status', '1', 0),
-(34, 0, 'flat', 'flat_sort_order', '1', 0),
-(35, 0, 'flat', 'flat_status', '1', 0),
-(36, 0, 'flat', 'flat_geo_zone_id', '0', 0),
-(37, 0, 'flat', 'flat_tax_class_id', '9', 0),
-(41, 0, 'flat', 'flat_cost', '5.00', 0),
+(16458, 0, 'joseanmatias_faixa_cep', 'joseanmatias_faixa_cep_sort_order', '0', 0),
+(16457, 0, 'joseanmatias_faixa_cep', 'joseanmatias_faixa_cep_status', '1', 0),
 (42, 0, 'credit', 'credit_sort_order', '7', 0),
 (43, 0, 'credit', 'credit_status', '1', 0),
 (53, 0, 'reward', 'reward_sort_order', '2', 0),
@@ -3493,135 +3794,147 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (954, 0, 'affiliate', 'affiliate_status', '1', 0),
 (94, 0, 'voucher', 'voucher_sort_order', '8', 0),
 (95, 0, 'voucher', 'voucher_status', '1', 0),
-(103, 0, 'free_checkout', 'free_checkout_status', '1', 0),
-(104, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
+(16461, 0, 'pagseguro', 'pagseguro_email', 'fernando.mendes@webca.com.br', 0),
+(16460, 0, 'pagseguro', 'pagseguro_token', '1', 0),
 (11498, 0, 'export_import', 'export_import_settings_use_import_cache', '0', 0),
 (11497, 0, 'export_import', 'export_import_settings_use_export_cache', '0', 0),
 (11496, 0, 'export_import', 'export_import_settings_use_attribute_id', '1', 0),
-(14606, 0, 'config', 'config_simple_blog_description_limit', '200', 0),
-(14605, 0, 'config', 'config_simple_blog_limit', '4', 0),
-(14604, 0, 'config', 'config_simple_blog_status', '1', 0),
-(14603, 0, 'config', 'config_google_captcha_status', '0', 0),
-(14602, 0, 'config', 'config_google_captcha_secret', '', 0),
-(14601, 0, 'config', 'config_google_captcha_public', '', 0),
-(14600, 0, 'config', 'config_google_analytics_status', '0', 0),
-(14599, 0, 'config', 'config_google_analytics', '', 0),
-(14598, 0, 'config', 'config_error_filename', 'error.log', 0),
-(14595, 0, 'config', 'config_compression', '0', 0),
-(14596, 0, 'config', 'config_error_display', '1', 0),
-(14597, 0, 'config', 'config_error_log', '1', 0),
-(14592, 0, 'config', 'config_maintenance', '0', 0),
-(14593, 0, 'config', 'config_password', '1', 0),
-(14594, 0, 'config', 'config_encryption', '23440b71fe05d975643733c980ad05fe', 0),
-(14588, 0, 'config', 'config_seo_url', '0', 0),
-(14589, 0, 'config', 'config_file_max_size', '300000', 0),
-(14590, 0, 'config', 'config_file_ext_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
-(14591, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
 (7545, 0, 'filter', 'filter_status', '1', 0),
-(14585, 0, 'config', 'config_secure', '0', 0),
-(14586, 0, 'config', 'config_shared', '0', 0),
-(14587, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\\\\\\\\\\\\\\''hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-(14583, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
-(14584, 0, 'config', 'config_mail_alert', '', 0),
-(14582, 0, 'config', 'config_mail_smtp_port', '25', 0),
-(14581, 0, 'config', 'config_mail_smtp_password', '', 0),
-(14579, 0, 'config', 'config_mail_smtp_hostname', '', 0),
-(14580, 0, 'config', 'config_mail_smtp_username', '', 0),
-(14577, 0, 'config', 'config_mail_protocol', 'mail', 0),
-(14578, 0, 'config', 'config_mail_parameter', '', 0),
-(14576, 0, 'config', 'config_ftp_status', '1', 0),
-(14575, 0, 'config', 'config_ftp_root', '/Users/fernandomendes/github/casaflores/public/', 0),
-(14574, 0, 'config', 'config_ftp_password', '12qw12qw', 0),
-(14573, 0, 'config', 'config_ftp_username', 'fernandomendes', 0),
-(14572, 0, 'config', 'config_ftp_port', '21', 0),
-(14571, 0, 'config', 'config_ftp_hostname', '127.0.0.1', 0),
-(14570, 0, 'config', 'config_image_location_height', '50', 0),
-(14569, 0, 'config', 'config_image_location_width', '268', 0),
-(14568, 0, 'config', 'config_image_cart_height', '100', 0),
-(14565, 0, 'config', 'config_image_wishlist_width', '47', 0),
-(14566, 0, 'config', 'config_image_wishlist_height', '47', 0),
-(14567, 0, 'config', 'config_image_cart_width', '100', 0),
-(14564, 0, 'config', 'config_image_compare_height', '180', 0),
-(14563, 0, 'config', 'config_image_compare_width', '180', 0),
-(14562, 0, 'config', 'config_image_related_height', '270', 0),
-(14561, 0, 'config', 'config_image_related_width', '270', 0),
-(14560, 0, 'config', 'config_image_additional_height', '88', 0),
-(14559, 0, 'config', 'config_image_additional_width', '88', 0),
-(14558, 0, 'config', 'config_image_product_height', '220', 0),
-(14556, 0, 'config', 'config_image_popup_height', '800', 0),
-(14557, 0, 'config', 'config_image_product_width', '220', 0),
-(14554, 0, 'config', 'config_image_thumb_height', '800', 0),
-(14555, 0, 'config', 'config_image_popup_width', '800', 0),
-(14552, 0, 'config', 'config_image_category_height', '190', 0),
-(14553, 0, 'config', 'config_image_thumb_width', '800', 0),
-(14551, 0, 'config', 'config_image_category_width', '190', 0),
-(14550, 0, 'config', 'config_icon', 'catalog/favicon.png', 0),
-(14549, 0, 'config', 'config_logo', 'catalog/logo.png', 0),
-(14548, 0, 'config', 'config_return_status_id', '2', 0),
-(14546, 0, 'config', 'config_affiliate_mail', '0', 0),
-(14547, 0, 'config', 'config_return_id', '0', 0),
-(14545, 0, 'config', 'config_affiliate_id', '4', 0),
-(14544, 0, 'config', 'config_affiliate_commission', '5', 0),
-(14543, 0, 'config', 'config_affiliate_auto', '0', 0),
-(14541, 0, 'config', 'config_stock_checkout', '0', 0),
-(14542, 0, 'config', 'config_affiliate_approval', '0', 0),
-(14540, 0, 'config', 'config_stock_warning', '0', 0),
-(14539, 0, 'config', 'config_stock_display', '0', 0),
-(14538, 0, 'config', 'config_order_mail', '0', 0),
-(14537, 0, 'config', 'config_complete_status', 'a:1:{i:0;s:1:"5";}', 1),
-(14536, 0, 'config', 'config_processing_status', 'a:1:{i:0;s:1:"2";}', 1),
-(14535, 0, 'config', 'config_order_status_id', '1', 0),
-(14534, 0, 'config', 'config_checkout_id', '5', 0),
-(14533, 0, 'config', 'config_checkout_guest', '1', 0),
-(14531, 0, 'config', 'config_api_id', '27', 0),
-(14532, 0, 'config', 'config_cart_weight', '1', 0),
-(14530, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
-(14529, 0, 'config', 'config_account_mail', '0', 0),
-(14528, 0, 'config', 'config_account_id', '3', 0),
-(14527, 0, 'config', 'config_login_attempts', '5', 0),
-(14526, 0, 'config', 'config_customer_price', '0', 0),
-(14525, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
-(14524, 0, 'config', 'config_customer_group_id', '1', 0),
-(14522, 0, 'config', 'config_tax_customer', 'shipping', 0),
-(14523, 0, 'config', 'config_customer_online', '0', 0),
-(14521, 0, 'config', 'config_tax_default', 'shipping', 0),
-(14520, 0, 'config', 'config_tax', '0', 0),
-(14519, 0, 'config', 'config_voucher_max', '1000', 0),
-(14518, 0, 'config', 'config_voucher_min', '1', 0),
-(14509, 0, 'config', 'config_length_class_id', '1', 0),
-(14510, 0, 'config', 'config_weight_class_id', '1', 0),
-(14511, 0, 'config', 'config_product_count', '1', 0),
-(14512, 0, 'config', 'config_product_limit', '6', 0),
-(14513, 0, 'config', 'config_product_description_length', '100', 0),
-(14517, 0, 'config', 'config_review_mail', '0', 0),
-(14516, 0, 'config', 'config_review_guest', '1', 0),
-(14515, 0, 'config', 'config_review_status', '1', 0),
-(14514, 0, 'config', 'config_limit_admin', '20', 0),
-(14508, 0, 'config', 'config_currency_auto', '0', 0),
-(14507, 0, 'config', 'config_currency', 'BRL', 0),
-(14506, 0, 'config', 'config_admin_language', 'pt-br', 0),
-(14505, 0, 'config', 'config_language', 'pt-br', 0),
-(14504, 0, 'config', 'config_zone_id', '464', 0),
-(14503, 0, 'config', 'config_country_id', '30', 0),
-(14501, 0, 'config', 'config_template', 'theme631', 0),
-(14502, 0, 'config', 'config_layout_id', '4', 0),
-(14500, 0, 'config', 'config_meta_keyword', '', 0),
-(14499, 0, 'config', 'config_meta_description', 'Casa Flores', 0),
-(14496, 0, 'config', 'config_open', '', 0),
-(14497, 0, 'config', 'config_comment', '', 0),
-(14498, 0, 'config', 'config_meta_title', 'Casa Flores', 0),
-(14495, 0, 'config', 'config_image', '', 0),
-(14494, 0, 'config', 'config_fax', '', 0),
-(14493, 0, 'config', 'config_telephone', '(11) 3845-1157', 0),
-(14492, 0, 'config', 'config_email', 'casaflores@casaflores.com.br', 0),
-(14491, 0, 'config', 'config_geocode', '', 0),
-(14490, 0, 'config', 'config_address', 'Rua Dr. Cardoso de Melo, 1.280 - Vila Olimpia - São Paulo - SP \r\nCEP. 04548-004', 0),
-(14489, 0, 'config', 'config_owner', 'Casa Flores', 0),
-(14488, 0, 'config', 'config_name', 'Casa Flores', 0),
-(14607, 0, 'config', 'config_simple_blog_comment_auto_approval', '0', 0),
-(14608, 0, 'config', 'config_simple_blog_author_information', '1', 0),
-(14609, 0, 'config', 'config_simple_blog_related_articles', '1', 0),
-(14610, 0, 'config', 'config_simple_blog_share_social_site', '1', 0);
+(16414, 0, 'config', 'config_image_cart_height', '100', 0),
+(16415, 0, 'config', 'config_image_location_width', '268', 0),
+(16416, 0, 'config', 'config_image_location_height', '50', 0),
+(16417, 0, 'config', 'config_ftp_hostname', '127.0.0.1', 0),
+(16418, 0, 'config', 'config_ftp_port', '21', 0),
+(16419, 0, 'config', 'config_ftp_username', 'fernandomendes', 0),
+(16420, 0, 'config', 'config_ftp_password', '12qw12qw', 0),
+(16421, 0, 'config', 'config_ftp_root', '/Users/fernandomendes/github/casaflores/public/', 0),
+(16422, 0, 'config', 'config_ftp_status', '1', 0),
+(16423, 0, 'config', 'config_mail_protocol', 'mail', 0),
+(16424, 0, 'config', 'config_mail_parameter', '', 0),
+(16425, 0, 'config', 'config_mail_smtp_hostname', '', 0),
+(16426, 0, 'config', 'config_mail_smtp_username', '', 0),
+(16427, 0, 'config', 'config_mail_smtp_password', '', 0),
+(16428, 0, 'config', 'config_mail_smtp_port', '25', 0),
+(16429, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
+(16430, 0, 'config', 'config_mail_alert', '', 0),
+(16431, 0, 'config', 'config_secure', '0', 0),
+(16432, 0, 'config', 'config_shared', '0', 0),
+(16433, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\''hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+(16413, 0, 'config', 'config_image_cart_width', '100', 0),
+(16412, 0, 'config', 'config_image_wishlist_height', '47', 0),
+(16411, 0, 'config', 'config_image_wishlist_width', '47', 0),
+(16410, 0, 'config', 'config_image_compare_height', '180', 0),
+(16409, 0, 'config', 'config_image_compare_width', '180', 0),
+(16408, 0, 'config', 'config_image_related_height', '500', 0),
+(16407, 0, 'config', 'config_image_related_width', '500', 0),
+(16406, 0, 'config', 'config_image_additional_height', '88', 0),
+(16405, 0, 'config', 'config_image_additional_width', '88', 0),
+(16404, 0, 'config', 'config_image_product_height', '500', 0),
+(16403, 0, 'config', 'config_image_product_width', '500', 0),
+(16402, 0, 'config', 'config_image_popup_height', '600', 0),
+(16401, 0, 'config', 'config_image_popup_width', '600', 0),
+(16400, 0, 'config', 'config_image_thumb_height', '800', 0),
+(16399, 0, 'config', 'config_image_thumb_width', '800', 0),
+(16398, 0, 'config', 'config_image_category_height', '190', 0),
+(16397, 0, 'config', 'config_image_category_width', '190', 0),
+(16396, 0, 'config', 'config_icon', 'catalog/favicon.png', 0),
+(16395, 0, 'config', 'config_logo', 'catalog/logo.png', 0),
+(16394, 0, 'config', 'config_return_status_id', '2', 0),
+(16393, 0, 'config', 'config_return_id', '0', 0),
+(16392, 0, 'config', 'config_affiliate_mail', '0', 0),
+(16391, 0, 'config', 'config_affiliate_id', '4', 0),
+(16390, 0, 'config', 'config_affiliate_commission', '5', 0),
+(16389, 0, 'config', 'config_affiliate_auto', '0', 0),
+(16388, 0, 'config', 'config_affiliate_approval', '0', 0),
+(16387, 0, 'config', 'config_stock_checkout', '0', 0),
+(16386, 0, 'config', 'config_stock_warning', '0', 0),
+(16385, 0, 'config', 'config_stock_display', '0', 0),
+(16384, 0, 'config', 'config_order_mail', '1', 0),
+(16383, 0, 'config', 'config_complete_status', 'a:1:{i:0;s:1:"5";}', 1),
+(16382, 0, 'config', 'config_processing_status', 'a:1:{i:0;s:1:"2";}', 1),
+(16381, 0, 'config', 'config_order_status_id', '1', 0),
+(16380, 0, 'config', 'config_checkout_id', '5', 0),
+(16379, 0, 'config', 'config_checkout_guest', '0', 0),
+(16378, 0, 'config', 'config_cart_weight', '0', 0),
+(16377, 0, 'config', 'config_api_id', '0', 0),
+(16376, 0, 'config', 'config_invoice_prefix', 'CASAFLORES-', 0),
+(16375, 0, 'config', 'config_account_mail', '1', 0),
+(16374, 0, 'config', 'config_account_id', '3', 0),
+(16373, 0, 'config', 'config_login_attempts', '5', 0),
+(16372, 0, 'config', 'config_customer_price', '0', 0),
+(16371, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
+(16370, 0, 'config', 'config_customer_group_id', '1', 0),
+(16369, 0, 'config', 'config_customer_online', '0', 0),
+(16368, 0, 'config', 'config_tax_customer', 'shipping', 0),
+(16367, 0, 'config', 'config_tax_default', 'shipping', 0),
+(16366, 0, 'config', 'config_tax', '0', 0),
+(16365, 0, 'config', 'config_voucher_max', '1000', 0),
+(16363, 0, 'config', 'config_review_mail', '1', 0),
+(16364, 0, 'config', 'config_voucher_min', '1', 0),
+(16362, 0, 'config', 'config_review_guest', '1', 0),
+(16361, 0, 'config', 'config_review_status', '1', 0),
+(16360, 0, 'config', 'config_limit_admin', '100', 0),
+(16357, 0, 'config', 'config_product_count', '1', 0),
+(16358, 0, 'config', 'config_product_limit', '20', 0),
+(16359, 0, 'config', 'config_product_description_length', '100', 0),
+(16347, 0, 'config', 'config_template', 'theme631', 0),
+(16348, 0, 'config', 'config_layout_id', '4', 0),
+(16349, 0, 'config', 'config_country_id', '30', 0),
+(16350, 0, 'config', 'config_zone_id', '464', 0),
+(16351, 0, 'config', 'config_language', 'pt-br', 0),
+(16352, 0, 'config', 'config_admin_language', 'pt-br', 0),
+(16353, 0, 'config', 'config_currency', 'BRL', 0),
+(16354, 0, 'config', 'config_currency_auto', '1', 0),
+(16355, 0, 'config', 'config_length_class_id', '1', 0),
+(16356, 0, 'config', 'config_weight_class_id', '1', 0),
+(16346, 0, 'config', 'config_meta_keyword', '', 0),
+(16345, 0, 'config', 'config_meta_description', 'Casa Flores', 0),
+(16344, 0, 'config', 'config_meta_title', 'Casa Flores', 0),
+(16343, 0, 'config', 'config_comment', '', 0),
+(16342, 0, 'config', 'config_open', '', 0),
+(16341, 0, 'config', 'config_image', '', 0),
+(16340, 0, 'config', 'config_fax', '', 0),
+(16339, 0, 'config', 'config_telephone', '(11) 3845-1157 | (11) 3805-1157 ', 0),
+(16338, 0, 'config', 'config_email', 'casaflores@casaflores.com.br', 0),
+(16337, 0, 'config', 'config_geocode', 'https://goo.gl/maps/cHxKFWfFM6D2', 0),
+(16336, 0, 'config', 'config_address', 'Rua Dr. Cardoso de Melo, 1.280 - Vila Olimpia - São Paulo - SP \r\nCEP. 04548-004', 0),
+(16335, 0, 'config', 'config_owner', 'Casa Flores', 0),
+(16334, 0, 'config', 'config_name', 'Casa Flores', 0),
+(16333, 0, 'google_base', 'google_base_status', '1', 0),
+(16434, 0, 'config', 'config_seo_url', '1', 0),
+(16435, 0, 'config', 'config_file_max_size', '300000', 0),
+(16436, 0, 'config', 'config_file_ext_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
+(16437, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
+(16438, 0, 'config', 'config_maintenance', '1', 0),
+(16439, 0, 'config', 'config_password', '1', 0),
+(16440, 0, 'config', 'config_encryption', '23440b71fe05d975643733c980ad05fe', 0),
+(16441, 0, 'config', 'config_compression', '0', 0),
+(16442, 0, 'config', 'config_error_display', '1', 0),
+(16443, 0, 'config', 'config_error_log', '1', 0),
+(16444, 0, 'config', 'config_error_filename', 'error.log', 0),
+(16445, 0, 'config', 'config_google_analytics', '', 0),
+(16446, 0, 'config', 'config_google_analytics_status', '0', 0),
+(16447, 0, 'config', 'config_google_captcha_public', '', 0),
+(16448, 0, 'config', 'config_google_captcha_secret', '', 0),
+(16449, 0, 'config', 'config_google_captcha_status', '0', 0),
+(16450, 0, 'config', 'config_simple_blog_status', '1', 0),
+(16451, 0, 'config', 'config_simple_blog_limit', '4', 0),
+(16452, 0, 'config', 'config_simple_blog_description_limit', '200', 0),
+(16453, 0, 'config', 'config_simple_blog_comment_auto_approval', '0', 0),
+(16454, 0, 'config', 'config_simple_blog_author_information', '1', 0),
+(16455, 0, 'config', 'config_simple_blog_related_articles', '1', 0),
+(16456, 0, 'config', 'config_simple_blog_share_social_site', '1', 0),
+(16459, 0, 'joseanmatias_faixa_cep', 'joseanmatias_faixa_cep_interval', '{"ion5i61t4fxfq9b7kaat3mcxr":{"title":"Zona Sul I","order_total":"1","cep":"04000000:04999999","cost":"20"},"d9sel3l7nojtuvtu6wkrcnmi":{"title":"Zona Sul II","order_total":"1","cep":"05800000:05900000","cost":"25"},"aj9kexxustob72yf6cxtuik9":{"title":"TESTE FERNANDO","order_total":"1","cep":"09560260","cost":"1000"}}', 0),
+(16465, 0, 'pagseguro', 'pagseguro_tipo_frete', '0', 0),
+(16466, 0, 'pagseguro', 'pagseguro_order_aguardando_pagamento', '7', 0),
+(16467, 0, 'pagseguro', 'pagseguro_order_analise', '7', 0),
+(16468, 0, 'pagseguro', 'pagseguro_order_paga', '7', 0),
+(16469, 0, 'pagseguro', 'pagseguro_order_disputa', '7', 0),
+(16470, 0, 'pagseguro', 'pagseguro_order_devolvida', '7', 0),
+(16471, 0, 'pagseguro', 'pagseguro_order_cancelada', '7', 0),
+(16472, 0, 'pagseguro', 'pagseguro_geo_zone_id', '0', 0),
+(16473, 0, 'pagseguro', 'pagseguro_status', '1', 0),
+(16474, 0, 'pagseguro', 'pagseguro_sort_order', '1', 0);
 
 -- --------------------------------------------------------
 
@@ -3641,7 +3954,7 @@ CREATE TABLE `oc_simple_blog_article` (
   `status` tinyint(1) NOT NULL,
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_simple_blog_article`
@@ -3656,7 +3969,8 @@ INSERT INTO `oc_simple_blog_article` (`simple_blog_article_id`, `simple_blog_aut
 (6, 4, 1, '', 'catalog/blog/post-6.jpg', 'product_wise', '', 5, 1, '2015-09-21 16:55:11', '2015-09-29 10:35:57'),
 (7, 4, 1, '', 'catalog/blog/post-7.jpg', 'product_wise', '', 6, 1, '2015-09-21 16:57:06', '2015-09-29 10:35:49'),
 (8, 2, 1, '', 'catalog/blog/post-8.jpg', 'product_wise', '', 7, 1, '2015-09-21 16:59:22', '2015-09-29 10:35:41'),
-(9, 1, 1, '', 'catalog/blog/post-9.jpg', 'product_wise', '', 8, 1, '2015-09-21 17:01:01', '2015-09-29 10:35:34');
+(9, 1, 1, '', 'catalog/blog/post-9.jpg', 'product_wise', '', 8, 1, '2015-09-21 17:01:01', '2015-09-29 10:35:34'),
+(12, 6, 0, '', '', 'product_wise', '', 0, 1, '2016-09-18 23:19:27', '2016-09-18 23:19:27');
 
 -- --------------------------------------------------------
 
@@ -3672,7 +3986,7 @@ CREATE TABLE `oc_simple_blog_article_description` (
   `description` mediumtext NOT NULL,
   `meta_description` varchar(256) NOT NULL,
   `meta_keyword` varchar(256) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=175 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=179 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_simple_blog_article_description`
@@ -3706,7 +4020,8 @@ INSERT INTO `oc_simple_blog_article_description` (`simple_blog_article_descripti
 (118, 1, 1, 'Establishing Your Brand on College Campuses', '&lt;p&gt;Many students are cash-strapped, nowadays. Nevertheless, their purchasing power is very high. Research reveals that 20 million students in the US have a combined disposable income of $417 billion. Moreover, another survey of students'' parents reveals that students now make 70 percent of their purchases themselves. These purchases are often made on credit cards. Therefore, students often have a significantly higher purchasing power.&lt;/p&gt;\r\n\r\n\r\n&lt;p&gt;If you know this, you can utilize it to capture the attention of the 16-24 age demographic. However, it is essential for your product or service to appeal to the lifestyle of the students. Additionally, student ambassadors should be utilized to spread the word about your product or service to their friends and classmates.&lt;/p&gt;\r\n\r\n\r\n&lt;p&gt;If you have not yet considered this demographic, it is time to reach out to them now!\r\nSocial media is a popular method for socialization and communication between many young people. Students are the majority users of social networking sites like Facebook and Twitter. These are the right places to introduce brands to young people.It is probably the right place to introduce a brand to them. To capture the student audience, it is essential to be a part of the conversation; it is also important to keep them engaged. Social media is the ideal platform for this.&lt;/p&gt;\r\n&lt;p&gt;However, studies state that half of these social media savvy youngsters fail to follow brands on social networking sites. Students who do follow often only show temporary, marginal support. Social media is definitely a great platform for engaging students and spreading the word. However, it is definitely not the best for brand introduction and recognition.&lt;/p&gt;', '', ''),
 (119, 1, 2, 'Establishing Your Brand on College Campuses', '&lt;p&gt;Many students are cash-strapped, nowadays. Nevertheless, their purchasing power is very high. Research reveals that 20 million students in the US have a combined disposable income of $417 billion. Moreover, another survey of students'' parents reveals that students now make 70 percent of their purchases themselves. These purchases are often made on credit cards. Therefore, students often have a significantly higher purchasing power.&lt;/p&gt;\r\n\r\n\r\n&lt;p&gt;If you know this, you can utilize it to capture the attention of the 16-24 age demographic. However, it is essential for your product or service to appeal to the lifestyle of the students. Additionally, student ambassadors should be utilized to spread the word about your product or service to their friends and classmates.&lt;/p&gt;\r\n\r\n\r\n&lt;p&gt;If you have not yet considered this demographic, it is time to reach out to them now!\r\nSocial media is a popular method for socialization and communication between many young people. Students are the majority users of social networking sites like Facebook and Twitter. These are the right places to introduce brands to young people.It is probably the right place to introduce a brand to them. To capture the student audience, it is essential to be a part of the conversation; it is also important to keep them engaged. Social media is the ideal platform for this.&lt;/p&gt;\r\n&lt;p&gt;However, studies state that half of these social media savvy youngsters fail to follow brands on social networking sites. Students who do follow often only show temporary, marginal support. Social media is definitely a great platform for engaging students and spreading the word. However, it is definitely not the best for brand introduction and recognition.&lt;/p&gt;', '', ''),
 (120, 1, 3, 'Establishing Your Brand on College Campuses', '&lt;p&gt;Many students are cash-strapped, nowadays. Nevertheless, their purchasing power is very high. Research reveals that 20 million students in the US have a combined disposable income of $417 billion. Moreover, another survey of students'' parents reveals that students now make 70 percent of their purchases themselves. These purchases are often made on credit cards. Therefore, students often have a significantly higher purchasing power.&lt;/p&gt;\r\n\r\n\r\n&lt;p&gt;If you know this, you can utilize it to capture the attention of the 16-24 age demographic. However, it is essential for your product or service to appeal to the lifestyle of the students. Additionally, student ambassadors should be utilized to spread the word about your product or service to their friends and classmates.&lt;/p&gt;\r\n\r\n\r\n&lt;p&gt;If you have not yet considered this demographic, it is time to reach out to them now!\r\nSocial media is a popular method for socialization and communication between many young people. Students are the majority users of social networking sites like Facebook and Twitter. These are the right places to introduce brands to young people.It is probably the right place to introduce a brand to them. To capture the student audience, it is essential to be a part of the conversation; it is also important to keep them engaged. Social media is the ideal platform for this.&lt;/p&gt;\r\n&lt;p&gt;However, studies state that half of these social media savvy youngsters fail to follow brands on social networking sites. Students who do follow often only show temporary, marginal support. Social media is definitely a great platform for engaging students and spreading the word. However, it is definitely not the best for brand introduction and recognition.&lt;/p&gt;', '', ''),
-(121, 2, 1, 'Believe in the Business of Your Dreams', '&lt;p&gt;What is stopping you from believing in the business of your dreams? Insecurity? Fear? Lack of confidence? All of the above? How can you overcome these obstructions?&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;Your Mantras&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;You may be wondering if you have the necessary skills, time, connections, and a million other things in order to create the business of your dreams. If you let your uncertainty and insecurity overpower you, you won''t ever be able to unleash your true business potential. To unlock the positive forces of your creativity and drive that will yield amazing results, make these your mantras:\r\n&quot;I will abandon all negative thoughts that prevent me from realizing my business objectives.&quot;\r\n&quot;I will focus my energy on growing the business of my dreams.&quot;&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;A Dreamer and a Doer&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;It is important to take time to develop your vision; and your practical thinking should be geared to this vision. You need to work with conviction. Being a dreamer does not mean that you can''t also be a doer. In fact, having a dream is the starting point for building your dream business. The problem starts when you stop there instead of setting realizable immediate targets. Success cannot come from one day to the next. So you need to build your dream business bit by bit. When your dreams begin to be transformed into reality thanks to your actions, you become aware of the power you possess for catalyzing success; and this further strengthens your determination to reach every single one of your business goals.&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;Make It Happen&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;Nothing can happen without tenacity, fortitude, and courage. Be bold enough to make choices; don''t just let things happen to you. Though you cannot have control over everything, you can focus on what you can handle and influence with your actions in a given situation. You have the power to make decisions that will move your business forward. You should not feel daunted by your lack of knowledge of business strategies either. You learn and grow while building your business. No women entrepreneur/mompreneur possesses absolute knowledge; there are so many examples of hugely successful businesswomen who started out without having any clue about business promotion techniques. Their motivation to learn, their unwavering belief that they could create the business of their dreams, and their steadfastness were key factors for their success.\r\n&lt;/p&gt;', '', '');
+(121, 2, 1, 'Believe in the Business of Your Dreams', '&lt;p&gt;What is stopping you from believing in the business of your dreams? Insecurity? Fear? Lack of confidence? All of the above? How can you overcome these obstructions?&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;Your Mantras&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;You may be wondering if you have the necessary skills, time, connections, and a million other things in order to create the business of your dreams. If you let your uncertainty and insecurity overpower you, you won''t ever be able to unleash your true business potential. To unlock the positive forces of your creativity and drive that will yield amazing results, make these your mantras:\r\n&quot;I will abandon all negative thoughts that prevent me from realizing my business objectives.&quot;\r\n&quot;I will focus my energy on growing the business of my dreams.&quot;&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;A Dreamer and a Doer&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;It is important to take time to develop your vision; and your practical thinking should be geared to this vision. You need to work with conviction. Being a dreamer does not mean that you can''t also be a doer. In fact, having a dream is the starting point for building your dream business. The problem starts when you stop there instead of setting realizable immediate targets. Success cannot come from one day to the next. So you need to build your dream business bit by bit. When your dreams begin to be transformed into reality thanks to your actions, you become aware of the power you possess for catalyzing success; and this further strengthens your determination to reach every single one of your business goals.&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;Make It Happen&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;Nothing can happen without tenacity, fortitude, and courage. Be bold enough to make choices; don''t just let things happen to you. Though you cannot have control over everything, you can focus on what you can handle and influence with your actions in a given situation. You have the power to make decisions that will move your business forward. You should not feel daunted by your lack of knowledge of business strategies either. You learn and grow while building your business. No women entrepreneur/mompreneur possesses absolute knowledge; there are so many examples of hugely successful businesswomen who started out without having any clue about business promotion techniques. Their motivation to learn, their unwavering belief that they could create the business of their dreams, and their steadfastness were key factors for their success.\r\n&lt;/p&gt;', '', ''),
+(178, 12, 4, 'TEste', '&lt;p&gt;TEsteTEsteTEsteTEsteTEsteTEsteTEsteTEsteTEsteTEsteTEste&lt;br&gt;&lt;/p&gt;', 'TEste', 'TEste');
 
 -- --------------------------------------------------------
 
@@ -3822,7 +4137,8 @@ INSERT INTO `oc_simple_blog_article_to_store` (`simple_blog_article_id`, `store_
 (8, 0),
 (9, 0),
 (5, 0),
-(1, 0);
+(1, 0),
+(12, 0);
 
 -- --------------------------------------------------------
 
@@ -3837,7 +4153,7 @@ CREATE TABLE `oc_simple_blog_author` (
   `status` tinyint(1) NOT NULL,
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_simple_blog_author`
@@ -3847,7 +4163,8 @@ INSERT INTO `oc_simple_blog_author` (`simple_blog_author_id`, `name`, `image`, `
 (1, 'Jessica Prinston', 'catalog/avatar.jpg', 1, '2015-09-16 17:26:04', '2015-09-29 17:51:00'),
 (2, 'Sam Kromstain', 'catalog/avatar.jpg', 1, '2015-09-17 10:26:40', '2015-09-29 17:52:05'),
 (3, 'Robert Johnson', 'catalog/avatar.jpg', 1, '2015-09-21 16:32:38', '2015-09-29 17:51:32'),
-(4, 'Edna Barton', 'catalog/avatar.jpg', 1, '2015-09-21 16:34:45', '2015-09-29 17:52:34');
+(4, 'Edna Barton', 'catalog/avatar.jpg', 1, '2015-09-21 16:34:45', '2015-09-29 17:52:34'),
+(6, 'Fausto Simaro Vieira', '', 1, '2016-09-18 23:18:44', '2016-09-18 23:18:44');
 
 -- --------------------------------------------------------
 
@@ -3863,7 +4180,7 @@ CREATE TABLE `oc_simple_blog_author_description` (
   `meta_description` varchar(256) NOT NULL,
   `meta_keyword` varchar(256) NOT NULL,
   `date_added` datetime NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_simple_blog_author_description`
@@ -3881,7 +4198,8 @@ INSERT INTO `oc_simple_blog_author_description` (`simple_blog_author_description
 (38, 3, 2, '&lt;p&gt;Senior salesman with 15 years of experience. He knows everything about the products he offers.&lt;/p&gt;', '', '', '0000-00-00 00:00:00'),
 (45, 4, 3, '&lt;p&gt;Quality control manager. Her mission is to check the products we ship and settle quality issues if any.&lt;/p&gt;', '', '', '0000-00-00 00:00:00'),
 (43, 4, 1, '&lt;p&gt;Quality control manager. Her mission is to check the products we ship and settle quality issues if any.&lt;/p&gt;', '', '', '0000-00-00 00:00:00'),
-(44, 4, 2, '&lt;p&gt;Quality control manager. Her mission is to check the products we ship and settle quality issues if any.&lt;/p&gt;', '', '', '0000-00-00 00:00:00');
+(44, 4, 2, '&lt;p&gt;Quality control manager. Her mission is to check the products we ship and settle quality issues if any.&lt;/p&gt;', '', '', '0000-00-00 00:00:00'),
+(47, 6, 4, '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -3900,7 +4218,7 @@ CREATE TABLE `oc_simple_blog_category` (
   `status` tinyint(1) NOT NULL,
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_simple_blog_category`
@@ -3926,7 +4244,7 @@ CREATE TABLE `oc_simple_blog_category_description` (
   `description` mediumtext NOT NULL,
   `meta_description` varchar(256) NOT NULL,
   `meta_keyword` varchar(256) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_simple_blog_category_description`
@@ -4076,17 +4394,18 @@ CREATE TABLE `oc_stock_status` (
 `stock_status_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_stock_status`
 --
 
 INSERT INTO `oc_stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
-(7, 4, 'In Stock'),
+(7, 4, 'Em estoque'),
 (8, 4, 'Pre-Order'),
-(5, 4, 'Out Of Stock'),
-(6, 4, '2-3 Days');
+(5, 4, 'Fora de estoque'),
+(6, 4, 'Encomendar'),
+(9, 4, 'Indisponível');
 
 -- --------------------------------------------------------
 
@@ -4225,71 +4544,43 @@ CREATE TABLE `oc_url_alias` (
 `url_alias_id` int(11) NOT NULL,
   `query` varchar(255) NOT NULL,
   `keyword` varchar(255) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=1303 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1602 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_url_alias`
 --
 
 INSERT INTO `oc_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
-(1266, 'product_id=48', 'ipod-classic'),
+(1324, 'category_id=48', 'presentes_floremcaixa'),
 (834, 'category_id=26', 'pc'),
 (835, 'category_id=27', 'mac'),
-(1296, 'manufacturer_id=8', 'Smoked Paprika '),
-(1163, 'information_id=4', 'about_us'),
-(1268, 'product_id=42', 'test'),
-(775, 'category_id=46', 'macs'),
-(776, 'category_id=45', 'windows'),
-(1299, 'category_id=38', ''),
-(1300, 'category_id=39', ''),
-(1301, 'category_id=40', ''),
-(1302, 'category_id=41', ''),
+(1453, 'information_id=4', 'sobre'),
+(1392, 'category_id=47', 'presentes'),
+(1338, 'category_id=53', 'arranjos_rosas'),
+(1475, 'category_id=59', 'entrega'),
 (785, 'category_id=57', 'tablet'),
-(1298, 'category_id=37', ''),
 (790, 'category_id=43', 'test11'),
 (791, 'category_id=44', 'test12'),
-(792, 'category_id=47', 'test15'),
 (793, 'category_id=48', 'test16'),
-(794, 'category_id=49', 'test17'),
+(1433, 'information_id=3', 'privacidade'),
 (795, 'category_id=50', 'test18'),
-(796, 'category_id=51', 'test19'),
-(797, 'category_id=52', 'test20'),
 (798, 'category_id=58', 'test25'),
 (799, 'category_id=53', 'test21'),
-(800, 'category_id=54', 'test22'),
-(801, 'category_id=55', 'test23'),
-(802, 'category_id=56', 'test24'),
-(803, 'category_id=38', 'test4'),
-(804, 'category_id=37', 'test5'),
-(805, 'category_id=39', 'test6'),
-(806, 'category_id=40', 'test7'),
-(807, 'category_id=41', 'test8'),
+(1359, 'category_id=56', 'buques_mixdeflores'),
+(1391, 'category_id=38', 'buques'),
+(1390, 'category_id=37', 'arranjos'),
+(1472, 'category_id=60', 'encomende'),
 (808, 'category_id=42', 'test9'),
-(1263, 'product_id=30', 'canon-eos-5d'),
-(1262, 'product_id=47', 'hp-lp3065'),
-(1261, 'product_id=28', 'htc-touch-hd'),
-(1271, 'product_id=43', 'macbook'),
-(1272, 'product_id=44', 'macbook-air'),
-(1273, 'product_id=45', 'macbook-pro'),
-(1274, 'product_id=31', 'nikon-d300'),
-(1275, 'product_id=29', 'palm-treo-pro'),
-(1276, 'product_id=35', 'product-8'),
-(1277, 'product_id=49', 'samsung-galaxy-tab-10-1'),
-(1278, 'product_id=33', 'samsung-syncmaster-941bw'),
-(1279, 'product_id=46', 'sony-vaio'),
-(1264, 'product_id=41', 'imac'),
-(1265, 'product_id=40', 'iphone'),
-(1267, 'product_id=36', 'ipod-nano'),
-(1269, 'product_id=34', 'ipod-shuffle'),
-(1270, 'product_id=32', 'ipod-touch'),
-(1295, 'manufacturer_id=9', 'Simply Organic'),
-(1292, 'manufacturer_id=5', 'McCormick'),
-(1297, 'manufacturer_id=7', 'Watkins'),
-(1294, 'manufacturer_id=6', 'PLANT'),
-(1293, 'manufacturer_id=10', 'Organic Turmeric'),
-(1164, 'information_id=6', 'delivery'),
-(1166, 'information_id=3', 'privacy'),
-(1165, 'information_id=5', 'terms'),
+(1352, 'category_id=57', 'arranjos_astromelias'),
+(1313, 'category_id=42', 'buques_rosas'),
+(1316, 'category_id=44', 'arranjos_orquideas'),
+(1493, 'product_id=50', 'miniorquideasnacesta'),
+(1373, 'product_id=51', 'miniorquideasnacorrosavaso'),
+(1314, 'category_id=43', 'buques_tulipas'),
+(1442, 'manufacturer_id=11', ''),
+(1521, 'category_id=61', 'cestasdecafedamanha'),
+(1428, 'information_id=6', 'delivery'),
+(1434, 'information_id=5', 'termos'),
 (845, 'common/home', ''),
 (846, 'information/contact', 'contact-us'),
 (847, 'information/sitemap', 'sitemap'),
@@ -4335,7 +4626,54 @@ INSERT INTO `oc_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 (1202, 'simple_blog_article_id=7', 'laboriosam'),
 (1201, 'simple_blog_article_id=8', 'molestias'),
 (1200, 'simple_blog_article_id=9', 'repellat'),
-(1185, 'simple_blog_category_id=4', 'management');
+(1185, 'simple_blog_category_id=4', 'management'),
+(1328, 'category_id=49', 'presentes_casafloressecret'),
+(1331, 'category_id=50', 'buques_astromelias'),
+(1353, 'category_id=58', 'arranjos_tulipas'),
+(1360, 'category_id=55', 'arranjos_mixdeflores'),
+(1454, 'manufacturer_id=12', ''),
+(1473, 'manufacturer_id=13', ''),
+(1496, 'category_id=65', 'presentes_maternidade'),
+(1554, 'category_id=62', 'presentes_tagsparaflores'),
+(1481, 'manufacturer_id=14', ''),
+(1495, 'category_id=64', 'presentes_garrafacomflor'),
+(1494, 'category_id=63', 'presentes_novidades'),
+(1497, 'category_id=66', 'presentes_maternidade_orquideas'),
+(1499, 'category_id=67', 'presentes_cartoesparaflores'),
+(1500, 'category_id=68', 'presentes_acessorios'),
+(1501, 'category_id=69', 'presentes_floresedoces'),
+(1552, 'category_id=70', 'presentes_diadospais'),
+(1503, 'category_id=71', 'presentes_diadospais_cestas'),
+(1504, 'category_id=72', 'presentes_diadospais_floremcaixa'),
+(1549, 'category_id=73', 'presentes_diadospais_buquesmasculinos'),
+(1509, 'product_id=94', ''),
+(1508, 'category_id=74', 'arranjos_cravinas'),
+(1550, 'product_id=132', ''),
+(1513, 'category_id=75', 'arranjos_cravos'),
+(1518, 'product_id=102', ''),
+(1558, 'category_id=76', 'arranjos_gerberas'),
+(1559, 'category_id=77', 'arranjos_lisianthus'),
+(1540, 'product_id=123', ''),
+(1539, 'product_id=122', ''),
+(1537, 'product_id=120', ''),
+(1535, 'product_id=118', ''),
+(1536, 'product_id=119', ''),
+(1533, 'product_id=116', ''),
+(1532, 'product_id=115', ''),
+(1538, 'product_id=121', ''),
+(1560, 'product_id=137', ''),
+(1561, 'manufacturer_id=15', ''),
+(1568, 'category_id=78', 'presentes_diadasecretaria'),
+(1570, 'product_id=144', ''),
+(1584, 'manufacturer_id=16', ''),
+(1585, 'simple_blog_author_id=6', 'Fausto Simaro Vieira'),
+(1586, 'simple_blog_article_id=12', 'TEste fausto simaro Vieira'),
+(1587, 'product_id=158', ''),
+(1588, 'product_id=159', ''),
+(1590, 'product_id=161', ''),
+(1591, 'product_id=162', ''),
+(1592, 'product_id=163', ''),
+(1599, 'category_id=79', 'buques_fresias');
 
 -- --------------------------------------------------------
 
@@ -4357,14 +4695,15 @@ CREATE TABLE `oc_user` (
   `ip` varchar(40) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `date_added` datetime NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `oc_user`
 --
 
 INSERT INTO `oc_user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `image`, `code`, `ip`, `status`, `date_added`) VALUES
-(1, 1, 'admin', '315f6ae69f800b988ad2d17b718977913ac21318', '92dc7dd49', 'John', 'Doe', 'fernando.mendes@webca.com.br', '', '', '127.0.0.1', 1, '2016-05-31 00:01:19');
+(1, 1, 'admin', '315f6ae69f800b988ad2d17b718977913ac21318', '92dc7dd49', 'John', 'Doe', 'fernando.mendes@webca.com.br', '', '', '127.0.0.1', 1, '2016-05-31 00:01:19'),
+(2, 1, 'casaflores', '48bbf999640be5cf909a3252ffca56932b396e84', '5c2b2d023', 'casaflores', 'casaflores', '', '', '', '179.98.217.46', 1, '2016-05-31 01:12:33');
 
 -- --------------------------------------------------------
 
@@ -4383,7 +4722,7 @@ CREATE TABLE `oc_user_group` (
 --
 
 INSERT INTO `oc_user_group` (`user_group_id`, `name`, `permission`) VALUES
-(1, 'Administrator', 'a:2:{s:6:"access";a:213:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:17:"catalog/recurring";i:10;s:14:"catalog/review";i:11;s:18:"common/column_left";i:12;s:18:"common/filemanager";i:13;s:11:"common/menu";i:14;s:14:"common/profile";i:15;s:12:"common/stats";i:16;s:13:"design/banner";i:17;s:13:"design/layout";i:18;s:14:"extension/feed";i:19;s:15:"extension/fraud";i:20;s:19:"extension/installer";i:21;s:22:"extension/modification";i:22;s:16:"extension/module";i:23;s:17:"extension/openbay";i:24;s:17:"extension/payment";i:25;s:18:"extension/shipping";i:26;s:15:"extension/total";i:27;s:16:"feed/google_base";i:28;s:19:"feed/google_sitemap";i:29;s:15:"feed/openbaypro";i:30;s:18:"fraud/fraudlabspro";i:31;s:13:"fraud/maxmind";i:32;s:20:"localisation/country";i:33;s:21:"localisation/currency";i:34;s:21:"localisation/geo_zone";i:35;s:21:"localisation/language";i:36;s:25:"localisation/length_class";i:37;s:21:"localisation/location";i:38;s:25:"localisation/order_status";i:39;s:26:"localisation/return_action";i:40;s:26:"localisation/return_reason";i:41;s:26:"localisation/return_status";i:42;s:25:"localisation/stock_status";i:43;s:22:"localisation/tax_class";i:44;s:21:"localisation/tax_rate";i:45;s:25:"localisation/weight_class";i:46;s:17:"localisation/zone";i:47;s:19:"marketing/affiliate";i:48;s:17:"marketing/contact";i:49;s:16:"marketing/coupon";i:50;s:19:"marketing/marketing";i:51;s:14:"module/account";i:52;s:16:"module/affiliate";i:53;s:20:"module/amazon_button";i:54;s:19:"module/amazon_login";i:55;s:17:"module/amazon_pay";i:56;s:13:"module/banner";i:57;s:17:"module/bestseller";i:58;s:15:"module/carousel";i:59;s:15:"module/category";i:60;s:19:"module/ebay_listing";i:61;s:15:"module/featured";i:62;s:13:"module/filter";i:63;s:22:"module/google_hangouts";i:64;s:11:"module/html";i:65;s:18:"module/information";i:66;s:13:"module/latest";i:67;s:12:"module/olark";i:68;s:15:"module/parallax";i:69;s:16:"module/pp_button";i:70;s:15:"module/pp_login";i:71;s:16:"module/slideshow";i:72;s:14:"module/special";i:73;s:12:"module/store";i:74;s:23:"module/tm_blog_articles";i:75;s:23:"module/tm_blog_category";i:76;s:18:"module/tm_category";i:77;s:23:"module/tm_category_menu";i:78;s:23:"module/tm_cookie_policy";i:79;s:15:"module/tm_fbbox";i:80;s:20:"module/tm_google_map";i:81;s:19:"module/tm_instagram";i:82;s:22:"module/tm_manufacturer";i:83;s:20:"module/tm_module_tab";i:84;s:20:"module/tm_newsletter";i:85;s:26:"module/tm_newsletter_popup";i:86;s:19:"module/tm_pinterest";i:87;s:27:"module/tm_product_slideshow";i:88;s:23:"module/tm_progress_bars";i:89;s:33:"module/tm_single_category_product";i:90;s:19:"module/tm_slideshow";i:91;s:21:"module/tm_social_list";i:92;s:17:"module/tm_twitter";i:93;s:17:"module/tm_videobg";i:94;s:14:"openbay/amazon";i:95;s:22:"openbay/amazon_listing";i:96;s:22:"openbay/amazon_product";i:97;s:16:"openbay/amazonus";i:98;s:24:"openbay/amazonus_listing";i:99;s:24:"openbay/amazonus_product";i:100;s:12:"openbay/ebay";i:101;s:20:"openbay/ebay_profile";i:102;s:21:"openbay/ebay_template";i:103;s:12:"openbay/etsy";i:104;s:20:"openbay/etsy_product";i:105;s:21:"openbay/etsy_shipping";i:106;s:17:"openbay/etsy_shop";i:107;s:23:"payment/amazon_checkout";i:108;s:24:"payment/amazon_login_pay";i:109;s:24:"payment/authorizenet_aim";i:110;s:24:"payment/authorizenet_sim";i:111;s:21:"payment/bank_transfer";i:112;s:22:"payment/bluepay_hosted";i:113;s:24:"payment/bluepay_redirect";i:114;s:14:"payment/cheque";i:115;s:11:"payment/cod";i:116;s:17:"payment/firstdata";i:117;s:24:"payment/firstdata_remote";i:118;s:21:"payment/free_checkout";i:119;s:14:"payment/g2apay";i:120;s:17:"payment/globalpay";i:121;s:24:"payment/globalpay_remote";i:122;s:22:"payment/klarna_account";i:123;s:22:"payment/klarna_invoice";i:124;s:14:"payment/liqpay";i:125;s:14:"payment/nochex";i:126;s:15:"payment/paymate";i:127;s:16:"payment/paypoint";i:128;s:13:"payment/payza";i:129;s:26:"payment/perpetual_payments";i:130;s:18:"payment/pp_express";i:131;s:18:"payment/pp_payflow";i:132;s:25:"payment/pp_payflow_iframe";i:133;s:14:"payment/pp_pro";i:134;s:21:"payment/pp_pro_iframe";i:135;s:19:"payment/pp_standard";i:136;s:14:"payment/realex";i:137;s:21:"payment/realex_remote";i:138;s:22:"payment/sagepay_direct";i:139;s:22:"payment/sagepay_server";i:140;s:18:"payment/sagepay_us";i:141;s:24:"payment/securetrading_pp";i:142;s:24:"payment/securetrading_ws";i:143;s:14:"payment/skrill";i:144;s:19:"payment/twocheckout";i:145;s:28:"payment/web_payment_software";i:146;s:16:"payment/worldpay";i:147;s:16:"report/affiliate";i:148;s:25:"report/affiliate_activity";i:149;s:22:"report/affiliate_login";i:150;s:24:"report/customer_activity";i:151;s:22:"report/customer_credit";i:152;s:21:"report/customer_login";i:153;s:22:"report/customer_online";i:154;s:21:"report/customer_order";i:155;s:22:"report/customer_reward";i:156;s:16:"report/marketing";i:157;s:24:"report/product_purchased";i:158;s:21:"report/product_viewed";i:159;s:18:"report/sale_coupon";i:160;s:17:"report/sale_order";i:161;s:18:"report/sale_return";i:162;s:20:"report/sale_shipping";i:163;s:15:"report/sale_tax";i:164;s:17:"sale/custom_field";i:165;s:13:"sale/customer";i:166;s:20:"sale/customer_ban_ip";i:167;s:19:"sale/customer_group";i:168;s:10:"sale/order";i:169;s:14:"sale/recurring";i:170;s:11:"sale/return";i:171;s:12:"sale/voucher";i:172;s:18:"sale/voucher_theme";i:173;s:15:"setting/setting";i:174;s:13:"setting/store";i:175;s:16:"shipping/auspost";i:176;s:17:"shipping/citylink";i:177;s:14:"shipping/fedex";i:178;s:13:"shipping/flat";i:179;s:13:"shipping/free";i:180;s:13:"shipping/item";i:181;s:23:"shipping/parcelforce_48";i:182;s:15:"shipping/pickup";i:183;s:19:"shipping/royal_mail";i:184;s:12:"shipping/ups";i:185;s:13:"shipping/usps";i:186;s:15:"shipping/weight";i:187;s:19:"simple_blog/article";i:188;s:18:"simple_blog/author";i:189;s:20:"simple_blog/category";i:190;s:19:"simple_blog/comment";i:191;s:19:"simple_blog/install";i:192;s:18:"simple_blog/report";i:193;s:11:"tool/backup";i:194;s:14:"tool/error_log";i:195;s:18:"tool/export_import";i:196;s:11:"tool/upload";i:197;s:12:"total/coupon";i:198;s:12:"total/credit";i:199;s:14:"total/handling";i:200;s:16:"total/klarna_fee";i:201;s:19:"total/low_order_fee";i:202;s:12:"total/reward";i:203;s:14:"total/shipping";i:204;s:15:"total/sub_total";i:205;s:9:"total/tax";i:206;s:11:"total/total";i:207;s:13:"total/voucher";i:208;s:8:"user/api";i:209;s:9:"user/user";i:210;s:20:"user/user_permission";i:211;s:11:"module/html";i:212;s:26:"module/tm_newsletter_popup";}s:6:"modify";a:213:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:17:"catalog/recurring";i:10;s:14:"catalog/review";i:11;s:18:"common/column_left";i:12;s:18:"common/filemanager";i:13;s:11:"common/menu";i:14;s:14:"common/profile";i:15;s:12:"common/stats";i:16;s:13:"design/banner";i:17;s:13:"design/layout";i:18;s:14:"extension/feed";i:19;s:15:"extension/fraud";i:20;s:19:"extension/installer";i:21;s:22:"extension/modification";i:22;s:16:"extension/module";i:23;s:17:"extension/openbay";i:24;s:17:"extension/payment";i:25;s:18:"extension/shipping";i:26;s:15:"extension/total";i:27;s:16:"feed/google_base";i:28;s:19:"feed/google_sitemap";i:29;s:15:"feed/openbaypro";i:30;s:18:"fraud/fraudlabspro";i:31;s:13:"fraud/maxmind";i:32;s:20:"localisation/country";i:33;s:21:"localisation/currency";i:34;s:21:"localisation/geo_zone";i:35;s:21:"localisation/language";i:36;s:25:"localisation/length_class";i:37;s:21:"localisation/location";i:38;s:25:"localisation/order_status";i:39;s:26:"localisation/return_action";i:40;s:26:"localisation/return_reason";i:41;s:26:"localisation/return_status";i:42;s:25:"localisation/stock_status";i:43;s:22:"localisation/tax_class";i:44;s:21:"localisation/tax_rate";i:45;s:25:"localisation/weight_class";i:46;s:17:"localisation/zone";i:47;s:19:"marketing/affiliate";i:48;s:17:"marketing/contact";i:49;s:16:"marketing/coupon";i:50;s:19:"marketing/marketing";i:51;s:14:"module/account";i:52;s:16:"module/affiliate";i:53;s:20:"module/amazon_button";i:54;s:19:"module/amazon_login";i:55;s:17:"module/amazon_pay";i:56;s:13:"module/banner";i:57;s:17:"module/bestseller";i:58;s:15:"module/carousel";i:59;s:15:"module/category";i:60;s:19:"module/ebay_listing";i:61;s:15:"module/featured";i:62;s:13:"module/filter";i:63;s:22:"module/google_hangouts";i:64;s:11:"module/html";i:65;s:18:"module/information";i:66;s:13:"module/latest";i:67;s:12:"module/olark";i:68;s:15:"module/parallax";i:69;s:16:"module/pp_button";i:70;s:15:"module/pp_login";i:71;s:16:"module/slideshow";i:72;s:14:"module/special";i:73;s:12:"module/store";i:74;s:23:"module/tm_blog_articles";i:75;s:23:"module/tm_blog_category";i:76;s:18:"module/tm_category";i:77;s:23:"module/tm_category_menu";i:78;s:23:"module/tm_cookie_policy";i:79;s:15:"module/tm_fbbox";i:80;s:20:"module/tm_google_map";i:81;s:19:"module/tm_instagram";i:82;s:22:"module/tm_manufacturer";i:83;s:20:"module/tm_module_tab";i:84;s:20:"module/tm_newsletter";i:85;s:26:"module/tm_newsletter_popup";i:86;s:19:"module/tm_pinterest";i:87;s:27:"module/tm_product_slideshow";i:88;s:23:"module/tm_progress_bars";i:89;s:33:"module/tm_single_category_product";i:90;s:19:"module/tm_slideshow";i:91;s:21:"module/tm_social_list";i:92;s:17:"module/tm_twitter";i:93;s:17:"module/tm_videobg";i:94;s:14:"openbay/amazon";i:95;s:22:"openbay/amazon_listing";i:96;s:22:"openbay/amazon_product";i:97;s:16:"openbay/amazonus";i:98;s:24:"openbay/amazonus_listing";i:99;s:24:"openbay/amazonus_product";i:100;s:12:"openbay/ebay";i:101;s:20:"openbay/ebay_profile";i:102;s:21:"openbay/ebay_template";i:103;s:12:"openbay/etsy";i:104;s:20:"openbay/etsy_product";i:105;s:21:"openbay/etsy_shipping";i:106;s:17:"openbay/etsy_shop";i:107;s:23:"payment/amazon_checkout";i:108;s:24:"payment/amazon_login_pay";i:109;s:24:"payment/authorizenet_aim";i:110;s:24:"payment/authorizenet_sim";i:111;s:21:"payment/bank_transfer";i:112;s:22:"payment/bluepay_hosted";i:113;s:24:"payment/bluepay_redirect";i:114;s:14:"payment/cheque";i:115;s:11:"payment/cod";i:116;s:17:"payment/firstdata";i:117;s:24:"payment/firstdata_remote";i:118;s:21:"payment/free_checkout";i:119;s:14:"payment/g2apay";i:120;s:17:"payment/globalpay";i:121;s:24:"payment/globalpay_remote";i:122;s:22:"payment/klarna_account";i:123;s:22:"payment/klarna_invoice";i:124;s:14:"payment/liqpay";i:125;s:14:"payment/nochex";i:126;s:15:"payment/paymate";i:127;s:16:"payment/paypoint";i:128;s:13:"payment/payza";i:129;s:26:"payment/perpetual_payments";i:130;s:18:"payment/pp_express";i:131;s:18:"payment/pp_payflow";i:132;s:25:"payment/pp_payflow_iframe";i:133;s:14:"payment/pp_pro";i:134;s:21:"payment/pp_pro_iframe";i:135;s:19:"payment/pp_standard";i:136;s:14:"payment/realex";i:137;s:21:"payment/realex_remote";i:138;s:22:"payment/sagepay_direct";i:139;s:22:"payment/sagepay_server";i:140;s:18:"payment/sagepay_us";i:141;s:24:"payment/securetrading_pp";i:142;s:24:"payment/securetrading_ws";i:143;s:14:"payment/skrill";i:144;s:19:"payment/twocheckout";i:145;s:28:"payment/web_payment_software";i:146;s:16:"payment/worldpay";i:147;s:16:"report/affiliate";i:148;s:25:"report/affiliate_activity";i:149;s:22:"report/affiliate_login";i:150;s:24:"report/customer_activity";i:151;s:22:"report/customer_credit";i:152;s:21:"report/customer_login";i:153;s:22:"report/customer_online";i:154;s:21:"report/customer_order";i:155;s:22:"report/customer_reward";i:156;s:16:"report/marketing";i:157;s:24:"report/product_purchased";i:158;s:21:"report/product_viewed";i:159;s:18:"report/sale_coupon";i:160;s:17:"report/sale_order";i:161;s:18:"report/sale_return";i:162;s:20:"report/sale_shipping";i:163;s:15:"report/sale_tax";i:164;s:17:"sale/custom_field";i:165;s:13:"sale/customer";i:166;s:20:"sale/customer_ban_ip";i:167;s:19:"sale/customer_group";i:168;s:10:"sale/order";i:169;s:14:"sale/recurring";i:170;s:11:"sale/return";i:171;s:12:"sale/voucher";i:172;s:18:"sale/voucher_theme";i:173;s:15:"setting/setting";i:174;s:13:"setting/store";i:175;s:16:"shipping/auspost";i:176;s:17:"shipping/citylink";i:177;s:14:"shipping/fedex";i:178;s:13:"shipping/flat";i:179;s:13:"shipping/free";i:180;s:13:"shipping/item";i:181;s:23:"shipping/parcelforce_48";i:182;s:15:"shipping/pickup";i:183;s:19:"shipping/royal_mail";i:184;s:12:"shipping/ups";i:185;s:13:"shipping/usps";i:186;s:15:"shipping/weight";i:187;s:19:"simple_blog/article";i:188;s:18:"simple_blog/author";i:189;s:20:"simple_blog/category";i:190;s:19:"simple_blog/comment";i:191;s:19:"simple_blog/install";i:192;s:18:"simple_blog/report";i:193;s:11:"tool/backup";i:194;s:14:"tool/error_log";i:195;s:18:"tool/export_import";i:196;s:11:"tool/upload";i:197;s:12:"total/coupon";i:198;s:12:"total/credit";i:199;s:14:"total/handling";i:200;s:16:"total/klarna_fee";i:201;s:19:"total/low_order_fee";i:202;s:12:"total/reward";i:203;s:14:"total/shipping";i:204;s:15:"total/sub_total";i:205;s:9:"total/tax";i:206;s:11:"total/total";i:207;s:13:"total/voucher";i:208;s:8:"user/api";i:209;s:9:"user/user";i:210;s:20:"user/user_permission";i:211;s:11:"module/html";i:212;s:26:"module/tm_newsletter_popup";}}'),
+(1, 'Administrator', 'a:2:{s:6:"access";a:221:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:17:"catalog/recurring";i:10;s:14:"catalog/review";i:11;s:18:"common/column_left";i:12;s:18:"common/filemanager";i:13;s:11:"common/menu";i:14;s:14:"common/profile";i:15;s:12:"common/stats";i:16;s:13:"design/banner";i:17;s:13:"design/layout";i:18;s:14:"extension/feed";i:19;s:15:"extension/fraud";i:20;s:19:"extension/installer";i:21;s:22:"extension/modification";i:22;s:16:"extension/module";i:23;s:17:"extension/openbay";i:24;s:17:"extension/payment";i:25;s:18:"extension/shipping";i:26;s:15:"extension/total";i:27;s:16:"feed/google_base";i:28;s:19:"feed/google_sitemap";i:29;s:15:"feed/openbaypro";i:30;s:18:"fraud/fraudlabspro";i:31;s:13:"fraud/maxmind";i:32;s:20:"localisation/country";i:33;s:21:"localisation/currency";i:34;s:21:"localisation/geo_zone";i:35;s:21:"localisation/language";i:36;s:25:"localisation/length_class";i:37;s:21:"localisation/location";i:38;s:25:"localisation/order_status";i:39;s:26:"localisation/return_action";i:40;s:26:"localisation/return_reason";i:41;s:26:"localisation/return_status";i:42;s:25:"localisation/stock_status";i:43;s:22:"localisation/tax_class";i:44;s:21:"localisation/tax_rate";i:45;s:25:"localisation/weight_class";i:46;s:17:"localisation/zone";i:47;s:19:"marketing/affiliate";i:48;s:17:"marketing/contact";i:49;s:16:"marketing/coupon";i:50;s:19:"marketing/marketing";i:51;s:14:"module/account";i:52;s:16:"module/affiliate";i:53;s:20:"module/amazon_button";i:54;s:19:"module/amazon_login";i:55;s:17:"module/amazon_pay";i:56;s:13:"module/banner";i:57;s:17:"module/bestseller";i:58;s:15:"module/carousel";i:59;s:15:"module/category";i:60;s:19:"module/ebay_listing";i:61;s:15:"module/featured";i:62;s:13:"module/filter";i:63;s:22:"module/google_hangouts";i:64;s:11:"module/html";i:65;s:18:"module/information";i:66;s:13:"module/latest";i:67;s:12:"module/olark";i:68;s:15:"module/parallax";i:69;s:16:"module/pp_button";i:70;s:15:"module/pp_login";i:71;s:16:"module/slideshow";i:72;s:14:"module/special";i:73;s:12:"module/store";i:74;s:23:"module/tm_blog_articles";i:75;s:23:"module/tm_blog_category";i:76;s:18:"module/tm_category";i:77;s:23:"module/tm_category_menu";i:78;s:23:"module/tm_cookie_policy";i:79;s:15:"module/tm_fbbox";i:80;s:20:"module/tm_google_map";i:81;s:19:"module/tm_instagram";i:82;s:22:"module/tm_manufacturer";i:83;s:20:"module/tm_module_tab";i:84;s:20:"module/tm_newsletter";i:85;s:26:"module/tm_newsletter_popup";i:86;s:19:"module/tm_pinterest";i:87;s:27:"module/tm_product_slideshow";i:88;s:23:"module/tm_progress_bars";i:89;s:33:"module/tm_single_category_product";i:90;s:19:"module/tm_slideshow";i:91;s:21:"module/tm_social_list";i:92;s:17:"module/tm_twitter";i:93;s:17:"module/tm_videobg";i:94;s:14:"openbay/amazon";i:95;s:22:"openbay/amazon_listing";i:96;s:22:"openbay/amazon_product";i:97;s:16:"openbay/amazonus";i:98;s:24:"openbay/amazonus_listing";i:99;s:24:"openbay/amazonus_product";i:100;s:12:"openbay/ebay";i:101;s:20:"openbay/ebay_profile";i:102;s:21:"openbay/ebay_template";i:103;s:12:"openbay/etsy";i:104;s:20:"openbay/etsy_product";i:105;s:21:"openbay/etsy_shipping";i:106;s:17:"openbay/etsy_shop";i:107;s:23:"payment/amazon_checkout";i:108;s:24:"payment/amazon_login_pay";i:109;s:24:"payment/authorizenet_aim";i:110;s:24:"payment/authorizenet_sim";i:111;s:21:"payment/bank_transfer";i:112;s:22:"payment/bluepay_hosted";i:113;s:24:"payment/bluepay_redirect";i:114;s:14:"payment/cheque";i:115;s:11:"payment/cod";i:116;s:17:"payment/firstdata";i:117;s:24:"payment/firstdata_remote";i:118;s:21:"payment/free_checkout";i:119;s:14:"payment/g2apay";i:120;s:17:"payment/globalpay";i:121;s:24:"payment/globalpay_remote";i:122;s:22:"payment/klarna_account";i:123;s:22:"payment/klarna_invoice";i:124;s:14:"payment/liqpay";i:125;s:14:"payment/nochex";i:126;s:15:"payment/paymate";i:127;s:16:"payment/paypoint";i:128;s:13:"payment/payza";i:129;s:26:"payment/perpetual_payments";i:130;s:18:"payment/pp_express";i:131;s:18:"payment/pp_payflow";i:132;s:25:"payment/pp_payflow_iframe";i:133;s:14:"payment/pp_pro";i:134;s:21:"payment/pp_pro_iframe";i:135;s:19:"payment/pp_standard";i:136;s:14:"payment/realex";i:137;s:21:"payment/realex_remote";i:138;s:22:"payment/sagepay_direct";i:139;s:22:"payment/sagepay_server";i:140;s:18:"payment/sagepay_us";i:141;s:24:"payment/securetrading_pp";i:142;s:24:"payment/securetrading_ws";i:143;s:14:"payment/skrill";i:144;s:19:"payment/twocheckout";i:145;s:28:"payment/web_payment_software";i:146;s:16:"payment/worldpay";i:147;s:16:"report/affiliate";i:148;s:25:"report/affiliate_activity";i:149;s:22:"report/affiliate_login";i:150;s:24:"report/customer_activity";i:151;s:22:"report/customer_credit";i:152;s:21:"report/customer_login";i:153;s:22:"report/customer_online";i:154;s:21:"report/customer_order";i:155;s:22:"report/customer_reward";i:156;s:16:"report/marketing";i:157;s:24:"report/product_purchased";i:158;s:21:"report/product_viewed";i:159;s:18:"report/sale_coupon";i:160;s:17:"report/sale_order";i:161;s:18:"report/sale_return";i:162;s:20:"report/sale_shipping";i:163;s:15:"report/sale_tax";i:164;s:17:"sale/custom_field";i:165;s:13:"sale/customer";i:166;s:20:"sale/customer_ban_ip";i:167;s:19:"sale/customer_group";i:168;s:10:"sale/order";i:169;s:14:"sale/recurring";i:170;s:11:"sale/return";i:171;s:12:"sale/voucher";i:172;s:18:"sale/voucher_theme";i:173;s:15:"setting/setting";i:174;s:13:"setting/store";i:175;s:16:"shipping/auspost";i:176;s:17:"shipping/citylink";i:177;s:14:"shipping/fedex";i:178;s:13:"shipping/flat";i:179;s:13:"shipping/free";i:180;s:13:"shipping/item";i:181;s:23:"shipping/parcelforce_48";i:182;s:15:"shipping/pickup";i:183;s:19:"shipping/royal_mail";i:184;s:12:"shipping/ups";i:185;s:13:"shipping/usps";i:186;s:15:"shipping/weight";i:187;s:19:"simple_blog/article";i:188;s:18:"simple_blog/author";i:189;s:20:"simple_blog/category";i:190;s:19:"simple_blog/comment";i:191;s:19:"simple_blog/install";i:192;s:18:"simple_blog/report";i:193;s:11:"tool/backup";i:194;s:14:"tool/error_log";i:195;s:18:"tool/export_import";i:196;s:11:"tool/upload";i:197;s:12:"total/coupon";i:198;s:12:"total/credit";i:199;s:14:"total/handling";i:200;s:16:"total/klarna_fee";i:201;s:19:"total/low_order_fee";i:202;s:12:"total/reward";i:203;s:14:"total/shipping";i:204;s:15:"total/sub_total";i:205;s:9:"total/tax";i:206;s:11:"total/total";i:207;s:13:"total/voucher";i:208;s:8:"user/api";i:209;s:9:"user/user";i:210;s:20:"user/user_permission";i:211;s:11:"module/html";i:212;s:26:"module/tm_newsletter_popup";i:213;s:17:"module/tm_videobg";i:214;s:15:"module/parallax";i:215;s:16:"module/slideshow";i:216;s:15:"module/carousel";i:217;s:16:"feed/google_base";i:218;s:31:"shipping/joseanmatias_faixa_cep";i:219;s:17:"payment/pagseguro";i:220;s:20:"module/scrollingcart";}s:6:"modify";a:221:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:17:"catalog/recurring";i:10;s:14:"catalog/review";i:11;s:18:"common/column_left";i:12;s:18:"common/filemanager";i:13;s:11:"common/menu";i:14;s:14:"common/profile";i:15;s:12:"common/stats";i:16;s:13:"design/banner";i:17;s:13:"design/layout";i:18;s:14:"extension/feed";i:19;s:15:"extension/fraud";i:20;s:19:"extension/installer";i:21;s:22:"extension/modification";i:22;s:16:"extension/module";i:23;s:17:"extension/openbay";i:24;s:17:"extension/payment";i:25;s:18:"extension/shipping";i:26;s:15:"extension/total";i:27;s:16:"feed/google_base";i:28;s:19:"feed/google_sitemap";i:29;s:15:"feed/openbaypro";i:30;s:18:"fraud/fraudlabspro";i:31;s:13:"fraud/maxmind";i:32;s:20:"localisation/country";i:33;s:21:"localisation/currency";i:34;s:21:"localisation/geo_zone";i:35;s:21:"localisation/language";i:36;s:25:"localisation/length_class";i:37;s:21:"localisation/location";i:38;s:25:"localisation/order_status";i:39;s:26:"localisation/return_action";i:40;s:26:"localisation/return_reason";i:41;s:26:"localisation/return_status";i:42;s:25:"localisation/stock_status";i:43;s:22:"localisation/tax_class";i:44;s:21:"localisation/tax_rate";i:45;s:25:"localisation/weight_class";i:46;s:17:"localisation/zone";i:47;s:19:"marketing/affiliate";i:48;s:17:"marketing/contact";i:49;s:16:"marketing/coupon";i:50;s:19:"marketing/marketing";i:51;s:14:"module/account";i:52;s:16:"module/affiliate";i:53;s:20:"module/amazon_button";i:54;s:19:"module/amazon_login";i:55;s:17:"module/amazon_pay";i:56;s:13:"module/banner";i:57;s:17:"module/bestseller";i:58;s:15:"module/carousel";i:59;s:15:"module/category";i:60;s:19:"module/ebay_listing";i:61;s:15:"module/featured";i:62;s:13:"module/filter";i:63;s:22:"module/google_hangouts";i:64;s:11:"module/html";i:65;s:18:"module/information";i:66;s:13:"module/latest";i:67;s:12:"module/olark";i:68;s:15:"module/parallax";i:69;s:16:"module/pp_button";i:70;s:15:"module/pp_login";i:71;s:16:"module/slideshow";i:72;s:14:"module/special";i:73;s:12:"module/store";i:74;s:23:"module/tm_blog_articles";i:75;s:23:"module/tm_blog_category";i:76;s:18:"module/tm_category";i:77;s:23:"module/tm_category_menu";i:78;s:23:"module/tm_cookie_policy";i:79;s:15:"module/tm_fbbox";i:80;s:20:"module/tm_google_map";i:81;s:19:"module/tm_instagram";i:82;s:22:"module/tm_manufacturer";i:83;s:20:"module/tm_module_tab";i:84;s:20:"module/tm_newsletter";i:85;s:26:"module/tm_newsletter_popup";i:86;s:19:"module/tm_pinterest";i:87;s:27:"module/tm_product_slideshow";i:88;s:23:"module/tm_progress_bars";i:89;s:33:"module/tm_single_category_product";i:90;s:19:"module/tm_slideshow";i:91;s:21:"module/tm_social_list";i:92;s:17:"module/tm_twitter";i:93;s:17:"module/tm_videobg";i:94;s:14:"openbay/amazon";i:95;s:22:"openbay/amazon_listing";i:96;s:22:"openbay/amazon_product";i:97;s:16:"openbay/amazonus";i:98;s:24:"openbay/amazonus_listing";i:99;s:24:"openbay/amazonus_product";i:100;s:12:"openbay/ebay";i:101;s:20:"openbay/ebay_profile";i:102;s:21:"openbay/ebay_template";i:103;s:12:"openbay/etsy";i:104;s:20:"openbay/etsy_product";i:105;s:21:"openbay/etsy_shipping";i:106;s:17:"openbay/etsy_shop";i:107;s:23:"payment/amazon_checkout";i:108;s:24:"payment/amazon_login_pay";i:109;s:24:"payment/authorizenet_aim";i:110;s:24:"payment/authorizenet_sim";i:111;s:21:"payment/bank_transfer";i:112;s:22:"payment/bluepay_hosted";i:113;s:24:"payment/bluepay_redirect";i:114;s:14:"payment/cheque";i:115;s:11:"payment/cod";i:116;s:17:"payment/firstdata";i:117;s:24:"payment/firstdata_remote";i:118;s:21:"payment/free_checkout";i:119;s:14:"payment/g2apay";i:120;s:17:"payment/globalpay";i:121;s:24:"payment/globalpay_remote";i:122;s:22:"payment/klarna_account";i:123;s:22:"payment/klarna_invoice";i:124;s:14:"payment/liqpay";i:125;s:14:"payment/nochex";i:126;s:15:"payment/paymate";i:127;s:16:"payment/paypoint";i:128;s:13:"payment/payza";i:129;s:26:"payment/perpetual_payments";i:130;s:18:"payment/pp_express";i:131;s:18:"payment/pp_payflow";i:132;s:25:"payment/pp_payflow_iframe";i:133;s:14:"payment/pp_pro";i:134;s:21:"payment/pp_pro_iframe";i:135;s:19:"payment/pp_standard";i:136;s:14:"payment/realex";i:137;s:21:"payment/realex_remote";i:138;s:22:"payment/sagepay_direct";i:139;s:22:"payment/sagepay_server";i:140;s:18:"payment/sagepay_us";i:141;s:24:"payment/securetrading_pp";i:142;s:24:"payment/securetrading_ws";i:143;s:14:"payment/skrill";i:144;s:19:"payment/twocheckout";i:145;s:28:"payment/web_payment_software";i:146;s:16:"payment/worldpay";i:147;s:16:"report/affiliate";i:148;s:25:"report/affiliate_activity";i:149;s:22:"report/affiliate_login";i:150;s:24:"report/customer_activity";i:151;s:22:"report/customer_credit";i:152;s:21:"report/customer_login";i:153;s:22:"report/customer_online";i:154;s:21:"report/customer_order";i:155;s:22:"report/customer_reward";i:156;s:16:"report/marketing";i:157;s:24:"report/product_purchased";i:158;s:21:"report/product_viewed";i:159;s:18:"report/sale_coupon";i:160;s:17:"report/sale_order";i:161;s:18:"report/sale_return";i:162;s:20:"report/sale_shipping";i:163;s:15:"report/sale_tax";i:164;s:17:"sale/custom_field";i:165;s:13:"sale/customer";i:166;s:20:"sale/customer_ban_ip";i:167;s:19:"sale/customer_group";i:168;s:10:"sale/order";i:169;s:14:"sale/recurring";i:170;s:11:"sale/return";i:171;s:12:"sale/voucher";i:172;s:18:"sale/voucher_theme";i:173;s:15:"setting/setting";i:174;s:13:"setting/store";i:175;s:16:"shipping/auspost";i:176;s:17:"shipping/citylink";i:177;s:14:"shipping/fedex";i:178;s:13:"shipping/flat";i:179;s:13:"shipping/free";i:180;s:13:"shipping/item";i:181;s:23:"shipping/parcelforce_48";i:182;s:15:"shipping/pickup";i:183;s:19:"shipping/royal_mail";i:184;s:12:"shipping/ups";i:185;s:13:"shipping/usps";i:186;s:15:"shipping/weight";i:187;s:19:"simple_blog/article";i:188;s:18:"simple_blog/author";i:189;s:20:"simple_blog/category";i:190;s:19:"simple_blog/comment";i:191;s:19:"simple_blog/install";i:192;s:18:"simple_blog/report";i:193;s:11:"tool/backup";i:194;s:14:"tool/error_log";i:195;s:18:"tool/export_import";i:196;s:11:"tool/upload";i:197;s:12:"total/coupon";i:198;s:12:"total/credit";i:199;s:14:"total/handling";i:200;s:16:"total/klarna_fee";i:201;s:19:"total/low_order_fee";i:202;s:12:"total/reward";i:203;s:14:"total/shipping";i:204;s:15:"total/sub_total";i:205;s:9:"total/tax";i:206;s:11:"total/total";i:207;s:13:"total/voucher";i:208;s:8:"user/api";i:209;s:9:"user/user";i:210;s:20:"user/user_permission";i:211;s:11:"module/html";i:212;s:26:"module/tm_newsletter_popup";i:213;s:17:"module/tm_videobg";i:214;s:15:"module/parallax";i:215;s:16:"module/slideshow";i:216;s:15:"module/carousel";i:217;s:16:"feed/google_base";i:218;s:31:"shipping/joseanmatias_faixa_cep";i:219;s:17:"payment/pagseguro";i:220;s:20:"module/scrollingcart";}}'),
 (10, 'Demonstration', '');
 
 -- --------------------------------------------------------
@@ -8757,6 +9096,32 @@ INSERT INTO `oc_zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id
 (108, 222, 3955, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (109, 222, 3972, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wca_newsletter`
+--
+
+CREATE TABLE `wca_newsletter` (
+`id` int(11) unsigned NOT NULL,
+  `email` varchar(4000) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `wca_newsletter`
+--
+
+INSERT INTO `wca_newsletter` (`id`, `email`) VALUES
+(50, 'fernando.mendes@webca.com.br'),
+(51, 'fausto.vieira@agenciaisland.com.br'),
+(52, 'patricia.olivani@gmail.com'),
+(53, 'shymarow@hotmail.com'),
+(54, 'fausto.vieira@agenciaisland.com.br'),
+(55, ''),
+(56, ''),
+(57, ''),
+(58, 'dvitacosmeticosltda@hotmail.com');
+
 --
 -- Indexes for dumped tables
 --
@@ -9566,6 +9931,12 @@ ALTER TABLE `oc_zone_to_geo_zone`
  ADD PRIMARY KEY (`zone_to_geo_zone_id`);
 
 --
+-- Indexes for table `wca_newsletter`
+--
+ALTER TABLE `wca_newsletter`
+ ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -9573,7 +9944,7 @@ ALTER TABLE `oc_zone_to_geo_zone`
 -- AUTO_INCREMENT for table `oc_address`
 --
 ALTER TABLE `oc_address`
-MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `oc_affiliate`
 --
@@ -9618,12 +9989,12 @@ MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
 -- AUTO_INCREMENT for table `oc_banner_image`
 --
 ALTER TABLE `oc_banner_image`
-MODIFY `banner_image_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=212;
+MODIFY `banner_image_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=317;
 --
 -- AUTO_INCREMENT for table `oc_category`
 --
 ALTER TABLE `oc_category`
-MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=42;
+MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=80;
 --
 -- AUTO_INCREMENT for table `oc_country`
 --
@@ -9653,12 +10024,12 @@ MODIFY `currency_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 -- AUTO_INCREMENT for table `oc_customer`
 --
 ALTER TABLE `oc_customer`
-MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `oc_customer_activity`
 --
 ALTER TABLE `oc_customer_activity`
-MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=30;
+MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT for table `oc_customer_ban_ip`
 --
@@ -9678,7 +10049,7 @@ MODIFY `customer_history_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `oc_customer_ip`
 --
 ALTER TABLE `oc_customer_ip`
-MODIFY `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `oc_customer_login`
 --
@@ -9708,7 +10079,7 @@ MODIFY `custom_field_value_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `oc_download`
 --
 ALTER TABLE `oc_download`
-MODIFY `download_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `download_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `oc_event`
 --
@@ -9718,7 +10089,7 @@ MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `oc_extension`
 --
 ALTER TABLE `oc_extension`
-MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=473;
+MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=481;
 --
 -- AUTO_INCREMENT for table `oc_filter`
 --
@@ -9753,12 +10124,12 @@ MODIFY `layout_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 -- AUTO_INCREMENT for table `oc_layout_module`
 --
 ALTER TABLE `oc_layout_module`
-MODIFY `layout_module_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=973;
+MODIFY `layout_module_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=990;
 --
 -- AUTO_INCREMENT for table `oc_layout_route`
 --
 ALTER TABLE `oc_layout_route`
-MODIFY `layout_route_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=278;
+MODIFY `layout_route_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=282;
 --
 -- AUTO_INCREMENT for table `oc_length_class`
 --
@@ -9778,7 +10149,7 @@ MODIFY `location_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `oc_manufacturer`
 --
 ALTER TABLE `oc_manufacturer`
-MODIFY `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `oc_marketing`
 --
@@ -9793,7 +10164,7 @@ MODIFY `modification_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=213;
 -- AUTO_INCREMENT for table `oc_module`
 --
 ALTER TABLE `oc_module`
-MODIFY `module_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=96;
+MODIFY `module_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=99;
 --
 -- AUTO_INCREMENT for table `oc_option`
 --
@@ -9858,7 +10229,7 @@ MODIFY `order_voucher_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `oc_product`
 --
 ALTER TABLE `oc_product`
-MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=50;
+MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=172;
 --
 -- AUTO_INCREMENT for table `oc_product_discount`
 --
@@ -9868,7 +10239,7 @@ MODIFY `product_discount_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=495;
 -- AUTO_INCREMENT for table `oc_product_image`
 --
 ALTER TABLE `oc_product_image`
-MODIFY `product_image_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3592;
+MODIFY `product_image_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3843;
 --
 -- AUTO_INCREMENT for table `oc_product_option`
 --
@@ -9888,7 +10259,7 @@ MODIFY `product_reward_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=778;
 -- AUTO_INCREMENT for table `oc_product_special`
 --
 ALTER TABLE `oc_product_special`
-MODIFY `product_special_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=613;
+MODIFY `product_special_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=614;
 --
 -- AUTO_INCREMENT for table `oc_recurring`
 --
@@ -9923,42 +10294,42 @@ MODIFY `return_status_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `oc_review`
 --
 ALTER TABLE `oc_review`
-MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=51;
+MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=52;
 --
 -- AUTO_INCREMENT for table `oc_setting`
 --
 ALTER TABLE `oc_setting`
-MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14611;
+MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16477;
 --
 -- AUTO_INCREMENT for table `oc_simple_blog_article`
 --
 ALTER TABLE `oc_simple_blog_article`
-MODIFY `simple_blog_article_id` int(16) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `simple_blog_article_id` int(16) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `oc_simple_blog_article_description`
 --
 ALTER TABLE `oc_simple_blog_article_description`
-MODIFY `simple_blog_article_description_id` int(16) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=175;
+MODIFY `simple_blog_article_description_id` int(16) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=179;
 --
 -- AUTO_INCREMENT for table `oc_simple_blog_author`
 --
 ALTER TABLE `oc_simple_blog_author`
-MODIFY `simple_blog_author_id` int(16) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `simple_blog_author_id` int(16) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `oc_simple_blog_author_description`
 --
 ALTER TABLE `oc_simple_blog_author_description`
-MODIFY `simple_blog_author_description_id` int(16) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=46;
+MODIFY `simple_blog_author_description_id` int(16) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=48;
 --
 -- AUTO_INCREMENT for table `oc_simple_blog_category`
 --
 ALTER TABLE `oc_simple_blog_category`
-MODIFY `simple_blog_category_id` int(16) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `simple_blog_category_id` int(16) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `oc_simple_blog_category_description`
 --
 ALTER TABLE `oc_simple_blog_category_description`
-MODIFY `simple_blog_category_description_id` int(16) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=55;
+MODIFY `simple_blog_category_description_id` int(16) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=56;
 --
 -- AUTO_INCREMENT for table `oc_simple_blog_comment`
 --
@@ -9978,7 +10349,7 @@ MODIFY `simple_blog_view_id` int(16) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 -- AUTO_INCREMENT for table `oc_stock_status`
 --
 ALTER TABLE `oc_stock_status`
-MODIFY `stock_status_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+MODIFY `stock_status_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `oc_store`
 --
@@ -10013,12 +10384,12 @@ MODIFY `upload_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `oc_url_alias`
 --
 ALTER TABLE `oc_url_alias`
-MODIFY `url_alias_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1303;
+MODIFY `url_alias_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1602;
 --
 -- AUTO_INCREMENT for table `oc_user`
 --
 ALTER TABLE `oc_user`
-MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `oc_user_group`
 --
@@ -10059,6 +10430,11 @@ MODIFY `zone_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4225;
 --
 ALTER TABLE `oc_zone_to_geo_zone`
 MODIFY `zone_to_geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=110;
+--
+-- AUTO_INCREMENT for table `wca_newsletter`
+--
+ALTER TABLE `wca_newsletter`
+MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=59;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
