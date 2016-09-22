@@ -2731,9 +2731,9 @@ input[type="checkbox"][name="agree"] + label:before, input[type="checkbox"][name
   color: #efab49;
 }
 .nav__primary .menu li > a {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1em;
-  letter-spacing: 1.35px;
+  letter-spacing: 0.35px;
   color: #fff;
 }
 @media (min-width: 768px) and (max-width: 991px) {
