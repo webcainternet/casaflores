@@ -1,5 +1,19 @@
 <?php echo $header; ?>
 
+<style>
+#banner0 {
+    margin: auto;
+    width: 1170px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 150px;
+}
+
+.info01, .info02 {
+    float: left;
+    width: 50%;
+}
+</style>
 
 <div id="container">
 	<div class="container">

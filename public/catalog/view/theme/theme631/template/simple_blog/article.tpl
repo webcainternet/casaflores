@@ -1,4 +1,11 @@
 <?php echo $header; ?>
+
+<style>
+.col-md-6 {
+    width: 100%;
+}
+</style>
+
 <div class="container">
     <ul class="breadcrumb">
         <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -42,11 +49,10 @@
                                         </figure>
                                     <?php } ?>
                                 <?php } ?>
-                            </div>
-                            <div class="col-sm-12 col-md-6">
 
                                 <h2 class="article-title">
-                                    <a href='<?php echo $article['href']; ?>'><?php echo $article['article_title']; ?></a>
+					<a  href="/index.php?route=simple_blog/article/view&simple_blog_article_id=<?php echo $article['simple_blog_article_id']; ?>">                                    
+						<?php echo $article['article_title']; ?></a>
                                 </h2>
 
                                 <div class="article-sub-title">
@@ -73,9 +79,8 @@
                                         <?php echo $article['description']; ?>
                                     </div>
                                 <?php } ?>
-
                                 <div>
-                                    <a class="btn" href="<?php echo $article['href']; ?>">
+                                    <a class="btn" href="/index.php?route=simple_blog/article/view&simple_blog_article_id=<?php echo $article['simple_blog_article_id']; ?>">
                                         <?php echo $button_continue_reading; ?></a>
                                 </div>
                             </div>
