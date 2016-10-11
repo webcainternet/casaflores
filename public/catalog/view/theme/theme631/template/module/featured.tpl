@@ -403,7 +403,7 @@
                         </div>
                         <div class="cart-button">
                             <button class="product-btn-add" type="button">
-                                <a href="<?php echo $product['href']; ?>">Saiba mais</a>
+                                <a href="<?php echo $product['href']; ?>">Veja mais</a>
                             </button>
                             <button class="product-btn" type="button" data-toggle="tooltip"
                                     title="<?php echo $button_wishlist; ?>"

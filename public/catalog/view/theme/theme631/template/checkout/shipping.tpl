@@ -6,6 +6,7 @@
     <div class="panel-body">
       <p><?php echo $text_shipping; ?></p>
       <form class="form-horizontal">
+        <?php /*
         <div class="form-group required">
           <label class="col-sm-3 control-label" for="input-country"><?php echo $entry_country; ?></label>
           <div class="col-sm-9">
@@ -27,7 +28,7 @@
             <select name="zone_id" id="input-zone" class="form-control">
             </select>
           </div>
-        </div>
+        </div> */ ?>
         <div class="form-group required">
           <label class="col-sm-3 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
           <div class="col-sm-9">

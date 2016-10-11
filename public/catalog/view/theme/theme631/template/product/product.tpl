@@ -452,6 +452,12 @@
                                 </div>
                             </div>
 
+                            <div style="background-color: #FAFAFA; padding: 10px; margin-bottom: 10px;">
+                                <p style="font-size: 10px;">- Até as 13h (dias úteis) - Podreão ser entregues no mesmo dia, até as 18h, ou agendadas para outros dias úteis e períodos.</p>
+
+                                <p style="font-size: 10px;">- Após as 13h - Entregas poderão ser agendadas a partir do período da manhã do próximo dia útil</p>
+                            </div>
+
                             <center>OU</center><br>
 
                             <div class="cart" style="border-bottom: 1px solid #e6e6e6; margin-bottom: 20px; padding-left: 10px; padding-bottom: 10px; font-size: 16px;">
@@ -926,7 +932,7 @@
                                                 <?php } ?>
                                                 <button class="product-btn-add" type="button"
                                                         onclick="cart.addPopup($(this),'<?php echo $product['product_id']; ?>');">
-                                                    Saiba mais
+                                                    Veja mais
                                                 </button>
                                             </div>
                                         </div>
@@ -1000,7 +1006,7 @@
                                 </div>
                                 <div class="cart-button">
                                     <button class="product-btn-add" type="button">
-                                        <a href="<?php echo $product['href']; ?>">Saiba mais</a>
+                                        <a href="<?php echo $product['href']; ?>">Veja mais</a>
                                 </button>
                                 </div>
                                 <div class="clear"></div>
@@ -1149,7 +1155,10 @@
                     $('#cart-total').html(json['total']);
                     $('#cart-total2').html(json['total2']);
                     $('#cart > ul').load('index.php?route=common/cart/info ul li');
+
+                    window.location="/index.php?route=checkout/cart";
                 }
+
                 timer = setTimeout(function () {
                     $('.alert').addClass('fadeOut');
                 }, 4000)

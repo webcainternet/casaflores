@@ -4,6 +4,9 @@
 .col-sm-9 {
     width: 100%;
 }
+.button-view {
+    display: none;
+}
 </style>
 
 <div class="container">
@@ -369,7 +372,7 @@
                                     <?php } ?>
                                 <?php } ?>
                                 <button class="product-btn-add" type="button">
-                                        <a href="<?php echo $product['href']; ?>">Saiba mais</a>
+                                        <a href="<?php echo $product['href']; ?>">Veja mais</a>
                                 </button>
                             </div>
                         </div>
@@ -434,13 +437,13 @@
                 <div class="aside">
 				<div class="cart-button">
 					<button class="product-btn-add" type="button">
-                        <a href="<?php echo $product['href']; ?>">Saiba mais</a></button>
+                        <a href="<?php echo $product['href']; ?>">Veja mais</a></button>
                     
 				</div>
 			</div>
                 <div class="cart-button">
                     <button class="product-btn-add" type="button">
-                        <a href="<?php echo $product['href']; ?>">Saiba mais</a></button>
+                        <a href="<?php echo $product['href']; ?>">Veja mais</a></button>
                 </div>
             </div>
 				<div class="clear"></div>
