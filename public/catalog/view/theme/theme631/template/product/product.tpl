@@ -452,7 +452,7 @@
                                 </div>
                             </div>
 
-                            <div style="background-color: #FAFAFA; padding: 10px; margin-bottom: 10px;">
+                            <div style="background-color: #FAFAFA; padding: 10px; margin-bottom: 10px; border: solid 1px #DDD;">
                                 <p style="font-size: 10px;">- Até as 13h (dias úteis) - Podreão ser entregues no mesmo dia, até as 18h, ou agendadas para outros dias úteis e períodos.</p>
 
                                 <p style="font-size: 10px;">- Após as 13h - Entregas poderão ser agendadas a partir do período da manhã do próximo dia útil</p>
