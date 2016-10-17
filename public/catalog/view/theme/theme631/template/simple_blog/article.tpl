@@ -25,7 +25,7 @@
 
         <div id="content" class="<?php echo $class; ?>">
             <?php echo $content_top; ?>
-            <h1><?php echo $heading_title; ?></h1>
+            <h1>Blog Casa Flores</h1>
 
             <?php if ($articles) { ?>
 
