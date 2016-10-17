@@ -181,13 +181,10 @@
 
                         <?php // echo $search; ?>
 
-                        <div style="float: right; color: #FFF; margin-top: 5px;">
-                        <a href="/index.php?route=checkout/cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Meu carrinho</a> <a href="/index.php?route=checkout/checkout"><input type="button" value="Finalizar pedido" style="
-    background: #fc0d1b;
-    border: 0px;
-    padding: 5px 13px;
-    margin-left: 10px;
-"></a>
+                        
+
+                        <div style="float: right; color: #FFF; margin-top: 10px; min-width: 200px;">
+                            <?php echo $cart; ?>
                         </div>
 
                         <?php echo $currency; ?>

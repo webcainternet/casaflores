@@ -1,8 +1,14 @@
 <div class="box-cart">
 <div id="cart" class="cart toggle-wrap">
 	<button type="button" data-loading-text="<?php echo $text_loading; ?>" class="toggle">
-		<i class="fl-bigmug-line-shopping202"></i> 
-		<?php if (isset($text_items2)) { ?><span class="hidden-xs">(</span><span id="cart-total2" class="cart-total2"><?php echo $text_items2; ?></span><span class="hidden-xs">)</span><?php } ?>
+		<i class="fa fa-shopping-cart" aria-hidden="true"></i> 
+
+		<?php if (isset($text_items2)) { ?>
+			<span id="cart-total2" class="cart-total2" style="float: right; margin-top: 5px; background: #fc0d1b; width: 26px; height: 26px; border-radius: 50%; margin-left: 10px;"><?php echo $text_items2; ?></span>
+		<?php } ?>
+
+		<span style="margin-top: 10px; float: right; margin-top: 5px;">Meu Carrinho</span>
+		
 	</button>
   <ul class="pull-right toggle_cont">
 	<?php if ($products || $vouchers) { ?>
