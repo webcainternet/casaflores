@@ -132,17 +132,17 @@
 
                             <li>
                                 <a href="https://www.facebook.com/Casaflores2016">
-                                   <i class="fa fa-facebook-square" aria-hidden="true"></i> <span style="font-size: 12px;">/casaflores2016</span>
+                                   <i class="fa fa-facebook-square" aria-hidden="true"></i>
                                 </a>
-                            </li>
+
+                            </li>            
 
                             <li>
-                                <a href="http://instagram.com/casaflores2016">
-                                   <i class="fa fa-instagram" aria-hidden="true"></i> <span style="font-size: 12px;">/casaflores2016</span>
-                                </a>
-                            </li>
 
-            
+                                <a href="http://instagram.com/casaflores2016">
+                                   <i class="fa fa-instagram" aria-hidden="true"></i>
+                                </a>
+                            </li>            
 
                             <li>
                                 <a href="#" id="home"

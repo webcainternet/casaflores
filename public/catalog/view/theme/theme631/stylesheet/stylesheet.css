@@ -911,7 +911,7 @@ header .search {
     position: absolute;
     top: 7px;
     left: -13px;
-    background-color: #fff;
+    background-color: #555;
     display: inline-block;
     width: 2px;
     height: 15px;

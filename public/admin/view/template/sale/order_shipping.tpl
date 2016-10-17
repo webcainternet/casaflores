@@ -14,6 +14,9 @@
 <div class="container">
   <?php foreach ($orders as $order) { ?>
   <div style="page-break-after: always;">
+
+    <center><p><img src="/image/catalog/logo-preto.png" style="max-width: 250px;"></p></center>
+
     <h1><?php echo $text_picklist; ?> #<?php echo $order['order_id']; ?></h1>
     <table class="table table-bordered">
       <thead>
