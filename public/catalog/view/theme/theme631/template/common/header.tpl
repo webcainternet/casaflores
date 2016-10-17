@@ -157,6 +157,20 @@
                                    <i class="fa fa-envelope"></i>
                                    <span style="text-transform: lowercase;">casaflores@casaflores.com.br</span></a>
                             </li>
+
+                            <?php if (isset($_SESSION['customer_id'])) { ?>
+                                <li>
+                                    <a href="/index.php?route=account/account"><i class="fa fa-user" aria-hidden="true"></i> Minha Conta</a>
+                                </li>
+
+                                <li>
+                                    <a href="/index.php?route=account/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</a>
+                                </li>
+                            <?php } else { ?>
+                                <li>
+                                    <a href="/index.php?route=account/login"><i class="fa fa-user" aria-hidden="true"></i> Acesse sua conta</a>
+                                </li>
+                            <?php } ?>
                         </ul>
                         </nav>
 
