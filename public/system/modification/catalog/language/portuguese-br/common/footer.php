@@ -14,7 +14,7 @@ $_['text_account']      = 'Minha conta';
 $_['text_order']        = 'Histórico de pedidos';
 $_['text_wishlist']     = 'Lista de desejos';
 $_['text_newsletter']   = 'Informativo';
-$_['text_powered']      = 'Desenvolvido por <a href="http://lojavirtual.digital" target="_blank">LojaVirtual.digital</a> - %s &copy; %s - Todos os direitos reservados';
+$_['text_powered']      = '%s &copy; %s - Todos os direitos reservados'; //Desenvolvido por <a href="http://lojavirtual.digital" target="_blank">LojaVirtual.digital</a> - 
 
 				$_['text_simple_blog']   = 'Blog';
 			

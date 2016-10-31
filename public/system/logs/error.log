@@ -138,3 +138,12 @@
 2016-10-06 18:26:20 - PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/casaflores/public/system/modification/catalog/controller/common/cart.php on line 19
 2016-10-06 18:26:20 - PHP Warning:  array_multisort(): Argument #3 is expected to be an array or a sort flag in /var/www/html/casaflores/public/system/modification/catalog/controller/common/cart.php on line 23
 2016-10-06 18:26:20 - PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/casaflores/public/system/modification/catalog/controller/common/cart.php on line 25
+2016-10-16 20:53:43 - PHP Notice:  Undefined variable: text_confirm in /var/www/html/casaflores/public/admin/view/template/simple_blog/comment_list.tpl on line 9
+2016-10-16 21:13:51 - PHP Notice:  Undefined index: article_addition_description in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 27
+2016-10-16 21:13:51 - PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 27
+2016-10-16 21:15:00 - PHP Notice:  Undefined index: article_addition_description in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 141
+2016-10-16 21:15:00 - PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 141
+2016-10-16 21:29:13 - PHP Notice:  Undefined index: article_addition_description in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 141
+2016-10-16 21:29:13 - PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 141
+2016-10-16 21:31:17 - PHP Notice:  Undefined index: article_addition_description in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 141
+2016-10-16 21:31:17 - PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 141
