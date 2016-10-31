@@ -1,4 +1,42 @@
 <?php echo $header; ?>
+
+<script>
+var arrayDia = new Array(7);
+arrayDia[0] = "0";
+arrayDia[1] = "Segunda-Feira";
+arrayDia[2] = "Terça-Feira";
+arrayDia[3] = "Quarta-Feira";
+arrayDia[4] = "Quinta-Feira";
+arrayDia[5] = "Sexta-Feira";
+arrayDia[6] = "0";
+ 
+var arrayMes = new Array(12);
+arrayMes[0] = "Janeiro";
+arrayMes[1] = "Fevereiro";
+arrayMes[2] = "Março";
+arrayMes[3] = "Abril";
+arrayMes[4] = "Maio";
+arrayMes[5] = "Junho";
+arrayMes[6] = "Julho";
+arrayMes[7] = "Agosto";
+arrayMes[8] = "Setembro";
+arrayMes[9] = "Outubro";
+arrayMes[10] = "Novembro";
+arrayMes[11] = "Dezembro";
+
+function getDiaExtenso(dia){
+    return this.arrayDia[dia];
+}
+
+function parseISODate(s) {
+  var b = s.split(/\D/);
+  var d = new Date();
+  d.setHours(0,0,0,0);
+  d.setFullYear(b[0], --b[1], b[2]);
+  return d.getFullYear() == b[0] && d.getDate() == b[2]? d : NaN;
+}
+</script>
+
 <div class="container">
     <ul class="breadcrumb">
         <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -1107,63 +1145,180 @@
 
 <script type="text/javascript"><!--
     $('#button-cart').on('click', function () {
-        $.ajax({
-            url: 'index.php?route=checkout/cart/add',
-            type: 'post',
-            data: $('#product input[type=\'text\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea'),
-            dataType: 'json',
-            beforeSend: function () {
-                $('#button-cart').button('loading');
-            },
-            complete: function () {
-                $('#button-cart').button('reset');
-            },
-            success: function (json) {
-                clearTimeout(timer);
-                $('.alert, .text-danger').remove();
-                $('.form-group').removeClass('has-error');
 
-                if (json['error']) {
-                    if (json['error']['option']) {
-                        for (i in json['error']['option']) {
-                            var element = $('#input-option' + i.replace('_', '-'));
+        <?php 
+            $mysqli = new mysqli(DB_HOSTNAME, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
-                            if (element.parent().hasClass('input-group')) {
-                                element.parent().after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
+            $sql = utf8_decode("SELECT t1.product_option_id as option8,  t2.product_option_id as option5, t3.product_option_value_id as valuemanha, t4.product_option_value_id as valuetarde FROM (SELECT * FROM oc_product_option WHERE option_id = 8 AND product_id = ".$product_id.") as t1, (SELECT * FROM oc_product_option WHERE option_id = 5 AND product_id = ".$product_id.") as t2, (SELECT * FROM oc_product_option_value WHERE option_value_id = 39) as t3, (SELECT * FROM oc_product_option_value WHERE option_value_id = 40) as t4 WHERE t3.product_option_id = t2.product_option_id AND t4.product_option_id = t2.product_option_id LIMIT 1");
+
+            if ($result = $mysqli->query($sql)) { 
+                $row_cnt = $result->num_rows;
+                if ($row_cnt > 0) {
+                    while($obj = $result->fetch_object()){
+                        $idelement1 = $obj->option8;
+                        $idelement2 = $obj->option5;
+                        $idmanha = $obj->valuemanha;
+                        $idtarde = $obj->valuetarde;
+                    } ?>
+                    /* ===== AREA CUSTOMIZADA ===== */
+                    var element1 = $('#input-option<?php echo $idelement1; ?>');
+                    var element2 = $('#input-option<?php echo $idelement2; ?>');
+                    var idmanha = <?php echo $idmanha; ?>;
+                    var idtarde = <?php echo $idtarde; ?>;
+
+                    var allok = 0;
+                    var naoatual = 0;
+                    $('.alert, .text-danger').remove();
+                    $('.form-group').removeClass('has-error');
+
+                    var diaSelecionado = parseISODate( element1.val() );
+                    var periodoSelecionado = element2.val();
+
+                    //Data atual
+                    var data = new Date();
+
+                    //Data selecionada
+                    var d = new Date(diaSelecionado);
+
+                    var n = d.getDay();
+                    var diaSemana = getDiaExtenso(n);
+
+                    // Guarda cada pedaço em uma variável
+                    var datadia     = data.getDate();           // 1-31
+                    var datadia_sem = data.getDay();            // 0-6 (zero=domingo)
+                    var datames     = data.getMonth();          // 0-11 (zero=janeiro)
+                    var dataano2    = data.getYear();           // 2 dígitos
+                    var dataano4    = data.getFullYear();       // 4 dígitos
+                    var datahora    = data.getHours();          // 0-23
+                    var datamin     = data.getMinutes();        // 0-59
+                    var dataseg     = data.getSeconds();        // 0-59
+                    var datamseg    = data.getMilliseconds();   // 0-999
+                    var datatz      = data.getTimezoneOffset(); // em minutos
+
+                    var ddia     = d.getDate();           // 1-31
+                    var ddia_sem = d.getDay();            // 0-6 (zero=domingo)
+                    var dmes     = d.getMonth();          // 0-11 (zero=janeiro)
+                    var dano2    = d.getYear();           // 2 dígitos
+                    var dano4    = d.getFullYear();       // 4 dígitos
+                    var dhora    = d.getHours();          // 0-23
+                    var dmin     = d.getMinutes();        // 0-59
+                    var dseg     = d.getSeconds();        // 0-59
+                    var dmseg    = d.getMilliseconds();   // 0-999
+                    var dtz      = d.getTimezoneOffset(); // em minutos
+
+                    //Verifica se foi digitado a data
+                    if (d == 'Invalid Date') {
+                        element1.after('<div class="text-danger">Data de entrega é obrigatório!</div>');
+                    } else {
+                        //Verifica se é dia passado
+                        if (datadia == ddia && datames == dmes && dataano4 == dano4) {
+                            //é hoje
+                            console.log('Foi selecionado o dia atual');
+                            //Verificação do dia da semana
+                            if (diaSemana == '0') {
+                                element1.after('<div class="text-danger">Não realizamos entrega aos finais de semana! Programe sua entrega para o próximo dia útil!</div>');
                             } else {
-                                element.after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
+                                //Verificação se ja passou das 13h
+                                var hora = data.getHours(); // 0-23
+                                if (hora >= 13) {
+                                    element1.after('<div class="text-danger">Não realizamos mais entrega para hoje! Programe sua entrega para o próximo dia útil!</div>');
+                                } else {
+                                    if (periodoSelecionado == idmanha) {
+                                        element2.after('<div class="text-danger">Não realizamos entrega hoje para este periodo! Programe sua entrega para o periodo da TARDE ou próximo dia útil!</div>');
+                                    } else {
+                                        allok = '1';       
+                                    }
+                                }
                             }
+                        } else {
+                            console.log('Não foi selecionado o dia atual');
+                            if (data > d) {
+                                element1.after('<div class="text-danger">Esta data de entrega já passou!</div>');
+                            } else {
+                                //Verificação do dia da semana
+                                if (diaSemana == '0') {
+                                    element1.after('<div class="text-danger">Não realizamos entrega aos finais de semana! Programe sua entrega para o próximo dia útil!</div>');
+                                } else {
+                                    //TUDO OK
+                                    allok = '1';
+                                }
+                            } 
                         }
                     }
 
-                    if (json['error']['recurring']) {
-                        $('select[name=\'recurring_id\']').after('<div class="text-danger">' + json['error']['recurring'] + '</div>');
-                    }
-
-                    if (json['error']['quantity']){
-                        $('#content').parent().before('<div class="alert alert-danger"><i class="material-design-cancel19"></i>' + json['error']['quantity'] + ' <button type="button" class="close material-design-close47"></button> </div>');
-                    }
-
-                    // Highlight any found errors
-                    $('.text-danger').parent().addClass('has-error');
-                }
-
-                if (json['success']) {
-                    $('#content').parent().before('<div class="alert alert-success"><i class="material-design-verification24"></i> ' + json['success'] + '<button type="button" class="close material-design-close47"></button></div>');
-
-
-                    $('#cart-total').html(json['total']);
-                    $('#cart-total2').html(json['total2']);
-                    $('#cart > ul').load('index.php?route=common/cart/info ul li');
-
-                    window.location="/index.php?route=checkout/cart";
-                }
-
-                timer = setTimeout(function () {
-                    $('.alert').addClass('fadeOut');
-                }, 4000)
+                    console.log('Parece que tudo ok:'+ allok);
+                    /* ===== FIM AREA CUSTOMIZADA ===== */
+                <?php } else { ?>
+                        allok = 1;
+                <?php }
             }
-        });
+        ?>
+
+
+        
+        
+        
+
+        //Verificação se esta tudo ok
+        if (allok == 1) {
+            $.ajax({
+                url: 'index.php?route=checkout/cart/add',
+                type: 'post',
+                data: $('#product input[type=\'text\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea'),
+                dataType: 'json',
+                beforeSend: function () {
+                    $('#button-cart').button('loading');
+                },
+                complete: function () {
+                    $('#button-cart').button('reset');
+                },
+                success: function (json) {
+                    clearTimeout(timer);
+                    $('.alert, .text-danger').remove();
+                    $('.form-group').removeClass('has-error');
+
+                    if (json['error']) {
+                        if (json['error']['option']) {
+                            for (i in json['error']['option']) {
+                                var element = $('#input-option' + i.replace('_', '-'));
+
+                                if (element.parent().hasClass('input-group')) {
+                                    element.parent().after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
+                                } else {
+                                    element.after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
+                                }
+                            }
+                        }
+
+                        if (json['error']['recurring']) {
+                            $('select[name=\'recurring_id\']').after('<div class="text-danger">' + json['error']['recurring'] + '</div>');
+                        }
+
+                        if (json['error']['quantity']){
+                            $('#content').parent().before('<div class="alert alert-danger"><i class="material-design-cancel19"></i>' + json['error']['quantity'] + ' <button type="button" class="close material-design-close47"></button> </div>');
+                        }
+
+                        // Highlight any found errors
+                        $('.text-danger').parent().addClass('has-error');
+                    }
+
+                    if (json['success']) {
+                        $('#content').parent().before('<div class="alert alert-success"><i class="material-design-verification24"></i> ' + json['success'] + '<button type="button" class="close material-design-close47"></button></div>');
+
+
+                        $('#cart-total').html(json['total']);
+                        $('#cart-total2').html(json['total2']);
+                        $('#cart > ul').load('index.php?route=common/cart/info ul li');
+
+                        window.location="/index.php?route=checkout/cart";
+                    }
+
+                    timer = setTimeout(function () {
+                        $('.alert').addClass('fadeOut');
+                    }, 4000)
+                }
+            });
+        }
     });
     //-->
 </script>
