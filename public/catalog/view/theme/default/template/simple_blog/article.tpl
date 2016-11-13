@@ -54,7 +54,7 @@
                                     class="article-date material-design-clock100"><?php echo $article['date_added']; ?></span>
                                     <?php if ($article['allow_comment']) { ?>
                                         <span class="article-comments material-design-add183"><a
-                                                href="<?php echo $article['comment_href']; ?>#comment-section"><?php echo $article['total_comment']; ?></a></span>
+                                                href="<?php echo $article['comment_href']; ?>#comment-section">1111<?php echo $article['total_comment']; ?></a></span>
                                     <?php } ?>
                                     <span class="article-author material-design-user157"><a
                                             href="<?php echo $article['author_href']; ?>"><?php echo $article['author_name']; ?></a></span>

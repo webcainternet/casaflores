@@ -800,7 +800,7 @@
             }
         },
 
-        _months : 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_'),
+        _months : 'Janeiro_Fevereiro_Maro_Abril_Maio_Junho_Julho_Agosto_Setembro_Outubro_Novembro_Dezembro'.split('_'),
         months : function (m) {
             return this._months[m.month()];
         },

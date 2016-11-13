@@ -147,3 +147,65 @@
 2016-10-16 21:29:13 - PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 141
 2016-10-16 21:31:17 - PHP Notice:  Undefined index: article_addition_description in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 141
 2016-10-16 21:31:17 - PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 141
+2016-10-31 21:26:12 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-10-31 21:26:29 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-10-31 21:27:05 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-11-01 16:48:08 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-11-01 16:51:10 - PHP Notice:  Undefined index: article_addition_description in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 27
+2016-11-01 16:51:10 - PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 27
+2016-11-01 16:51:25 - PHP Notice:  Undefined index: article_addition_description in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 141
+2016-11-01 16:51:25 - PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 141
+2016-11-01 16:52:30 - PHP Notice:  Undefined variable: text_confirm in /var/www/html/casaflores/public/admin/view/template/simple_blog/comment_list.tpl on line 9
+2016-11-01 17:13:43 - PHP Notice:  Undefined index: article_addition_description in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 141
+2016-11-01 17:13:43 - PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 141
+2016-11-01 17:36:36 - PHP Notice:  Undefined index: article_addition_description in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 141
+2016-11-01 17:36:36 - PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 141
+2016-11-01 18:45:05 - PHP Notice:  Undefined index: article_addition_description in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 141
+2016-11-01 18:45:05 - PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 141
+2016-11-01 18:45:16 - PHP Notice:  Undefined index: article_addition_description in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 141
+2016-11-01 18:45:16 - PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/casaflores/public/admin/model/simple_blog/article.php on line 141
+2016-11-02 12:11:06 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-11-03 15:42:21 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-11-06 19:42:55 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-11-10 17:18:36 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-11-11 0:14:53 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-11-11 0:15:11 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-11-11 0:33:41 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-11-11 0:33:57 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-11-11 13:10:32 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-11-11 17:15:21 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-11-11 17:15:30 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-11-11 17:15:59 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-11-11 17:16:09 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-11-11 17:16:22 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-11-11 17:16:33 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-11-11 17:17:09 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-11-11 17:17:23 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-11-11 17:17:27 - PHP Notice:  Undefined variable: footer_top in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/common/footer.tpl on line 144
+2016-11-11 17:17:27 - PHP Notice:  Undefined variable: theme_path in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/common/footer.tpl on line 159
+2016-11-11 17:17:27 - PHP Notice:  Undefined variable: theme_path in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/common/footer.tpl on line 160
+2016-11-11 17:17:27 - PHP Notice:  Undefined variable: theme_path in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/common/header.tpl on line 34
+2016-11-11 17:17:27 - PHP Notice:  Undefined variable: theme_path in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/common/header.tpl on line 35
+2016-11-11 17:17:27 - PHP Notice:  Undefined variable: theme_path in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/common/header.tpl on line 36
+2016-11-11 17:17:27 - PHP Notice:  Undefined variable: theme_path in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/common/header.tpl on line 37
+2016-11-11 17:17:27 - PHP Notice:  Undefined variable: theme_path in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/common/header.tpl on line 38
+2016-11-11 17:17:27 - PHP Notice:  Undefined variable: theme_path in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/common/header.tpl on line 39
+2016-11-11 17:17:27 - PHP Notice:  Undefined variable: theme_path in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/common/header.tpl on line 40
+2016-11-11 17:17:27 - PHP Notice:  Undefined variable: theme_path in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/common/header.tpl on line 41
+2016-11-11 17:17:27 - PHP Notice:  Undefined variable: theme_path in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/common/header.tpl on line 46
+2016-11-11 17:17:27 - PHP Notice:  Undefined variable: theme_path in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/common/header.tpl on line 56
+2016-11-11 17:17:27 - PHP Notice:  Undefined variable: theme_path in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/common/header.tpl on line 60
+2016-11-11 17:17:27 - PHP Notice:  Undefined variable: theme_path in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/common/header.tpl on line 88
+2016-11-11 17:17:27 - PHP Notice:  Undefined variable: theme_path in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/common/header.tpl on line 91
+2016-11-11 17:17:27 - PHP Notice:  Undefined variable: categories_tm in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/common/header.tpl on line 202
+2016-11-11 17:17:27 - PHP Notice:  Undefined variable: categories_tm in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/common/header.tpl on line 214
+2016-11-11 17:17:27 - PHP Notice:  Undefined variable: maintenance in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/common/header.tpl on line 222
+2016-11-11 17:17:27 - PHP Notice:  Undefined index: options in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/product/search.tpl on line 117
+2016-11-11 17:17:27 - PHP Notice:  Undefined index: options in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/product/search.tpl on line 118
+2016-11-11 17:17:27 - PHP Notice:  Undefined index: img-height in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/product/search.tpl on line 376
+2016-11-11 17:17:27 - PHP Notice:  Undefined index: img-width in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/product/search.tpl on line 376
+2016-11-11 17:17:27 - PHP Warning:  Division by zero in /var/www/html/casaflores/public/catalog/view/theme/theme631/template/product/search.tpl on line 376
+2016-11-11 17:19:51 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-11-11 17:23:57 - PHP Notice:  Undefined variable: json in /var/www/html/casaflores/public/admin/controller/sale/order.php on line 2221
+2016-11-13 0:52:27 - PHP Warning:  unlink(/var/www/html/public/system/cache/cache.currency.1479005180): No such file or directory in /var/www/html/casaflores/public/system/library/cache/file.php on line 17
+2016-11-13 3:55:51 - PHP Warning:  unlink(/var/www/html/public/system/cache/cache.language.1479016545): No such file or directory in /var/www/html/casaflores/public/system/library/cache/file.php on line 17

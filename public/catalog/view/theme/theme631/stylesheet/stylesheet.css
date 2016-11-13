@@ -2730,7 +2730,7 @@ input[type="checkbox"][name="agree"] + label:before, input[type="checkbox"][name
   color: #efab49;
 }
 .nav__primary .menu li > a {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1em;
   letter-spacing: 0.35px;
   color: #fff;
